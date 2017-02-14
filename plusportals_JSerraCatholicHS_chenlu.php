@@ -91,6 +91,16 @@ foreach($pp_bia as $alinks) {
 
 $attend_file = 'attend.html';
 
+//get MarkingPeriodId
+$markingperiod_url = "https://www.plusportals.com/ParentStudentDetails/GetMarkingPeriod";  
+curl_setopt($ch, CURLOPT_URL, $markingperiod_url);// 学生列表页面
+$MarkingPeriod_Html = curl_exec($ch);
+$markingperiod_data = json_decode($MarkingPeriod_Html, true);
+//var_dump($markingperiod_data);
+foreach ($markingperiod_data as $mp) {
+    $MarkingPeriodId[$mp['MarkingPeriodId']] = $mp['MarkingPeriodName'];
+}
+
 //catch information for each students.
 $y = 0;
 for ($i = 0; $i < count($pp_get_all_students); $i++) {

@@ -1,5 +1,7 @@
 <?php
 require 'vendor/autoload.php';
+include('db_class.php'); // call db.class.php
+$bdd = new db(); 
 //http://lp15.smhs.org/login/index.php
 //$data = "username=shitian.chen&password=wee34rrt&anchor=";
 //https://aeries.smhs.org/Parent/LoginParent.aspx
@@ -13,6 +15,13 @@ $cookie_file = dirname(__FILE__)."/cookies/stiinformationnow.cookie";
 $base_url = "https://500203.stiinformationnow.com";
 $logInUrl = $base_url. "/InformationNow/Login.aspx";
 $Agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36";
+
+//catch all data will input All, current data will empty
+$Catch_All_Term_Datas = "";
+$uid = 52;
+$gradeYear = '11th';
+$school = 'Rockland Country Day School';
+
 
 $ch = curl_init();// 初始化
 curl_setopt($ch, CURLOPT_URL, $logInUrl);// 网址
@@ -74,12 +83,12 @@ curl_setopt($ch, CURLOPT_URL, $attendance_url);// 网址
 curl_setopt($ch, CURLOPT_USERAGENT, $Agent);
 $attendance_Html = curl_exec($ch);
 $att_file = "login/500203.html";
-//html_put_files($att_file, $attendance_Html);
+html_put_files($att_file, $attendance_Html);
 
 $att_dom = new \HtmlParser\ParserDom($attendance_Html);
-$student_infos['attendance'] = $att_dom->find('#ctl00_ContentPlaceHolder1_grdAttendance', 0)->outerHtml();
 $student_infos['student_name'] = $att_dom->find('#ctl00_ddStudentList', 0)->getPlainText();
 $student_infos['student_id'] = $att_dom->find('#ctl00_ddStudentList option', 0)->getAttr('value');
+
 //get grade page
 $grade_url = "https://500203.stiinformationnow.com/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx";
 curl_setopt($ch, CURLOPT_URL, $grade_url);// 网址
@@ -96,9 +105,58 @@ foreach($grade_dom->find('#ctl00_ContentPlaceHolder1_ddGradingPeriodList option'
     //if(($terms->getAttr('value') != 0) && empty($terms->getAttr('selected'))) {
     if($terms->getAttr('value') != 0) {
         $terms_list[$terms->getAttr('value')] = $terms->getPlainText();
+        $currentSelected = $terms->getAttr('selected');
+        if($currentSelected) {
+            $currentTermId = $terms->getAttr('value');
+            $term = $terms->getPlainText();
+        }
     }
 }
-//var_dump($student_infos['grade']);
+// echo $currentTermId."\n";
+// echo $term."\n";
+
+//attend data
+$student_infos['attendance'] = $att_dom->find('#ctl00_ContentPlaceHolder1_grdAttendance', 0)->outerHtml();
+//insert attend summary is empty
+$query = 'INSERT INTO sinica_attendance_summary (
+        uid, 
+        studentid, 
+        term,
+        gradeyear,
+        schoolname,
+        createtime
+    ) VALUES (
+        '. $uid .',
+        '. $student_infos['student_id'] .',
+        "'. $term .'",
+        "'. $gradeYear .'",
+        "'. $school .'",
+        '.time().'
+    )';        
+    $bdd->execute($query);
+    //attend detail insert to db
+    $query = "INSERT INTO sinica_attendance_details 
+        (uid, 
+         studentid, 
+         type,
+         detail, 
+         term,
+         gradeyear,
+         schoolname,
+         createtime
+        ) VALUES (
+            ". $uid .",
+            ". $student_infos['student_id'] .",
+            '',
+            '". $student_infos['attendance'] ."',
+            '". $term ."',
+            '". $gradeYear ."',
+            '". $school ."',
+            ". time() ."
+        )";
+    $bdd->execute($query);
+
+
 //get grade table
 $grade_period_url = "https://500203.stiinformationnow.com/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx";
 //get post data elements
@@ -107,22 +165,160 @@ $__EVENTARGUMENT = $grade_dom->find('#__EVENTARGUMENT', 0)->getAttr('value');
 $__LASTFOCUS = $grade_dom->find('#__LASTFOCUS', 0)->getAttr('value');
 $__VIEWSTATE = $grade_dom->find('#__VIEWSTATE', 0)->getAttr('value');
 $__EVENTVALIDATION = $grade_dom->find('#__EVENTVALIDATION', 0)->getAttr('value');
-
+$y = 0;
 foreach($terms_list as $period_id => $term) {
-    //prepare data of post
-    $data ="ctl00%24ScriptManager1=ctl00%24MainContentUpdatePanel%7Cctl00%24ContentPlaceHolder1%24ddGradingPeriodList&__EVENTTARGET=".urlencode($__EVENTTARGET)."&__EVENTARGUMENT=".urlencode($__EVENTARGUMENT)."&__LASTFOCUS=".urlencode($__LASTFOCUS)."&__VIEWSTATE=".urlencode($__VIEWSTATE)."&__EVENTVALIDATION=".urlencode($__EVENTVALIDATION)."&ctl00%24ddStudentList=".$student_infos['student_id']."&ctl00%24ddStudentAcadSession=15&ctl00%24ContentPlaceHolder1%24ddGradingPeriodList=".$period_id."&__ASYNCPOST=true";
+    // get current Term data
+    if(empty($Catch_All_Term_Datas) && $currentTermId == $period_id) {
+        //prepare data of post
+        $data ="ctl00%24ScriptManager1=ctl00%24MainContentUpdatePanel%7Cctl00%24ContentPlaceHolder1%24ddGradingPeriodList&__EVENTTARGET=".urlencode($__EVENTTARGET)."&__EVENTARGUMENT=".urlencode($__EVENTARGUMENT)."&__LASTFOCUS=".urlencode($__LASTFOCUS)."&__VIEWSTATE=".urlencode($__VIEWSTATE)."&__EVENTVALIDATION=".urlencode($__EVENTVALIDATION)."&ctl00%24ddStudentList=".$student_infos['student_id']."&ctl00%24ddStudentAcadSession=15&ctl00%24ContentPlaceHolder1%24ddGradingPeriodList=".$period_id."&__ASYNCPOST=true";
 
-    curl_setopt($ch, CURLOPT_URL, $grade_period_url);// 网址
-    curl_setopt($ch, CURLOPT_USERAGENT, $Agent);
-    curl_setopt($ch, CURLOPT_POST, true);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);// POST数据
-    $grade_period_Html = curl_exec($ch);
+        curl_setopt($ch, CURLOPT_URL, $grade_period_url);// 网址
+        curl_setopt($ch, CURLOPT_USERAGENT, $Agent);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);// POST数据
+        $grade_period_Html = curl_exec($ch);
 
-    $period_file = "grades/".$student_infos['student_id']."_".$period_id.".html";
-    html_put_files($period_file, $grade_period_Html);
+        $period_file = "grades/".$student_infos['student_id']."_".$period_id.".html";
+        html_put_files($period_file, $grade_period_Html);
 
-    $grade_period_dom = new \HtmlParser\ParserDom($grade_period_Html);
-    $student_infos['grade'][$period_id] = $grade_period_dom->find('#ctl00_ContentPlaceHolder1_grdGrades', 0)->outerHtml();
+        $grade_period_dom = new \HtmlParser\ParserDom($grade_period_Html);
+        $student_infos['grade'][$period_id] = $grade_period_dom->find('#ctl00_ContentPlaceHolder1_grdGrades', 0)->outerHtml();
+        $grade_table = $grade_period_dom->find('#ctl00_ContentPlaceHolder1_grdGrades tr');
+        $j = 0;
+        foreach($grade_table as $tableTr) {
+            $i = 1;
+            foreach($tableTr->find('td') as $tableTd) {
+                $tdText = trim($tableTd->getPlainText());
+                switch($i) {
+                    case 1:
+                        $courseName = $tdText;
+                        break;
+                    case 2:
+                        $courseTeacher = $tdText;
+                        break;
+                    case 4:
+                        $average = $tdText;
+                        break;
+                }                
+                $i++;
+                //'ctl00_ContentPlaceHolder1_grdGrades_ctl13_AverageDiv';
+            }
+            if(isset($average) && $average != "N/A") {
+                list($avg, $grade) = explode(' | ', $average);
+                $gradeData[$period_id][$j]['courseName'] = $courseName;
+                $gradeData[$period_id][$j]['courseTeacher'] = $courseTeacher;
+                $gradeData[$period_id][$j]['average'] = $avg;
+                $gradeData[$period_id][$j]['grade'] = $grade;
+                $status = get_last_summary_grade($uid, $student_infos['student_id'], $courseName, $avg, $term, $gradeYear, $bdd);
+        
+                $query ='INSERT INTO sinica_grade_summary (
+                    uid, 
+                    studentid, 
+                    -- courseid, 
+                    coursename, 
+                    teacher,
+                    average, 
+                    grade, 
+                    term,
+                    status,
+                    markingperiodid,
+                    gradelevel,
+                    schoolname,
+                    createtime
+                    ) VALUES (
+                        '. $uid .',
+                        '. $student_infos['student_id'] .',
+                        "'. $courseName .'",
+                        "'. $courseTeacher .'",
+                        "'. $avg .'",
+                        "'. $grade .'",
+                        "'. $term .'",
+                        "'. $status .'",
+                        '. $period_id .',
+                        "'. $gradeYear .'",
+                        "'. $school .'",
+                        '. time() .'
+                        )';
+                $bdd->execute($query);                
+            }
+            $j++;
+        }
+    }
+    //get all Terms data
+    elseif (!empty($Catch_All_Term_Datas) && $period_id <= $currentTermId) {
+        //prepare data of post
+        $data ="ctl00%24ScriptManager1=ctl00%24MainContentUpdatePanel%7Cctl00%24ContentPlaceHolder1%24ddGradingPeriodList&__EVENTTARGET=".urlencode($__EVENTTARGET)."&__EVENTARGUMENT=".urlencode($__EVENTARGUMENT)."&__LASTFOCUS=".urlencode($__LASTFOCUS)."&__VIEWSTATE=".urlencode($__VIEWSTATE)."&__EVENTVALIDATION=".urlencode($__EVENTVALIDATION)."&ctl00%24ddStudentList=".$student_infos['student_id']."&ctl00%24ddStudentAcadSession=15&ctl00%24ContentPlaceHolder1%24ddGradingPeriodList=".$period_id."&__ASYNCPOST=true";
+        curl_setopt($ch, CURLOPT_URL, $grade_period_url);// 网址
+        curl_setopt($ch, CURLOPT_USERAGENT, $Agent);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data);// POST数据
+        $grade_period_Html = curl_exec($ch);
+
+        $period_file = "grades/".$student_infos['student_id']."_".$period_id.".html";
+        html_put_files($period_file, $grade_period_Html);
+
+        $grade_period_dom = new \HtmlParser\ParserDom($grade_period_Html);
+        $student_infos['grade'][$period_id] = $grade_period_dom->find('#ctl00_ContentPlaceHolder1_grdGrades', 0)->outerHtml();
+        //get all grade summary
+        $grade_table = $grade_period_dom->find('#ctl00_ContentPlaceHolder1_grdGrades tr');
+        $j = 1;
+        foreach($grade_table as $tableTr) {
+            $i = 1;
+            foreach($tableTr->find('td') as $tableTd) { 
+                $tdText = trim($tableTd->getPlainText());
+                switch($i) {
+                    case 1:
+                        $courseName = $tdText;
+                        break;
+                    case 2:
+                        $courseTeacher = $tdText;
+                        break;
+                    case 4:
+                        $average = $tdText;
+                        break;
+                }                
+                $i++;
+                //'ctl00_ContentPlaceHolder1_grdGrades_ctl13_AverageDiv';
+            }
+            if(isset($average) && $average != "N/A") {
+                list($avg, $grade) = explode(' | ', $average);
+                $gradeData[$period_id][$j]['courseName'] = $courseName;
+                $gradeData[$period_id][$j]['courseTeacher'] = $courseTeacher;
+                $gradeData[$period_id][$j]['average'] = $avg;
+                $gradeData[$period_id][$j]['grade'] = $grade;
+                $status = get_last_summary_grade($uid, $student_infos['student_id'], $courseName, $avg, $term, $gradeYear, $bdd);
+        
+                $query ='INSERT INTO sinica_grade_summary (
+                    uid, 
+                    studentid, 
+                    -- courseid, 
+                    coursename, 
+                    average, 
+                    grade, 
+                    term,
+                    status,
+                    markingperiodid,
+                    gradelevel,
+                    schoolname,
+                    createtime
+                    ) VALUES (
+                        '. $uid .',
+                        '. $student_infos['student_id'] .',
+                        "'. $courseName .'",
+                        "'. $avg .'",
+                        "'. $grade .'",
+                        "'. $term .'",
+                        "'. $status .'",
+                        '. $period_id .',
+                        "'. $gradeYear .'",
+                        "'. $school .'",
+                        '. time() .'
+                        )';
+                $bdd->execute($query);  
+            }
+            $j++;
+        }   
+    }
 }
 /*
 $sin_dom = new \HtmlParser\ParserDom($sin_login_Html);
@@ -212,9 +408,10 @@ foreach($grade_table as $table) {
         }
     }
 }
+*/
 $all = 'grades/lp15_'.$student_infos['student_id']."_all.html";
 html_put_files($all, var_export($student_infos, true));
-*/
+
 
 function html_put_files($fname = NULL, $data) {
     if(empty($fname)) {
@@ -226,3 +423,59 @@ function html_put_files($fname = NULL, $data) {
     file_put_contents($fname, $data, FILE_APPEND);
 }
 
+function get_last_summary_grade($uid, $studentid, $coursename, $cgrade, $term = null, $gradeyear = null, $bdd)
+{
+    //$bdd = new db();
+    $query = "SELECT average 
+        FROM sinica_grade_summary 
+        WHERE 
+            studentid = ". $studentid ." 
+            AND uid = ". $uid ."
+            AND coursename = '". $coursename ."' 
+            AND term = '". $term ."'
+            AND gradelevel = '". $gradeyear ."'
+            order by id desc 
+            limit 1";
+    //echo"check grade summary sql :: ". $query."\n";
+    $result = $bdd->getOne($query);
+    
+    //check grade under 75 will send email to supervisor
+    //$send = self::check_mail_to_teacher($uid, $cgrade, $bdd);
+    //email log
+    
+    $average = $result['average'];
+    // echo $cgrade."\n";
+    // echo $average."\n";
+    if ($average) {
+        if ($cgrade > $average) {
+            $status = 'up';
+        } elseif ($cgrade < $average) {
+            $status = 'down';
+        } else {
+            $status = 'equal';
+        }
+        return $status;
+    } else {
+        return null;
+    }
+}
+
+function check_mail_to_teacher($uid, $cgrade, $sname = null) {
+    $bdd = new db();
+    $teacher_name = "Nathan";
+    $student_name = "";
+        // $query = "SELECT manager_teaher from users ";
+        // $bdd->getOne($query);
+    if(!empty($cgrade) && $cgrade < 70) {
+        $subject = "Grade Notice - ". $sname;
+        $message = "Hello! ".$teacher_name ." This is a simple Grade score under 70 email message test !!";
+        $to = "lidzhu@gmail.com";
+        $from = "snowwind.z@gmail.com";
+        $headers = "From:" . $from;
+        @mail($to,$subject,$message,$headers);
+        return true;
+    }
+    else {
+        return false;
+    }
+}

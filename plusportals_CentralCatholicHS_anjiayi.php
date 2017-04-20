@@ -3,7 +3,6 @@ require 'vendor/autoload.php';
 include('db_class.php'); // call db.class.php
 $bdd = new db();
 
-$school = "Central Catholic High School";
 $file = "login/pp_grade.html";
 $cookie_file = dirname(__FILE__)."/cookies/CentralCatholicHS_ajy.cookie";
 $base_url = "https://www.plusportals.com";
@@ -15,6 +14,7 @@ $Agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko)
 $gradeYear = '10th';
 //$term = 'Q3';
 $Catch_All_Term_Datas = "";
+$school = "Central Catholic High School";
 
 //$proxy = "127.0.0.1:7070";
 // $MarkingPeriodId = array(

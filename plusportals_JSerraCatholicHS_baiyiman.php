@@ -126,7 +126,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
     //get current term name
     $term = $MarkingPeriodId[$CurrentMarkingPeriodId];
 
-    // get recent score json data for current semester
+    /*// get part of recent score json data for current semester
     $recent_json = $score_dom->find('div.bgf9', 1)->outerHtml();
     $tmp = explode("\n", $recent_json);
     for($j = 0; $j < count($tmp); $j ++) {
@@ -135,7 +135,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
     $tmpj = implode("\n", $tmp);
     //var_dump($tmpj);
     $recent_score = $tmpj;
-    preg_match("/({\"Data\").*(])/", $recent_json, $rscores);
+    preg_match("/({\"Data\").*\w}{1}/", $recent_json, $rscores);
     $recent_file = "login/recent_json.html";
     $recent_score_json = $rscores[0];
     // html_put_files($recent_file, $rscores[0]);
@@ -161,8 +161,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
             ".time()."
         )";
     $bdd->execute($query);
-
-
+    */
 
     //get attendence summary for each students
     $x = $k = 0;
@@ -291,33 +290,35 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);// POST数据
         $pp_grade_course_detail_Html[$SectionId] =  curl_exec($ch);
         $pp_infos[$i]['grades_detail'][$SectionId]['scores_detail'] = $pp_grade_course_detail_Html[$SectionId];
-        $query = "INSERT INTO sinica_grade_details (
+        $query = "INSERT INTO sinica_grade_recent_scores (
             uid, 
             studentid, 
-            courseid, 
+            leadcourseid, 
             coursename, 
             teacher, 
             teacher_email, 
-            category_detail, 
-            scores_detail,
+            category,
+            recentscore, 
+            recentscore_json,
             term,
             gradeyear,
             schoolname,
             createtime
-          ) VALUES (
+        ) VALUES (
             ". $uid .",
             ". $pp_infos[$i]['student_id'] .",
-            ". $SectionId .",
+            ". $SectionId .",            
             '". $coursesName ."',
             '". $pp_infos[$i]['grades_detail'][$SectionId]['teacher_name'] ."',
             '" . $pp_infos[$i]['grades_detail'][$SectionId]['teacher_email'] ."',
             '" . $pp_infos[$i]['grades_detail'][$SectionId]['category_averages'] ."',
+            '',            
             '". $pp_infos[$i]['grades_detail'][$SectionId]['scores_detail'] ."',
             '". $term ."',
             '". $gradeYear ."',
             '". $school ."',
             ". time() ."
-          )";
+        )";
         $bdd->execute($query);
     }
 
@@ -330,87 +331,87 @@ function getMillisecond() {
     return (float)sprintf('%.0f', (floatval($s1) + floatval($s2)) * 1000);  
 }
 
- function get_last_summary_grade($uid, $studentid, $courseid, $cgrade, $term = null, $gradeyear = null, $bdd)
-    {
-        //$bdd = new db();
-        $query = "SELECT average 
-            FROM sinica_grade_summary 
-            WHERE 
-                studentid = ". $studentid ." 
-                AND uid = ". $uid ." 
-                AND courseid = '". $courseid ."' 
-                AND term = '". $term ."'
-                AND gradelevel = '". $gradeyear ."'
-                order by id desc 
-                limit 1";
-        //echo"check grade summary sql :: ". $query."\n";
-        $result = $bdd->getOne($query);
-        
-        //check grade under 75 will send email to supervisor
-        //$send = self::check_mail_to_teacher($uid, $cgrade, $bdd);
-        //email log
-        
-        $average = $result['average'];
-        // echo $cgrade."\n";
-        // echo $average."\n";
-        if ($average) {
-            if ($cgrade > $average) {
-                $status = 'up';
-            } elseif ($cgrade < $average) {
-                $status = 'down';
-            } else {
-                $status = 'equal';
-            }
-            return $status;
+function get_last_summary_grade($uid, $studentid, $courseid, $cgrade, $term = null, $gradeyear = null, $bdd)
+{
+    //$bdd = new db();
+    $query = "SELECT average 
+        FROM sinica_grade_summary 
+        WHERE 
+            studentid = ". $studentid ." 
+            AND uid = ". $uid ." 
+            AND courseid = '". $courseid ."' 
+            AND term = '". $term ."'
+            AND gradelevel = '". $gradeyear ."'
+            order by id desc 
+            limit 1";
+    //echo"check grade summary sql :: ". $query."\n";
+    $result = $bdd->getOne($query);
+    
+    //check grade under 75 will send email to supervisor
+    //$send = self::check_mail_to_teacher($uid, $cgrade, $bdd);
+    //email log
+    
+    $average = $result['average'];
+    // echo $cgrade."\n";
+    // echo $average."\n";
+    if ($average) {
+        if ($cgrade > $average) {
+            $status = 'up';
+        } elseif ($cgrade < $average) {
+            $status = 'down';
         } else {
-            return null;
+            $status = 'equal';
         }
+        return $status;
+    } else {
+        return null;
     }
+}
 
-    function check_mail_to_teacher($uid, $cgrade, $bdd)
-    {
-        //get email alert for supervisor
-        //$bdd = new db();     
-        $teacher_name = "Nathan";
-        $student_name = "";
-        $query = "SELECT name from users_field_data 
-            where uid = ". $uid;
-        $student_name = $bdd->getOne($query);
-        
-        $query = "SELECT ufd.name , ufd.mail 
-            from users_field_data ufd 
-            left join user__field_supervisor ufs on ufd.uid = ufs.field_supervisor_target_id
-            where ufs.entity_id = ".$uid." and bundle = 'user'";
-            // $query = "SELECT manager_teaher from users ";
-        $teacher = $bdd->getAll($query);
-        if (!empty($cgrade) && $cgrade < 75) {
-            $subject = "Grade Notice - ". $student_name;
-            $message = "Hello! ".$teacher[0]['name'] ." This is a simple Grade score under 70 email message test !!";
-            $to = $teacher[0]['mail'];
-            $from = "snowwind.z@gmail.com";
-            $headers = "From:" . $from;
-            @mail($to, $subject, $message, $headers);
-            return true;
+function check_mail_to_teacher($uid, $cgrade, $bdd)
+{
+    //get email alert for supervisor
+    //$bdd = new db();     
+    $teacher_name = "Nathan";
+    $student_name = "";
+    $query = "SELECT name from users_field_data 
+        where uid = ". $uid;
+    $student_name = $bdd->getOne($query);
+    
+    $query = "SELECT ufd.name , ufd.mail 
+        from users_field_data ufd 
+        left join user__field_supervisor ufs on ufd.uid = ufs.field_supervisor_target_id
+        where ufs.entity_id = ".$uid." and bundle = 'user'";
+        // $query = "SELECT manager_teaher from users ";
+    $teacher = $bdd->getAll($query);
+    if (!empty($cgrade) && $cgrade < 75) {
+        $subject = "Grade Notice - ". $student_name;
+        $message = "Hello! ".$teacher[0]['name'] ." This is a simple Grade score under 70 email message test !!";
+        $to = $teacher[0]['mail'];
+        $from = "snowwind.z@gmail.com";
+        $headers = "From:" . $from;
+        @mail($to, $subject, $message, $headers);
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function assoc_unique($arr, $key)
+{
+    $tmp_arr = array();
+    foreach ($arr as $k => $v) {
+        if (in_array($v[$key], $tmp_arr)) {
+            //搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
+
+            unset($arr[$k]);
         } else {
-            return false;
+            $tmp_arr[] = $v[$key];
         }
     }
-
-    function assoc_unique($arr, $key)
-    {
-        $tmp_arr = array();
-        foreach ($arr as $k => $v) {
-            if (in_array($v[$key], $tmp_arr)) {
-                //搜索$v[$key]是否在$tmp_arr数组中存在，若存在返回true
-
-                unset($arr[$k]);
-            } else {
-                $tmp_arr[] = $v[$key];
-            }
-        }
-        sort($arr); //sort函数对数组进行排序
-        return $arr;
-    }
+    sort($arr); //sort函数对数组进行排序
+    return $arr;
+}
 /**
  * [html_put_files description]
  * @param  [type] $fname [description]

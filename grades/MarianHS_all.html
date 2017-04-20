@@ -7,9 +7,9 @@ array (
     'student_img' => 'https://www.plusportals.com/Image/GetImage?sid=780&token=951501F7FC255B82034669B17925E7965D9991EF4281967CD9CD35E0BD8C52D9',
     'attendence_summary' => 
     array (
-      'Absences' => 'Absences: 0',
-      'Tardies' => 'Tardies: 0',
-      'Dismissals' => 'Dismissals: 0',
+      'Absent' => '1.00',
+      'Tardy' => '0',
+      'Dismissal' => '0',
     ),
     'attendence_detail' => 
     array (
@@ -17,6 +17,24 @@ array (
 <div class="pull-left mgn-lft10 wdt94">
 <div>
 <h4>Absent Days</h4>
+</div>
+<div class="demonewxt">
+<label class="txtovflw" style="width: 69px">Date</label>
+<label class="txtovflw" style="width: 90px">Description</label>
+<label class="txtovflw" style="width: 61px">Amount</label>
+<label class="txtovflw" style="width: 50px">E/U</label>
+</div>
+<div class="demonewxt2">
+<span style="width: 78px">04-12-2017</span>
+<span style="width: 95px">ABSENCE</span>
+<span style="width: 60px">1.00</span>
+<span style="width: 50px"> </span>
+</div>
+<div class="demonewxt" style="margin-top:50px">
+<label class="txtovflw" style="width: 150px">E: Excused</label>
+</div>
+<div class="demonewxt">
+<label class="txtovflw" style="width: 150px">U: Unexcused</label>
 </div>
 </div>
 </div>
@@ -46,589 +64,12 @@ array (
 </div>
 ',
     ),
-    'grades_summary' => 
-    array (
-      '1st' => 
-      array (
-        0 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Chemistry (C) 0630/01',
-          'Average' => 90.170000000000002,
-          'GradeSymbol' => '92',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 452,
-          'IsWithdrawnCourse' => false,
-        ),
-        1 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Draw/Paint (D) 0721/01',
-          'Average' => 92.989999999999995,
-          'GradeSymbol' => '93',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 469,
-          'IsWithdrawnCourse' => false,
-        ),
-        2 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'English 2 (A) 0220/01',
-          'Average' => 91.579999999999998,
-          'GradeSymbol' => '92',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 388,
-          'IsWithdrawnCourse' => false,
-        ),
-        3 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Lunch 1A (I) 0001/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 372,
-          'IsWithdrawnCourse' => false,
-        ),
-        4 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'NT/Ch Hist (B) 0122/01',
-          'Average' => 95.659999999999997,
-          'GradeSymbol' => '96',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 375,
-          'IsWithdrawnCourse' => false,
-        ),
-        5 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Precal (E) 0440/02',
-          'Average' => 95.640000000000001,
-          'GradeSymbol' => '96',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 428,
-          'IsWithdrawnCourse' => false,
-        ),
-        6 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 538,
-          'IsWithdrawnCourse' => false,
-        ),
-        7 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 549,
-          'IsWithdrawnCourse' => false,
-        ),
-        8 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'US Hist (F) 0320/02',
-          'Average' => 88.200000000000003,
-          'GradeSymbol' => '88',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 403,
-          'IsWithdrawnCourse' => false,
-        ),
-      ),
-      '2nd' => 
-      array (
-        0 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Chemistry (C) 0630/01',
-          'Average' => 93.969999999999999,
-          'GradeSymbol' => '94',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 452,
-          'IsWithdrawnCourse' => false,
-        ),
-        1 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Draw/Paint (D) 0721/01',
-          'Average' => 92.0,
-          'GradeSymbol' => '92',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 469,
-          'IsWithdrawnCourse' => false,
-        ),
-        2 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'English 2 (A) 0220/01',
-          'Average' => 78.609999999999999,
-          'GradeSymbol' => '79',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 388,
-          'IsWithdrawnCourse' => false,
-        ),
-        3 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Lunch 1A (I) 0001/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 372,
-          'IsWithdrawnCourse' => false,
-        ),
-        4 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'NT/Ch Hist (B) 0122/01',
-          'Average' => 98.530000000000001,
-          'GradeSymbol' => '99',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 375,
-          'IsWithdrawnCourse' => false,
-        ),
-        5 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Precal (E) 0440/02',
-          'Average' => 95.909999999999997,
-          'GradeSymbol' => '96',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 428,
-          'IsWithdrawnCourse' => false,
-        ),
-        6 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 538,
-          'IsWithdrawnCourse' => false,
-        ),
-        7 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 549,
-          'IsWithdrawnCourse' => false,
-        ),
-        8 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'US Hist (F) 0320/02',
-          'Average' => 90.0,
-          'GradeSymbol' => '90',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 403,
-          'IsWithdrawnCourse' => false,
-        ),
-      ),
-      'MEX' => 
-      array (
-        0 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Chemistry (C) 0630/01',
-          'Average' => NULL,
-          'GradeSymbol' => '',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 452,
-          'IsWithdrawnCourse' => false,
-        ),
-        1 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Draw/Paint (D) 0721/01',
-          'Average' => NULL,
-          'GradeSymbol' => '',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 469,
-          'IsWithdrawnCourse' => false,
-        ),
-        2 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'English 2 (A) 0220/01',
-          'Average' => NULL,
-          'GradeSymbol' => '',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 388,
-          'IsWithdrawnCourse' => false,
-        ),
-        3 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Lunch 1A (I) 0001/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 372,
-          'IsWithdrawnCourse' => false,
-        ),
-        4 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'NT/Ch Hist (B) 0122/01',
-          'Average' => NULL,
-          'GradeSymbol' => '',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 375,
-          'IsWithdrawnCourse' => false,
-        ),
-        5 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Precal (E) 0440/02',
-          'Average' => NULL,
-          'GradeSymbol' => '',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 428,
-          'IsWithdrawnCourse' => false,
-        ),
-        6 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 538,
-          'IsWithdrawnCourse' => false,
-        ),
-        7 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 549,
-          'IsWithdrawnCourse' => false,
-        ),
-        8 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'US Hist (F) 0320/02',
-          'Average' => NULL,
-          'GradeSymbol' => '',
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 403,
-          'IsWithdrawnCourse' => false,
-        ),
-      ),
-      '3rd' => 
-      array (
-        0 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Chemistry (C) 0630/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 452,
-          'IsWithdrawnCourse' => false,
-        ),
-        1 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Draw/Paint (D) 0721/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 469,
-          'IsWithdrawnCourse' => false,
-        ),
-        2 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'English 2 (A) 0220/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 388,
-          'IsWithdrawnCourse' => false,
-        ),
-        3 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Lunch 1A (I) 0001/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 372,
-          'IsWithdrawnCourse' => false,
-        ),
-        4 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'NT/Ch Hist (B) 0122/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 375,
-          'IsWithdrawnCourse' => false,
-        ),
-        5 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Precal (E) 0440/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 428,
-          'IsWithdrawnCourse' => false,
-        ),
-        6 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 538,
-          'IsWithdrawnCourse' => false,
-        ),
-        7 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 549,
-          'IsWithdrawnCourse' => false,
-        ),
-        8 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'US Hist (F) 0320/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 403,
-          'IsWithdrawnCourse' => false,
-        ),
-      ),
-      '4th' => 
-      array (
-        0 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Chemistry (C) 0630/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 452,
-          'IsWithdrawnCourse' => false,
-        ),
-        1 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Draw/Paint (D) 0721/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 469,
-          'IsWithdrawnCourse' => false,
-        ),
-        2 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'English 2 (A) 0220/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 388,
-          'IsWithdrawnCourse' => false,
-        ),
-        3 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Lunch 1A (I) 0001/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 372,
-          'IsWithdrawnCourse' => false,
-        ),
-        4 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'NT/Ch Hist (B) 0122/01',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 375,
-          'IsWithdrawnCourse' => false,
-        ),
-        5 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Precal (E) 0440/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 428,
-          'IsWithdrawnCourse' => false,
-        ),
-        6 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 538,
-          'IsWithdrawnCourse' => false,
-        ),
-        7 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'Study Hall',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 549,
-          'IsWithdrawnCourse' => false,
-        ),
-        8 => 
-        array (
-          'CourseId' => 0,
-          'CourseName' => 'US Hist (F) 0320/02',
-          'Average' => NULL,
-          'GradeSymbol' => NULL,
-          'StaffName' => NULL,
-          'MarkingPeriodId' => 0,
-          'StudentId' => 780,
-          'SectionId' => 403,
-          'IsWithdrawnCourse' => false,
-        ),
-      ),
-    ),
     'grades_detail' => 
     array (
       452 => 
       array (
         'teacher_name' => 'Barry, Edward',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader ">90.17</td>
-<td class="cellDivHeader ">93.97</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col>
@@ -709,60 +150,71 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>Homework</td>
 <td style="display:none">20.00</td>
-<td>40.00</td>
-<td>40.00</td>
+<td>68.00</td>
+<td>68.00</td>
 <td>100.00 %</td>
 <td>100</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr class="k-alt">
 <td>SECOND MARKING PERIOD</td>
-<td>Quiz</td>
-<td style="display:none">25.00</td>
-<td>955.00</td>
-<td>1000.00</td>
-<td>95.50 %</td>
-<td>96</td>
+<td>Lab/Other</td>
+<td style="display:none">15.00</td>
+<td>558.00</td>
+<td>600.00</td>
+<td>93.00 %</td>
+<td>93</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr>
 <td>SECOND MARKING PERIOD</td>
+<td>Quiz</td>
+<td style="display:none">25.00</td>
+<td>1165.00</td>
+<td>1300.00</td>
+<td>89.62 %</td>
+<td>90</td>
+<td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>SECOND MARKING PERIOD</td>
 <td>Test</td>
 <td style="display:none">40.00</td>
-<td>180.00</td>
-<td>200.00</td>
-<td>90.00 %</td>
-<td>90</td>
+<td>275.00</td>
+<td>300.00</td>
+<td>91.67 %</td>
+<td>92</td>
+<td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>THIRD MARKING PERIOD</td>
+<td>Homework</td>
+<td style="display:none">20.00</td>
+<td>48.00</td>
+<td>60.00</td>
+<td>80.00 %</td>
+<td>80</td>
+<td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>THIRD MARKING PERIOD</td>
+<td>Lab/Other</td>
+<td style="display:none">15.00</td>
+<td>484.00</td>
+<td>600.00</td>
+<td>80.67 %</td>
+<td>81</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 </tbody>
 </table>
 ',
-        'course_detail' => '{"Data":[{"Description":"Per Table - trends quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481673600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"P table - coloring quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481500800000)\\/","PossiblePoints":"100.00","Score":"65.00","Average":"65.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Rest of CH5 notes","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Periodic Table Quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Test Corrections CH4 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 5 - notes ptI","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 4 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1480636800000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Test","MarkingPeriodId":"28"},{"Description":"CH4 Pre-Quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1480464000000)\\/","PossiblePoints":"100.00","Score":"110.00","Average":"110.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"ec and Q#s","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1480291200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Quiz - For NOT registering by deadline","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479686400000)\\/","PossiblePoints":"100.00","Score":"Exempt","Average":null,"Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Quantum #s quiz 2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479686400000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Q# quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Sub Assign 11/16","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479254400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Sub assign 11/16","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479254400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH4 Notes","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479168000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Reserach Section of Project On-Time","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479081600000)\\/","PossiblePoints":"8.00","Score":"8.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Mole-mass post corrections Quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1478736000000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"CH 3 Packets","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Test Corrections CH3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Lab Contract","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH3 Packets complete","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 3 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1478563200000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"Test","MarkingPeriodId":"28"},{"Description":"Miniposters - elements","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Lab/Other","AssignmentDate":"\\/Date(1478217600000)\\/","PossiblePoints":"200.00","Score":"148.00","Average":"74.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"27"},{"Description":"Quiz week 1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1478217600000)\\/","PossiblePoints":"100.00","Score":"40.00","Average":"40.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Test Corrections CH3","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477958400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Avagadro\\u0027s # Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477612800000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"CH 2 Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477353600000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Test","MarkingPeriodId":"27"},{"Description":"CH3 Notes part2","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"CATAPULT Challenge Test Grade","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"100.00","Score":"78.00","Average":"78.00%","Note":"","ShortName":"Test","MarkingPeriodId":"27"},{"Description":"Catapult grade x2","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Lab/Other","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"200.00","Score":"156.00","Average":"78.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"27"},{"Description":"Pre-test Quiz Ch2","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Sub Assign 10/20","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476921600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"CH 3 notes part 1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476921600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"SigFigs Quiz - Rounding","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"GROUP Quiz - SigFigs","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Group Quiz - Redemption","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"SI Conversion Part II - x2 if greater than ptI","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475625600000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"SI Conversions Part I","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475452800000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Mini Poster Turn In","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475193600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Test Corrections CH1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Sub assignment from 9/26","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Sub assigment 9/26","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Chapter 1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474588800000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Test","MarkingPeriodId":"27"},{"Description":"20 elements","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"6 pcs of equipment","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"2 - 16 Even CH1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474243200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"6 photos - 3 mix/3 subst","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"6 pvs of \\"Equipment\\"","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"CH 1 - no notes","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473897600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Assessment ?s CH1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473638400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"CH Note Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473379200000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Guideline in","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473292800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Guideline sheet","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473292800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Start taking Notes CH 1 - ALSO return signed copy of Guidelines Sheet on Thurs","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473292800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"}],"Total":54,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[{"Description":"CH 8 Test - Bal Equations","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Test","AssignmentDate":"\\/Date(1491868800000)\\/","PossiblePoints":"100.00","Score":"92.00","Average":"92.00%","Note":"","ShortName":"Test","MarkingPeriodId":"31"},{"Description":"Worksheet - Bal Equat 20-50","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Homework","AssignmentDate":"\\/Date(1491436800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"31"},{"Description":"Balancing Equations 2","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Quiz","AssignmentDate":"\\/Date(1491350400000)\\/","PossiblePoints":"60.00","Score":"60.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"31"},{"Description":"CH8.2 notes","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Homework","AssignmentDate":"\\/Date(1491264000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"31"},{"Description":"% error write up grade","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Lab/Other","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"200.00","Score":"142.00","Average":"71.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"30"},{"Description":"%error lab","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Lab/Other","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"200.00","Score":"190.00","Average":"95.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"30"},{"Description":"Poster project","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Lab/Other","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"200.00","Score":"152.00","Average":"76.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"30"},{"Description":"Balancing Equations","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490745600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"Sub assignment 3/28","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490745600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"p 258, 260 - CH7","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490572800000)\\/","PossiblePoints":"4.00","Score":"0.00","Average":"0.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"CH -7 ALL Test corrections","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490313600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"p245 plus 8.1 notes","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490227200000)\\/","PossiblePoints":"4.00","Score":"0.00","Average":"0.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"CH 7 - all","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1490054400000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Test","MarkingPeriodId":"30"},{"Description":"Sect 7.4 ?s [34-39]","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1489968000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"Oix#, mm, Fm, naming, %comp","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1489622400000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"40-50 p242-3","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1489536000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"p226, 227, 230, 241","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1489363200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"HW quiz p226, 227, 230 etc","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1489363200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"Molar mass calc and Oxidation #s","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1489017600000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"Equipment quiz","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1488931200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"CH7 Test Corrections","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1488931200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"Naming/MM wksht","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1488844800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"CH 7.1 - Naming cpds only","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1488499200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Test","MarkingPeriodId":"30"},{"Description":"Naming cpds #2","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1488412800000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"Naming cpds #1","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1488240000000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"CH7 question - vacation HW","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1488153600000)\\/","PossiblePoints":"8.00","Score":"8.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"Ions and naming cpds","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1487289600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"Flashcards - Ions","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1487289600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"Flash card quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1487203200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"CH6 Test corrections","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1487030400000)\\/","PossiblePoints":"4.00","Score":"0.00","Average":"0.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"CH7 notes ptII","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1487030400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"Polyatomic ions","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1486684800000)\\/","PossiblePoints":"100.00","Score":"120.00","Average":"120.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"CH7 notes ptI","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1486684800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"CH 6 Test - Go Pats!!","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1486339200000)\\/","PossiblePoints":"100.00","Score":"73.00","Average":"73.00%","Note":"","ShortName":"Test","MarkingPeriodId":"30"},{"Description":"CH6 practice packet","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1486080000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"30"},{"Description":"VSEPR #1","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1485907200000)\\/","PossiblePoints":"100.00","Score":"60.00","Average":"60.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"30"},{"Description":"Write up of Penny density lab x3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Lab/Other","AssignmentDate":"\\/Date(1485388800000)\\/","PossiblePoints":"300.00","Score":"258.00","Average":"86.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"28"},{"Description":"Lewis Structures #3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1485388800000)\\/","PossiblePoints":"100.00","Score":"50.00","Average":"50.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Lewis structure - Group quiz grade","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1485216000000)\\/","PossiblePoints":"100.00","Score":"60.00","Average":"60.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"CH 6 part 1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1485216000000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Penny lab\\u0026journal","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484870400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Penny density lab - 3 days","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Lab/Other","AssignmentDate":"\\/Date(1484870400000)\\/","PossiblePoints":"300.00","Score":"300.00","Average":"100.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"28"},{"Description":"CH6 up to 6.3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484784000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 6 notes part 1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484611200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH5 test corr","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484611200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH5 Test - Periodic Table","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1483574400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Test","MarkingPeriodId":"28"},{"Description":"CH 5 1- 47 end of chapter","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1483488000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH5 review Packet vaca","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1483401600000)\\/","PossiblePoints":"8.00","Score":"8.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Per Table - trends quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481673600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"P table - coloring quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481500800000)\\/","PossiblePoints":"100.00","Score":"65.00","Average":"65.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Rest of CH5 notes","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Periodic Table Quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Test Corrections CH4 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 5 - notes ptI","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 4 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1480636800000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Test","MarkingPeriodId":"28"},{"Description":"CH4 Pre-Quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1480464000000)\\/","PossiblePoints":"100.00","Score":"110.00","Average":"110.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"ec and Q#s","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1480291200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Quiz - For NOT registering by deadline","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479686400000)\\/","PossiblePoints":"100.00","Score":"Exempt","Average":null,"Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Quantum #s quiz 2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479686400000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Q# quiz #1","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Sub Assign 11/16","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479254400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Sub assign 11/16","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479254400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH4 Notes","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479168000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Reserach Section of Project On-Time","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479081600000)\\/","PossiblePoints":"8.00","Score":"8.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Mole-mass post corrections Quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1478736000000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"CH 3 Packets","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"28"},{"Description":"Test Corrections CH3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"Lab Contract","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH3 Packets complete","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"28"},{"Description":"CH 3 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1478563200000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"Test","MarkingPeriodId":"28"},{"Description":"Miniposters - elements","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Lab/Other","AssignmentDate":"\\/Date(1478217600000)\\/","PossiblePoints":"200.00","Score":"148.00","Average":"74.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"27"},{"Description":"Quiz week 1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1478217600000)\\/","PossiblePoints":"100.00","Score":"40.00","Average":"40.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Test Corrections CH3","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477958400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Avagadro\\u0027s # Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477612800000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"CH 2 Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477353600000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Test","MarkingPeriodId":"27"},{"Description":"CH3 Notes part2","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"CATAPULT Challenge Test Grade","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"100.00","Score":"78.00","Average":"78.00%","Note":"","ShortName":"Test","MarkingPeriodId":"27"},{"Description":"Catapult grade x2","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Lab/Other","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"200.00","Score":"156.00","Average":"78.00%","Note":"","ShortName":"Lab","MarkingPeriodId":"27"},{"Description":"Pre-test Quiz Ch2","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Sub Assign 10/20","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476921600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"CH 3 notes part 1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476921600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"SigFigs Quiz - Rounding","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"GROUP Quiz - SigFigs","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Group Quiz - Redemption","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"SI Conversion Part II - x2 if greater than ptI","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475625600000)\\/","PossiblePoints":"100.00","Score":"105.00","Average":"105.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"SI Conversions Part I","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475452800000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Mini Poster Turn In","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475193600000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Test Corrections CH1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Sub assignment from 9/26","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Sub assigment 9/26","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Chapter 1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474588800000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Test","MarkingPeriodId":"27"},{"Description":"20 elements","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"6 pcs of equipment","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"2 - 16 Even CH1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474243200000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"6 photos - 3 mix/3 subst","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"6 pvs of \\"Equipment\\"","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"CH 1 - no notes","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473897600000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Assessment ?s CH1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473638400000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"CH Note Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473379200000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Guideline in","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473292800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Quiz","MarkingPeriodId":"27"},{"Description":"Guideline sheet","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473292800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"},{"Description":"Start taking Notes CH 1 - ALSO return signed copy of Guidelines Sheet on Thurs","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473292800000)\\/","PossiblePoints":"4.00","Score":"4.00","Average":"100.00%","Note":"","ShortName":"HW","MarkingPeriodId":"27"}],"Total":102,"AggregateResults":null,"Errors":null}',
       ),
       469 => 
       array (
         'teacher_name' => 'Mann, Angela',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader ">92.99</td>
-<td class="cellDivHeader ">92.00</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col>
@@ -823,50 +275,71 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>Homework</td>
 <td style="display:none">1.00</td>
-<td>47.00</td>
-<td>50.00</td>
-<td>94.00 %</td>
-<td>94</td>
+<td>202.00</td>
+<td>225.00</td>
+<td>89.78 %</td>
+<td>90</td>
 <td style="display:none"><input class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr class="k-alt">
 <td>SECOND MARKING PERIOD</td>
 <td>Classwork</td>
 <td style="display:none">0.00</td>
-<td>45.00</td>
-<td>50.00</td>
-<td>90.00 %</td>
-<td>90</td>
+<td>181.00</td>
+<td>200.00</td>
+<td>90.50 %</td>
+<td>91</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>THIRD MARKING PERIOD</td>
+<td>Homework</td>
+<td style="display:none">1.00</td>
+<td>187.00</td>
+<td>200.00</td>
+<td>93.50 %</td>
+<td>94</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>THIRD MARKING PERIOD</td>
+<td>Classwork</td>
+<td style="display:none">0.00</td>
+<td>147.00</td>
+<td>160.00</td>
+<td>91.88 %</td>
+<td>92</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>FOURTH MARKING PERIOD</td>
+<td>Homework</td>
+<td style="display:none">1.00</td>
+<td>0.00</td>
+<td>25.00</td>
+<td>0.00 %</td>
+<td>0</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>FOURTH MARKING PERIOD</td>
+<td>Classwork</td>
+<td style="display:none">0.00</td>
+<td>13.00</td>
+<td>16.00</td>
+<td>81.25 %</td>
+<td>81</td>
 <td style="display:none"><input class="check-box" disabled type="checkbox"></td>
 </tr>
 </tbody>
 </table>
 ',
-        'course_detail' => '{"Data":[{"Description":"3 media drawing","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Classwork","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"3 media drawing","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479340800000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478736000000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Op-Art line drawing","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1478476800000)\\/","PossiblePoints":"50.00","Score":"46.00","Average":"92.00%","Note":"","ShortName":"Op-Art line drawing","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477526400000)\\/","PossiblePoints":"25.00","Score":"25.00","Average":"100.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476921600000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"scratch art mandala","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"scratch art mandala","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"25.00","Score":"25.00","Average":"100.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"1pt perspective city","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1474848000000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"1pt perspective city","MarkingPeriodId":"27"},{"Description":"Finish nature sketch","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474502400000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Finish nature sketch","MarkingPeriodId":"27"},{"Description":"Please get a sketchbook to use for class. Must be spiral bound and unlined, at least 50 pages","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"10.00","Score":"10.00","Average":"100.00%","Note":"","ShortName":"Get sketchbook","MarkingPeriodId":"27"},{"Description":"Abstract watercolor","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"50.00","Score":"44.00","Average":"88.00%","Note":"","ShortName":"Abstract watercolor","MarkingPeriodId":"27"}],"Total":15,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[{"Description":"Used class time wisely, stayed on task all period and followed instructions.","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Classwork","AssignmentDate":"\\/Date(1491955200000)\\/","PossiblePoints":"6.00","Score":"4.00","Average":"66.67%","Note":"","ShortName":"Effort/participation","MarkingPeriodId":"31"},{"Description":"Used class time wisely, stayed on task all period and followed instructions.","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Classwork","AssignmentDate":"\\/Date(1491523200000)\\/","PossiblePoints":"10.00","Score":"9.00","Average":"90.00%","Note":"","ShortName":"Effort/participation","MarkingPeriodId":"31"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Homework","AssignmentDate":"\\/Date(1491436800000)\\/","PossiblePoints":"25.00","Score":"0.00","Average":"0.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"31"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490832000000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490227200000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1489708800000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1489017600000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1488412800000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Elizabeth Murray inspired abstract shape paintings","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Classwork","AssignmentDate":"\\/Date(1487289600000)\\/","PossiblePoints":"50.00","Score":"44.00","Average":"88.00%","Note":"","ShortName":"Design paintings","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1487203200000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1486598400000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Repitition w variation drawing","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Classwork","AssignmentDate":"\\/Date(1486512000000)\\/","PossiblePoints":"50.00","Score":"48.00","Average":"96.00%","Note":"","ShortName":"Rep w variation","MarkingPeriodId":"30"},{"Description":"Elizabeth Murray documentary questions","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Classwork","AssignmentDate":"\\/Date(1486339200000)\\/","PossiblePoints":"10.00","Score":"10.00","Average":"100.00%","Note":"","ShortName":"Docu questions","MarkingPeriodId":"30"},{"Description":"Embroidered news","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Classwork","AssignmentDate":"\\/Date(1486339200000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"Embroidered news","MarkingPeriodId":"30"},{"Description":"Sketch","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1485993600000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketch","MarkingPeriodId":"30"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1485388800000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484784000000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1483574400000)\\/","PossiblePoints":"25.00","Score":"22.00","Average":"88.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Watercolor flowers","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Classwork","AssignmentDate":"\\/Date(1483401600000)\\/","PossiblePoints":"50.00","Score":"44.00","Average":"88.00%","Note":"","ShortName":"Watercolor flowers","MarkingPeriodId":"28"},{"Description":"Repeated design painting","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Classwork","AssignmentDate":"\\/Date(1481846400000)\\/","PossiblePoints":"50.00","Score":"44.00","Average":"88.00%","Note":"","ShortName":"Repeated Animals","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1481760000000)\\/","PossiblePoints":"25.00","Score":"21.00","Average":"84.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"25.00","Score":"22.00","Average":"88.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Color Wheel","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Classwork","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"50.00","Score":"48.00","Average":"96.00%","Note":"","ShortName":"Color Wheel","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479945600000)\\/","PossiblePoints":"25.00","Score":"21.00","Average":"84.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"3 media drawing","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Classwork","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"3 media drawing","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479340800000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478736000000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Op-Art line drawing","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1478476800000)\\/","PossiblePoints":"50.00","Score":"46.00","Average":"92.00%","Note":"","ShortName":"Op-Art line drawing","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"28"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477526400000)\\/","PossiblePoints":"25.00","Score":"25.00","Average":"100.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476921600000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"25.00","Score":"23.00","Average":"92.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"scratch art mandala","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"scratch art mandala","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"Sketchbook","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"25.00","Score":"25.00","Average":"100.00%","Note":"","ShortName":"Sketchbook","MarkingPeriodId":"27"},{"Description":"1pt perspective city","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1474848000000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"1pt perspective city","MarkingPeriodId":"27"},{"Description":"Finish nature sketch","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474502400000)\\/","PossiblePoints":"25.00","Score":"24.00","Average":"96.00%","Note":"","ShortName":"Finish nature sketch","MarkingPeriodId":"27"},{"Description":"Please get a sketchbook to use for class. Must be spiral bound and unlined, at least 50 pages","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"10.00","Score":"10.00","Average":"100.00%","Note":"","ShortName":"Get sketchbook","MarkingPeriodId":"27"},{"Description":"Abstract watercolor","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Classwork","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"50.00","Score":"44.00","Average":"88.00%","Note":"","ShortName":"Abstract watercolor","MarkingPeriodId":"27"}],"Total":40,"AggregateResults":null,"Errors":null}',
       ),
       388 => 
       array (
         'teacher_name' => 'Flynn, Stephen',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader ">91.58</td>
-<td class="cellDivHeader ">78.61</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col>
@@ -967,70 +440,51 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>essay</td>
 <td style="display:none">20.00</td>
-<td>238.00</td>
-<td>300.00</td>
-<td>79.33 %</td>
-<td>79</td>
+<td>412.00</td>
+<td>500.00</td>
+<td>82.40 %</td>
+<td>82</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr class="k-alt">
 <td>SECOND MARKING PERIOD</td>
 <td>Homework</td>
 <td style="display:none">5.00</td>
-<td>95.00</td>
-<td>100.00</td>
-<td>95.00 %</td>
-<td>95</td>
+<td>170.00</td>
+<td>200.00</td>
+<td>85.00 %</td>
+<td>85</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr>
 <td>SECOND MARKING PERIOD</td>
 <td>Quiz</td>
 <td style="display:none">20.00</td>
-<td>85.00</td>
-<td>100.00</td>
-<td>85.00 %</td>
-<td>85</td>
+<td>185.00</td>
+<td>200.00</td>
+<td>92.50 %</td>
+<td>93</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr class="k-alt">
 <td>SECOND MARKING PERIOD</td>
 <td>Test</td>
 <td style="display:none">40.00</td>
-<td>73.00</td>
-<td>100.00</td>
-<td>73.00 %</td>
-<td>73</td>
+<td>250.00</td>
+<td>300.00</td>
+<td>83.33 %</td>
+<td>83</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 </tbody>
 </table>
 ',
-        'course_detail' => '{"Data":[{"Description":"quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481587200000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"literary terms","MarkingPeriodId":"28"},{"Description":"animal fable","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"Fable","MarkingPeriodId":"28"},{"Description":"folk tale","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1479772800000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"folk tale","MarkingPeriodId":"28"},{"Description":"evaluation paragraphs","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"100.00","Score":"73.00","Average":"73.00%","Note":"","ShortName":"capitalization \\u0026 pun","MarkingPeriodId":"28"},{"Description":"unique skill","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1479340800000)\\/","PossiblePoints":"100.00","Score":"78.00","Average":"78.00%","Note":"","ShortName":"november essay","MarkingPeriodId":"28"},{"Description":"puntuation packet","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479081600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"punctuation","MarkingPeriodId":"28"},{"Description":"extra ecredit","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"essay","AssignmentDate":"\\/Date(1478476800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"descriptive essay","MarkingPeriodId":"27"},{"Description":"Unit Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Hebrews and Sumerian","MarkingPeriodId":"27"},{"Description":"symbol of tree","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Journal entry","MarkingPeriodId":"27"},{"Description":"comp between Gil and Gen","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"flood chart","MarkingPeriodId":"27"},{"Description":"participation","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"participation","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"participation","MarkingPeriodId":"27"},{"Description":"Voc. #1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"A Separate Peace","MarkingPeriodId":"27"},{"Description":"evaluation","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"verbals","MarkingPeriodId":"27"},{"Description":"Impact","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"essay","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"82.00","Average":"82.00%","Note":"","ShortName":"October Essay","MarkingPeriodId":"27"},{"Description":"A Separate Peace","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Voc #1","MarkingPeriodId":"27"},{"Description":"Entry #4","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Journal entry","MarkingPeriodId":"27"},{"Description":"2 evaluations","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"60.00","Average":"60.00%","Note":"","ShortName":"A Separate Peace","MarkingPeriodId":"27"},{"Description":"group quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476144000000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"verbal review","MarkingPeriodId":"27"},{"Description":"quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475539200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"participles","MarkingPeriodId":"27"},{"Description":"rewrite","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475452800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Active to Passive","MarkingPeriodId":"27"},{"Description":"short quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475193600000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"gerunds and modifier","MarkingPeriodId":"27"},{"Description":"questions","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474588800000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"gilgamesh","MarkingPeriodId":"27"},{"Description":"courage in the face of adversity","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1474588800000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Journal entry #2","MarkingPeriodId":"27"},{"Description":"goals","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"essay","AssignmentDate":"\\/Date(1474416000000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"september essay","MarkingPeriodId":"27"},{"Description":"Summer Reading","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"78.00","Average":"78.00%","Note":"","ShortName":"Things Fall Apart","MarkingPeriodId":"27"},{"Description":"Hero","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1474156800000)\\/","PossiblePoints":"100.00","Score":"83.00","Average":"83.00%","Note":"","ShortName":"Journal #1","MarkingPeriodId":"27"},{"Description":"summer reading quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473552000000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Siddhartha","MarkingPeriodId":"27"}],"Total":27,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[{"Description":"3rd term part","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"participation","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"participation","MarkingPeriodId":"30"},{"Description":"most embarrassing moment","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"essay","AssignmentDate":"\\/Date(1490572800000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"march essay","MarkingPeriodId":"30"},{"Description":"vocabulary","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490227200000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Mockingbird","MarkingPeriodId":"30"},{"Description":"Word Search","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490227200000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Mockingbird","MarkingPeriodId":"30"},{"Description":"Test","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1489968000000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"Greek Period","MarkingPeriodId":"30"},{"Description":"Prose-Go Set a Watchman","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"essay","AssignmentDate":"\\/Date(1489708800000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"Explication","MarkingPeriodId":"30"},{"Description":"chance in film or lit","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"journal","AssignmentDate":"\\/Date(1489104000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"journal #5","MarkingPeriodId":"30"},{"Description":"quiz","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1488931200000)\\/","PossiblePoints":"100.00","Score":"30.00","Average":"30.00%","Note":"","ShortName":"Oedipus","MarkingPeriodId":"30"},{"Description":"Gods-Godess Project","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1488844800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Greek Drama","MarkingPeriodId":"30"},{"Description":"p. 408 questions","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1488499200000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Iliad","MarkingPeriodId":"30"},{"Description":"Uncontrolled emotion","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"journal","AssignmentDate":"\\/Date(1488153600000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Journal entry #5","MarkingPeriodId":"30"},{"Description":"negative impact","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"essay","AssignmentDate":"\\/Date(1487203200000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"feb essay","MarkingPeriodId":"30"},{"Description":"ques p. 379-1-5","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1486339200000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"iliad","MarkingPeriodId":"30"},{"Description":"Final Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1485302400000)\\/","PossiblePoints":"100.00","Score":"89.00","Average":"89.00%","Note":"","ShortName":"Lear","MarkingPeriodId":"28"},{"Description":"The Road Not Taken","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"essay","AssignmentDate":"\\/Date(1485302400000)\\/","PossiblePoints":"100.00","Score":"86.00","Average":"86.00%","Note":"","ShortName":"explication #2","MarkingPeriodId":"30"},{"Description":"Quotes Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1485129600000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"King Lear","MarkingPeriodId":"28"},{"Description":"essay","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1484870400000)\\/","PossiblePoints":"100.00","Score":"86.00","Average":"86.00%","Note":"","ShortName":"January essay","MarkingPeriodId":"28"},{"Description":"King Lear","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1483574400000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"vocabulary","MarkingPeriodId":"28"},{"Description":"essay","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1481846400000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"dec essay","MarkingPeriodId":"28"},{"Description":"quiz","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481587200000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"literary terms","MarkingPeriodId":"28"},{"Description":"class explication","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"stopping by woods","MarkingPeriodId":"28"},{"Description":"animal fable","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1480982400000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"Fable","MarkingPeriodId":"28"},{"Description":"folk tale","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1479772800000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"folk tale","MarkingPeriodId":"28"},{"Description":"evaluation paragraphs","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"100.00","Score":"73.00","Average":"73.00%","Note":"","ShortName":"capitalization \\u0026 pun","MarkingPeriodId":"28"},{"Description":"unique skill","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"essay","AssignmentDate":"\\/Date(1479340800000)\\/","PossiblePoints":"100.00","Score":"78.00","Average":"78.00%","Note":"","ShortName":"november essay","MarkingPeriodId":"28"},{"Description":"puntuation packet","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479081600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"punctuation","MarkingPeriodId":"28"},{"Description":"extra ecredit","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"essay","AssignmentDate":"\\/Date(1478476800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"descriptive essay","MarkingPeriodId":"27"},{"Description":"Unit Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Hebrews and Sumerian","MarkingPeriodId":"27"},{"Description":"symbol of tree","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Journal entry","MarkingPeriodId":"27"},{"Description":"comp between Gil and Gen","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"flood chart","MarkingPeriodId":"27"},{"Description":"participation","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"participation","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"participation","MarkingPeriodId":"27"},{"Description":"Voc. #1","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477872000000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"A Separate Peace","MarkingPeriodId":"27"},{"Description":"evaluation","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477267200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"verbals","MarkingPeriodId":"27"},{"Description":"Impact","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"essay","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"82.00","Average":"82.00%","Note":"","ShortName":"October Essay","MarkingPeriodId":"27"},{"Description":"A Separate Peace","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Voc #1","MarkingPeriodId":"27"},{"Description":"Entry #4","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1476316800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Journal entry","MarkingPeriodId":"27"},{"Description":"2 evaluations","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"60.00","Average":"60.00%","Note":"","ShortName":"A Separate Peace","MarkingPeriodId":"27"},{"Description":"group quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476144000000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"verbal review","MarkingPeriodId":"27"},{"Description":"quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475539200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"participles","MarkingPeriodId":"27"},{"Description":"rewrite","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475452800000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Active to Passive","MarkingPeriodId":"27"},{"Description":"short quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475193600000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"gerunds and modifier","MarkingPeriodId":"27"},{"Description":"questions","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474588800000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"gilgamesh","MarkingPeriodId":"27"},{"Description":"courage in the face of adversity","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1474588800000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Journal entry #2","MarkingPeriodId":"27"},{"Description":"goals","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"essay","AssignmentDate":"\\/Date(1474416000000)\\/","PossiblePoints":"100.00","Score":"70.00","Average":"70.00%","Note":"","ShortName":"september essay","MarkingPeriodId":"27"},{"Description":"Summer Reading","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"78.00","Average":"78.00%","Note":"","ShortName":"Things Fall Apart","MarkingPeriodId":"27"},{"Description":"Hero","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"journal","AssignmentDate":"\\/Date(1474156800000)\\/","PossiblePoints":"100.00","Score":"83.00","Average":"83.00%","Note":"","ShortName":"Journal #1","MarkingPeriodId":"27"},{"Description":"summer reading quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1473552000000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Siddhartha","MarkingPeriodId":"27"}],"Total":47,"AggregateResults":null,"Errors":null}',
       ),
       372 => 
       array (
         'teacher_name' => 'Staff 4',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col class="k-group-col">
@@ -1059,31 +513,12 @@ array (
 </tr></thead>
 </table>
 ',
-        'course_detail' => '{"Data":[],"Total":0,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[],"Total":0,"AggregateResults":null,"Errors":null}',
       ),
       375 => 
       array (
         'teacher_name' => 'McGarry, Colm',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader ">95.66</td>
-<td class="cellDivHeader ">98.53</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col>
@@ -1154,8 +589,8 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>Quiz</td>
 <td style="display:none">1.00</td>
-<td>40.00</td>
-<td>40.00</td>
+<td>140.00</td>
+<td>140.00</td>
 <td>100.00 %</td>
 <td>100</td>
 <td style="display:none"><input class="check-box" disabled type="checkbox"></td>
@@ -1164,50 +599,61 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>Homework</td>
 <td style="display:none">1.00</td>
-<td>98.00</td>
-<td>100.00</td>
-<td>98.00 %</td>
-<td>98</td>
+<td>198.00</td>
+<td>200.00</td>
+<td>99.00 %</td>
+<td>99</td>
 <td style="display:none"><input class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr class="k-alt">
 <td>SECOND MARKING PERIOD</td>
 <td>Test</td>
 <td style="display:none">1.00</td>
-<td>197.00</td>
-<td>200.00</td>
-<td>98.50 %</td>
-<td>99</td>
+<td>757.00</td>
+<td>800.00</td>
+<td>94.63 %</td>
+<td>95</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>THIRD MARKING PERIOD</td>
+<td>Quiz</td>
+<td style="display:none">1.00</td>
+<td>224.00</td>
+<td>240.00</td>
+<td>93.33 %</td>
+<td>93</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>THIRD MARKING PERIOD</td>
+<td>Test</td>
+<td style="display:none">1.00</td>
+<td>768.00</td>
+<td>800.00</td>
+<td>96.00 %</td>
+<td>96</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>FOURTH MARKING PERIOD</td>
+<td>Quiz</td>
+<td style="display:none">1.00</td>
+<td>100.00</td>
+<td>100.00</td>
+<td>100.00 %</td>
+<td>100</td>
 <td style="display:none"><input class="check-box" disabled type="checkbox"></td>
 </tr>
 </tbody>
 </table>
 ',
-        'course_detail' => '{"Data":[{"Description":"Journal entry - answer the question in the handout - leave the Journals on Tuesday","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479772800000)\\/","PossiblePoints":"50.00","Score":"48.00","Average":"96.00%","Note":"","ShortName":"God\\u0027s love","MarkingPeriodId":"28"},{"Description":"Open Book test on Chapter 2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1479254400000)\\/","PossiblePoints":"100.00","Score":"99.00","Average":"99.00%","Note":"","ShortName":"Chapter 2 Test","MarkingPeriodId":"28"},{"Description":"Identify the 7 gifts of the Spirit in the early Church","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479168000000)\\/","PossiblePoints":"40.00","Score":"40.00","Average":"100.00%","Note":"","ShortName":"Church Gifts","MarkingPeriodId":"28"},{"Description":"Your task is to write a speech that you could deliver to a group of High school young people that would motivate them to succeed.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1478736000000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Motivation","MarkingPeriodId":"28"},{"Description":"In your journal explain whether High School survival depends  more on Gospel rules or Greco-Roman rules","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"Comparing Values","MarkingPeriodId":"28"},{"Description":"How can the Spirit give energy to a group","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Synergy","MarkingPeriodId":"27"},{"Description":"Grade for performance in class","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"participation","MarkingPeriodId":"27"},{"Description":"Ch 1 test including information about the movie as well as a general awareness of Mark CHs 1-6","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477612800000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Test Ch.1","MarkingPeriodId":"27"},{"Description":"Check of Journal entries","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477612800000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Journal Check","MarkingPeriodId":"27"},{"Description":"Summarize what happens In Mark Chapter 5","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477440000000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Mark 5 Summary","MarkingPeriodId":"27"},{"Description":"Write a one page reflection paper on state of healthcare inour society.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Healthcare","MarkingPeriodId":"27"},{"Description":"Journal entry explaining the importance of labeling the challenges we face.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476748800000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Naming Challenges","MarkingPeriodId":"27"},{"Description":"Vocab and ideas from pages 6-12 in text","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476403200000)\\/","PossiblePoints":"50.00","Score":"48.00","Average":"96.00%","Note":"","ShortName":"Quiz page 6-12","MarkingPeriodId":"27"},{"Description":"using the letter of Pope benedict outline the challenges and opportunities to create meaningful communities in a digital age.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"92.00","Average":"92.00%","Note":"","ShortName":"Online Community","MarkingPeriodId":"27"},{"Description":"Respond in writing to all the bullet point Qs on pages 6,-12","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"Journal page 6 - 8","MarkingPeriodId":"27"},{"Description":"Explain what causes you to lose your temper (beyond your control)","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Types of Anger","MarkingPeriodId":"27"},{"Description":"Assessment of your understanding of The 4th Chapter of Mark","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"50.00","Score":"39.00","Average":"78.00%","Note":"","ShortName":"Mark 4 Quiz","MarkingPeriodId":"27"},{"Description":"Test on the book SPEAK","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474502400000)\\/","PossiblePoints":"100.00","Score":"107.00","Average":"107.00%","Note":"","ShortName":"Summer reading test","MarkingPeriodId":"27"},{"Description":"Finish worksheets on the book SPEAK each day as directed, ALL ARE DUE THURSDAY","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474502400000)\\/","PossiblePoints":"30.00","Score":"30.00","Average":"100.00%","Note":"","ShortName":"Worksheets","MarkingPeriodId":"27"},{"Description":"How can Faith be helpful in reducing the incidences of sexual assaults among young people in our communities?","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Faith and Assaults","MarkingPeriodId":"27"},{"Description":"Using the Stories explained in class and Mark Chapters 1 and 2 explain the role leadership plays in responding to God\\u0027s call. 400 words","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1473379200000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Answering the Call","MarkingPeriodId":"27"}],"Total":21,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[{"Description":"Quiz every day on Mark\\u0027s Gospel 9-15","MarkingPeriod":null,"MarkingPeriodShort":"4th","Category":"Quiz","AssignmentDate":"\\/Date(1491955200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Mark 9-10","MarkingPeriodId":"31"},{"Description":"The Church and other religions","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Chapter 8 test","MarkingPeriodId":"30"},{"Description":"What is the relationship between the Catholic Church and other religions?","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1490140800000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Other Faiths","MarkingPeriodId":"30"},{"Description":"In-class reflection on \\"Im not ashamed\\"","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1489708800000)\\/","PossiblePoints":"50.00","Score":"49.00","Average":"98.00%","Note":"","ShortName":"Movie Quiz","MarkingPeriodId":"30"},{"Description":"Open Book test Chapter 7","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1489104000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Chap 7 Test","MarkingPeriodId":"30"},{"Description":"What is the best way to combat addiction in our communities today?","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1489017600000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Addiction Response","MarkingPeriodId":"30"},{"Description":"briefly compare the 4 Gospels, include literary style and content","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1487289600000)\\/","PossiblePoints":"200.00","Score":"190.00","Average":"95.00%","Note":"","ShortName":"Compare gospels","MarkingPeriodId":"30"},{"Description":"Read March Chapters 8 \\u0026  9and respond to brief quiz qs","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1487116800000)\\/","PossiblePoints":"40.00","Score":"36.00","Average":"90.00%","Note":"","ShortName":"Mark 8, 9","MarkingPeriodId":"30"},{"Description":"Review the role that the Church has played in politics. Comment on what you believe is the appropriate role of the Church in this area. 400 words","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1486684800000)\\/","PossiblePoints":"100.00","Score":"92.00","Average":"92.00%","Note":"","ShortName":"Church and State","MarkingPeriodId":"30"},{"Description":"Open Book test on Chap 6","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1486598400000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Chap 6 Review","MarkingPeriodId":"30"},{"Description":"Respond to the 10 Questions and comment on Romero\\u0027s Holiness","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1486512000000)\\/","PossiblePoints":"50.00","Score":"46.00","Average":"92.00%","Note":"","ShortName":"Journal Check Romero","MarkingPeriodId":"30"},{"Description":"Using descriptions in the Chapter, especially the definitions of Holiness  explain in 400 words (4 or 5 paragraphs)  your understanding of Holiness.","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1486080000000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Holiness","MarkingPeriodId":"30"},{"Description":"Review of Chapter 5","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1484870400000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Chap 5 test","MarkingPeriodId":"28"},{"Description":"Explain the differences between Protestants and Catholics. 100 words","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484784000000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"Protestantism","MarkingPeriodId":"28"},{"Description":"Explain 3 Heresies from the early centuries of the Church. 100 words","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1484697600000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"Heresies","MarkingPeriodId":"28"},{"Description":"write a 400 word paper on the significance of unity in a diverse world and a Church made up of many different people and ideas.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1484179200000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Unity","MarkingPeriodId":"28"},{"Description":"read 1st 3 sections of Chapter 4","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1483660800000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Chap 4 Quiz","MarkingPeriodId":"28"},{"Description":"Using the 5 scripture references choose the one which best describes  a community of faith. Explain 200 words","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1483574400000)\\/","PossiblePoints":"100.00","Score":"89.00","Average":"89.00%","Note":"","ShortName":"Best Church Model","MarkingPeriodId":"28"},{"Description":"How is CS Lewis Story Lion Witch and Wardrobe an allegory of the Gospel?\\n400 words","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1481673600000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Gospel Allegory","MarkingPeriodId":"28"},{"Description":"Chapter 3 Test, Journal Check","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1481068800000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Vocab Test Ch.3","MarkingPeriodId":"28"},{"Description":"Complete worksheet referring to Acts Chapter 11 - 25","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1480636800000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Paul\\u0027s Journeys","MarkingPeriodId":"28"},{"Description":"Journal entry - answer the question in the handout - leave the Journals on Tuesday","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479772800000)\\/","PossiblePoints":"50.00","Score":"48.00","Average":"96.00%","Note":"","ShortName":"God\\u0027s love","MarkingPeriodId":"28"},{"Description":"Open Book test on Chapter 2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1479254400000)\\/","PossiblePoints":"100.00","Score":"99.00","Average":"99.00%","Note":"","ShortName":"Chapter 2 Test","MarkingPeriodId":"28"},{"Description":"Identify the 7 gifts of the Spirit in the early Church","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479168000000)\\/","PossiblePoints":"40.00","Score":"40.00","Average":"100.00%","Note":"","ShortName":"Church Gifts","MarkingPeriodId":"28"},{"Description":"Your task is to write a speech that you could deliver to a group of High school young people that would motivate them to succeed.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1478736000000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Motivation","MarkingPeriodId":"28"},{"Description":"In your journal explain whether High School survival depends  more on Gospel rules or Greco-Roman rules","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1478649600000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"Comparing Values","MarkingPeriodId":"28"},{"Description":"How can the Spirit give energy to a group","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Synergy","MarkingPeriodId":"27"},{"Description":"Grade for performance in class","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"participation","MarkingPeriodId":"27"},{"Description":"Ch 1 test including information about the movie as well as a general awareness of Mark CHs 1-6","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477612800000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Test Ch.1","MarkingPeriodId":"27"},{"Description":"Check of Journal entries","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477612800000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Journal Check","MarkingPeriodId":"27"},{"Description":"Summarize what happens In Mark Chapter 5","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477440000000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Mark 5 Summary","MarkingPeriodId":"27"},{"Description":"Write a one page reflection paper on state of healthcare inour society.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"96.00","Average":"96.00%","Note":"","ShortName":"Healthcare","MarkingPeriodId":"27"},{"Description":"Journal entry explaining the importance of labeling the challenges we face.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1476748800000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Naming Challenges","MarkingPeriodId":"27"},{"Description":"Vocab and ideas from pages 6-12 in text","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476403200000)\\/","PossiblePoints":"50.00","Score":"48.00","Average":"96.00%","Note":"","ShortName":"Quiz page 6-12","MarkingPeriodId":"27"},{"Description":"using the letter of Pope benedict outline the challenges and opportunities to create meaningful communities in a digital age.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1476230400000)\\/","PossiblePoints":"100.00","Score":"92.00","Average":"92.00%","Note":"","ShortName":"Online Community","MarkingPeriodId":"27"},{"Description":"Respond in writing to all the bullet point Qs on pages 6,-12","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"Journal page 6 - 8","MarkingPeriodId":"27"},{"Description":"Explain what causes you to lose your temper (beyond your control)","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"Types of Anger","MarkingPeriodId":"27"},{"Description":"Assessment of your understanding of The 4th Chapter of Mark","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475107200000)\\/","PossiblePoints":"50.00","Score":"39.00","Average":"78.00%","Note":"","ShortName":"Mark 4 Quiz","MarkingPeriodId":"27"},{"Description":"Test on the book SPEAK","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474502400000)\\/","PossiblePoints":"100.00","Score":"107.00","Average":"107.00%","Note":"","ShortName":"Summer reading test","MarkingPeriodId":"27"},{"Description":"Finish worksheets on the book SPEAK each day as directed, ALL ARE DUE THURSDAY","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474502400000)\\/","PossiblePoints":"30.00","Score":"30.00","Average":"100.00%","Note":"","ShortName":"Worksheets","MarkingPeriodId":"27"},{"Description":"How can Faith be helpful in reducing the incidences of sexual assaults among young people in our communities?","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1473984000000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Faith and Assaults","MarkingPeriodId":"27"},{"Description":"Using the Stories explained in class and Mark Chapters 1 and 2 explain the role leadership plays in responding to God\\u0027s call. 400 words","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1473379200000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Answering the Call","MarkingPeriodId":"27"}],"Total":42,"AggregateResults":null,"Errors":null}',
       ),
       428 => 
       array (
         'teacher_name' => 'Baxter, Beverly',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader ">95.64</td>
-<td class="cellDivHeader ">95.91</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col>
@@ -1288,40 +734,71 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>Quiz</td>
 <td style="display:none">1.00</td>
-<td>152.50</td>
-<td>159.00</td>
-<td>95.91 %</td>
-<td>96</td>
+<td>218.50</td>
+<td>225.00</td>
+<td>97.11 %</td>
+<td>97</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>SECOND MARKING PERIOD</td>
+<td>Homework</td>
+<td style="display:none">1.00</td>
+<td>92.00</td>
+<td>92.00</td>
+<td>100.00 %</td>
+<td>100</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>SECOND MARKING PERIOD</td>
+<td>Test</td>
+<td style="display:none">1.00</td>
+<td>97.00</td>
+<td>100.00</td>
+<td>97.00 %</td>
+<td>97</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>SECOND MARKING PERIOD</td>
+<td>Participation</td>
+<td style="display:none">0.00</td>
+<td>50.00</td>
+<td>50.00</td>
+<td>100.00 %</td>
+<td>100</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr>
+<td>THIRD MARKING PERIOD</td>
+<td>Quiz</td>
+<td style="display:none">1.00</td>
+<td>109.50</td>
+<td>136.00</td>
+<td>80.51 %</td>
+<td>81</td>
+<td style="display:none"><input class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>THIRD MARKING PERIOD</td>
+<td>Homework</td>
+<td style="display:none">1.00</td>
+<td>48.00</td>
+<td>48.00</td>
+<td>100.00 %</td>
+<td>100</td>
 <td style="display:none"><input class="check-box" disabled type="checkbox"></td>
 </tr>
 </tbody>
 </table>
 ',
-        'course_detail' => '{"Data":[{"Description":"Quiz on Sections 5.4-5.5","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481587200000)\\/","PossiblePoints":"45.00","Score":"43.00","Average":"95.56%","Note":"","ShortName":"Quiz 5.4-5.5","MarkingPeriodId":"28"},{"Description":"Quiz on Sections 5.1-5.3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"54.00","Score":"52.00","Average":"96.30%","Note":"","ShortName":"Quiz 5.1-5.3","MarkingPeriodId":"28"},{"Description":"Quiz on Sections 3.1-3.3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479081600000)\\/","PossiblePoints":"60.00","Score":"57.50","Average":"95.83%","Note":"","ShortName":"Quiz 3.1-3.3","MarkingPeriodId":"28"},{"Description":"Term 1 participation","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Participation","AssignmentDate":"\\/Date(1478217600000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"Participation","MarkingPeriodId":"27"},{"Description":"Sections 3.1-3.3 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477526400000)\\/","PossiblePoints":"24.00","Score":"24.00","Average":"100.00%","Note":"","ShortName":"HW 3.1-3.3","MarkingPeriodId":"27"},{"Description":"Quiz on Sections 2.4-2.6","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"60.00","Score":"56.00","Average":"93.33%","Note":"","ShortName":"Quiz 2.4-2.6","MarkingPeriodId":"27"},{"Description":"Sections 2.4-2.6 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"24.00","Score":"24.00","Average":"100.00%","Note":"","ShortName":"HW 2.4-2.6","MarkingPeriodId":"27"},{"Description":"Sections 2.1-2.3 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"HW 2.1-2.3","MarkingPeriodId":"27"},{"Description":"Sections 2.1-2.3 Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"84.00","Score":"83.50","Average":"99.40%","Note":"","ShortName":"Quiz 2.1-2.3","MarkingPeriodId":"27"},{"Description":"Chapter 1 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"28.00","Score":"28.00","Average":"100.00%","Note":"","ShortName":"HW Chap 1","MarkingPeriodId":"27"},{"Description":"Chapter 1 Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"92.50","Average":"92.50%","Note":"","ShortName":"Test Chap 1","MarkingPeriodId":"27"}],"Total":11,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[{"Description":"Participation for Term 3","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Participation","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"40.00","Score":"45.00","Average":"112.50%","Note":"","ShortName":"T3 Participation","MarkingPeriodId":"30"},{"Description":"Quiz on Sections 6.4-6.5","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490659200000)\\/","PossiblePoints":"60.00","Score":"39.00","Average":"65.00%","Note":"","ShortName":"Sec 6.4-6.5 Quiz","MarkingPeriodId":"30"},{"Description":"Homework for Sections 6.4-6.5","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490659200000)\\/","PossiblePoints":"24.00","Score":"24.00","Average":"100.00%","Note":"","ShortName":"HW 6.4-6.5","MarkingPeriodId":"30"},{"Description":"Quiz on Sections 6.1-6.3","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1488240000000)\\/","PossiblePoints":"76.00","Score":"70.50","Average":"92.76%","Note":"","ShortName":"Sec 6.1-6.3 Quiz","MarkingPeriodId":"30"},{"Description":"Homework for Sections 6.1-6.3","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1488240000000)\\/","PossiblePoints":"24.00","Score":"24.00","Average":"100.00%","Note":"","ShortName":"HW 6.1-6.3","MarkingPeriodId":"30"},{"Description":"Quiz on Sections 3.4-3.5","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"66.00","Score":"66.00","Average":"100.00%","Note":"","ShortName":"Quiz 3.4-3.5","MarkingPeriodId":"28"},{"Description":"Chapter 5 Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Chap 5 Test","MarkingPeriodId":"28"},{"Description":"Homework for Chapter 3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"44.00","Score":"44.00","Average":"100.00%","Note":"","ShortName":"Chap 3 HW","MarkingPeriodId":"28"},{"Description":"Homework for Chapter 5","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"48.00","Score":"48.00","Average":"100.00%","Note":"","ShortName":"Chap 5 HW","MarkingPeriodId":"28"},{"Description":"Class Participation for Term 2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Participation","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"50.00","Score":"50.00","Average":"100.00%","Note":"","ShortName":"T2 Participation","MarkingPeriodId":"28"},{"Description":"Quiz on Sections 5.4-5.5","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481587200000)\\/","PossiblePoints":"45.00","Score":"43.00","Average":"95.56%","Note":"","ShortName":"Quiz 5.4-5.5","MarkingPeriodId":"28"},{"Description":"Quiz on Sections 5.1-5.3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481155200000)\\/","PossiblePoints":"54.00","Score":"52.00","Average":"96.30%","Note":"","ShortName":"Quiz 5.1-5.3","MarkingPeriodId":"28"},{"Description":"Quiz on Sections 3.1-3.3","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1479081600000)\\/","PossiblePoints":"60.00","Score":"57.50","Average":"95.83%","Note":"","ShortName":"Quiz 3.1-3.3","MarkingPeriodId":"28"},{"Description":"Term 1 participation","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Participation","AssignmentDate":"\\/Date(1478217600000)\\/","PossiblePoints":"50.00","Score":"45.00","Average":"90.00%","Note":"","ShortName":"Participation","MarkingPeriodId":"27"},{"Description":"Sections 3.1-3.3 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1477526400000)\\/","PossiblePoints":"24.00","Score":"24.00","Average":"100.00%","Note":"","ShortName":"HW 3.1-3.3","MarkingPeriodId":"27"},{"Description":"Quiz on Sections 2.4-2.6","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"60.00","Score":"56.00","Average":"93.33%","Note":"","ShortName":"Quiz 2.4-2.6","MarkingPeriodId":"27"},{"Description":"Sections 2.4-2.6 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1475712000000)\\/","PossiblePoints":"24.00","Score":"24.00","Average":"100.00%","Note":"","ShortName":"HW 2.4-2.6","MarkingPeriodId":"27"},{"Description":"Sections 2.1-2.3 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"20.00","Score":"20.00","Average":"100.00%","Note":"","ShortName":"HW 2.1-2.3","MarkingPeriodId":"27"},{"Description":"Sections 2.1-2.3 Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1474934400000)\\/","PossiblePoints":"84.00","Score":"83.50","Average":"99.40%","Note":"","ShortName":"Quiz 2.1-2.3","MarkingPeriodId":"27"},{"Description":"Chapter 1 Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"28.00","Score":"28.00","Average":"100.00%","Note":"","ShortName":"HW Chap 1","MarkingPeriodId":"27"},{"Description":"Chapter 1 Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474329600000)\\/","PossiblePoints":"100.00","Score":"92.50","Average":"92.50%","Note":"","ShortName":"Test Chap 1","MarkingPeriodId":"27"}],"Total":21,"AggregateResults":null,"Errors":null}',
       ),
       538 => 
       array (
         'teacher_name' => 'Castelline, Denise',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col class="k-group-col">
@@ -1350,31 +827,12 @@ array (
 </tr></thead>
 </table>
 ',
-        'course_detail' => '{"Data":[],"Total":0,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[],"Total":0,"AggregateResults":null,"Errors":null}',
       ),
       549 => 
       array (
         'teacher_name' => 'Castelline, Denise',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col class="k-group-col">
@@ -1403,31 +861,12 @@ array (
 </tr></thead>
 </table>
 ',
-        'course_detail' => '{"Data":[],"Total":0,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[],"Total":0,"AggregateResults":null,"Errors":null}',
       ),
       403 => 
       array (
         'teacher_name' => 'Johnson, Walter',
         'teacher_email' => '',
-        'grades_summary_total' => '<table style="width: 100% !important">
-<tr class="rowDivHeader">
-<th class="cellDivHeader ">Progress</th>
-<th title="FIRST MARKING PERIOD" class="cellDivHeader ">1st</th>
-<th title="SECOND MARKING PERIOD" class="cellDivHeader ">2nd</th>
-<th title="MIDYEAR EXAM" class="cellDivHeader ">MEX</th>
-<th title="THIRD MARKING PERIOD" class="cellDivHeader ">3rd</th>
-<th title="FOURTH MARKING PERIOD" class="cellDivHeader ">4th</th>
-</tr>
-<tr class="rowDivHeader">
-<td class="cellDivHeader ">Average</td>
-<td class="cellDivHeader ">88.20</td>
-<td class="cellDivHeader ">90.00</td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-<td class="cellDivHeader "></td>
-</tr>
-</table>
-',
         'category_averages' => '<table>
 <colgroup>
 <col>
@@ -1528,36 +967,46 @@ array (
 <td>SECOND MARKING PERIOD</td>
 <td>Homework</td>
 <td style="display:none">1.00</td>
-<td>89.00</td>
 <td>100.00</td>
-<td>89.00 %</td>
-<td>89</td>
+<td>100.00</td>
+<td>100.00 %</td>
+<td>100</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr class="k-alt">
 <td>SECOND MARKING PERIOD</td>
 <td>Test</td>
 <td style="display:none">1.00</td>
-<td>87.00</td>
-<td>100.00</td>
-<td>87.00 %</td>
-<td>87</td>
+<td>177.00</td>
+<td>200.00</td>
+<td>88.50 %</td>
+<td>89</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 <tr>
 <td>SECOND MARKING PERIOD</td>
 <td>Class Participation</td>
 <td style="display:none">1.00</td>
-<td>88.00</td>
+<td>90.00</td>
 <td>100.00</td>
-<td>88.00 %</td>
+<td>90.00 %</td>
+<td>90</td>
+<td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
+</tr>
+<tr class="k-alt">
+<td>SECOND MARKING PERIOD</td>
+<td>Essay</td>
+<td style="display:none">1.00</td>
+<td>175.00</td>
+<td>200.00</td>
+<td>87.50 %</td>
 <td>88</td>
 <td style="display:none"><input checked class="check-box" disabled type="checkbox"></td>
 </tr>
 </tbody>
 </table>
 ',
-        'course_detail' => '{"Data":[{"Description":"Quest","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481241600000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Ch.6 Secs. 3-4","MarkingPeriodId":"28"},{"Description":"Ch. 6 sec. 1-2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1480550400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Ch. 6 sec. 1-2","MarkingPeriodId":"28"},{"Description":"Class Part.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Class Participation","AssignmentDate":"\\/Date(1479772800000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"Class Part.","MarkingPeriodId":"28"},{"Description":"Homework","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1479772800000)\\/","PossiblePoints":"100.00","Score":"89.00","Average":"89.00%","Note":"","ShortName":"Homework","MarkingPeriodId":"28"},{"Description":"Ch. 5 \\u0026 Const.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"100.00","Score":"87.00","Average":"87.00%","Note":"","ShortName":"Ch. 5 \\u0026 Const.","MarkingPeriodId":"28"},{"Description":"Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Homework","MarkingPeriodId":"27"},{"Description":"Class Part.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Class Participation","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"Class Part.","MarkingPeriodId":"27"},{"Description":"Articles of Confederatiojn","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Essay","AssignmentDate":"\\/Date(1478044800000)\\/","PossiblePoints":"100.00","Score":"87.00","Average":"87.00%","Note":"","ShortName":"Essay","MarkingPeriodId":"27"},{"Description":"Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477526400000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Ch. 4 Sec. 3-4","MarkingPeriodId":"27"},{"Description":"British imperial policies and growing colonial resistance","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Essay","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"84.00","Average":"84.00%","Note":"","ShortName":"1763-1776 Essay","MarkingPeriodId":"27"},{"Description":"Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476403200000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Ch.3 - 4.2","MarkingPeriodId":"27"},{"Description":"Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1475452800000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"Ch. 2 Test","MarkingPeriodId":"27"},{"Description":"Ch.1 Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474243200000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"Ch.1 Test","MarkingPeriodId":"27"}],"Total":13,"AggregateResults":null,"Errors":null}',
+        'scores_detail' => '{"Data":[{"Description":"Homework","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Homework","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"100.00","Score":"98.00","Average":"98.00%","Note":"","ShortName":"Homework","MarkingPeriodId":"30"},{"Description":"Class Participation","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Class Participation","AssignmentDate":"\\/Date(1490918400000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Class Participation","MarkingPeriodId":"30"},{"Description":"Ch. 13 Quest","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1490227200000)\\/","PossiblePoints":"100.00","Score":"92.00","Average":"92.00%","Note":"","ShortName":"Ch. 13 Quest","MarkingPeriodId":"30"},{"Description":"Captains of Industry","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Essay","AssignmentDate":"\\/Date(1490140800000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"Essay","MarkingPeriodId":"30"},{"Description":"Test","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1488931200000)\\/","PossiblePoints":"100.00","Score":"94.00","Average":"94.00%","Note":"","ShortName":"Civil War","MarkingPeriodId":"30"},{"Description":"Ch.10 Test","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Test","AssignmentDate":"\\/Date(1487203200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Ch.10 Test","MarkingPeriodId":"30"},{"Description":"Quest","MarkingPeriod":null,"MarkingPeriodShort":"3rd","Category":"Quiz","AssignmentDate":"\\/Date(1486339200000)\\/","PossiblePoints":"100.00","Score":"81.00","Average":"81.00%","Note":"","ShortName":"Chapter 9","MarkingPeriodId":"30"},{"Description":"Class Part.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Class Participation","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Class Part.","MarkingPeriodId":"28"},{"Description":"Homework","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Homework","AssignmentDate":"\\/Date(1485475200000)\\/","PossiblePoints":"100.00","Score":"100.00","Average":"100.00%","Note":"","ShortName":"Homework","MarkingPeriodId":"28"},{"Description":"Reform Essay","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Essay","AssignmentDate":"\\/Date(1485302400000)\\/","PossiblePoints":"100.00","Score":"85.00","Average":"85.00%","Note":"","ShortName":"Chapter 8","MarkingPeriodId":"28"},{"Description":"Nationalism and Sectionalism","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Essay","AssignmentDate":"\\/Date(1484179200000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Chapter 7","MarkingPeriodId":"28"},{"Description":"Test","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1484006400000)\\/","PossiblePoints":"100.00","Score":"90.00","Average":"90.00%","Note":"","ShortName":"Chapter 7","MarkingPeriodId":"28"},{"Description":"Quest","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1481241600000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Ch.6 Secs. 3-4","MarkingPeriodId":"28"},{"Description":"Ch. 6 sec. 1-2","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Quiz","AssignmentDate":"\\/Date(1480550400000)\\/","PossiblePoints":"100.00","Score":"95.00","Average":"95.00%","Note":"","ShortName":"Ch. 6 sec. 1-2","MarkingPeriodId":"28"},{"Description":"Ch. 5 \\u0026 Const.","MarkingPeriod":null,"MarkingPeriodShort":"2nd","Category":"Test","AssignmentDate":"\\/Date(1479427200000)\\/","PossiblePoints":"100.00","Score":"87.00","Average":"87.00%","Note":"","ShortName":"Ch. 5 \\u0026 Const.","MarkingPeriodId":"28"},{"Description":"Homework","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Homework","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"93.00","Average":"93.00%","Note":"","ShortName":"Homework","MarkingPeriodId":"27"},{"Description":"Class Part.","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Class Participation","AssignmentDate":"\\/Date(1478131200000)\\/","PossiblePoints":"100.00","Score":"88.00","Average":"88.00%","Note":"","ShortName":"Class Part.","MarkingPeriodId":"27"},{"Description":"Articles of Confederatiojn","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Essay","AssignmentDate":"\\/Date(1478044800000)\\/","PossiblePoints":"100.00","Score":"87.00","Average":"87.00%","Note":"","ShortName":"Essay","MarkingPeriodId":"27"},{"Description":"Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1477526400000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Ch. 4 Sec. 3-4","MarkingPeriodId":"27"},{"Description":"British imperial policies and growing colonial resistance","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Essay","AssignmentDate":"\\/Date(1477008000000)\\/","PossiblePoints":"100.00","Score":"84.00","Average":"84.00%","Note":"","ShortName":"1763-1776 Essay","MarkingPeriodId":"27"},{"Description":"Quiz","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Quiz","AssignmentDate":"\\/Date(1476403200000)\\/","PossiblePoints":"100.00","Score":"97.00","Average":"97.00%","Note":"","ShortName":"Ch.3 - 4.2","MarkingPeriodId":"27"},{"Description":"Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1475452800000)\\/","PossiblePoints":"100.00","Score":"80.00","Average":"80.00%","Note":"","ShortName":"Ch. 2 Test","MarkingPeriodId":"27"},{"Description":"Ch.1 Test","MarkingPeriod":null,"MarkingPeriodShort":"1st","Category":"Test","AssignmentDate":"\\/Date(1474243200000)\\/","PossiblePoints":"100.00","Score":"75.00","Average":"75.00%","Note":"","ShortName":"Ch.1 Test","MarkingPeriodId":"27"}],"Total":23,"AggregateResults":null,"Errors":null}',
       ),
     ),
   ),

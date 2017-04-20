@@ -2,6 +2,175 @@
 require 'vendor/autoload.php';
 include('db_class.php'); // call db.class.php
 $bdd = new db(); 
+$url = '/private/var/www/oop/sinica/grades/aeries_grades_home.html';
+$sHtml = file_get_contents($url);
+// $gradeHtml = new \HtmlParser\ParserDom($sHtml);
+
+$grade_dom = new \HtmlParser\ParserDom($sHtml);
+$cids = array(
+  1 =>"2495914",
+  2 =>"1391809",
+  3 =>"1391129",
+);
+$grade_table = $grade_dom->find('#ctl00_MainContent_subGBS_tblEverything');
+    foreach($grade_table as $table) {
+        foreach ($cids as $key => $value) {
+            echo $key."\n";
+            if(strlen($key) == 1) {
+                $td_id = "#ctl00_MainContent_subGBS_DataDetails_ctl0".$key."_trGBKItem .Data";
+            }else {
+                $td_id = "#ctl00_MainContent_subGBS_DataDetails_ctl".$key."_trGBKItem .Data";
+            }             
+            echo $td_id."\n";  
+            $i = 0;
+            foreach($grade_dom->find($td_id) as $tr) {
+                $cdata = $tr->getPlainText();
+                switch($i) {
+                    case 1:
+                        $student_infos['grades'][$key]['courses_name'] = $cdata;
+                        break;
+                    case 4:
+                        $student_infos['grades'][$key]['courses_teacher'] = $cdata;
+                        break;
+                    case 5: 
+                        $student_infos['grades'][$key]['courses_score'] = $cdata;
+                        break;
+                    case 7:
+                        $student_infos['grades'][$key]['courses_grade'] = $cdata;
+                        break;
+                }
+                $i++;
+            }
+        }
+    }
+    var_dump($student_infos);
+exit();
+for($i =1; $i <= 8; $i++) {
+$tag = "#ctl00_MainContent_subGRD_DataDetails_ctl00_lblM".$i;
+$a = $html_dom->find($tag, 0)->getAttr('style');
+if($a) {
+    $text = $html_dom->find($tag, 0)->getPlainText();
+    echo str_replace("Mk", "", $text)."\n";
+}
+}
+exit();
+// $attend = $html_dom->find('#ctl00_MainContent_dlAttSummaryPeriod', 0)->find('tr', 14);
+// $a = $attend->find('td', 3)->getPlainText();
+// echo $a."\n";
+// $attend = $html_dom->find('#ctl00_MainContent_dlAttSummaryPeriod', 0)->find('tr', 16);
+// $b = $attend->find('td', 3)->getPlainText();
+// echo $b."\n";
+// echo $a+$b."\n";
+// foreach($attend->find('td', 3) as $td) {
+//     echo $td->getPlainText()."\n";
+// }
+//var_dump($attend);
+exit();
+
+
+//get assignment class group weight
+$groupTr = $gDom = $html_dom->find('table#grades_summary', 0)->find('tr.group_total');
+$gWTotal = 0;
+foreach($groupTr as $gTotal) {
+    $gWTitle = $gTotal->find('th.title', 0)->getPlainText();
+    $gWNum = $gTotal->find('span.group_weight', 0)->getPlainText();
+    $groupWeight[trim($gWTitle)] = $gWNum;
+    $gWTotal += $gWNum;
+    
+}
+$groupWeightTotal = (int)$gWTotal;
+//var_dump($groupWeight);
+$l = 0;
+$gDropped = array();
+$tableTr = $html_dom->find('table#grades_summary tr.gDropped');
+
+foreach($tableTr as $th) {
+    echo $th->outerHtml();
+    exit();
+    foreach($th->find('span.assignment_id') as $sAI) {
+        $assID = $gDropped[$l]['assignment_id'] = $sAI->getPlainText();
+        // $assignment_id = $th->find('span.assignment_id', 0)->getPlainText();
+        // $grades[$z]['assignment_id'] = $assignment_id;
+    }
+    foreach($th->find('span.original_score') as $sOS) {
+        $gDropped[$l]['original_score'] = $sOS->getPlainText();
+        //$original_score = $th->find('span.original_score', 0)->getPlainText();
+        //$grades[$z]['original_score'] = $original_score;
+    }
+    foreach($th->find('td.points_possible') as $tdP) {
+        $gDropped[$l]['points'] = $tdP->getPlainText();   
+    }
+    $l++;           
+}
+var_dump($gDropped);
+exit();
+//get assignment class sores
+$tableTr = $gDom = $html_dom->find('table#grades_summary', 0)->find('tr[.assignment_graded .editable]');
+$course['id'] = 420;
+$z = 0;
+foreach($tableTr as $th) {
+    foreach($th->find('th.title a') as $thN) {
+        $grades[$z]['class_name'] = $thN->getPlainText();
+    }
+    foreach($th->find('div.context') as $divC) {
+        $grades[$z]['context'] = $divC->getPlainText();
+    }
+
+    foreach($th->find('td.due') as $tdD) {
+        $grades[$z]['date'] = $tdD->getPlainText();
+    }
+    foreach($th->find('span.original_score') as $sOS) {
+        $grades[$z]['original_score'] = $sOS->getPlainText();
+        //$original_score = $th->find('span.original_score', 0)->getPlainText();
+        //$grades[$z]['original_score'] = $original_score;
+    }
+    foreach($th->find('span.assignment_id') as $sAI) {
+        $grades[$z]['assignment_id'] = $sAI->getPlainText();
+        // $assignment_id = $th->find('span.assignment_id', 0)->getPlainText();
+        // $grades[$z]['assignment_id'] = $assignment_id;
+    }
+    foreach($th->find('td.points_possible') as $tdP) {
+        $grades[$z]['points'] = $tdP->getPlainText();   
+    }
+    $z++;           
+}
+
+foreach($groupWeight as $cn_key => $cWeight) {
+    $scoresNum = $scoresPoints = 0;
+    foreach($grades as $key => $gD) {
+        if($gD['context'] == $cn_key) {
+            if((int)$gD['original_score']) {
+            echo $gD['class_name']."\n";
+            echo $gD['context']."\n";
+            echo (int)$gD['original_score']."\n";
+            echo trim($gD['points'])."\n";
+            $scoresNum += (int)trim($gD['original_score']);
+            $scoresPoints += (int)$gD['points'];
+            }
+        }
+    }
+    echo $scoresNum."\n";
+    echo $scoresPoints."\n";
+}
+
+// $ids = array_column($grades, 'context');
+// foreach ($groupWeight as $cn_key => $cWeight) {
+//     $id = array_keys($ids, trim($cn_key));
+//     if(count($id) > 0) {
+//     $p = $q = 0;
+//     foreach($grades as $key => $gD) {
+//         if(in_array($key, $id)) {
+//             echo $gD['context']."\n";
+//             echo (int)$gD['original_score']."\n";
+//             $p += (int)$gD['original_score'];
+//             //$q += (int)$gD['points'];
+//         }
+//     }
+//     echo $p ."\n";
+//     }
+//     exit();
+// }
+exit();     
 /*function get_last_grade($uid, $studentid, $courseid, $cgrade, $time = null) {
     $bdd = new db();
     $query = "SELECT * FROM sinica_grade_summary WHERE studentid = ". $studentid ." AND uid = ". $uid ." AND courseid = '". $courseid ."' order by id desc limit 1";

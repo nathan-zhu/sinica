@@ -1,0 +1,2262 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	STI InformationNow Home Portal
+</title>
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/Grid.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/Grid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#TermsAndConditions').each(function () {
+
+                var $link = $(this);
+
+                $link.click(function () {
+
+                    // Only load terms.aspx when the Terms link has been clicked
+                    var $dialog = $('<div style="font-size:10pt;"></div>').load($link.attr('href') + ' div[id$="TermsContent"]').dialog({
+
+                        autoOpen: false,
+                        open: function (event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        title: $link.attr('title'),
+                        width: 500,
+                        height: 500,
+                        modal: true,
+                        buttons: {
+                            "Agree": function () {
+                                $dialog.dialog("close");
+                            }
+                        }
+                    });
+
+                    $dialog.dialog('open');
+                    return false;
+                });
+            });
+
+            $("[Name='lnkHelp']").click(
+         function () {
+             mixpanel.track("Help Accessed");
+         });
+
+        });
+
+
+
+
+    </script>
+
+    
+<style type="text/css">
+	.ctl00_navMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_navMenu_1 { text-decoration:none; }
+	.ctl00_navMenu_2 {  }
+	.ctl00_navMenu_3 { border-style:none; }
+	.ctl00_navMenu_4 {  }
+	.ctl00_navMenu_5 { border-style:none; }
+	.ctl00_navMenu_6 {  }
+	.ctl00_navMenu_7 {  }
+	.ctl00_navMenu_8 {  }
+	.ctl00_navMenu_9 { border-style:none; }
+	.ctl00_navMenu_10 {  }
+	.ctl00_navMenu_11 { border-style:none; }
+	.ctl00_navMenu_12 {  }
+
+</style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./Attendance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDM4Mzk3MTMxDxYEHgZUZXJtSWRkHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPZBYGAgYPZBYCZg9kFgQCAw8QDxYGHg1EYXRhVGV4dEZpZWxkBQtTdHVkZW50TmFtZR4ORGF0YVZhbHVlRmllbGQFCVN0dWRlbnRJRB4LXyFEYXRhQm91bmRnZBAVAQ5DaGVuLCBUaWFuZmVuZxUBBDMxOTgUKwMBZxYBZmQCBw8QDxYGHwIFCEFjYWROYW1lHwMFDUFjYWRTZXNzaW9uSUQfBGdkEBUCI1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNS0yMDE2I1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNi0yMDE3FQICMTICMTUUKwMCZ2cWAQIBZAIHDxQrAA0PFgIfBGdkZGRkZGRkZGQQFgAWAGQQFgAWAGRkFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYMHgRUZXh0BQRIb21lHgVWYWx1ZQUESG9tZR4HRW5hYmxlZGceClNlbGVjdGFibGVoHghEYXRhUGF0aAUkYmIwNWFmZDgtZTUwMC00ZTM0LTk4ODktMDgyNzhlNjc3ZmMzHglEYXRhQm91bmRnFCsAAwUHMDowLDA6MRQrAAIWDh8FBQlIb21lIFBhZ2UfBgUJSG9tZSBQYWdlHgtOYXZpZ2F0ZVVybAU5L0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvRGVmYXVsdC5hc3B4HwdnHwhnHwkFOS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL2RlZmF1bHQuYXNweB8KZ2QUKwACFg4fBQUPU2Nob29sIENhbGVuZGFyHwYFD1NjaG9vbCBDYWxlbmRhch8LBUEvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TY2hvb2wvQ2FsZW5kYXIuYXNweB8HZx8IZx8JBUEvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zY2hvb2wvY2FsZW5kYXIuYXNweB8KZ2QUKwACFgwfBQUTU3R1ZGVudCBJbmZvcm1hdGlvbh8GBRNTdHVkZW50IEluZm9ybWF0aW9uHwdnHwhoHwkFJDRjN2U2ZTY1LWVmOGQtNDg5MC04OThlLTNkOTRjM2Q3NzdiNB8KZxQrAAQFKzA6MCwwOjEsMToxLDA6MSwxOjEsMDoxLDE6MSwwOjEsMDoyLDE6MiwwOjIUKwACFhAfBQUKQXR0ZW5kYW5jZR8GBQpBdHRlbmRhbmNlHwsFRC9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1N0dWRlbnQvQXR0ZW5kYW5jZS5hc3B4HwdnHwhnHwkFRC9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3N0dWRlbnQvYXR0ZW5kYW5jZS5hc3B4HwpnHghTZWxlY3RlZGdkFCsAAhYOHwUFBkdyYWRlcx8GBQZHcmFkZXMfCwVAL0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvU3R1ZGVudC9HcmFkZXMuYXNweB8HZx8IZx8JBUAvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zdHVkZW50L2dyYWRlcy5hc3B4HwpnZBQrAAIWDh8FBQhTY2hlZHVsZR8GBQhTY2hlZHVsZR8LBUIvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TdHVkZW50L1NjaGVkdWxlLmFzcHgfB2cfCGcfCQVCL2luZm9ybWF0aW9ubm93L3BhcmVudHBvcnRhbC9zdGkuaG9tZS51aS53ZWIvc3R1ZGVudC9zY2hlZHVsZS5hc3B4HwpnZBQrAAIWDB8FBQdSZXBvcnRzHwYFB1JlcG9ydHMfB2cfCGgfCQUkMzAxZDkxM2MtMmQwZi00YjRhLWEwZTQtMmZhNmVkNTg2MzBkHwpnFCsAAgUjMDowLDE6MCwwOjAsMDoxLDE6MSwwOjEsMToxLDA6MSwxOjEUKwACFg4fBQUWQ29tcHJlaGVuc2l2ZSBQcm9ncmVzcx8GBRZDb21wcmVoZW5zaXZlIFByb2dyZXNzHwsFWS9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1JlcG9ydGluZy9SZXBvcnRzL0NvbXByZWhlbnNpdmVQcm9ncmVzcy5hc3B4HwdnHwhnHwkFWS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3JlcG9ydGluZy9yZXBvcnRzL2NvbXByZWhlbnNpdmVwcm9ncmVzcy5hc3B4HwpnZBQrAAIWDB8FBRJTeXN0ZW0gUHJlZmVyZW5jZXMfBgUSU3lzdGVtIFByZWZlcmVuY2VzHwdnHwhoHwkFJDMwOWM5YjM3LTU2NTQtNDk5ZC04OWYxLTMzNmZjNzIxOWM2Nh8KZxQrAAEFBzA6MCwxOjBkAgkPZBYCZg9kFggCAw8PFgIeB1Zpc2libGVoZGQCBQ8PFgIfBWVkZAIJDw8WAh8FZWRkAg0PZBYEAgcPEA8WBh8CBQhUZXJtTmFtZR8DBQZUZXJtSWQfBGdkEBUEA0FMTAZURVJNIDEGVEVSTSAyBlRFUk0gMxUEATACMzICMzMCMzQUKwMEZ2dnZxYBZmQCCQ88KwARAwAPFgQfBGceC18hSXRlbUNvdW50AgNkARAWAQIGFgE8KwAFAQAWAh8NaBYBZgwUKwAAFgJmD2QWCAIBD2QWDGYPZBYCAgEPFgQeBGhyZWYFigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00NzQ1NTc0Rjc2NkI2NjU4NTk1MDRDNTA3MjM3NkI2RDU0NzUzOTY2NEQ1QTUxMzk0NzRCMzQzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc4NEQ0MTNEM0QeCWlubmVyaHRtbAUOVGh1IDExLzEwLzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFGkhSLDAxLDAyLDAzLDA0LDA1LDA2LDA3LDA4ZGQCAw8PFgIfBQUHQWxsIERheWRkAgQPDxYCHwUFBFNpY2tkZAIFDw8WBB8FBQFFHgdUb29sVGlwBQdFeGN1c2VkZGQCAg9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD0yRjc2NkY3MTQ0NkUzOTM5NEUzNDJCMzkzMTM0NzMzMDc1NTM2QjVBNzYzMDMwNDY3MTM0NDEzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc3NEY1MTNEM0QfEAUOV2VkIDExLzA5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFCEhSLDAyLDA0ZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBQRTaWNrZGQCBQ8PFgQfBQUBRR8RBQdFeGN1c2VkZGQCAw9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00RDU5MzYzNDU5NkY3QTUyMzI0QzcyNTgzNzczNjc0NDRGNjQ0NTRBNDk0QTc5NDM2QTc3MzgzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENDQ2Qjc4NEY1MTNEM0QfEAUOTW9uIDA5LzE5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFAkhSZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBRpObyBQYXJlbnQvR3VhcmRpYW4gQ29udGFjdGRkAgUPDxYEHwUFAVUfEQUJVW5leGN1c2VkZGQCBA8PFgIfDWhkZBgCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZEF0dGVuZGFuY2UPPCsADAEIAgFkBQ1jdGwwMCRuYXZNZW51Dw9kBR5TdHVkZW50IEluZm9ybWF0aW9uXEF0dGVuZGFuY2Vk5Ewh97Dc9XIfmWW8dVnfXaPwDnc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=kSwQd1GbJe_WoTOW2g2ylTtUnLiTtXslXQ86FFXeu_ac6L6DUzbYjbfqVWRkFjWK98V3VQA9Ef5KlwnYgiDynNnU76g1&amp;t=635875293181218729" type="text/javascript"></script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=MEfoYUSMmKN0mA04YFvA_G8UmNUW-HnsN65YXJyu5yYfeds2pl7g-DY-myjLdt01pvscZ3L_CHUDJt6k_AkE1eJM4LmF7us0SZSNxgPQDLd9wBNcXlYji835bxZtdSyCi3Ofeg2&amp;t=1c6690ce" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=uYynn0I5s7UF3X9c7yOpM6Q8ZAN5TJrnIki3bcmaXSxSBj5C2kZ2AkXnG6yVnpZnaWYQP8LBgNi0E_KWszgchKlRbK6f2iWVBv0yDrhAhmVStD1POKeindeCjD7U2AEykCFk0K8pL5CE2lP9hq0_D-_o4WA1&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=WEIhJ0IchRHEDsRDLEWlk03S-MCvQknAbqIwjyn48ygQ-DOMSa0FeX2Gdem5OJVMOk9KCKHWFWzHNCcEXTSdaSAvJciemDraHvBNJFf73P1GgiVWwHFTGUdKkm4zGPpEVu-SBKsP4Oxg1KBXRP_75ee4Ibtf3E07aUgAfP9kIqI1mpY80&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1QHAqDkq4wyFhsIU7Qwae8Ywi7yLzSMPtTpZzibVl16zKSuToyGoKGP66qfVhPvYkvjOF9hRp1MRQR7XJ+8mk4B7sQdmiF5dJ03SIvYi6ZVAbSUIN+a3omTepQWqVZTfeghx4i3UQYVP0QILFJTizeZP9ILPgRbJbOfN+QgoC/3X90OGjZ6SSrMzis1LMQXc2ZfpjPjhVL0ALP0AC55PRiwZ7NqCvrwz4aY4L9+V2IEhNLW8dcQT4A3SdETgY+6zycAwY/p9SV5jH3E7cTC9PjmR7H5WGQcYCcU4uytVEQEAtELs8=" />
+</div>
+        <div id="MasterPageWrapper">
+            <div id="MasterContentWrapper">
+                <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContextUpdatePanel','','tctl00$MainContentUpdatePanel',''], ['ctl00$ScriptManager1','','ctl00$ddStudentList','','ctl00$ddStudentAcadSession',''], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=9pTVkv_t4xQFv1rIhvpMXon6PTgGEyGkMrnZJEJnHvmZIQRx8NI3tCKRYR3ypwDie6YqZg2" style="display:none;">
+
+</iframe>
+                <div id="MasterHeader">
+                    <div id="MasterHeaderContent">
+                        <div id="MasterHeaderLogo">
+                            <img id="ctl00_headerImage" alt="Sti Information Now Home Portal" src="../Resources/images/logo.png" style="height:47px;width:209px;border-width:0px;top: 0px;" />
+                        </div>
+                        <div id="MasterHeaderOptions">
+                            <ul>
+                                <li>
+                                    <a id="ctl00_lnkHelp" Name="lnkHelp" href="javascript:__doPostBack(&#39;ctl00$lnkHelp&#39;,&#39;&#39;)">Help</a></li>
+                                <li>
+                                    <a id="ctl00_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div id="MasterHeaderLogin">
+                            Welcome
+                            <span id="ctl00_LoginName1">jlin452</span>
+                            !
+                        </div>
+                        <div id="ctl00_ContextUpdatePanel">
+	
+                                <div id="MasterHeaderContext">
+                                    <ul style="clear: right; float: right;">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label1">Student</label>
+                                            <select name="ctl00$ddStudentList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentList">
+		<option selected="selected" value="3198">Chen, Tianfeng</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear: right; float: right">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label2">School/Academic Session</label>
+                                            <select name="ctl00$ddStudentAcadSession" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentAcadSession\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentAcadSession">
+		<option value="12">Rockland Country Day... | 2015-2016</option>
+		<option selected="selected" value="15">Rockland Country Day... | 2016-2017</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+</div>
+                    </div>
+                </div>
+                <div id="MasterMain">
+                    <!-- TODO:JBW Look at creating custom Menu control due to aspMenu using tabular layout. Also, aspMenu renders different code output in Safari and Chrome -->
+                    <div id="MasterNavMenu">
+                        <table id="ctl00_navMenu" class="menu ctl00_navMenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr id="ctl00_navMenun0">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun1">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Default.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Home Page</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun2">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/School/Calendar.aspx" style="border-style:none;font-size:1em;margin-left:16px;">School Calendar</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun3">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Student Information</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun4">
+				<td><table class="menuItem ctl00_navMenu_6 menuSelected ctl00_navMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5 menuSelected ctl00_navMenu_9" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Attendance</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun5">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Grades</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun6">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Schedule.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Schedule</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun7">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Reports</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun8">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Reporting/Reports/ComprehensiveProgress.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Comprehensive Progress</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun9">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">System Preferences</a></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                        
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            <div id="MasterBodyContent">
+                                <div id="MasterStudentHeader">
+                                    <div id="MasterStudentHeaderBreadcrumbs">
+                                        <span id="ctl00_studentBreadcrumbs"><a href="#ctl00_studentBreadcrumbs_SkipLink"><img alt="Skip Navigation Links" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=m_ctRK0xwhqQAHzbSjI_LenJoGySSdrnqh_F_1lPwtG6-ph_HgbkLIYC7eLAJwfrre13vHpXWcP4D07Xnva2X6apZm81&amp;t=635875293181218729" width="0" height="0" style="border-width:0px;" /></a><span>
+                                                Chen, Tianfeng
+                                            </span><span> &gt; </span><span><a>Student Information</a></span><span> &gt; </span><span>Attendance</span><a id="ctl00_studentBreadcrumbs_SkipLink"></a></span>
+                                    </div>
+                                    <div style="float: right">
+                                        
+                                    </div>
+                                </div>
+                                <span id="ctl00_MasterValidationErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterInfoLabel" style="display:inline-block;color:Blue;width:100%;display: none;"></span>
+                                <div id="ctl00_MasterValidationSummary" class="ErrorLabelDivision" style="color:Red;display:none;">
+
+	</div>
+                                <div id="MasterChildContent">
+                                    
+    <a href="PeriodAttendance.aspx" id="ctl00_ContentPlaceHolder1_lnkPeriodAttendance">View Period Absences</a> &nbsp;
+    <a href="CheckInCheckOut.aspx" id="ctl00_ContentPlaceHolder1_lnkCheckIn">View Check In/Check Out</a>
+    <div class="Nugget">
+        <ul>
+            <li class="textbox">
+                <label for="ctl00_ContentPlaceHolder1_ddTermList" id="ctl00_ContentPlaceHolder1_Label2">Term</label>
+                <select name="ctl00$ContentPlaceHolder1$ddTermList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddTermList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ddTermList" style="width:20em;">
+		<option selected="selected" value="0">ALL</option>
+		<option value="32">TERM 1</option>
+		<option value="33">TERM 2</option>
+		<option value="34">TERM 3</option>
+
+	</select>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<table class="grid" cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grdAttendance" style="color:#333333;width:100%;border-collapse:collapse;">
+			<tr class="gridHeader" align="left" style="color:Black;font-weight:bold;">
+				<th scope="col">Date</th><th scope="col">Term</th><th scope="col">Period(s)</th><th scope="col">Level</th><th scope="col">Reason</th><th scope="col">Cat</th>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4745574F766B665859504C5072376B6D547539664D5A5139474B343D2D55464A4A545546535756394A524430794D4445324D5445784D413D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl02_lnkDetail">Thu 11/10/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,01,02,03,04,05,06,07,08</td><td style="width:8%;">All Day</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridAlternatingRow" style="color:#284775;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=2F766F71446E39394E342B393134733075536B5A763030467134413D2D55464A4A545546535756394A524430794D4445324D5445774F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl03_lnkDetail">Wed 11/09/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,02,04</td><td style="width:8%;">Tardy</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4D593634596F7A52324C7258377367444F64454A494A79436A77383D2D55464A4A545546535756394A524430794D4445324D446B784F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl04_lnkDetail">Mon 09/19/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR</td><td style="width:8%;">Tardy</td><td style="width:20%;">No Parent/Guardian Contact</td><td title="Unexcused" style="width:5%;">U</td>
+			</tr>
+		</table>
+	</div>    
+
+                                </div>
+                            </div>
+                        
+</div>
+                    <div id="ctl00_progressBar" style="display:none;">
+	
+                            <span class="ProgressBar">Loading...</span>
+                        
+</div>
+                </div>
+            </div>
+            <div id="MasterFooter">
+                <div id="footerCopyright">
+                    
+                    COPYRIGHT &copy; 2017 <a href="www.Chalkable.com">Chalkable</a>&nbsp;&nbsp;
+                <span style="cursor: pointer; text-decoration: underline;"><a id="TermsAndConditions"
+                    href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Terms.aspx" title="Terms of Use">
+                    Terms of Use</a></span>
+                </div>
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_MasterValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_MasterValidationSummary = document.all ? document.all["ctl00_MasterValidationSummary"] : document.getElementById("ctl00_MasterValidationSummary");
+ctl00_MasterValidationSummary.displaymode = "List";
+//]]>
+</script>
+
+<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-68126126-1', {'cookieDomain':'auto'});ga('send', 'pageview', {'page': '/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx'});</script>
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_navMenu_Data = new Object();
+ctl00_navMenu_Data.disappearAfter = 500;
+ctl00_navMenu_Data.horizontalOffset = 0;
+ctl00_navMenu_Data.verticalOffset = 0;
+ctl00_navMenu_Data.staticHoverClass = 'ctl00_navMenu_12 menuHover';
+ctl00_navMenu_Data.staticHoverHyperLinkClass = 'ctl00_navMenu_11 menuHover';
+ctl00_navMenu_Data.iframeUrl = '/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=EZrn4vvCn9VoUyZMJnowC3c9FkiIm0FWmD8nkplhliiyamXoHhFPuaGglt6A4UyA00S_bjIr_r1kQs7PohAc6LpSbxA1&t=635875293181218729';
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_MasterValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":0,"dynamicLayout":true}, null, null, $get("ctl00_progressBar"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	STI InformationNow Home Portal
+</title>
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/Grid.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/Grid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#TermsAndConditions').each(function () {
+
+                var $link = $(this);
+
+                $link.click(function () {
+
+                    // Only load terms.aspx when the Terms link has been clicked
+                    var $dialog = $('<div style="font-size:10pt;"></div>').load($link.attr('href') + ' div[id$="TermsContent"]').dialog({
+
+                        autoOpen: false,
+                        open: function (event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        title: $link.attr('title'),
+                        width: 500,
+                        height: 500,
+                        modal: true,
+                        buttons: {
+                            "Agree": function () {
+                                $dialog.dialog("close");
+                            }
+                        }
+                    });
+
+                    $dialog.dialog('open');
+                    return false;
+                });
+            });
+
+            $("[Name='lnkHelp']").click(
+         function () {
+             mixpanel.track("Help Accessed");
+         });
+
+        });
+
+
+
+
+    </script>
+
+    
+<style type="text/css">
+	.ctl00_navMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_navMenu_1 { text-decoration:none; }
+	.ctl00_navMenu_2 {  }
+	.ctl00_navMenu_3 { border-style:none; }
+	.ctl00_navMenu_4 {  }
+	.ctl00_navMenu_5 { border-style:none; }
+	.ctl00_navMenu_6 {  }
+	.ctl00_navMenu_7 {  }
+	.ctl00_navMenu_8 {  }
+	.ctl00_navMenu_9 { border-style:none; }
+	.ctl00_navMenu_10 {  }
+	.ctl00_navMenu_11 { border-style:none; }
+	.ctl00_navMenu_12 {  }
+
+</style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./Attendance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDM4Mzk3MTMxDxYEHgZUZXJtSWRkHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPZBYGAgYPZBYCZg9kFgQCAw8QDxYGHg1EYXRhVGV4dEZpZWxkBQtTdHVkZW50TmFtZR4ORGF0YVZhbHVlRmllbGQFCVN0dWRlbnRJRB4LXyFEYXRhQm91bmRnZBAVAQ5DaGVuLCBUaWFuZmVuZxUBBDMxOTgUKwMBZxYBZmQCBw8QDxYGHwIFCEFjYWROYW1lHwMFDUFjYWRTZXNzaW9uSUQfBGdkEBUCI1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNS0yMDE2I1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNi0yMDE3FQICMTICMTUUKwMCZ2cWAQIBZAIHDxQrAA0PFgIfBGdkZGRkZGRkZGQQFgAWAGQQFgAWAGRkFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYMHgRUZXh0BQRIb21lHgVWYWx1ZQUESG9tZR4HRW5hYmxlZGceClNlbGVjdGFibGVoHghEYXRhUGF0aAUkYmIwNWFmZDgtZTUwMC00ZTM0LTk4ODktMDgyNzhlNjc3ZmMzHglEYXRhQm91bmRnFCsAAwUHMDowLDA6MRQrAAIWDh8FBQlIb21lIFBhZ2UfBgUJSG9tZSBQYWdlHgtOYXZpZ2F0ZVVybAU5L0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvRGVmYXVsdC5hc3B4HwdnHwhnHwkFOS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL2RlZmF1bHQuYXNweB8KZ2QUKwACFg4fBQUPU2Nob29sIENhbGVuZGFyHwYFD1NjaG9vbCBDYWxlbmRhch8LBUEvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TY2hvb2wvQ2FsZW5kYXIuYXNweB8HZx8IZx8JBUEvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zY2hvb2wvY2FsZW5kYXIuYXNweB8KZ2QUKwACFgwfBQUTU3R1ZGVudCBJbmZvcm1hdGlvbh8GBRNTdHVkZW50IEluZm9ybWF0aW9uHwdnHwhoHwkFJDRjN2U2ZTY1LWVmOGQtNDg5MC04OThlLTNkOTRjM2Q3NzdiNB8KZxQrAAQFKzA6MCwwOjEsMToxLDA6MSwxOjEsMDoxLDE6MSwwOjEsMDoyLDE6MiwwOjIUKwACFhAfBQUKQXR0ZW5kYW5jZR8GBQpBdHRlbmRhbmNlHwsFRC9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1N0dWRlbnQvQXR0ZW5kYW5jZS5hc3B4HwdnHwhnHwkFRC9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3N0dWRlbnQvYXR0ZW5kYW5jZS5hc3B4HwpnHghTZWxlY3RlZGdkFCsAAhYOHwUFBkdyYWRlcx8GBQZHcmFkZXMfCwVAL0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvU3R1ZGVudC9HcmFkZXMuYXNweB8HZx8IZx8JBUAvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zdHVkZW50L2dyYWRlcy5hc3B4HwpnZBQrAAIWDh8FBQhTY2hlZHVsZR8GBQhTY2hlZHVsZR8LBUIvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TdHVkZW50L1NjaGVkdWxlLmFzcHgfB2cfCGcfCQVCL2luZm9ybWF0aW9ubm93L3BhcmVudHBvcnRhbC9zdGkuaG9tZS51aS53ZWIvc3R1ZGVudC9zY2hlZHVsZS5hc3B4HwpnZBQrAAIWDB8FBQdSZXBvcnRzHwYFB1JlcG9ydHMfB2cfCGgfCQUkMzAxZDkxM2MtMmQwZi00YjRhLWEwZTQtMmZhNmVkNTg2MzBkHwpnFCsAAgUjMDowLDE6MCwwOjAsMDoxLDE6MSwwOjEsMToxLDA6MSwxOjEUKwACFg4fBQUWQ29tcHJlaGVuc2l2ZSBQcm9ncmVzcx8GBRZDb21wcmVoZW5zaXZlIFByb2dyZXNzHwsFWS9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1JlcG9ydGluZy9SZXBvcnRzL0NvbXByZWhlbnNpdmVQcm9ncmVzcy5hc3B4HwdnHwhnHwkFWS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3JlcG9ydGluZy9yZXBvcnRzL2NvbXByZWhlbnNpdmVwcm9ncmVzcy5hc3B4HwpnZBQrAAIWDB8FBRJTeXN0ZW0gUHJlZmVyZW5jZXMfBgUSU3lzdGVtIFByZWZlcmVuY2VzHwdnHwhoHwkFJDMwOWM5YjM3LTU2NTQtNDk5ZC04OWYxLTMzNmZjNzIxOWM2Nh8KZxQrAAEFBzA6MCwxOjBkAgkPZBYCZg9kFggCAw8PFgIeB1Zpc2libGVoZGQCBQ8PFgIfBWVkZAIJDw8WAh8FZWRkAg0PZBYEAgcPEA8WBh8CBQhUZXJtTmFtZR8DBQZUZXJtSWQfBGdkEBUEA0FMTAZURVJNIDEGVEVSTSAyBlRFUk0gMxUEATACMzICMzMCMzQUKwMEZ2dnZxYBZmQCCQ88KwARAwAPFgQfBGceC18hSXRlbUNvdW50AgNkARAWAQIGFgE8KwAFAQAWAh8NaBYBZgwUKwAAFgJmD2QWCAIBD2QWDGYPZBYCAgEPFgQeBGhyZWYFigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00NzQ1NTc0Rjc2NkI2NjU4NTk1MDRDNTA3MjM3NkI2RDU0NzUzOTY2NEQ1QTUxMzk0NzRCMzQzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc4NEQ0MTNEM0QeCWlubmVyaHRtbAUOVGh1IDExLzEwLzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFGkhSLDAxLDAyLDAzLDA0LDA1LDA2LDA3LDA4ZGQCAw8PFgIfBQUHQWxsIERheWRkAgQPDxYCHwUFBFNpY2tkZAIFDw8WBB8FBQFFHgdUb29sVGlwBQdFeGN1c2VkZGQCAg9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD0yRjc2NkY3MTQ0NkUzOTM5NEUzNDJCMzkzMTM0NzMzMDc1NTM2QjVBNzYzMDMwNDY3MTM0NDEzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc3NEY1MTNEM0QfEAUOV2VkIDExLzA5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFCEhSLDAyLDA0ZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBQRTaWNrZGQCBQ8PFgQfBQUBRR8RBQdFeGN1c2VkZGQCAw9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00RDU5MzYzNDU5NkY3QTUyMzI0QzcyNTgzNzczNjc0NDRGNjQ0NTRBNDk0QTc5NDM2QTc3MzgzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENDQ2Qjc4NEY1MTNEM0QfEAUOTW9uIDA5LzE5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFAkhSZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBRpObyBQYXJlbnQvR3VhcmRpYW4gQ29udGFjdGRkAgUPDxYEHwUFAVUfEQUJVW5leGN1c2VkZGQCBA8PFgIfDWhkZBgCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZEF0dGVuZGFuY2UPPCsADAEIAgFkBQ1jdGwwMCRuYXZNZW51Dw9kBR5TdHVkZW50IEluZm9ybWF0aW9uXEF0dGVuZGFuY2Vk5Ewh97Dc9XIfmWW8dVnfXaPwDnc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=kSwQd1GbJe_WoTOW2g2ylTtUnLiTtXslXQ86FFXeu_ac6L6DUzbYjbfqVWRkFjWK98V3VQA9Ef5KlwnYgiDynNnU76g1&amp;t=635875293181218729" type="text/javascript"></script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=MEfoYUSMmKN0mA04YFvA_G8UmNUW-HnsN65YXJyu5yYfeds2pl7g-DY-myjLdt01pvscZ3L_CHUDJt6k_AkE1eJM4LmF7us0SZSNxgPQDLd9wBNcXlYji835bxZtdSyCi3Ofeg2&amp;t=1c6690ce" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=uYynn0I5s7UF3X9c7yOpM6Q8ZAN5TJrnIki3bcmaXSxSBj5C2kZ2AkXnG6yVnpZnaWYQP8LBgNi0E_KWszgchKlRbK6f2iWVBv0yDrhAhmVStD1POKeindeCjD7U2AEykCFk0K8pL5CE2lP9hq0_D-_o4WA1&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=WEIhJ0IchRHEDsRDLEWlk03S-MCvQknAbqIwjyn48ygQ-DOMSa0FeX2Gdem5OJVMOk9KCKHWFWzHNCcEXTSdaSAvJciemDraHvBNJFf73P1GgiVWwHFTGUdKkm4zGPpEVu-SBKsP4Oxg1KBXRP_75ee4Ibtf3E07aUgAfP9kIqI1mpY80&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1QHAqDkq4wyFhsIU7Qwae8Ywi7yLzSMPtTpZzibVl16zKSuToyGoKGP66qfVhPvYkvjOF9hRp1MRQR7XJ+8mk4B7sQdmiF5dJ03SIvYi6ZVAbSUIN+a3omTepQWqVZTfeghx4i3UQYVP0QILFJTizeZP9ILPgRbJbOfN+QgoC/3X90OGjZ6SSrMzis1LMQXc2ZfpjPjhVL0ALP0AC55PRiwZ7NqCvrwz4aY4L9+V2IEhNLW8dcQT4A3SdETgY+6zycAwY/p9SV5jH3E7cTC9PjmR7H5WGQcYCcU4uytVEQEAtELs8=" />
+</div>
+        <div id="MasterPageWrapper">
+            <div id="MasterContentWrapper">
+                <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContextUpdatePanel','','tctl00$MainContentUpdatePanel',''], ['ctl00$ScriptManager1','','ctl00$ddStudentList','','ctl00$ddStudentAcadSession',''], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=9pTVkv_t4xQFv1rIhvpMXon6PTgGEyGkMrnZJEJnHvmZIQRx8NI3tCKRYR3ypwDie6YqZg2" style="display:none;">
+
+</iframe>
+                <div id="MasterHeader">
+                    <div id="MasterHeaderContent">
+                        <div id="MasterHeaderLogo">
+                            <img id="ctl00_headerImage" alt="Sti Information Now Home Portal" src="../Resources/images/logo.png" style="height:47px;width:209px;border-width:0px;top: 0px;" />
+                        </div>
+                        <div id="MasterHeaderOptions">
+                            <ul>
+                                <li>
+                                    <a id="ctl00_lnkHelp" Name="lnkHelp" href="javascript:__doPostBack(&#39;ctl00$lnkHelp&#39;,&#39;&#39;)">Help</a></li>
+                                <li>
+                                    <a id="ctl00_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div id="MasterHeaderLogin">
+                            Welcome
+                            <span id="ctl00_LoginName1">jlin452</span>
+                            !
+                        </div>
+                        <div id="ctl00_ContextUpdatePanel">
+	
+                                <div id="MasterHeaderContext">
+                                    <ul style="clear: right; float: right;">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label1">Student</label>
+                                            <select name="ctl00$ddStudentList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentList">
+		<option selected="selected" value="3198">Chen, Tianfeng</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear: right; float: right">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label2">School/Academic Session</label>
+                                            <select name="ctl00$ddStudentAcadSession" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentAcadSession\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentAcadSession">
+		<option value="12">Rockland Country Day... | 2015-2016</option>
+		<option selected="selected" value="15">Rockland Country Day... | 2016-2017</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+</div>
+                    </div>
+                </div>
+                <div id="MasterMain">
+                    <!-- TODO:JBW Look at creating custom Menu control due to aspMenu using tabular layout. Also, aspMenu renders different code output in Safari and Chrome -->
+                    <div id="MasterNavMenu">
+                        <table id="ctl00_navMenu" class="menu ctl00_navMenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr id="ctl00_navMenun0">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun1">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Default.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Home Page</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun2">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/School/Calendar.aspx" style="border-style:none;font-size:1em;margin-left:16px;">School Calendar</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun3">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Student Information</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun4">
+				<td><table class="menuItem ctl00_navMenu_6 menuSelected ctl00_navMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5 menuSelected ctl00_navMenu_9" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Attendance</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun5">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Grades</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun6">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Schedule.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Schedule</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun7">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Reports</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun8">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Reporting/Reports/ComprehensiveProgress.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Comprehensive Progress</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun9">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">System Preferences</a></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                        
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            <div id="MasterBodyContent">
+                                <div id="MasterStudentHeader">
+                                    <div id="MasterStudentHeaderBreadcrumbs">
+                                        <span id="ctl00_studentBreadcrumbs"><a href="#ctl00_studentBreadcrumbs_SkipLink"><img alt="Skip Navigation Links" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=m_ctRK0xwhqQAHzbSjI_LenJoGySSdrnqh_F_1lPwtG6-ph_HgbkLIYC7eLAJwfrre13vHpXWcP4D07Xnva2X6apZm81&amp;t=635875293181218729" width="0" height="0" style="border-width:0px;" /></a><span>
+                                                Chen, Tianfeng
+                                            </span><span> &gt; </span><span><a>Student Information</a></span><span> &gt; </span><span>Attendance</span><a id="ctl00_studentBreadcrumbs_SkipLink"></a></span>
+                                    </div>
+                                    <div style="float: right">
+                                        
+                                    </div>
+                                </div>
+                                <span id="ctl00_MasterValidationErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterInfoLabel" style="display:inline-block;color:Blue;width:100%;display: none;"></span>
+                                <div id="ctl00_MasterValidationSummary" class="ErrorLabelDivision" style="color:Red;display:none;">
+
+	</div>
+                                <div id="MasterChildContent">
+                                    
+    <a href="PeriodAttendance.aspx" id="ctl00_ContentPlaceHolder1_lnkPeriodAttendance">View Period Absences</a> &nbsp;
+    <a href="CheckInCheckOut.aspx" id="ctl00_ContentPlaceHolder1_lnkCheckIn">View Check In/Check Out</a>
+    <div class="Nugget">
+        <ul>
+            <li class="textbox">
+                <label for="ctl00_ContentPlaceHolder1_ddTermList" id="ctl00_ContentPlaceHolder1_Label2">Term</label>
+                <select name="ctl00$ContentPlaceHolder1$ddTermList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddTermList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ddTermList" style="width:20em;">
+		<option selected="selected" value="0">ALL</option>
+		<option value="32">TERM 1</option>
+		<option value="33">TERM 2</option>
+		<option value="34">TERM 3</option>
+
+	</select>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<table class="grid" cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grdAttendance" style="color:#333333;width:100%;border-collapse:collapse;">
+			<tr class="gridHeader" align="left" style="color:Black;font-weight:bold;">
+				<th scope="col">Date</th><th scope="col">Term</th><th scope="col">Period(s)</th><th scope="col">Level</th><th scope="col">Reason</th><th scope="col">Cat</th>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4745574F766B665859504C5072376B6D547539664D5A5139474B343D2D55464A4A545546535756394A524430794D4445324D5445784D413D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl02_lnkDetail">Thu 11/10/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,01,02,03,04,05,06,07,08</td><td style="width:8%;">All Day</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridAlternatingRow" style="color:#284775;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=2F766F71446E39394E342B393134733075536B5A763030467134413D2D55464A4A545546535756394A524430794D4445324D5445774F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl03_lnkDetail">Wed 11/09/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,02,04</td><td style="width:8%;">Tardy</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4D593634596F7A52324C7258377367444F64454A494A79436A77383D2D55464A4A545546535756394A524430794D4445324D446B784F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl04_lnkDetail">Mon 09/19/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR</td><td style="width:8%;">Tardy</td><td style="width:20%;">No Parent/Guardian Contact</td><td title="Unexcused" style="width:5%;">U</td>
+			</tr>
+		</table>
+	</div>    
+
+                                </div>
+                            </div>
+                        
+</div>
+                    <div id="ctl00_progressBar" style="display:none;">
+	
+                            <span class="ProgressBar">Loading...</span>
+                        
+</div>
+                </div>
+            </div>
+            <div id="MasterFooter">
+                <div id="footerCopyright">
+                    
+                    COPYRIGHT &copy; 2017 <a href="www.Chalkable.com">Chalkable</a>&nbsp;&nbsp;
+                <span style="cursor: pointer; text-decoration: underline;"><a id="TermsAndConditions"
+                    href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Terms.aspx" title="Terms of Use">
+                    Terms of Use</a></span>
+                </div>
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_MasterValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_MasterValidationSummary = document.all ? document.all["ctl00_MasterValidationSummary"] : document.getElementById("ctl00_MasterValidationSummary");
+ctl00_MasterValidationSummary.displaymode = "List";
+//]]>
+</script>
+
+<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-68126126-1', {'cookieDomain':'auto'});ga('send', 'pageview', {'page': '/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx'});</script>
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_navMenu_Data = new Object();
+ctl00_navMenu_Data.disappearAfter = 500;
+ctl00_navMenu_Data.horizontalOffset = 0;
+ctl00_navMenu_Data.verticalOffset = 0;
+ctl00_navMenu_Data.staticHoverClass = 'ctl00_navMenu_12 menuHover';
+ctl00_navMenu_Data.staticHoverHyperLinkClass = 'ctl00_navMenu_11 menuHover';
+ctl00_navMenu_Data.iframeUrl = '/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=EZrn4vvCn9VoUyZMJnowC3c9FkiIm0FWmD8nkplhliiyamXoHhFPuaGglt6A4UyA00S_bjIr_r1kQs7PohAc6LpSbxA1&t=635875293181218729';
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_MasterValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":0,"dynamicLayout":true}, null, null, $get("ctl00_progressBar"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	STI InformationNow Home Portal
+</title>
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/Grid.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/Grid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#TermsAndConditions').each(function () {
+
+                var $link = $(this);
+
+                $link.click(function () {
+
+                    // Only load terms.aspx when the Terms link has been clicked
+                    var $dialog = $('<div style="font-size:10pt;"></div>').load($link.attr('href') + ' div[id$="TermsContent"]').dialog({
+
+                        autoOpen: false,
+                        open: function (event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        title: $link.attr('title'),
+                        width: 500,
+                        height: 500,
+                        modal: true,
+                        buttons: {
+                            "Agree": function () {
+                                $dialog.dialog("close");
+                            }
+                        }
+                    });
+
+                    $dialog.dialog('open');
+                    return false;
+                });
+            });
+
+            $("[Name='lnkHelp']").click(
+         function () {
+             mixpanel.track("Help Accessed");
+         });
+
+        });
+
+
+
+
+    </script>
+
+    
+<style type="text/css">
+	.ctl00_navMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_navMenu_1 { text-decoration:none; }
+	.ctl00_navMenu_2 {  }
+	.ctl00_navMenu_3 { border-style:none; }
+	.ctl00_navMenu_4 {  }
+	.ctl00_navMenu_5 { border-style:none; }
+	.ctl00_navMenu_6 {  }
+	.ctl00_navMenu_7 {  }
+	.ctl00_navMenu_8 {  }
+	.ctl00_navMenu_9 { border-style:none; }
+	.ctl00_navMenu_10 {  }
+	.ctl00_navMenu_11 { border-style:none; }
+	.ctl00_navMenu_12 {  }
+
+</style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./Attendance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDM4Mzk3MTMxDxYEHgZUZXJtSWRkHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPZBYGAgYPZBYCZg9kFgQCAw8QDxYGHg1EYXRhVGV4dEZpZWxkBQtTdHVkZW50TmFtZR4ORGF0YVZhbHVlRmllbGQFCVN0dWRlbnRJRB4LXyFEYXRhQm91bmRnZBAVAQ5DaGVuLCBUaWFuZmVuZxUBBDMxOTgUKwMBZxYBZmQCBw8QDxYGHwIFCEFjYWROYW1lHwMFDUFjYWRTZXNzaW9uSUQfBGdkEBUCI1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNS0yMDE2I1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNi0yMDE3FQICMTICMTUUKwMCZ2cWAQIBZAIHDxQrAA0PFgIfBGdkZGRkZGRkZGQQFgAWAGQQFgAWAGRkFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYMHgRUZXh0BQRIb21lHgVWYWx1ZQUESG9tZR4HRW5hYmxlZGceClNlbGVjdGFibGVoHghEYXRhUGF0aAUkYmIwNWFmZDgtZTUwMC00ZTM0LTk4ODktMDgyNzhlNjc3ZmMzHglEYXRhQm91bmRnFCsAAwUHMDowLDA6MRQrAAIWDh8FBQlIb21lIFBhZ2UfBgUJSG9tZSBQYWdlHgtOYXZpZ2F0ZVVybAU5L0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvRGVmYXVsdC5hc3B4HwdnHwhnHwkFOS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL2RlZmF1bHQuYXNweB8KZ2QUKwACFg4fBQUPU2Nob29sIENhbGVuZGFyHwYFD1NjaG9vbCBDYWxlbmRhch8LBUEvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TY2hvb2wvQ2FsZW5kYXIuYXNweB8HZx8IZx8JBUEvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zY2hvb2wvY2FsZW5kYXIuYXNweB8KZ2QUKwACFgwfBQUTU3R1ZGVudCBJbmZvcm1hdGlvbh8GBRNTdHVkZW50IEluZm9ybWF0aW9uHwdnHwhoHwkFJDRjN2U2ZTY1LWVmOGQtNDg5MC04OThlLTNkOTRjM2Q3NzdiNB8KZxQrAAQFKzA6MCwwOjEsMToxLDA6MSwxOjEsMDoxLDE6MSwwOjEsMDoyLDE6MiwwOjIUKwACFhAfBQUKQXR0ZW5kYW5jZR8GBQpBdHRlbmRhbmNlHwsFRC9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1N0dWRlbnQvQXR0ZW5kYW5jZS5hc3B4HwdnHwhnHwkFRC9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3N0dWRlbnQvYXR0ZW5kYW5jZS5hc3B4HwpnHghTZWxlY3RlZGdkFCsAAhYOHwUFBkdyYWRlcx8GBQZHcmFkZXMfCwVAL0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvU3R1ZGVudC9HcmFkZXMuYXNweB8HZx8IZx8JBUAvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zdHVkZW50L2dyYWRlcy5hc3B4HwpnZBQrAAIWDh8FBQhTY2hlZHVsZR8GBQhTY2hlZHVsZR8LBUIvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TdHVkZW50L1NjaGVkdWxlLmFzcHgfB2cfCGcfCQVCL2luZm9ybWF0aW9ubm93L3BhcmVudHBvcnRhbC9zdGkuaG9tZS51aS53ZWIvc3R1ZGVudC9zY2hlZHVsZS5hc3B4HwpnZBQrAAIWDB8FBQdSZXBvcnRzHwYFB1JlcG9ydHMfB2cfCGgfCQUkMzAxZDkxM2MtMmQwZi00YjRhLWEwZTQtMmZhNmVkNTg2MzBkHwpnFCsAAgUjMDowLDE6MCwwOjAsMDoxLDE6MSwwOjEsMToxLDA6MSwxOjEUKwACFg4fBQUWQ29tcHJlaGVuc2l2ZSBQcm9ncmVzcx8GBRZDb21wcmVoZW5zaXZlIFByb2dyZXNzHwsFWS9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1JlcG9ydGluZy9SZXBvcnRzL0NvbXByZWhlbnNpdmVQcm9ncmVzcy5hc3B4HwdnHwhnHwkFWS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3JlcG9ydGluZy9yZXBvcnRzL2NvbXByZWhlbnNpdmVwcm9ncmVzcy5hc3B4HwpnZBQrAAIWDB8FBRJTeXN0ZW0gUHJlZmVyZW5jZXMfBgUSU3lzdGVtIFByZWZlcmVuY2VzHwdnHwhoHwkFJDMwOWM5YjM3LTU2NTQtNDk5ZC04OWYxLTMzNmZjNzIxOWM2Nh8KZxQrAAEFBzA6MCwxOjBkAgkPZBYCZg9kFggCAw8PFgIeB1Zpc2libGVoZGQCBQ8PFgIfBWVkZAIJDw8WAh8FZWRkAg0PZBYEAgcPEA8WBh8CBQhUZXJtTmFtZR8DBQZUZXJtSWQfBGdkEBUEA0FMTAZURVJNIDEGVEVSTSAyBlRFUk0gMxUEATACMzICMzMCMzQUKwMEZ2dnZxYBZmQCCQ88KwARAwAPFgQfBGceC18hSXRlbUNvdW50AgNkARAWAQIGFgE8KwAFAQAWAh8NaBYBZgwUKwAAFgJmD2QWCAIBD2QWDGYPZBYCAgEPFgQeBGhyZWYFigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00NzQ1NTc0Rjc2NkI2NjU4NTk1MDRDNTA3MjM3NkI2RDU0NzUzOTY2NEQ1QTUxMzk0NzRCMzQzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc4NEQ0MTNEM0QeCWlubmVyaHRtbAUOVGh1IDExLzEwLzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFGkhSLDAxLDAyLDAzLDA0LDA1LDA2LDA3LDA4ZGQCAw8PFgIfBQUHQWxsIERheWRkAgQPDxYCHwUFBFNpY2tkZAIFDw8WBB8FBQFFHgdUb29sVGlwBQdFeGN1c2VkZGQCAg9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD0yRjc2NkY3MTQ0NkUzOTM5NEUzNDJCMzkzMTM0NzMzMDc1NTM2QjVBNzYzMDMwNDY3MTM0NDEzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc3NEY1MTNEM0QfEAUOV2VkIDExLzA5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFCEhSLDAyLDA0ZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBQRTaWNrZGQCBQ8PFgQfBQUBRR8RBQdFeGN1c2VkZGQCAw9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00RDU5MzYzNDU5NkY3QTUyMzI0QzcyNTgzNzczNjc0NDRGNjQ0NTRBNDk0QTc5NDM2QTc3MzgzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENDQ2Qjc4NEY1MTNEM0QfEAUOTW9uIDA5LzE5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFAkhSZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBRpObyBQYXJlbnQvR3VhcmRpYW4gQ29udGFjdGRkAgUPDxYEHwUFAVUfEQUJVW5leGN1c2VkZGQCBA8PFgIfDWhkZBgCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZEF0dGVuZGFuY2UPPCsADAEIAgFkBQ1jdGwwMCRuYXZNZW51Dw9kBR5TdHVkZW50IEluZm9ybWF0aW9uXEF0dGVuZGFuY2Vk5Ewh97Dc9XIfmWW8dVnfXaPwDnc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=kSwQd1GbJe_WoTOW2g2ylTtUnLiTtXslXQ86FFXeu_ac6L6DUzbYjbfqVWRkFjWK98V3VQA9Ef5KlwnYgiDynNnU76g1&amp;t=635875293181218729" type="text/javascript"></script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=MEfoYUSMmKN0mA04YFvA_G8UmNUW-HnsN65YXJyu5yYfeds2pl7g-DY-myjLdt01pvscZ3L_CHUDJt6k_AkE1eJM4LmF7us0SZSNxgPQDLd9wBNcXlYji835bxZtdSyCi3Ofeg2&amp;t=1c6690ce" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=uYynn0I5s7UF3X9c7yOpM6Q8ZAN5TJrnIki3bcmaXSxSBj5C2kZ2AkXnG6yVnpZnaWYQP8LBgNi0E_KWszgchKlRbK6f2iWVBv0yDrhAhmVStD1POKeindeCjD7U2AEykCFk0K8pL5CE2lP9hq0_D-_o4WA1&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=WEIhJ0IchRHEDsRDLEWlk03S-MCvQknAbqIwjyn48ygQ-DOMSa0FeX2Gdem5OJVMOk9KCKHWFWzHNCcEXTSdaSAvJciemDraHvBNJFf73P1GgiVWwHFTGUdKkm4zGPpEVu-SBKsP4Oxg1KBXRP_75ee4Ibtf3E07aUgAfP9kIqI1mpY80&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1QHAqDkq4wyFhsIU7Qwae8Ywi7yLzSMPtTpZzibVl16zKSuToyGoKGP66qfVhPvYkvjOF9hRp1MRQR7XJ+8mk4B7sQdmiF5dJ03SIvYi6ZVAbSUIN+a3omTepQWqVZTfeghx4i3UQYVP0QILFJTizeZP9ILPgRbJbOfN+QgoC/3X90OGjZ6SSrMzis1LMQXc2ZfpjPjhVL0ALP0AC55PRiwZ7NqCvrwz4aY4L9+V2IEhNLW8dcQT4A3SdETgY+6zycAwY/p9SV5jH3E7cTC9PjmR7H5WGQcYCcU4uytVEQEAtELs8=" />
+</div>
+        <div id="MasterPageWrapper">
+            <div id="MasterContentWrapper">
+                <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContextUpdatePanel','','tctl00$MainContentUpdatePanel',''], ['ctl00$ScriptManager1','','ctl00$ddStudentList','','ctl00$ddStudentAcadSession',''], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=9pTVkv_t4xQFv1rIhvpMXon6PTgGEyGkMrnZJEJnHvmZIQRx8NI3tCKRYR3ypwDie6YqZg2" style="display:none;">
+
+</iframe>
+                <div id="MasterHeader">
+                    <div id="MasterHeaderContent">
+                        <div id="MasterHeaderLogo">
+                            <img id="ctl00_headerImage" alt="Sti Information Now Home Portal" src="../Resources/images/logo.png" style="height:47px;width:209px;border-width:0px;top: 0px;" />
+                        </div>
+                        <div id="MasterHeaderOptions">
+                            <ul>
+                                <li>
+                                    <a id="ctl00_lnkHelp" Name="lnkHelp" href="javascript:__doPostBack(&#39;ctl00$lnkHelp&#39;,&#39;&#39;)">Help</a></li>
+                                <li>
+                                    <a id="ctl00_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div id="MasterHeaderLogin">
+                            Welcome
+                            <span id="ctl00_LoginName1">jlin452</span>
+                            !
+                        </div>
+                        <div id="ctl00_ContextUpdatePanel">
+	
+                                <div id="MasterHeaderContext">
+                                    <ul style="clear: right; float: right;">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label1">Student</label>
+                                            <select name="ctl00$ddStudentList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentList">
+		<option selected="selected" value="3198">Chen, Tianfeng</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear: right; float: right">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label2">School/Academic Session</label>
+                                            <select name="ctl00$ddStudentAcadSession" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentAcadSession\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentAcadSession">
+		<option value="12">Rockland Country Day... | 2015-2016</option>
+		<option selected="selected" value="15">Rockland Country Day... | 2016-2017</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+</div>
+                    </div>
+                </div>
+                <div id="MasterMain">
+                    <!-- TODO:JBW Look at creating custom Menu control due to aspMenu using tabular layout. Also, aspMenu renders different code output in Safari and Chrome -->
+                    <div id="MasterNavMenu">
+                        <table id="ctl00_navMenu" class="menu ctl00_navMenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr id="ctl00_navMenun0">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun1">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Default.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Home Page</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun2">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/School/Calendar.aspx" style="border-style:none;font-size:1em;margin-left:16px;">School Calendar</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun3">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Student Information</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun4">
+				<td><table class="menuItem ctl00_navMenu_6 menuSelected ctl00_navMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5 menuSelected ctl00_navMenu_9" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Attendance</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun5">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Grades</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun6">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Schedule.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Schedule</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun7">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Reports</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun8">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Reporting/Reports/ComprehensiveProgress.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Comprehensive Progress</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun9">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">System Preferences</a></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                        
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            <div id="MasterBodyContent">
+                                <div id="MasterStudentHeader">
+                                    <div id="MasterStudentHeaderBreadcrumbs">
+                                        <span id="ctl00_studentBreadcrumbs"><a href="#ctl00_studentBreadcrumbs_SkipLink"><img alt="Skip Navigation Links" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=m_ctRK0xwhqQAHzbSjI_LenJoGySSdrnqh_F_1lPwtG6-ph_HgbkLIYC7eLAJwfrre13vHpXWcP4D07Xnva2X6apZm81&amp;t=635875293181218729" width="0" height="0" style="border-width:0px;" /></a><span>
+                                                Chen, Tianfeng
+                                            </span><span> &gt; </span><span><a>Student Information</a></span><span> &gt; </span><span>Attendance</span><a id="ctl00_studentBreadcrumbs_SkipLink"></a></span>
+                                    </div>
+                                    <div style="float: right">
+                                        
+                                    </div>
+                                </div>
+                                <span id="ctl00_MasterValidationErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterInfoLabel" style="display:inline-block;color:Blue;width:100%;display: none;"></span>
+                                <div id="ctl00_MasterValidationSummary" class="ErrorLabelDivision" style="color:Red;display:none;">
+
+	</div>
+                                <div id="MasterChildContent">
+                                    
+    <a href="PeriodAttendance.aspx" id="ctl00_ContentPlaceHolder1_lnkPeriodAttendance">View Period Absences</a> &nbsp;
+    <a href="CheckInCheckOut.aspx" id="ctl00_ContentPlaceHolder1_lnkCheckIn">View Check In/Check Out</a>
+    <div class="Nugget">
+        <ul>
+            <li class="textbox">
+                <label for="ctl00_ContentPlaceHolder1_ddTermList" id="ctl00_ContentPlaceHolder1_Label2">Term</label>
+                <select name="ctl00$ContentPlaceHolder1$ddTermList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddTermList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ddTermList" style="width:20em;">
+		<option selected="selected" value="0">ALL</option>
+		<option value="32">TERM 1</option>
+		<option value="33">TERM 2</option>
+		<option value="34">TERM 3</option>
+
+	</select>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<table class="grid" cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grdAttendance" style="color:#333333;width:100%;border-collapse:collapse;">
+			<tr class="gridHeader" align="left" style="color:Black;font-weight:bold;">
+				<th scope="col">Date</th><th scope="col">Term</th><th scope="col">Period(s)</th><th scope="col">Level</th><th scope="col">Reason</th><th scope="col">Cat</th>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4745574F766B665859504C5072376B6D547539664D5A5139474B343D2D55464A4A545546535756394A524430794D4445324D5445784D413D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl02_lnkDetail">Thu 11/10/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,01,02,03,04,05,06,07,08</td><td style="width:8%;">All Day</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridAlternatingRow" style="color:#284775;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=2F766F71446E39394E342B393134733075536B5A763030467134413D2D55464A4A545546535756394A524430794D4445324D5445774F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl03_lnkDetail">Wed 11/09/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,02,04</td><td style="width:8%;">Tardy</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4D593634596F7A52324C7258377367444F64454A494A79436A77383D2D55464A4A545546535756394A524430794D4445324D446B784F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl04_lnkDetail">Mon 09/19/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR</td><td style="width:8%;">Tardy</td><td style="width:20%;">No Parent/Guardian Contact</td><td title="Unexcused" style="width:5%;">U</td>
+			</tr>
+		</table>
+	</div>    
+
+                                </div>
+                            </div>
+                        
+</div>
+                    <div id="ctl00_progressBar" style="display:none;">
+	
+                            <span class="ProgressBar">Loading...</span>
+                        
+</div>
+                </div>
+            </div>
+            <div id="MasterFooter">
+                <div id="footerCopyright">
+                    
+                    COPYRIGHT &copy; 2017 <a href="www.Chalkable.com">Chalkable</a>&nbsp;&nbsp;
+                <span style="cursor: pointer; text-decoration: underline;"><a id="TermsAndConditions"
+                    href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Terms.aspx" title="Terms of Use">
+                    Terms of Use</a></span>
+                </div>
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_MasterValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_MasterValidationSummary = document.all ? document.all["ctl00_MasterValidationSummary"] : document.getElementById("ctl00_MasterValidationSummary");
+ctl00_MasterValidationSummary.displaymode = "List";
+//]]>
+</script>
+
+<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-68126126-1', {'cookieDomain':'auto'});ga('send', 'pageview', {'page': '/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx'});</script>
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_navMenu_Data = new Object();
+ctl00_navMenu_Data.disappearAfter = 500;
+ctl00_navMenu_Data.horizontalOffset = 0;
+ctl00_navMenu_Data.verticalOffset = 0;
+ctl00_navMenu_Data.staticHoverClass = 'ctl00_navMenu_12 menuHover';
+ctl00_navMenu_Data.staticHoverHyperLinkClass = 'ctl00_navMenu_11 menuHover';
+ctl00_navMenu_Data.iframeUrl = '/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=EZrn4vvCn9VoUyZMJnowC3c9FkiIm0FWmD8nkplhliiyamXoHhFPuaGglt6A4UyA00S_bjIr_r1kQs7PohAc6LpSbxA1&t=635875293181218729';
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_MasterValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":0,"dynamicLayout":true}, null, null, $get("ctl00_progressBar"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	STI InformationNow Home Portal
+</title>
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/Grid.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/Grid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#TermsAndConditions').each(function () {
+
+                var $link = $(this);
+
+                $link.click(function () {
+
+                    // Only load terms.aspx when the Terms link has been clicked
+                    var $dialog = $('<div style="font-size:10pt;"></div>').load($link.attr('href') + ' div[id$="TermsContent"]').dialog({
+
+                        autoOpen: false,
+                        open: function (event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        title: $link.attr('title'),
+                        width: 500,
+                        height: 500,
+                        modal: true,
+                        buttons: {
+                            "Agree": function () {
+                                $dialog.dialog("close");
+                            }
+                        }
+                    });
+
+                    $dialog.dialog('open');
+                    return false;
+                });
+            });
+
+            $("[Name='lnkHelp']").click(
+         function () {
+             mixpanel.track("Help Accessed");
+         });
+
+        });
+
+
+
+
+    </script>
+
+    
+<style type="text/css">
+	.ctl00_navMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_navMenu_1 { text-decoration:none; }
+	.ctl00_navMenu_2 {  }
+	.ctl00_navMenu_3 { border-style:none; }
+	.ctl00_navMenu_4 {  }
+	.ctl00_navMenu_5 { border-style:none; }
+	.ctl00_navMenu_6 {  }
+	.ctl00_navMenu_7 {  }
+	.ctl00_navMenu_8 {  }
+	.ctl00_navMenu_9 { border-style:none; }
+	.ctl00_navMenu_10 {  }
+	.ctl00_navMenu_11 { border-style:none; }
+	.ctl00_navMenu_12 {  }
+
+</style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./Attendance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDM4Mzk3MTMxDxYEHgZUZXJtSWRkHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPZBYGAgYPZBYCZg9kFgQCAw8QDxYGHg1EYXRhVGV4dEZpZWxkBQtTdHVkZW50TmFtZR4ORGF0YVZhbHVlRmllbGQFCVN0dWRlbnRJRB4LXyFEYXRhQm91bmRnZBAVAQ5DaGVuLCBUaWFuZmVuZxUBBDMxOTgUKwMBZxYBZmQCBw8QDxYGHwIFCEFjYWROYW1lHwMFDUFjYWRTZXNzaW9uSUQfBGdkEBUCI1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNS0yMDE2I1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNi0yMDE3FQICMTICMTUUKwMCZ2cWAQIBZAIHDxQrAA0PFgIfBGdkZGRkZGRkZGQQFgAWAGQQFgAWAGRkFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYMHgRUZXh0BQRIb21lHgVWYWx1ZQUESG9tZR4HRW5hYmxlZGceClNlbGVjdGFibGVoHghEYXRhUGF0aAUkYmIwNWFmZDgtZTUwMC00ZTM0LTk4ODktMDgyNzhlNjc3ZmMzHglEYXRhQm91bmRnFCsAAwUHMDowLDA6MRQrAAIWDh8FBQlIb21lIFBhZ2UfBgUJSG9tZSBQYWdlHgtOYXZpZ2F0ZVVybAU5L0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvRGVmYXVsdC5hc3B4HwdnHwhnHwkFOS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL2RlZmF1bHQuYXNweB8KZ2QUKwACFg4fBQUPU2Nob29sIENhbGVuZGFyHwYFD1NjaG9vbCBDYWxlbmRhch8LBUEvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TY2hvb2wvQ2FsZW5kYXIuYXNweB8HZx8IZx8JBUEvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zY2hvb2wvY2FsZW5kYXIuYXNweB8KZ2QUKwACFgwfBQUTU3R1ZGVudCBJbmZvcm1hdGlvbh8GBRNTdHVkZW50IEluZm9ybWF0aW9uHwdnHwhoHwkFJDRjN2U2ZTY1LWVmOGQtNDg5MC04OThlLTNkOTRjM2Q3NzdiNB8KZxQrAAQFKzA6MCwwOjEsMToxLDA6MSwxOjEsMDoxLDE6MSwwOjEsMDoyLDE6MiwwOjIUKwACFhAfBQUKQXR0ZW5kYW5jZR8GBQpBdHRlbmRhbmNlHwsFRC9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1N0dWRlbnQvQXR0ZW5kYW5jZS5hc3B4HwdnHwhnHwkFRC9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3N0dWRlbnQvYXR0ZW5kYW5jZS5hc3B4HwpnHghTZWxlY3RlZGdkFCsAAhYOHwUFBkdyYWRlcx8GBQZHcmFkZXMfCwVAL0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvU3R1ZGVudC9HcmFkZXMuYXNweB8HZx8IZx8JBUAvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zdHVkZW50L2dyYWRlcy5hc3B4HwpnZBQrAAIWDh8FBQhTY2hlZHVsZR8GBQhTY2hlZHVsZR8LBUIvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TdHVkZW50L1NjaGVkdWxlLmFzcHgfB2cfCGcfCQVCL2luZm9ybWF0aW9ubm93L3BhcmVudHBvcnRhbC9zdGkuaG9tZS51aS53ZWIvc3R1ZGVudC9zY2hlZHVsZS5hc3B4HwpnZBQrAAIWDB8FBQdSZXBvcnRzHwYFB1JlcG9ydHMfB2cfCGgfCQUkMzAxZDkxM2MtMmQwZi00YjRhLWEwZTQtMmZhNmVkNTg2MzBkHwpnFCsAAgUjMDowLDE6MCwwOjAsMDoxLDE6MSwwOjEsMToxLDA6MSwxOjEUKwACFg4fBQUWQ29tcHJlaGVuc2l2ZSBQcm9ncmVzcx8GBRZDb21wcmVoZW5zaXZlIFByb2dyZXNzHwsFWS9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1JlcG9ydGluZy9SZXBvcnRzL0NvbXByZWhlbnNpdmVQcm9ncmVzcy5hc3B4HwdnHwhnHwkFWS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3JlcG9ydGluZy9yZXBvcnRzL2NvbXByZWhlbnNpdmVwcm9ncmVzcy5hc3B4HwpnZBQrAAIWDB8FBRJTeXN0ZW0gUHJlZmVyZW5jZXMfBgUSU3lzdGVtIFByZWZlcmVuY2VzHwdnHwhoHwkFJDMwOWM5YjM3LTU2NTQtNDk5ZC04OWYxLTMzNmZjNzIxOWM2Nh8KZxQrAAEFBzA6MCwxOjBkAgkPZBYCZg9kFggCAw8PFgIeB1Zpc2libGVoZGQCBQ8PFgIfBWVkZAIJDw8WAh8FZWRkAg0PZBYEAgcPEA8WBh8CBQhUZXJtTmFtZR8DBQZUZXJtSWQfBGdkEBUEA0FMTAZURVJNIDEGVEVSTSAyBlRFUk0gMxUEATACMzICMzMCMzQUKwMEZ2dnZxYBZmQCCQ88KwARAwAPFgQfBGceC18hSXRlbUNvdW50AgNkARAWAQIGFgE8KwAFAQAWAh8NaBYBZgwUKwAAFgJmD2QWCAIBD2QWDGYPZBYCAgEPFgQeBGhyZWYFigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00NzQ1NTc0Rjc2NkI2NjU4NTk1MDRDNTA3MjM3NkI2RDU0NzUzOTY2NEQ1QTUxMzk0NzRCMzQzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc4NEQ0MTNEM0QeCWlubmVyaHRtbAUOVGh1IDExLzEwLzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFGkhSLDAxLDAyLDAzLDA0LDA1LDA2LDA3LDA4ZGQCAw8PFgIfBQUHQWxsIERheWRkAgQPDxYCHwUFBFNpY2tkZAIFDw8WBB8FBQFFHgdUb29sVGlwBQdFeGN1c2VkZGQCAg9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD0yRjc2NkY3MTQ0NkUzOTM5NEUzNDJCMzkzMTM0NzMzMDc1NTM2QjVBNzYzMDMwNDY3MTM0NDEzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc3NEY1MTNEM0QfEAUOV2VkIDExLzA5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFCEhSLDAyLDA0ZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBQRTaWNrZGQCBQ8PFgQfBQUBRR8RBQdFeGN1c2VkZGQCAw9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00RDU5MzYzNDU5NkY3QTUyMzI0QzcyNTgzNzczNjc0NDRGNjQ0NTRBNDk0QTc5NDM2QTc3MzgzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENDQ2Qjc4NEY1MTNEM0QfEAUOTW9uIDA5LzE5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFAkhSZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBRpObyBQYXJlbnQvR3VhcmRpYW4gQ29udGFjdGRkAgUPDxYEHwUFAVUfEQUJVW5leGN1c2VkZGQCBA8PFgIfDWhkZBgCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZEF0dGVuZGFuY2UPPCsADAEIAgFkBQ1jdGwwMCRuYXZNZW51Dw9kBR5TdHVkZW50IEluZm9ybWF0aW9uXEF0dGVuZGFuY2Vk5Ewh97Dc9XIfmWW8dVnfXaPwDnc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=kSwQd1GbJe_WoTOW2g2ylTtUnLiTtXslXQ86FFXeu_ac6L6DUzbYjbfqVWRkFjWK98V3VQA9Ef5KlwnYgiDynNnU76g1&amp;t=635875293181218729" type="text/javascript"></script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=MEfoYUSMmKN0mA04YFvA_G8UmNUW-HnsN65YXJyu5yYfeds2pl7g-DY-myjLdt01pvscZ3L_CHUDJt6k_AkE1eJM4LmF7us0SZSNxgPQDLd9wBNcXlYji835bxZtdSyCi3Ofeg2&amp;t=1c6690ce" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=uYynn0I5s7UF3X9c7yOpM6Q8ZAN5TJrnIki3bcmaXSxSBj5C2kZ2AkXnG6yVnpZnaWYQP8LBgNi0E_KWszgchKlRbK6f2iWVBv0yDrhAhmVStD1POKeindeCjD7U2AEykCFk0K8pL5CE2lP9hq0_D-_o4WA1&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=WEIhJ0IchRHEDsRDLEWlk03S-MCvQknAbqIwjyn48ygQ-DOMSa0FeX2Gdem5OJVMOk9KCKHWFWzHNCcEXTSdaSAvJciemDraHvBNJFf73P1GgiVWwHFTGUdKkm4zGPpEVu-SBKsP4Oxg1KBXRP_75ee4Ibtf3E07aUgAfP9kIqI1mpY80&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1QHAqDkq4wyFhsIU7Qwae8Ywi7yLzSMPtTpZzibVl16zKSuToyGoKGP66qfVhPvYkvjOF9hRp1MRQR7XJ+8mk4B7sQdmiF5dJ03SIvYi6ZVAbSUIN+a3omTepQWqVZTfeghx4i3UQYVP0QILFJTizeZP9ILPgRbJbOfN+QgoC/3X90OGjZ6SSrMzis1LMQXc2ZfpjPjhVL0ALP0AC55PRiwZ7NqCvrwz4aY4L9+V2IEhNLW8dcQT4A3SdETgY+6zycAwY/p9SV5jH3E7cTC9PjmR7H5WGQcYCcU4uytVEQEAtELs8=" />
+</div>
+        <div id="MasterPageWrapper">
+            <div id="MasterContentWrapper">
+                <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContextUpdatePanel','','tctl00$MainContentUpdatePanel',''], ['ctl00$ScriptManager1','','ctl00$ddStudentList','','ctl00$ddStudentAcadSession',''], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=9pTVkv_t4xQFv1rIhvpMXon6PTgGEyGkMrnZJEJnHvmZIQRx8NI3tCKRYR3ypwDie6YqZg2" style="display:none;">
+
+</iframe>
+                <div id="MasterHeader">
+                    <div id="MasterHeaderContent">
+                        <div id="MasterHeaderLogo">
+                            <img id="ctl00_headerImage" alt="Sti Information Now Home Portal" src="../Resources/images/logo.png" style="height:47px;width:209px;border-width:0px;top: 0px;" />
+                        </div>
+                        <div id="MasterHeaderOptions">
+                            <ul>
+                                <li>
+                                    <a id="ctl00_lnkHelp" Name="lnkHelp" href="javascript:__doPostBack(&#39;ctl00$lnkHelp&#39;,&#39;&#39;)">Help</a></li>
+                                <li>
+                                    <a id="ctl00_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div id="MasterHeaderLogin">
+                            Welcome
+                            <span id="ctl00_LoginName1">jlin452</span>
+                            !
+                        </div>
+                        <div id="ctl00_ContextUpdatePanel">
+	
+                                <div id="MasterHeaderContext">
+                                    <ul style="clear: right; float: right;">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label1">Student</label>
+                                            <select name="ctl00$ddStudentList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentList">
+		<option selected="selected" value="3198">Chen, Tianfeng</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear: right; float: right">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label2">School/Academic Session</label>
+                                            <select name="ctl00$ddStudentAcadSession" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentAcadSession\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentAcadSession">
+		<option value="12">Rockland Country Day... | 2015-2016</option>
+		<option selected="selected" value="15">Rockland Country Day... | 2016-2017</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+</div>
+                    </div>
+                </div>
+                <div id="MasterMain">
+                    <!-- TODO:JBW Look at creating custom Menu control due to aspMenu using tabular layout. Also, aspMenu renders different code output in Safari and Chrome -->
+                    <div id="MasterNavMenu">
+                        <table id="ctl00_navMenu" class="menu ctl00_navMenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr id="ctl00_navMenun0">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun1">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Default.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Home Page</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun2">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/School/Calendar.aspx" style="border-style:none;font-size:1em;margin-left:16px;">School Calendar</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun3">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Student Information</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun4">
+				<td><table class="menuItem ctl00_navMenu_6 menuSelected ctl00_navMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5 menuSelected ctl00_navMenu_9" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Attendance</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun5">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Grades</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun6">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Schedule.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Schedule</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun7">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Reports</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun8">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Reporting/Reports/ComprehensiveProgress.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Comprehensive Progress</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun9">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">System Preferences</a></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                        
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            <div id="MasterBodyContent">
+                                <div id="MasterStudentHeader">
+                                    <div id="MasterStudentHeaderBreadcrumbs">
+                                        <span id="ctl00_studentBreadcrumbs"><a href="#ctl00_studentBreadcrumbs_SkipLink"><img alt="Skip Navigation Links" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=m_ctRK0xwhqQAHzbSjI_LenJoGySSdrnqh_F_1lPwtG6-ph_HgbkLIYC7eLAJwfrre13vHpXWcP4D07Xnva2X6apZm81&amp;t=635875293181218729" width="0" height="0" style="border-width:0px;" /></a><span>
+                                                Chen, Tianfeng
+                                            </span><span> &gt; </span><span><a>Student Information</a></span><span> &gt; </span><span>Attendance</span><a id="ctl00_studentBreadcrumbs_SkipLink"></a></span>
+                                    </div>
+                                    <div style="float: right">
+                                        
+                                    </div>
+                                </div>
+                                <span id="ctl00_MasterValidationErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterInfoLabel" style="display:inline-block;color:Blue;width:100%;display: none;"></span>
+                                <div id="ctl00_MasterValidationSummary" class="ErrorLabelDivision" style="color:Red;display:none;">
+
+	</div>
+                                <div id="MasterChildContent">
+                                    
+    <a href="PeriodAttendance.aspx" id="ctl00_ContentPlaceHolder1_lnkPeriodAttendance">View Period Absences</a> &nbsp;
+    <a href="CheckInCheckOut.aspx" id="ctl00_ContentPlaceHolder1_lnkCheckIn">View Check In/Check Out</a>
+    <div class="Nugget">
+        <ul>
+            <li class="textbox">
+                <label for="ctl00_ContentPlaceHolder1_ddTermList" id="ctl00_ContentPlaceHolder1_Label2">Term</label>
+                <select name="ctl00$ContentPlaceHolder1$ddTermList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddTermList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ddTermList" style="width:20em;">
+		<option selected="selected" value="0">ALL</option>
+		<option value="32">TERM 1</option>
+		<option value="33">TERM 2</option>
+		<option value="34">TERM 3</option>
+
+	</select>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<table class="grid" cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grdAttendance" style="color:#333333;width:100%;border-collapse:collapse;">
+			<tr class="gridHeader" align="left" style="color:Black;font-weight:bold;">
+				<th scope="col">Date</th><th scope="col">Term</th><th scope="col">Period(s)</th><th scope="col">Level</th><th scope="col">Reason</th><th scope="col">Cat</th>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4745574F766B665859504C5072376B6D547539664D5A5139474B343D2D55464A4A545546535756394A524430794D4445324D5445784D413D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl02_lnkDetail">Thu 11/10/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,01,02,03,04,05,06,07,08</td><td style="width:8%;">All Day</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridAlternatingRow" style="color:#284775;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=2F766F71446E39394E342B393134733075536B5A763030467134413D2D55464A4A545546535756394A524430794D4445324D5445774F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl03_lnkDetail">Wed 11/09/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,02,04</td><td style="width:8%;">Tardy</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4D593634596F7A52324C7258377367444F64454A494A79436A77383D2D55464A4A545546535756394A524430794D4445324D446B784F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl04_lnkDetail">Mon 09/19/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR</td><td style="width:8%;">Tardy</td><td style="width:20%;">No Parent/Guardian Contact</td><td title="Unexcused" style="width:5%;">U</td>
+			</tr>
+		</table>
+	</div>    
+
+                                </div>
+                            </div>
+                        
+</div>
+                    <div id="ctl00_progressBar" style="display:none;">
+	
+                            <span class="ProgressBar">Loading...</span>
+                        
+</div>
+                </div>
+            </div>
+            <div id="MasterFooter">
+                <div id="footerCopyright">
+                    
+                    COPYRIGHT &copy; 2017 <a href="www.Chalkable.com">Chalkable</a>&nbsp;&nbsp;
+                <span style="cursor: pointer; text-decoration: underline;"><a id="TermsAndConditions"
+                    href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Terms.aspx" title="Terms of Use">
+                    Terms of Use</a></span>
+                </div>
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_MasterValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_MasterValidationSummary = document.all ? document.all["ctl00_MasterValidationSummary"] : document.getElementById("ctl00_MasterValidationSummary");
+ctl00_MasterValidationSummary.displaymode = "List";
+//]]>
+</script>
+
+<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-68126126-1', {'cookieDomain':'auto'});ga('send', 'pageview', {'page': '/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx'});</script>
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_navMenu_Data = new Object();
+ctl00_navMenu_Data.disappearAfter = 500;
+ctl00_navMenu_Data.horizontalOffset = 0;
+ctl00_navMenu_Data.verticalOffset = 0;
+ctl00_navMenu_Data.staticHoverClass = 'ctl00_navMenu_12 menuHover';
+ctl00_navMenu_Data.staticHoverHyperLinkClass = 'ctl00_navMenu_11 menuHover';
+ctl00_navMenu_Data.iframeUrl = '/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=EZrn4vvCn9VoUyZMJnowC3c9FkiIm0FWmD8nkplhliiyamXoHhFPuaGglt6A4UyA00S_bjIr_r1kQs7PohAc6LpSbxA1&t=635875293181218729';
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_MasterValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":0,"dynamicLayout":true}, null, null, $get("ctl00_progressBar"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	STI InformationNow Home Portal
+</title>
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/Grid.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/Grid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#TermsAndConditions').each(function () {
+
+                var $link = $(this);
+
+                $link.click(function () {
+
+                    // Only load terms.aspx when the Terms link has been clicked
+                    var $dialog = $('<div style="font-size:10pt;"></div>').load($link.attr('href') + ' div[id$="TermsContent"]').dialog({
+
+                        autoOpen: false,
+                        open: function (event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        title: $link.attr('title'),
+                        width: 500,
+                        height: 500,
+                        modal: true,
+                        buttons: {
+                            "Agree": function () {
+                                $dialog.dialog("close");
+                            }
+                        }
+                    });
+
+                    $dialog.dialog('open');
+                    return false;
+                });
+            });
+
+            $("[Name='lnkHelp']").click(
+         function () {
+             mixpanel.track("Help Accessed");
+         });
+
+        });
+
+
+
+
+    </script>
+
+    
+<style type="text/css">
+	.ctl00_navMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_navMenu_1 { text-decoration:none; }
+	.ctl00_navMenu_2 {  }
+	.ctl00_navMenu_3 { border-style:none; }
+	.ctl00_navMenu_4 {  }
+	.ctl00_navMenu_5 { border-style:none; }
+	.ctl00_navMenu_6 {  }
+	.ctl00_navMenu_7 {  }
+	.ctl00_navMenu_8 {  }
+	.ctl00_navMenu_9 { border-style:none; }
+	.ctl00_navMenu_10 {  }
+	.ctl00_navMenu_11 { border-style:none; }
+	.ctl00_navMenu_12 {  }
+
+</style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./Attendance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDM4Mzk3MTMxDxYEHgZUZXJtSWRkHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPZBYGAgYPZBYCZg9kFgQCAw8QDxYGHg1EYXRhVGV4dEZpZWxkBQtTdHVkZW50TmFtZR4ORGF0YVZhbHVlRmllbGQFCVN0dWRlbnRJRB4LXyFEYXRhQm91bmRnZBAVAQ5DaGVuLCBUaWFuZmVuZxUBBDMxOTgUKwMBZxYBZmQCBw8QDxYGHwIFCEFjYWROYW1lHwMFDUFjYWRTZXNzaW9uSUQfBGdkEBUCI1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNS0yMDE2I1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNi0yMDE3FQICMTICMTUUKwMCZ2cWAQIBZAIHDxQrAA0PFgIfBGdkZGRkZGRkZGQQFgAWAGQQFgAWAGRkFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYMHgRUZXh0BQRIb21lHgVWYWx1ZQUESG9tZR4HRW5hYmxlZGceClNlbGVjdGFibGVoHghEYXRhUGF0aAUkYmIwNWFmZDgtZTUwMC00ZTM0LTk4ODktMDgyNzhlNjc3ZmMzHglEYXRhQm91bmRnFCsAAwUHMDowLDA6MRQrAAIWDh8FBQlIb21lIFBhZ2UfBgUJSG9tZSBQYWdlHgtOYXZpZ2F0ZVVybAU5L0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvRGVmYXVsdC5hc3B4HwdnHwhnHwkFOS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL2RlZmF1bHQuYXNweB8KZ2QUKwACFg4fBQUPU2Nob29sIENhbGVuZGFyHwYFD1NjaG9vbCBDYWxlbmRhch8LBUEvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TY2hvb2wvQ2FsZW5kYXIuYXNweB8HZx8IZx8JBUEvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zY2hvb2wvY2FsZW5kYXIuYXNweB8KZ2QUKwACFgwfBQUTU3R1ZGVudCBJbmZvcm1hdGlvbh8GBRNTdHVkZW50IEluZm9ybWF0aW9uHwdnHwhoHwkFJDRjN2U2ZTY1LWVmOGQtNDg5MC04OThlLTNkOTRjM2Q3NzdiNB8KZxQrAAQFKzA6MCwwOjEsMToxLDA6MSwxOjEsMDoxLDE6MSwwOjEsMDoyLDE6MiwwOjIUKwACFhAfBQUKQXR0ZW5kYW5jZR8GBQpBdHRlbmRhbmNlHwsFRC9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1N0dWRlbnQvQXR0ZW5kYW5jZS5hc3B4HwdnHwhnHwkFRC9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3N0dWRlbnQvYXR0ZW5kYW5jZS5hc3B4HwpnHghTZWxlY3RlZGdkFCsAAhYOHwUFBkdyYWRlcx8GBQZHcmFkZXMfCwVAL0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvU3R1ZGVudC9HcmFkZXMuYXNweB8HZx8IZx8JBUAvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zdHVkZW50L2dyYWRlcy5hc3B4HwpnZBQrAAIWDh8FBQhTY2hlZHVsZR8GBQhTY2hlZHVsZR8LBUIvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TdHVkZW50L1NjaGVkdWxlLmFzcHgfB2cfCGcfCQVCL2luZm9ybWF0aW9ubm93L3BhcmVudHBvcnRhbC9zdGkuaG9tZS51aS53ZWIvc3R1ZGVudC9zY2hlZHVsZS5hc3B4HwpnZBQrAAIWDB8FBQdSZXBvcnRzHwYFB1JlcG9ydHMfB2cfCGgfCQUkMzAxZDkxM2MtMmQwZi00YjRhLWEwZTQtMmZhNmVkNTg2MzBkHwpnFCsAAgUjMDowLDE6MCwwOjAsMDoxLDE6MSwwOjEsMToxLDA6MSwxOjEUKwACFg4fBQUWQ29tcHJlaGVuc2l2ZSBQcm9ncmVzcx8GBRZDb21wcmVoZW5zaXZlIFByb2dyZXNzHwsFWS9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1JlcG9ydGluZy9SZXBvcnRzL0NvbXByZWhlbnNpdmVQcm9ncmVzcy5hc3B4HwdnHwhnHwkFWS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3JlcG9ydGluZy9yZXBvcnRzL2NvbXByZWhlbnNpdmVwcm9ncmVzcy5hc3B4HwpnZBQrAAIWDB8FBRJTeXN0ZW0gUHJlZmVyZW5jZXMfBgUSU3lzdGVtIFByZWZlcmVuY2VzHwdnHwhoHwkFJDMwOWM5YjM3LTU2NTQtNDk5ZC04OWYxLTMzNmZjNzIxOWM2Nh8KZxQrAAEFBzA6MCwxOjBkAgkPZBYCZg9kFggCAw8PFgIeB1Zpc2libGVoZGQCBQ8PFgIfBWVkZAIJDw8WAh8FZWRkAg0PZBYEAgcPEA8WBh8CBQhUZXJtTmFtZR8DBQZUZXJtSWQfBGdkEBUEA0FMTAZURVJNIDEGVEVSTSAyBlRFUk0gMxUEATACMzICMzMCMzQUKwMEZ2dnZxYBZmQCCQ88KwARAwAPFgQfBGceC18hSXRlbUNvdW50AgNkARAWAQIGFgE8KwAFAQAWAh8NaBYBZgwUKwAAFgJmD2QWCAIBD2QWDGYPZBYCAgEPFgQeBGhyZWYFigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00NzQ1NTc0Rjc2NkI2NjU4NTk1MDRDNTA3MjM3NkI2RDU0NzUzOTY2NEQ1QTUxMzk0NzRCMzQzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc4NEQ0MTNEM0QeCWlubmVyaHRtbAUOVGh1IDExLzEwLzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFGkhSLDAxLDAyLDAzLDA0LDA1LDA2LDA3LDA4ZGQCAw8PFgIfBQUHQWxsIERheWRkAgQPDxYCHwUFBFNpY2tkZAIFDw8WBB8FBQFFHgdUb29sVGlwBQdFeGN1c2VkZGQCAg9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD0yRjc2NkY3MTQ0NkUzOTM5NEUzNDJCMzkzMTM0NzMzMDc1NTM2QjVBNzYzMDMwNDY3MTM0NDEzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc3NEY1MTNEM0QfEAUOV2VkIDExLzA5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFCEhSLDAyLDA0ZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBQRTaWNrZGQCBQ8PFgQfBQUBRR8RBQdFeGN1c2VkZGQCAw9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00RDU5MzYzNDU5NkY3QTUyMzI0QzcyNTgzNzczNjc0NDRGNjQ0NTRBNDk0QTc5NDM2QTc3MzgzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENDQ2Qjc4NEY1MTNEM0QfEAUOTW9uIDA5LzE5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFAkhSZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBRpObyBQYXJlbnQvR3VhcmRpYW4gQ29udGFjdGRkAgUPDxYEHwUFAVUfEQUJVW5leGN1c2VkZGQCBA8PFgIfDWhkZBgCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZEF0dGVuZGFuY2UPPCsADAEIAgFkBQ1jdGwwMCRuYXZNZW51Dw9kBR5TdHVkZW50IEluZm9ybWF0aW9uXEF0dGVuZGFuY2Vk5Ewh97Dc9XIfmWW8dVnfXaPwDnc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=kSwQd1GbJe_WoTOW2g2ylTtUnLiTtXslXQ86FFXeu_ac6L6DUzbYjbfqVWRkFjWK98V3VQA9Ef5KlwnYgiDynNnU76g1&amp;t=635875293181218729" type="text/javascript"></script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=MEfoYUSMmKN0mA04YFvA_G8UmNUW-HnsN65YXJyu5yYfeds2pl7g-DY-myjLdt01pvscZ3L_CHUDJt6k_AkE1eJM4LmF7us0SZSNxgPQDLd9wBNcXlYji835bxZtdSyCi3Ofeg2&amp;t=1c6690ce" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=uYynn0I5s7UF3X9c7yOpM6Q8ZAN5TJrnIki3bcmaXSxSBj5C2kZ2AkXnG6yVnpZnaWYQP8LBgNi0E_KWszgchKlRbK6f2iWVBv0yDrhAhmVStD1POKeindeCjD7U2AEykCFk0K8pL5CE2lP9hq0_D-_o4WA1&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=WEIhJ0IchRHEDsRDLEWlk03S-MCvQknAbqIwjyn48ygQ-DOMSa0FeX2Gdem5OJVMOk9KCKHWFWzHNCcEXTSdaSAvJciemDraHvBNJFf73P1GgiVWwHFTGUdKkm4zGPpEVu-SBKsP4Oxg1KBXRP_75ee4Ibtf3E07aUgAfP9kIqI1mpY80&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1QHAqDkq4wyFhsIU7Qwae8Ywi7yLzSMPtTpZzibVl16zKSuToyGoKGP66qfVhPvYkvjOF9hRp1MRQR7XJ+8mk4B7sQdmiF5dJ03SIvYi6ZVAbSUIN+a3omTepQWqVZTfeghx4i3UQYVP0QILFJTizeZP9ILPgRbJbOfN+QgoC/3X90OGjZ6SSrMzis1LMQXc2ZfpjPjhVL0ALP0AC55PRiwZ7NqCvrwz4aY4L9+V2IEhNLW8dcQT4A3SdETgY+6zycAwY/p9SV5jH3E7cTC9PjmR7H5WGQcYCcU4uytVEQEAtELs8=" />
+</div>
+        <div id="MasterPageWrapper">
+            <div id="MasterContentWrapper">
+                <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContextUpdatePanel','','tctl00$MainContentUpdatePanel',''], ['ctl00$ScriptManager1','','ctl00$ddStudentList','','ctl00$ddStudentAcadSession',''], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=9pTVkv_t4xQFv1rIhvpMXon6PTgGEyGkMrnZJEJnHvmZIQRx8NI3tCKRYR3ypwDie6YqZg2" style="display:none;">
+
+</iframe>
+                <div id="MasterHeader">
+                    <div id="MasterHeaderContent">
+                        <div id="MasterHeaderLogo">
+                            <img id="ctl00_headerImage" alt="Sti Information Now Home Portal" src="../Resources/images/logo.png" style="height:47px;width:209px;border-width:0px;top: 0px;" />
+                        </div>
+                        <div id="MasterHeaderOptions">
+                            <ul>
+                                <li>
+                                    <a id="ctl00_lnkHelp" Name="lnkHelp" href="javascript:__doPostBack(&#39;ctl00$lnkHelp&#39;,&#39;&#39;)">Help</a></li>
+                                <li>
+                                    <a id="ctl00_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div id="MasterHeaderLogin">
+                            Welcome
+                            <span id="ctl00_LoginName1">jlin452</span>
+                            !
+                        </div>
+                        <div id="ctl00_ContextUpdatePanel">
+	
+                                <div id="MasterHeaderContext">
+                                    <ul style="clear: right; float: right;">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label1">Student</label>
+                                            <select name="ctl00$ddStudentList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentList">
+		<option selected="selected" value="3198">Chen, Tianfeng</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear: right; float: right">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label2">School/Academic Session</label>
+                                            <select name="ctl00$ddStudentAcadSession" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentAcadSession\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentAcadSession">
+		<option value="12">Rockland Country Day... | 2015-2016</option>
+		<option selected="selected" value="15">Rockland Country Day... | 2016-2017</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+</div>
+                    </div>
+                </div>
+                <div id="MasterMain">
+                    <!-- TODO:JBW Look at creating custom Menu control due to aspMenu using tabular layout. Also, aspMenu renders different code output in Safari and Chrome -->
+                    <div id="MasterNavMenu">
+                        <table id="ctl00_navMenu" class="menu ctl00_navMenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr id="ctl00_navMenun0">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun1">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Default.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Home Page</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun2">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/School/Calendar.aspx" style="border-style:none;font-size:1em;margin-left:16px;">School Calendar</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun3">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Student Information</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun4">
+				<td><table class="menuItem ctl00_navMenu_6 menuSelected ctl00_navMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5 menuSelected ctl00_navMenu_9" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Attendance</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun5">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Grades</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun6">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Schedule.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Schedule</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun7">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Reports</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun8">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Reporting/Reports/ComprehensiveProgress.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Comprehensive Progress</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun9">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">System Preferences</a></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                        
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            <div id="MasterBodyContent">
+                                <div id="MasterStudentHeader">
+                                    <div id="MasterStudentHeaderBreadcrumbs">
+                                        <span id="ctl00_studentBreadcrumbs"><a href="#ctl00_studentBreadcrumbs_SkipLink"><img alt="Skip Navigation Links" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=m_ctRK0xwhqQAHzbSjI_LenJoGySSdrnqh_F_1lPwtG6-ph_HgbkLIYC7eLAJwfrre13vHpXWcP4D07Xnva2X6apZm81&amp;t=635875293181218729" width="0" height="0" style="border-width:0px;" /></a><span>
+                                                Chen, Tianfeng
+                                            </span><span> &gt; </span><span><a>Student Information</a></span><span> &gt; </span><span>Attendance</span><a id="ctl00_studentBreadcrumbs_SkipLink"></a></span>
+                                    </div>
+                                    <div style="float: right">
+                                        
+                                    </div>
+                                </div>
+                                <span id="ctl00_MasterValidationErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterInfoLabel" style="display:inline-block;color:Blue;width:100%;display: none;"></span>
+                                <div id="ctl00_MasterValidationSummary" class="ErrorLabelDivision" style="color:Red;display:none;">
+
+	</div>
+                                <div id="MasterChildContent">
+                                    
+    <a href="PeriodAttendance.aspx" id="ctl00_ContentPlaceHolder1_lnkPeriodAttendance">View Period Absences</a> &nbsp;
+    <a href="CheckInCheckOut.aspx" id="ctl00_ContentPlaceHolder1_lnkCheckIn">View Check In/Check Out</a>
+    <div class="Nugget">
+        <ul>
+            <li class="textbox">
+                <label for="ctl00_ContentPlaceHolder1_ddTermList" id="ctl00_ContentPlaceHolder1_Label2">Term</label>
+                <select name="ctl00$ContentPlaceHolder1$ddTermList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddTermList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ddTermList" style="width:20em;">
+		<option selected="selected" value="0">ALL</option>
+		<option value="32">TERM 1</option>
+		<option value="33">TERM 2</option>
+		<option value="34">TERM 3</option>
+
+	</select>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<table class="grid" cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grdAttendance" style="color:#333333;width:100%;border-collapse:collapse;">
+			<tr class="gridHeader" align="left" style="color:Black;font-weight:bold;">
+				<th scope="col">Date</th><th scope="col">Term</th><th scope="col">Period(s)</th><th scope="col">Level</th><th scope="col">Reason</th><th scope="col">Cat</th>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4745574F766B665859504C5072376B6D547539664D5A5139474B343D2D55464A4A545546535756394A524430794D4445324D5445784D413D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl02_lnkDetail">Thu 11/10/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,01,02,03,04,05,06,07,08</td><td style="width:8%;">All Day</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridAlternatingRow" style="color:#284775;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=2F766F71446E39394E342B393134733075536B5A763030467134413D2D55464A4A545546535756394A524430794D4445324D5445774F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl03_lnkDetail">Wed 11/09/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,02,04</td><td style="width:8%;">Tardy</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4D593634596F7A52324C7258377367444F64454A494A79436A77383D2D55464A4A545546535756394A524430794D4445324D446B784F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl04_lnkDetail">Mon 09/19/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR</td><td style="width:8%;">Tardy</td><td style="width:20%;">No Parent/Guardian Contact</td><td title="Unexcused" style="width:5%;">U</td>
+			</tr>
+		</table>
+	</div>    
+
+                                </div>
+                            </div>
+                        
+</div>
+                    <div id="ctl00_progressBar" style="display:none;">
+	
+                            <span class="ProgressBar">Loading...</span>
+                        
+</div>
+                </div>
+            </div>
+            <div id="MasterFooter">
+                <div id="footerCopyright">
+                    
+                    COPYRIGHT &copy; 2017 <a href="www.Chalkable.com">Chalkable</a>&nbsp;&nbsp;
+                <span style="cursor: pointer; text-decoration: underline;"><a id="TermsAndConditions"
+                    href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Terms.aspx" title="Terms of Use">
+                    Terms of Use</a></span>
+                </div>
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_MasterValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_MasterValidationSummary = document.all ? document.all["ctl00_MasterValidationSummary"] : document.getElementById("ctl00_MasterValidationSummary");
+ctl00_MasterValidationSummary.displaymode = "List";
+//]]>
+</script>
+
+<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-68126126-1', {'cookieDomain':'auto'});ga('send', 'pageview', {'page': '/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx'});</script>
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_navMenu_Data = new Object();
+ctl00_navMenu_Data.disappearAfter = 500;
+ctl00_navMenu_Data.horizontalOffset = 0;
+ctl00_navMenu_Data.verticalOffset = 0;
+ctl00_navMenu_Data.staticHoverClass = 'ctl00_navMenu_12 menuHover';
+ctl00_navMenu_Data.staticHoverHyperLinkClass = 'ctl00_navMenu_11 menuHover';
+ctl00_navMenu_Data.iframeUrl = '/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=EZrn4vvCn9VoUyZMJnowC3c9FkiIm0FWmD8nkplhliiyamXoHhFPuaGglt6A4UyA00S_bjIr_r1kQs7PohAc6LpSbxA1&t=635875293181218729';
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_MasterValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":0,"dynamicLayout":true}, null, null, $get("ctl00_progressBar"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="ctl00_Head1"><title>
+	STI InformationNow Home Portal
+</title>
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/common.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/Grid.css" rel="stylesheet" type="text/css" />
+    <link href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/styles/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-1.6.2.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/jquery-ui-1.8.16.custom.min.js" type="text/javascript"></script>
+    <script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/Resources/scripts/Grid.js" type="text/javascript"></script>
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $('#TermsAndConditions').each(function () {
+
+                var $link = $(this);
+
+                $link.click(function () {
+
+                    // Only load terms.aspx when the Terms link has been clicked
+                    var $dialog = $('<div style="font-size:10pt;"></div>').load($link.attr('href') + ' div[id$="TermsContent"]').dialog({
+
+                        autoOpen: false,
+                        open: function (event, ui) { $(".ui-dialog-titlebar-close").hide(); },
+                        title: $link.attr('title'),
+                        width: 500,
+                        height: 500,
+                        modal: true,
+                        buttons: {
+                            "Agree": function () {
+                                $dialog.dialog("close");
+                            }
+                        }
+                    });
+
+                    $dialog.dialog('open');
+                    return false;
+                });
+            });
+
+            $("[Name='lnkHelp']").click(
+         function () {
+             mixpanel.track("Help Accessed");
+         });
+
+        });
+
+
+
+
+    </script>
+
+    
+<style type="text/css">
+	.ctl00_navMenu_0 { background-color:white;visibility:hidden;display:none;position:absolute;left:0px;top:0px; }
+	.ctl00_navMenu_1 { text-decoration:none; }
+	.ctl00_navMenu_2 {  }
+	.ctl00_navMenu_3 { border-style:none; }
+	.ctl00_navMenu_4 {  }
+	.ctl00_navMenu_5 { border-style:none; }
+	.ctl00_navMenu_6 {  }
+	.ctl00_navMenu_7 {  }
+	.ctl00_navMenu_8 {  }
+	.ctl00_navMenu_9 { border-style:none; }
+	.ctl00_navMenu_10 {  }
+	.ctl00_navMenu_11 { border-style:none; }
+	.ctl00_navMenu_12 {  }
+
+</style></head>
+<body>
+    <form name="aspnetForm" method="post" action="./Attendance.aspx" id="aspnetForm">
+<div>
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNDM4Mzk3MTMxDxYEHgZUZXJtSWRkHhNWYWxpZGF0ZVJlcXVlc3RNb2RlAgEWAmYPZBYCAgMPZBYGAgYPZBYCZg9kFgQCAw8QDxYGHg1EYXRhVGV4dEZpZWxkBQtTdHVkZW50TmFtZR4ORGF0YVZhbHVlRmllbGQFCVN0dWRlbnRJRB4LXyFEYXRhQm91bmRnZBAVAQ5DaGVuLCBUaWFuZmVuZxUBBDMxOTgUKwMBZxYBZmQCBw8QDxYGHwIFCEFjYWROYW1lHwMFDUFjYWRTZXNzaW9uSUQfBGdkEBUCI1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNS0yMDE2I1JvY2tsYW5kIENvdW50cnkgRGF5Li4uIHwgMjAxNi0yMDE3FQICMTICMTUUKwMCZ2cWAQIBZAIHDxQrAA0PFgIfBGdkZGRkZGRkZGQQFgAWAGQQFgAWAGRkFCsABQUPMDowLDA6MSwwOjIsMDozFCsAAhYMHgRUZXh0BQRIb21lHgVWYWx1ZQUESG9tZR4HRW5hYmxlZGceClNlbGVjdGFibGVoHghEYXRhUGF0aAUkYmIwNWFmZDgtZTUwMC00ZTM0LTk4ODktMDgyNzhlNjc3ZmMzHglEYXRhQm91bmRnFCsAAwUHMDowLDA6MRQrAAIWDh8FBQlIb21lIFBhZ2UfBgUJSG9tZSBQYWdlHgtOYXZpZ2F0ZVVybAU5L0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvRGVmYXVsdC5hc3B4HwdnHwhnHwkFOS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL2RlZmF1bHQuYXNweB8KZ2QUKwACFg4fBQUPU2Nob29sIENhbGVuZGFyHwYFD1NjaG9vbCBDYWxlbmRhch8LBUEvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TY2hvb2wvQ2FsZW5kYXIuYXNweB8HZx8IZx8JBUEvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zY2hvb2wvY2FsZW5kYXIuYXNweB8KZ2QUKwACFgwfBQUTU3R1ZGVudCBJbmZvcm1hdGlvbh8GBRNTdHVkZW50IEluZm9ybWF0aW9uHwdnHwhoHwkFJDRjN2U2ZTY1LWVmOGQtNDg5MC04OThlLTNkOTRjM2Q3NzdiNB8KZxQrAAQFKzA6MCwwOjEsMToxLDA6MSwxOjEsMDoxLDE6MSwwOjEsMDoyLDE6MiwwOjIUKwACFhAfBQUKQXR0ZW5kYW5jZR8GBQpBdHRlbmRhbmNlHwsFRC9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1N0dWRlbnQvQXR0ZW5kYW5jZS5hc3B4HwdnHwhnHwkFRC9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3N0dWRlbnQvYXR0ZW5kYW5jZS5hc3B4HwpnHghTZWxlY3RlZGdkFCsAAhYOHwUFBkdyYWRlcx8GBQZHcmFkZXMfCwVAL0luZm9ybWF0aW9uTm93L1BhcmVudFBvcnRhbC9TdGkuSG9tZS5VSS5XZWIvU3R1ZGVudC9HcmFkZXMuYXNweB8HZx8IZx8JBUAvaW5mb3JtYXRpb25ub3cvcGFyZW50cG9ydGFsL3N0aS5ob21lLnVpLndlYi9zdHVkZW50L2dyYWRlcy5hc3B4HwpnZBQrAAIWDh8FBQhTY2hlZHVsZR8GBQhTY2hlZHVsZR8LBUIvSW5mb3JtYXRpb25Ob3cvUGFyZW50UG9ydGFsL1N0aS5Ib21lLlVJLldlYi9TdHVkZW50L1NjaGVkdWxlLmFzcHgfB2cfCGcfCQVCL2luZm9ybWF0aW9ubm93L3BhcmVudHBvcnRhbC9zdGkuaG9tZS51aS53ZWIvc3R1ZGVudC9zY2hlZHVsZS5hc3B4HwpnZBQrAAIWDB8FBQdSZXBvcnRzHwYFB1JlcG9ydHMfB2cfCGgfCQUkMzAxZDkxM2MtMmQwZi00YjRhLWEwZTQtMmZhNmVkNTg2MzBkHwpnFCsAAgUjMDowLDE6MCwwOjAsMDoxLDE6MSwwOjEsMToxLDA6MSwxOjEUKwACFg4fBQUWQ29tcHJlaGVuc2l2ZSBQcm9ncmVzcx8GBRZDb21wcmVoZW5zaXZlIFByb2dyZXNzHwsFWS9JbmZvcm1hdGlvbk5vdy9QYXJlbnRQb3J0YWwvU3RpLkhvbWUuVUkuV2ViL1JlcG9ydGluZy9SZXBvcnRzL0NvbXByZWhlbnNpdmVQcm9ncmVzcy5hc3B4HwdnHwhnHwkFWS9pbmZvcm1hdGlvbm5vdy9wYXJlbnRwb3J0YWwvc3RpLmhvbWUudWkud2ViL3JlcG9ydGluZy9yZXBvcnRzL2NvbXByZWhlbnNpdmVwcm9ncmVzcy5hc3B4HwpnZBQrAAIWDB8FBRJTeXN0ZW0gUHJlZmVyZW5jZXMfBgUSU3lzdGVtIFByZWZlcmVuY2VzHwdnHwhoHwkFJDMwOWM5YjM3LTU2NTQtNDk5ZC04OWYxLTMzNmZjNzIxOWM2Nh8KZxQrAAEFBzA6MCwxOjBkAgkPZBYCZg9kFggCAw8PFgIeB1Zpc2libGVoZGQCBQ8PFgIfBWVkZAIJDw8WAh8FZWRkAg0PZBYEAgcPEA8WBh8CBQhUZXJtTmFtZR8DBQZUZXJtSWQfBGdkEBUEA0FMTAZURVJNIDEGVEVSTSAyBlRFUk0gMxUEATACMzICMzMCMzQUKwMEZ2dnZxYBZmQCCQ88KwARAwAPFgQfBGceC18hSXRlbUNvdW50AgNkARAWAQIGFgE8KwAFAQAWAh8NaBYBZgwUKwAAFgJmD2QWCAIBD2QWDGYPZBYCAgEPFgQeBGhyZWYFigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00NzQ1NTc0Rjc2NkI2NjU4NTk1MDRDNTA3MjM3NkI2RDU0NzUzOTY2NEQ1QTUxMzk0NzRCMzQzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc4NEQ0MTNEM0QeCWlubmVyaHRtbAUOVGh1IDExLzEwLzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFGkhSLDAxLDAyLDAzLDA0LDA1LDA2LDA3LDA4ZGQCAw8PFgIfBQUHQWxsIERheWRkAgQPDxYCHwUFBFNpY2tkZAIFDw8WBB8FBQFFHgdUb29sVGlwBQdFeGN1c2VkZGQCAg9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD0yRjc2NkY3MTQ0NkUzOTM5NEUzNDJCMzkzMTM0NzMzMDc1NTM2QjVBNzYzMDMwNDY3MTM0NDEzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENTQ0NTc3NEY1MTNEM0QfEAUOV2VkIDExLzA5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFCEhSLDAyLDA0ZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBQRTaWNrZGQCBQ8PFgQfBQUBRR8RBQdFeGN1c2VkZGQCAw9kFgxmD2QWAgIBDxYEHw8FigFBdHRlbmRhbmNlRGV0YWlsLmFzcHg/eD00RDU5MzYzNDU5NkY3QTUyMzI0QzcyNTgzNzczNjc0NDRGNjQ0NTRBNDk0QTc5NDM2QTc3MzgzRDJENTU0NjRBNEE1NDU1NDY1MzU3NTYzOTRBNTI0NDMwNzk0RDQ0NDUzMjRENDQ2Qjc4NEY1MTNEM0QfEAUOTW9uIDA5LzE5LzIwMTZkAgEPDxYCHwUFBlRFUk0gMWRkAgIPDxYCHwUFAkhSZGQCAw8PFgIfBQUFVGFyZHlkZAIEDw8WAh8FBRpObyBQYXJlbnQvR3VhcmRpYW4gQ29udGFjdGRkAgUPDxYEHwUFAVUfEQUJVW5leGN1c2VkZGQCBA8PFgIfDWhkZBgCBSdjdGwwMCRDb250ZW50UGxhY2VIb2xkZXIxJGdyZEF0dGVuZGFuY2UPPCsADAEIAgFkBQ1jdGwwMCRuYXZNZW51Dw9kBR5TdHVkZW50IEluZm9ybWF0aW9uXEF0dGVuZGFuY2Vk5Ewh97Dc9XIfmWW8dVnfXaPwDnc=" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=kSwQd1GbJe_WoTOW2g2ylTtUnLiTtXslXQ86FFXeu_ac6L6DUzbYjbfqVWRkFjWK98V3VQA9Ef5KlwnYgiDynNnU76g1&amp;t=635875293181218729" type="text/javascript"></script>
+
+
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=MEfoYUSMmKN0mA04YFvA_G8UmNUW-HnsN65YXJyu5yYfeds2pl7g-DY-myjLdt01pvscZ3L_CHUDJt6k_AkE1eJM4LmF7us0SZSNxgPQDLd9wBNcXlYji835bxZtdSyCi3Ofeg2&amp;t=1c6690ce" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=uYynn0I5s7UF3X9c7yOpM6Q8ZAN5TJrnIki3bcmaXSxSBj5C2kZ2AkXnG6yVnpZnaWYQP8LBgNi0E_KWszgchKlRbK6f2iWVBv0yDrhAhmVStD1POKeindeCjD7U2AEykCFk0K8pL5CE2lP9hq0_D-_o4WA1&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<script src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=WEIhJ0IchRHEDsRDLEWlk03S-MCvQknAbqIwjyn48ygQ-DOMSa0FeX2Gdem5OJVMOk9KCKHWFWzHNCcEXTSdaSAvJciemDraHvBNJFf73P1GgiVWwHFTGUdKkm4zGPpEVu-SBKsP4Oxg1KBXRP_75ee4Ibtf3E07aUgAfP9kIqI1mpY80&amp;t=ffffffffeea0dba9" type="text/javascript"></script>
+<div>
+
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdAA1QHAqDkq4wyFhsIU7Qwae8Ywi7yLzSMPtTpZzibVl16zKSuToyGoKGP66qfVhPvYkvjOF9hRp1MRQR7XJ+8mk4B7sQdmiF5dJ03SIvYi6ZVAbSUIN+a3omTepQWqVZTfeghx4i3UQYVP0QILFJTizeZP9ILPgRbJbOfN+QgoC/3X90OGjZ6SSrMzis1LMQXc2ZfpjPjhVL0ALP0AC55PRiwZ7NqCvrwz4aY4L9+V2IEhNLW8dcQT4A3SdETgY+6zycAwY/p9SV5jH3E7cTC9PjmR7H5WGQcYCcU4uytVEQEAtELs8=" />
+</div>
+        <div id="MasterPageWrapper">
+            <div id="MasterContentWrapper">
+                <script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$ScriptManager1', 'aspnetForm', ['tctl00$ContextUpdatePanel','','tctl00$MainContentUpdatePanel',''], ['ctl00$ScriptManager1','','ctl00$ddStudentList','','ctl00$ddStudentAcadSession',''], [], 90, 'ctl00');
+//]]>
+</script>
+<input type="hidden" name="ctl00$ScriptManager1" id="ctl00_ScriptManager1" />
+<script type="text/javascript">
+//<![CDATA[
+Sys.Application.setServerId("ctl00_ScriptManager1", "ctl00$ScriptManager1");
+Sys.Application._enableHistoryInScriptManager();
+//]]>
+</script>
+<iframe id="__historyFrame" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/ScriptResource.axd?d=9pTVkv_t4xQFv1rIhvpMXon6PTgGEyGkMrnZJEJnHvmZIQRx8NI3tCKRYR3ypwDie6YqZg2" style="display:none;">
+
+</iframe>
+                <div id="MasterHeader">
+                    <div id="MasterHeaderContent">
+                        <div id="MasterHeaderLogo">
+                            <img id="ctl00_headerImage" alt="Sti Information Now Home Portal" src="../Resources/images/logo.png" style="height:47px;width:209px;border-width:0px;top: 0px;" />
+                        </div>
+                        <div id="MasterHeaderOptions">
+                            <ul>
+                                <li>
+                                    <a id="ctl00_lnkHelp" Name="lnkHelp" href="javascript:__doPostBack(&#39;ctl00$lnkHelp&#39;,&#39;&#39;)">Help</a></li>
+                                <li>
+                                    <a id="ctl00_lnkLogout" href="javascript:__doPostBack(&#39;ctl00$lnkLogout&#39;,&#39;&#39;)">Logout</a></li>
+                            </ul>
+                        </div>
+                        <div id="MasterHeaderLogin">
+                            Welcome
+                            <span id="ctl00_LoginName1">jlin452</span>
+                            !
+                        </div>
+                        <div id="ctl00_ContextUpdatePanel">
+	
+                                <div id="MasterHeaderContext">
+                                    <ul style="clear: right; float: right;">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label1">Student</label>
+                                            <select name="ctl00$ddStudentList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentList">
+		<option selected="selected" value="3198">Chen, Tianfeng</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                    <ul style="clear: right; float: right">
+                                        <li class="">
+                                            <label for="ctl00_ddStudentAcadSession" id="ctl00_Label2">School/Academic Session</label>
+                                            <select name="ctl00$ddStudentAcadSession" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ddStudentAcadSession\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ddStudentAcadSession">
+		<option value="12">Rockland Country Day... | 2015-2016</option>
+		<option selected="selected" value="15">Rockland Country Day... | 2016-2017</option>
+
+	</select>
+                                        </li>
+                                    </ul>
+                                </div>
+                            
+</div>
+                    </div>
+                </div>
+                <div id="MasterMain">
+                    <!-- TODO:JBW Look at creating custom Menu control due to aspMenu using tabular layout. Also, aspMenu renders different code output in Safari and Chrome -->
+                    <div id="MasterNavMenu">
+                        <table id="ctl00_navMenu" class="menu ctl00_navMenu_2" cellpadding="0" cellspacing="0" border="0">
+	<tr id="ctl00_navMenun0">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Home</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun1">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Default.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Home Page</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun2">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/School/Calendar.aspx" style="border-style:none;font-size:1em;margin-left:16px;">School Calendar</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun3">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Student Information</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun4">
+				<td><table class="menuItem ctl00_navMenu_6 menuSelected ctl00_navMenu_10" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5 menuSelected ctl00_navMenu_9" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Attendance</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun5">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Grades.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Grades</a></td>
+					</tr>
+				</table></td>
+			</tr><tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun6">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Schedule.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Schedule</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun7">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">Reports</a></td>
+			</tr>
+		</table></td>
+	</tr><tr>
+		<td><table border="0" cellpadding="0" cellspacing="0" width="100%">
+			<tr onmouseover="Menu_HoverStatic(this)" onmouseout="Menu_Unhover(this)" onkeyup="Menu_Key(this)" id="ctl00_navMenun8">
+				<td><table class="menuItem ctl00_navMenu_6" cellpadding="0" cellspacing="0" border="0" width="100%">
+					<tr>
+						<td style="width:100%;"><a class="ctl00_navMenu_1 menuItem ctl00_navMenu_5" href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Reporting/Reports/ComprehensiveProgress.aspx" style="border-style:none;font-size:1em;margin-left:16px;">Comprehensive Progress</a></td>
+					</tr>
+				</table></td>
+			</tr>
+		</table></td>
+	</tr><tr id="ctl00_navMenun9">
+		<td><table class="menuTitle ctl00_navMenu_4" cellpadding="0" cellspacing="0" border="0" width="100%">
+			<tr>
+				<td style="width:100%;"><a class="ctl00_navMenu_1 menuTitle ctl00_navMenu_3" style="border-style:none;font-size:1em;">System Preferences</a></td>
+			</tr>
+		</table></td>
+	</tr>
+</table>
+                        
+                    </div>
+                    <div id="ctl00_MainContentUpdatePanel">
+	
+                            <div id="MasterBodyContent">
+                                <div id="MasterStudentHeader">
+                                    <div id="MasterStudentHeaderBreadcrumbs">
+                                        <span id="ctl00_studentBreadcrumbs"><a href="#ctl00_studentBreadcrumbs_SkipLink"><img alt="Skip Navigation Links" src="/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=m_ctRK0xwhqQAHzbSjI_LenJoGySSdrnqh_F_1lPwtG6-ph_HgbkLIYC7eLAJwfrre13vHpXWcP4D07Xnva2X6apZm81&amp;t=635875293181218729" width="0" height="0" style="border-width:0px;" /></a><span>
+                                                Chen, Tianfeng
+                                            </span><span> &gt; </span><span><a>Student Information</a></span><span> &gt; </span><span>Attendance</span><a id="ctl00_studentBreadcrumbs_SkipLink"></a></span>
+                                    </div>
+                                    <div style="float: right">
+                                        
+                                    </div>
+                                </div>
+                                <span id="ctl00_MasterValidationErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterErrorLabel" style="display:inline-block;color:Red;width:100%;display: none;"></span>
+                                <span id="ctl00_MasterInfoLabel" style="display:inline-block;color:Blue;width:100%;display: none;"></span>
+                                <div id="ctl00_MasterValidationSummary" class="ErrorLabelDivision" style="color:Red;display:none;">
+
+	</div>
+                                <div id="MasterChildContent">
+                                    
+    <a href="PeriodAttendance.aspx" id="ctl00_ContentPlaceHolder1_lnkPeriodAttendance">View Period Absences</a> &nbsp;
+    <a href="CheckInCheckOut.aspx" id="ctl00_ContentPlaceHolder1_lnkCheckIn">View Check In/Check Out</a>
+    <div class="Nugget">
+        <ul>
+            <li class="textbox">
+                <label for="ctl00_ContentPlaceHolder1_ddTermList" id="ctl00_ContentPlaceHolder1_Label2">Term</label>
+                <select name="ctl00$ContentPlaceHolder1$ddTermList" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$ContentPlaceHolder1$ddTermList\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_ContentPlaceHolder1_ddTermList" style="width:20em;">
+		<option selected="selected" value="0">ALL</option>
+		<option value="32">TERM 1</option>
+		<option value="33">TERM 2</option>
+		<option value="34">TERM 3</option>
+
+	</select>
+            </li>
+        </ul>
+    </div>
+    <div>
+		<table class="grid" cellspacing="0" cellpadding="4" rules="all" border="1" id="ctl00_ContentPlaceHolder1_grdAttendance" style="color:#333333;width:100%;border-collapse:collapse;">
+			<tr class="gridHeader" align="left" style="color:Black;font-weight:bold;">
+				<th scope="col">Date</th><th scope="col">Term</th><th scope="col">Period(s)</th><th scope="col">Level</th><th scope="col">Reason</th><th scope="col">Cat</th>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4745574F766B665859504C5072376B6D547539664D5A5139474B343D2D55464A4A545546535756394A524430794D4445324D5445784D413D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl02_lnkDetail">Thu 11/10/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,01,02,03,04,05,06,07,08</td><td style="width:8%;">All Day</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridAlternatingRow" style="color:#284775;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=2F766F71446E39394E342B393134733075536B5A763030467134413D2D55464A4A545546535756394A524430794D4445324D5445774F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl03_lnkDetail">Wed 11/09/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR,02,04</td><td style="width:8%;">Tardy</td><td style="width:20%;">Sick</td><td title="Excused" style="width:5%;">E</td>
+			</tr><tr class="gridRow" style="color:#333333;">
+				<td style="width:20%;">
+                    <div>
+                        <a href="AttendanceDetail.aspx?x=4D593634596F7A52324C7258377367444F64454A494A79436A77383D2D55464A4A545546535756394A524430794D4445324D446B784F513D3D" id="ctl00_ContentPlaceHolder1_grdAttendance_ctl04_lnkDetail">Mon 09/19/2016</a>                         
+                    </div>
+                </td><td style="width:15%;">TERM 1</td><td style="width:8%;">HR</td><td style="width:8%;">Tardy</td><td style="width:20%;">No Parent/Guardian Contact</td><td title="Unexcused" style="width:5%;">U</td>
+			</tr>
+		</table>
+	</div>    
+
+                                </div>
+                            </div>
+                        
+</div>
+                    <div id="ctl00_progressBar" style="display:none;">
+	
+                            <span class="ProgressBar">Loading...</span>
+                        
+</div>
+                </div>
+            </div>
+            <div id="MasterFooter">
+                <div id="footerCopyright">
+                    
+                    COPYRIGHT &copy; 2017 <a href="www.Chalkable.com">Chalkable</a>&nbsp;&nbsp;
+                <span style="cursor: pointer; text-decoration: underline;"><a id="TermsAndConditions"
+                    href="/InformationNow/ParentPortal/Sti.Home.UI.Web/Terms.aspx" title="Terms of Use">
+                    Terms of Use</a></span>
+                </div>
+            </div>
+        </div>
+    
+<script type="text/javascript">
+//<![CDATA[
+var Page_ValidationSummaries =  new Array(document.getElementById("ctl00_MasterValidationSummary"));
+//]]>
+</script>
+
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_MasterValidationSummary = document.all ? document.all["ctl00_MasterValidationSummary"] : document.getElementById("ctl00_MasterValidationSummary");
+ctl00_MasterValidationSummary.displaymode = "List";
+//]]>
+</script>
+
+<script>  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','UA-68126126-1', {'cookieDomain':'auto'});ga('send', 'pageview', {'page': '/InformationNow/ParentPortal/Sti.Home.UI.Web/Student/Attendance.aspx'});</script>
+<script type="text/javascript">
+//<![CDATA[
+var ctl00_navMenu_Data = new Object();
+ctl00_navMenu_Data.disappearAfter = 500;
+ctl00_navMenu_Data.horizontalOffset = 0;
+ctl00_navMenu_Data.verticalOffset = 0;
+ctl00_navMenu_Data.staticHoverClass = 'ctl00_navMenu_12 menuHover';
+ctl00_navMenu_Data.staticHoverHyperLinkClass = 'ctl00_navMenu_11 menuHover';
+ctl00_navMenu_Data.iframeUrl = '/InformationNow/ParentPortal/Sti.Home.UI.Web/WebResource.axd?d=EZrn4vvCn9VoUyZMJnowC3c9FkiIm0FWmD8nkplhliiyamXoHhFPuaGglt6A4UyA00S_bjIr_r1kQs7PohAc6LpSbxA1&t=635875293181218729';
+
+(function(id) {
+    var e = document.getElementById(id);
+    if (e) {
+        e.dispose = function() {
+            Array.remove(Page_ValidationSummaries, document.getElementById(id));
+        }
+        e = null;
+    }
+})('ctl00_MasterValidationSummary');
+Sys.Application.add_init(function() {
+    $create(Sys.UI._UpdateProgress, {"associatedUpdatePanelId":null,"displayAfter":0,"dynamicLayout":true}, null, null, $get("ctl00_progressBar"));
+});
+//]]>
+</script>
+</form>
+</body>
+</html>

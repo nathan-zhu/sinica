@@ -1,26 +1,23 @@
 <?php
 require 'vendor/autoload.php';
 include('db_class.php'); // call db.class.php
-$bdd = new db();
+$bdd = new db(); 
 
-$school_name ="MarianHS";
-$login_file = "login/".$school_name."_login.html";
-$grade_file = "login/".$school_name."_grade.html";
-
-$cookie_file = dirname(__FILE__)."/cookies/".$school_name.".cookie";
+$file = "login/JSerraCatholicHS2_grade.html";
+$cookie_file = dirname(__FILE__)."/cookies/JSerraCatholicHS2.cookie";
 $base_url = "https://www.plusportals.com";
-$logInUrl = $base_url."/MarianHS";
+$logInUrl = "https://www.plusportals.com/JSerraCatholicHS";
 // 准备提交的表单数据之账号和密码。（这个是根据表单选项来的）
-$data = "UserName=mia@liumeihui.com&Password=Zhang2000&RememberMe=false";
+$data = "UserName=Eric.dong@jserra.org&Password=David0908&RememberMe=false";
 
-$Agent = "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_12_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.98 Safari/537.36";
-//$proxy = "127.0.0.1:7070";
+$Agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/32.0.1700.107 Chrome/32.0.1700.107 Safari/537.36';
+$proxy = "127.0.0.1:7070";
 
-//catch all data will input All, current data will empty
+$uid = 27;
+$gradeYear = '12th';
+//$term = 'Q3';
 $Catch_All_Term_Datas = "";
-$uid = 51;
-$gradeYear = '11th';
-$school = 'Marian High School';
+$school = "JSerra Catholic High School";
 
 $attendance_type = array(
     0 => 'Absent',
@@ -33,8 +30,8 @@ $ch = curl_init();// 初始化
 curl_setopt($ch, CURLOPT_URL, $logInUrl);// 网址
 curl_setopt($ch, CURLOPT_USERAGENT, $Agent);
 // 设置代理
-//curl_setopt($ch, CURLOPT_PROXY, $proxy);
-//curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
+// curl_setopt($ch, CURLOPT_PROXY, $proxy);
+// curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
  
 // 基本配置
 curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -50,18 +47,18 @@ curl_setopt($ch, CURLOPT_COOKIEJAR, $cookie_file);
 curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
-$student_Html = curl_exec($ch);
-//html_put_files($login_file, $student_Html);
-$student_Html_dom = new \HtmlParser\ParserDom($student_Html);
-
+$contents = curl_exec($ch);
 $pp_get_all_students = 1;
 $pp_infos = array();
-// $pp_lar_url = "https://www.plusportals.com/ParentStudentDetails/ParentStudentDetails/780";
-// curl_setopt($ch, CURLOPT_URL, $pp_lar_url);// 学生列表页面
-// $pp_list_Html = curl_exec($ch);
+$pp_lar_url = "https://www.plusportals.com/ParentStudentDetails/ParentStudentDetails/9132";
+curl_setopt($ch, CURLOPT_URL, $pp_lar_url);// 学生列表页面
+$pp_list_Html = curl_exec($ch);
+//html_put_files($file, $pp_list_Html);
+$pp_list_Html_dom = new \HtmlParser\ParserDom($pp_list_Html);
 
 /*
-//##get student list page cache token and studentid.
+// This is Parent account to start get student datas.
+// have student list mode then use below function
 $pp_list_url = "https://www.plusportals.com/Account/ApplyRole?mode=2";
 
 curl_setopt($ch, CURLOPT_URL, $pp_list_url);// 学生列表页面
@@ -76,8 +73,9 @@ foreach($pp_bia as $alinks) {
     $get_sid[$j] = $alinks->getAttr('href');
     preg_match("/\d.*(?=\?token=)/", $get_sid[$j], $sid[$j]);
     $j++;
-}*/
-//$attend_file = 'attendance.html';
+}
+*/
+$attend_file = 'attend.html';
 
 //get MarkingPeriodId
 $markingperiod_url = "https://www.plusportals.com/ParentStudentDetails/GetMarkingPeriod";  
@@ -94,12 +92,12 @@ $y = 0;
 for ($i = 0; $i < count($pp_get_all_students); $i++) {
     $y = $i+$i;
     //get student name and id
-    $pp_infos[$i]['name'] = $student_Html_dom->find('div.txtnme', $i)->getPlainText();
-    $img_link = $get_token_link = $student_Html_dom->find('img.blk-img-crved', $i)->getAttr('src');
-    preg_match("/(sid=)\d.*(?=\&token=)/", $img_link, $sid);
+    $pp_infos[$i]['name'] = $pp_list_Html_dom->find('div.re-blue-strip label', $i)->getPlainText();
+    $img_link = $get_token_link = $pp_list_Html_dom->find('img.blk-img-crved', $i)->getAttr('src');
+    preg_match("/\d+(?=&token)/", $img_link, $sid);
     $token[$i] = preg_replace("/.*(&token=)/", "", $get_token_link);
     $pp_infos[$i]['token'] = $token[$i];
-    $pp_infos[$i]['student_id'] = preg_replace("/sid=/", "", $sid[0]);
+    $pp_infos[$i]['student_id'] = $sid[0];
     $pp_infos[$i]['student_img'] = $base_url.$img_link;
 
     //get student detail page
@@ -115,15 +113,18 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
     $term = $MarkingPeriodId[$CurrentMarkingPeriodId];
 
     //get attendence summary for each students
-    $x = $k = 0;
-    $attendence_total = 0;
-    $pdn_attendance = $student_Html_dom->find('div.pdn-attendance', $y);
-    foreach($pdn_attendance->find('div.box-in') as $boxin) {
-        $x++;
-        list($ty, $boxin_text) = explode(": ", $boxin->getPlainText());
-        $pp_infos[$i]['attendence_summary'][$attendance_type[$k]] = $boxin_text;
-        $attendence_total += (int)$boxin_text;
-        $query = 'INSERT INTO sinica_attendance_summary (
+    $x = $absences_num = 0;
+    $pdn_attendance = $pp_list_Html_dom->find('div#GridAbsentTotals');
+    foreach($pdn_attendance as $table) {
+        $attendance_detail = $table->outerHtml();
+        foreach ($table->find('td') as $td) {
+            $text = $td->getPlainText();        
+            if(preg_match("/\d+/", $text)) {
+                $absences_num += $text;
+            }
+        }
+    }
+    $query = 'INSERT INTO sinica_attendance_summary (
             uid, 
             studentid, 
             category_description, 
@@ -135,18 +136,88 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
         ) VALUES (
             '. $uid .',
             '. $pp_infos[$i]['student_id'] .',
-            "'. $attendance_type[$k] .'",
-            '. $boxin_text .', 
+            "Absent",
+            '.$absences_num.', 
             "'. $term .'",
             "'. $gradeYear .'",
             "'. $school .'",
-            '. time() .'
+            '.time().'
         )';        
-        $bdd->execute($query);
-        $k++;
-    }
+    $bdd->execute($query);
     
-   /* //get attendence detail page content
+    //get detail attendance
+    $data = "sort=&page=1&pageSize=50&group=&filter=";
+    $attend_detail_url = "https://www.plusportals.com/ParentStudentDetails/ShowAttendanceGridInfo";
+    curl_setopt($ch, CURLOPT_URL, $attend_detail_url);// 学生列表页面
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);// POST数据
+    $attendance_detail_Html = curl_exec($ch);
+    $output = "<table>";
+    $output.="<thead>";
+    $output.="<tr><th>Attendance Description</th><th>Attendance Date</th></tr>";
+    $output.="</thead>";
+    $output.="<tbody>";
+    $attend_data = json_decode($attendance_detail_Html, true);
+    
+    foreach ($attend_data['Data'] as $rows) {
+        $output.="<tr>";
+        $output.="<td>". $rows['AttendanceDescription'] ."</td>";
+        $output.="<td>". $rows['AttendanceDate'] ."</td>";
+        $output.="</tr>";
+    }
+    $output.="</tbody>";
+    $output.="</table>";
+
+    //insert attendance detail to db
+    $type = 'Absent';
+    //insert to db
+    $query = "INSERT INTO sinica_attendance_details 
+        (uid, 
+         studentid, 
+         type,
+         detail, 
+         term,
+         gradeyear,
+         schoolname,
+         createtime
+        ) VALUES (
+            ". $uid .",
+            ". $pp_infos[$i]['student_id'] .",
+            '". $type ."',
+            '". $output ."',
+            '". $term ."',
+            '". $gradeYear ."',
+            '". $school ."',
+            ". time() ."
+        )";
+    $bdd->execute($query);
+
+    /*
+    // this is other show type to get attendence
+    foreach($pdn_attendance->find('div.box-in') as $boxin) {
+        $x++;
+        $boxin_text = $boxin->getPlainText();
+        switch($x) {
+            case 1:
+                $pp_infos[$i]['attendence_summary']['Absences'] = $boxin_text;
+                break;
+            case 2:
+                $pp_infos[$i]['attendence_summary']['Tardies'] = $boxin_text;
+                break;
+            case 3:
+                $pp_infos[$i]['attendence_summary']['Dismissals'] = $boxin_text;
+                break;
+            case 4:
+                $pp_infos[$i]['attendence_summary']['Incidents'] = $boxin_text;
+                break;
+        }
+    }
+    //attendance summary insert to db
+    $grade_summary_data = implode('","', $pp_infos[$i]['attendence_summary']);
+    $query = 'INSERT INTO sinica_attendance_summary (uid, studentid, absences, tardies, dismissals, incidents, term, schoolname) VALUES ('. $uid .','. $pp_infos[$i]['student_id'] .',"'. $grade_summary_data .'","","' . $school. '")';
+    $bdd->execute($query);
+
+    //get attendence detail page content
     foreach ($attendance_type as $type_key => $type) {
         $pp_attend_url = "https://www.plusportals.com/ParentStudentDetails/ShowDetails/?studentId=". $pp_infos[$i]['student_id'] ."&showtype=". $type;
         curl_setopt($ch, CURLOPT_URL, $pp_attend_url);// 学生成绩详情页面
@@ -156,85 +227,28 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
         $temfile = "login/". $pp_infos[$i]['student_id']."_".$type."_".$attend_file;
         //file_put_contents($temfile, $pp_attend_Html_body[$type_key]);
         $pp_infos[$i]['attendence_detail'][$type] = $pp_attend_Html_body[$type_key];
-    }*/
 
-    //get attendence detail page content
-    if($attendence_total) {
-        foreach ($attendance_type as $type_key => $type) {
-            $pp_attend_url = "https://www.plusportals.com/ParentStudentDetails/ShowDetails/?studentId=". $pp_infos[$i]['student_id'] ."&showtype=". $type;
-            curl_setopt($ch, CURLOPT_URL, $pp_attend_url);// 学生成绩详情页面
-            $pp_attend_Html[$type_key] = curl_exec($ch);
-            $pp_attend_Html_dom[$type_key] = new \HtmlParser\ParserDom($pp_attend_Html[$type_key]);
-            $pp_attend_Html_body[$type_key] = $pp_attend_Html_dom[$type_key]->find('div.main-cont', 0)->outerHtml();
-            //$temfile = "login/". $pp_infos[$i]['student_id']."_".$type."_".$attend_file;
-            //file_put_contents($temfile, $pp_attend_Html_body[$type_key]);
-            $pp_infos[$i]['attendence_detail'][$type] = $pp_attend_Html_body[$type_key];
-
-            //insert to db
-            $query = "INSERT INTO sinica_attendance_details 
-                (uid, 
-                 studentid, 
-                 type,
-                 detail, 
-                 term,
-                 gradeyear,
-                 schoolname,
-                 createtime
-                ) VALUES (
-                    ". $uid .",
-                    ". $pp_infos[$i]['student_id'] .",
-                    '". $type ."',
-                    '". $pp_infos[$i]['attendence_detail'][$type] ."',
-                    '". $term ."',
-                    '". $gradeYear ."',
-                    '". $school ."',
-                    ". time() ."
-                )";
-            $bdd->execute($query);
-        }
+        //insert to db
+        $query = "INSERT INTO sinica_attendance_details (uid, studentid, type, detail, schoolname) VALUES (". $uid .",". $pp_infos[$i]['student_id'] .",'". $type ."','". $pp_infos[$i]['attendence_detail'][$type] ."','". $school ."')";
+        $bdd->execute($query);
     }
-
-    // // get part of recent score json data for current semester
-    // $recent_json = $score_dom->find('div.bgf9', 1)->outerHtml();
-    // $tmp = explode("\n", $recent_json);
-    // for($j = 0; $j < count($tmp); $j ++) {
-    //     $tmp[$j] = preg_replace("(')", "\"", $tmp[$j]);
+    */
+    
+    // //get MarkingPeriodId
+    // $markingperiod_url = "https://www.plusportals.com/ParentStudentDetails/GetMarkingPeriod";  
+    // curl_setopt($ch, CURLOPT_URL, $markingperiod_url);// 学生列表页面
+    // $MarkingPeriod_Html = curl_exec($ch);
+    // $markingperiod_data = json_decode($MarkingPeriod_Html, true);
+    // //var_dump($markingperiod_data);
+    // foreach ($markingperiod_data as $mp) {
+    //     $MarkingPeriodId[$mp['MarkingPeriodId']] = $mp['MarkingPeriodName'];
     // }
-    // $tmpj = implode("\n", $tmp);
-    // //var_dump($tmpj);
-    // $recent_score = $tmpj;
-    // preg_replace("/(jQuery\(function).*/", "", $recent_score);
-    // preg_match("/({\"Data\").*\w}{1}/", $recent_json, $rscores);
-    // $recent_file = "login/recent_json.html";
-    // $recent_score_json = $rscores[0];
-    // // html_put_files($recent_file, $rscores[0]);
-
-    // //recent score inser to db 
-    // $query = "INSERT INTO sinica_grade_recent_scores (
-    //     uid, 
-    //     studentid, 
-    //     recentscore, 
-    //     recentscore_json,
-    //     term,
-    //     gradeyear,
-    //     schoolname,
-    //     createtime
-    //     ) VALUES (
-    //         ". $uid .",
-    //         '". $pp_infos[$i]['student_id'] ."',
-    //         '". $recent_score ."',
-    //         '". $recent_score_json ."',
-    //         '". $term ."',
-    //         '". $gradeYear ."',
-    //         '". $school ."',
-    //         ".time()."
-    //     )";
-    // $bdd->execute($query);
-
-    //get summary and detail score datas
+    
     $z = 0;
-    foreach($MarkingPeriodId as $key => $value) {
-        //get school MarkingPeriodId name
+    foreach($MarkingPeriodId as $key => $value) {    
+        //echo $key."\n";
+        //echo $CurrentMarkingPeriodId."\n";
+        //get school period name
         $term = $MarkingPeriodId[$key];
         //$Catch_All_Term_Datas empty, will get current term data
         if($CurrentMarkingPeriodId == $key && empty($Catch_All_Term_Datas)) {
@@ -251,10 +265,31 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
                 break;
             }
         }
+        // old get grade summary jason data
+        // $grade_data = "sort=&group=&filter=";
+        // $url = "https://www.plusportals.com/ParentStudentDetails/ShowGridProgressQuickViewInfo?markingPeriodId=". $key ."&studentId=". $pp_infos[$i]['student_id'];
+        // curl_setopt($ch, CURLOPT_URL, $url);// 网址
+        // curl_setopt($ch, CURLOPT_USERAGENT, $Agent);
+        // curl_setopt($ch, CURLOPT_HEADER, 0);
+        // curl_setopt($ch, CURLOPT_POST, true);
+        // curl_setopt($ch, CURLOPT_POSTFIELDS, $grade_data);// POST数据
+        // $grade_summary_Html[$key] = curl_exec($ch);
+        // // $temfile = "grades/JSerraCatholicHS_". $pp_infos[$i]['student_id']."_".$key."_total.html";
+        // // file_put_contents($temfile, $grade_summary_Html[$key]);
+
+        // //grade summary insert to sinica_grade_summary table
+        // $grade_summary = json_decode($grade_summary_Html[$key], true);
+
+        // foreach ($grade_summary['Data'] as $summary) {
+        //     $coursesList[$summary['SectionId']] = $summary['CourseName'];
+        //     $term = $MarkingPeriodId[$key];
+        //     $query ='INSERT INTO sinica_grade_summary (uid, studentid, courseid, coursename, average, grade, term, schoolname) VALUES ('. $uid .','. $summary['StudentId'] .','. $summary['SectionId'] .',"'. $summary['CourseName'] .'","'. $summary['Average'] .'","'. $summary['GradeSymbol'] .'","'. $term .'","'. $school .'")';
+
+        //     //$bdd->execute($query);
+        // }
     }
 
-    // each term get same courses cotent for coursellist,
-    // so only loop current term courses, $coursesList[$CurrentMarkingPeriodId];
+    //loop all courses
     foreach ($coursesList[$CurrentMarkingPeriodId] as $SectionId => $coursesName) {
         $msc = getMillisecond();
         //get Category Averages for each Course
@@ -293,6 +328,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
         curl_setopt($ch, CURLOPT_POSTFIELDS, $data);// POST数据
         $pp_grade_course_detail_Html[$SectionId] =  curl_exec($ch);
         $pp_infos[$i]['grades_detail'][$SectionId]['scores_detail'] = $pp_grade_course_detail_Html[$SectionId];
+
         $query = "INSERT INTO sinica_grade_recent_scores (
             uid, 
             studentid, 
@@ -307,7 +343,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
             gradeyear,
             schoolname,
             createtime
-          ) VALUES (
+        ) VALUES (
             ". $uid .",
             ". $pp_infos[$i]['student_id'] .",
             ". $SectionId .",            
@@ -321,14 +357,14 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
             '". $gradeYear ."',
             '". $school ."',
             ". time() ."
-          )";
-        $bdd->execute($query);
-    }
-
-
+        )";
+        $bdd->execute($query);            
+    }    
+    /*
+    // below is old way to get data of grade
     //get student detail page
     //https://www.plusportals.com/ParentStudentDetails/ParentStudentDetails/9192?isProgressReport=False&token=FB223F4CCAA8F2A4E9E72FE845C37303AA44A2DDF950074538458B6C83E4E9E0
-    /*$pp_score_url = "https://www.plusportals.com/ParentStudentDetails/ParentStudentDetails/". $pp_infos[$i]['student_id'] ."?isProgressReport=False&token=". $token[$i];
+    $pp_score_url = "https://www.plusportals.com/ParentStudentDetails/ParentStudentDetails/". $pp_infos[$i]['student_id'] ."?isProgressReport=False&token=". $token[$i];
     curl_setopt($ch, CURLOPT_URL, $pp_score_url);// 学生成绩详情页面
     $pp_score_Html = curl_exec($ch);
     $z = 0;
@@ -382,6 +418,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
                             $category_averages_table = $category_averages_dom->find('div table', 2)->outerHtml();
                             $pp_infos[$i]['grades_detail'][$SectionId]['category_averages'] = preg_replace("/<a [^>]*>|<\/a>/","",$category_averages_table);
 
+
                             //$path_file = "grade_detail.html";
                             //$temfile = "login/". $pp_infos[$i]['student_id']."_".$key."_".$grades['SectionId']."_".$path_file;
                             //file_put_contents($temfile, $pp_grade_detail_Html[$SectionId]);
@@ -401,20 +438,20 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
                             //file_put_contents($temfile, $pp_grade_course_detail_Html[$SectionId]);
                             
                             //get all datas array to check
-                            // $temfile = "login/0000_". $pp_infos[$i]['student_id']."_".$key."_total.html";
-                            // file_put_contents($temfile, var_export($pp_infos, true), FILE_APPEND);
+                            $temfile = "login/0000_". $pp_infos[$i]['student_id']."_".$key."_total.html";
+                            file_put_contents($temfile, var_export($pp_infos, true), FILE_APPEND);
                         }
                     }
                 }
             }
         }
-    }*/
+    }
+    */
 }
-curl_close($ch);
-
 //var_dump($pp_infos);
-$file = "grades/MarianHS_all.html";
-html_put_files($file, var_export($pp_infos, true));
+curl_close($ch);
+$file = "grades/JSC.html";
+//html_put_files($file, var_export($pp_infos, true));
 
 function getMillisecond() {
     list($s1, $s2) = explode(' ', microtime());     
@@ -454,7 +491,9 @@ function get_summary_scores_data($uid, $student_id, $key, $term, $gradeYear, $sc
     $grade_summary = json_decode($grade_summary_Html[$key], true);
     //var_dump($grade_summary);
     foreach ($grade_summary['Data'] as $summary) {        
-        $coursesList[$summary['SectionId']] = $summary['CourseName'];
+        if($summary['Average']) {
+            $coursesList[$summary['SectionId']] = $summary['CourseName'];    
+        }
         //$term = $MarkingPeriodId[$key];
         //check grade status
         $status = get_last_summary_grade($uid, $summary['StudentId'], $summary['SectionId'], $summary['Average'], $term, $gradeYear, $bdd);
@@ -492,41 +531,41 @@ function get_summary_scores_data($uid, $student_id, $key, $term, $gradeYear, $sc
 }
 
 function get_last_summary_grade($uid, $studentid, $courseid, $cgrade, $term = null, $gradeyear = null, $bdd)
-    {
-        //$bdd = new db();
-        $query = "SELECT average 
-            FROM sinica_grade_summary 
-            WHERE 
-                studentid = ". $studentid ." 
-                AND uid = ". $uid ." 
-                AND courseid = '". $courseid ."' 
-                AND term = '". $term ."'
-                AND gradelevel = '". $gradeyear ."'
-                order by id desc 
-                limit 1";
-        //echo"check grade summary sql :: ". $query."\n";
-        $result = $bdd->getOne($query);
-        
-        //check grade under 75 will send email to supervisor
-        //$send = self::check_mail_to_teacher($uid, $cgrade, $bdd);
-        //email log
-        
-        $average = $result['average'];
-        // echo $cgrade."\n";
-        // echo $average."\n";
-        if ($average) {
-            if ($cgrade > $average) {
-                $status = 'up';
-            } elseif ($cgrade < $average) {
-                $status = 'down';
-            } else {
-                $status = 'equal';
-            }
-            return $status;
+{
+    //$bdd = new db();
+    $query = "SELECT average 
+        FROM sinica_grade_summary 
+        WHERE 
+            studentid = ". $studentid ." 
+            AND uid = ". $uid ." 
+            AND courseid = '". $courseid ."' 
+            AND term = '". $term ."'
+            AND gradelevel = '". $gradeyear ."'
+            order by id desc 
+            limit 1";
+    //echo"check grade summary sql :: ". $query."\n";
+    $result = $bdd->getOne($query);
+    
+    //check grade under 75 will send email to supervisor
+    //$send = self::check_mail_to_teacher($uid, $cgrade, $bdd);
+    //email log
+    
+    $average = $result['average'];
+    // echo $cgrade."\n";
+    // echo $average."\n";
+    if ($average) {
+        if ($cgrade > $average) {
+            $status = 'up';
+        } elseif ($cgrade < $average) {
+            $status = 'down';
         } else {
-            return null;
+            $status = 'equal';
         }
+        return $status;
+    } else {
+        return null;
     }
+}
 
 function check_mail_to_teacher($uid, $cgrade, $bdd)
 {

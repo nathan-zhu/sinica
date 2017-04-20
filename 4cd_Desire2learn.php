@@ -1,5 +1,8 @@
 <?php
 require 'vendor/autoload.php';
+include('db_class.php'); // call db.class.php
+$bdd = new db(); 
+
 //https://desire2learn.4cd.edu/d2l/lp/auth/login/login.d2l
 $login_file = "login/Desire2learn_login.html";
 $home_file = "login/Desire2learn_home.html";
@@ -8,6 +11,12 @@ $base_url = "https://desire2learn.4cd.edu/";
 $logInUrl = $base_url. "d2l/lp/auth/login/login.d2l";
 // 准备提交的表单数据之账号和密码。（这个是根据表单选项来的）
 $data = "userName=lcui522&password=yinChuan1993";
+
+$uid = 54;
+$gradeYear = '10th';
+//$term = 'Q3';
+$Catch_All_Term_Datas = "";
+$school = "Diablo Valley College";
 
 //$proxy = "127.0.0.1:7070";
 

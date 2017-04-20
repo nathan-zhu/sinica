@@ -1,0 +1,3072 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Aeries.net Student Portal - Shitian Chen
+</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><link rel="icon" href="favicon.ico" type="image/x-icon" /><link href="/Parent/Content/AjaxControlToolkit/Styles/Bundle?v=FDBVOkOPr_cBjdVOMFWml5TXJYdiNvOL409jlglEoH81" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="StyleSheets/aeries-responsive.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/aeries.common.min.css?v=20160413" /><link rel="stylesheet" type="text/css" href="StyleSheets/aeries.default.min.css?v=20160413" /><link id="ctl00_BaseCSS" rel="stylesheet" type="text/css" href="StyleSheets/GeneralDark.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/calendar-stylesheet.css" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.common.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.rtl.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.default.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.dataviz.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.dataviz.default.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.bootstrap.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="StyleSheets/DynamicMenu.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/font-awesome/font-awesome.min.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/CheckBoxes.min.css?vsn=20150915" />
+
+    <script src="ClientScripts/ControlPositions.js?vsn=20140815" type="text/javascript"></script>
+    <script src="ClientScripts/ExpandOut.js" type="text/javascript"></script>
+    <script src="ClientScripts/XMLCommunications.js" type="text/javascript"></script>
+    <script src="ClientScripts/xmldom.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="Scripts/require/TimeOut.js?vsn=20151215"></script>
+    <script src="ClientScripts/calendar.js" type="text/javascript"></script>
+    <script src="ClientScripts/iscroll.js" type="text/javascript"></script>
+	<script src="ClientScripts/EmailStuff.js?vsn=20160401" type="text/javascript"></script>
+	<script src="ClientScripts/jquery.min.js?v=1.12.3" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.validate.min.js"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.validate.unobtrusive.min.js"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.unobtrusive-ajax.min.js"></script>
+	<script src="KendoUI/kendo.all.min.js?v=2017.1.118" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="KendoUI/kendo.aspnetmvc.min.js?v=2017.1.118"></script>
+    <script src="ClientScripts/General.js?vsn=20151215" type="text/javascript"></script>
+	<script src="ClientScripts/ParentNav.js" type="text/javascript"></script>
+	<script src="ClientScripts/StudentBackpack.js?vsn=20161208" type="text/javascript"></script>
+    <script type="text/javascript">window.defaultStatus="Welcome to Aeries";</script>
+	<script type="text/javascript" src="ClientScripts/aeries-kendo-windows-1.0.4.js?vsn=20160401"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			if (kendo.support.mobileOS) {
+
+				//GeneralFunctions.IsDemoServer(CheckForMobileVersion_IsDemoServer_Complete);
+			}
+
+		});
+
+	</script>
+
+    </head>
+
+<body id="ctl00_body" class="MainParent" leftmargin="8" topmargin="0" marginwidth="8" marginheight="0">
+  
+  <form method="post" action="./Default.aspx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMzcyNzExNzUPFgQeD0hpZGVDb250YWN0SW5mb2ceE1ZhbGlkYXRlUmVxdWVzdE1vZGUCARYCZg9kFgICAw9kFgJmD2QWDAIBD2QWAmYPZBYGAgEPDxYCHgRUZXh0BQkyMDE2LTIwMTdkZAIDDw8WBB8CBR1TYW50YSBNYXJnYXJpdGEgQ2F0aG9saWMgSC5TLh4HVG9vbFRpcAUIU2Nob29sIDFkZAIND2QWAmYPFgIeCWlubmVyaHRtbAXNKjx0YWJsZSB3aWR0aD0iMTAwJSIgYm9yZGVyPSIwIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiPjx0cj48dGQgYWxpZ249ImxlZnQiIGNsYXNzPSJhbCI+PHRhYmxlIGNsYXNzPSJtZW51dGFibGUiIGJvcmRlcj0iMCIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIj48dHIgdmFsaWduPSJ0b3AiPjx0ZCBhbGlnbj0ibGVmdCIgY2xhc3M9ImFsIiBzdHlsZT0id2hpdGUtc3BhY2U6bm93cmFwOyBkaXNwbGF5OmlubGluZTsiPjx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+PHRyIHZhbGlnbj0idG9wIj48dGQ+PGRpdiBpZD0iVG9wXzEiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iRGVmYXVsdC5hc3B4IiBuYW1lPSJIb21lIiBpZD0iSG9tZSI+SG9tZTwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfMiI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJTdHVkZW50IEluZm8iIGlkPSJTdHVkZW50IEluZm8iPlN0dWRlbnQgSW5mbzwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfMiIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJTdHVkZW50UHJvZmlsZS5hc3B4IiBuYW1lPSJQcm9maWxlIiBpZD0iUHJvZmlsZSI+UHJvZmlsZTwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IlN0dWRlbnRzLmFzcHgiIG5hbWU9IkRlbW9ncmFwaGljcyIgaWQ9IkRlbW9ncmFwaGljcyI+RGVtb2dyYXBoaWNzPC9hPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQ2xhc3Nlcy5hc3B4IiBuYW1lPSJDbGFzc2VzIiBpZD0iQ2xhc3NlcyI+Q2xhc3NlczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkFjdGl2aXRpZXMuYXNweCIgbmFtZT0iQWN0aXZpdGllcyBhbmQgQXdhcmRzIiBpZD0iQWN0aXZpdGllcyBhbmQgQXdhcmRzIj5BY3Rpdml0aWVzIGFuZCBBd2FyZHM8L2E+PC9kaXY+PC90ZD48dGQ+PGRpdiBpZD0iVG9wXzMiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iQXR0ZW5kYW5jZSIgaWQ9IkF0dGVuZGFuY2UiPkF0dGVuZGFuY2U8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzMiIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQXR0ZW5kYW5jZS5hc3B4IiBuYW1lPSJBdHRlbmRhbmNlIiBpZD0iQXR0ZW5kYW5jZSI+QXR0ZW5kYW5jZTwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfNCI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJHcmFkZXMiIGlkPSJHcmFkZXMiPkdyYWRlczwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfNCIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJHcmFkZWJvb2tTdW1tYXJ5LmFzcHgiIG5hbWU9IkdyYWRlYm9vayIgaWQ9IkdyYWRlYm9vayI+R3JhZGVib29rPC9hPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iR3JhZGVib29rRGV0YWlscy5hc3B4IiBuYW1lPSJHcmFkZWJvb2sgRGV0YWlscyIgaWQ9IkdyYWRlYm9vayBEZXRhaWxzIj5HcmFkZWJvb2sgRGV0YWlsczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkdyYWRlcy5hc3B4IiBuYW1lPSJHcmFkZXMiIGlkPSJHcmFkZXMiPkdyYWRlczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkdyYWR1YXRpb25SZXF1aXJlbWVudHMuYXNweCIgbmFtZT0iR3JhZHVhdGlvbiBTdGF0dXMiIGlkPSJHcmFkdWF0aW9uIFN0YXR1cyI+R3JhZHVhdGlvbiBTdGF0dXM8L2E+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJUcmFuc2NyaXB0cy5hc3B4IiBuYW1lPSJUcmFuc2NyaXB0cyIgaWQ9IlRyYW5zY3JpcHRzIj5UcmFuc2NyaXB0czwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IlN0dWRlbnRTdGFuZGFyZHNCYXNlZFByb2dyZXNzLmFzcHgiIG5hbWU9IlN0YW5kYXJkcyBCYXNlZCBQcm9ncmVzcyBEYXNoYm9hcmQiIGlkPSJTdGFuZGFyZHMgQmFzZWQgUHJvZ3Jlc3MgRGFzaGJvYXJkIj5TdGFuZGFyZHMgQmFzZWQgUHJvZ3Jlc3MgRGFzaGJvYXJkPC9hPjwvZGl2PjwvdGQ+PHRkPjxkaXYgaWQ9IlRvcF81Ij48YSBjbGFzcz0idG9wZHluYW1pY21lbnVUYWJsZXQiIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIG5hbWU9Ik1lZGljYWwiIGlkPSJNZWRpY2FsIj5NZWRpY2FsPC9hPjwvZGl2PjxkaXYgaWQ9IlN1Yl81IiBjbGFzcz0iU3ViVGFiIiBzdHlsZT0iYm9yZGVyLWJvdHRvbTogb3V0c2V0IDFweCAjRkZGRkZGOyBkaXNwbGF5OmlubGluZTsgbGVmdDowcHg7IHotaW5kZXg6IDE7Ij48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkltbXVuaXphdGlvbnMuYXNweCIgbmFtZT0iSW1tdW5pemF0aW9ucyIgaWQ9IkltbXVuaXphdGlvbnMiPkltbXVuaXphdGlvbnM8L2E+PC9kaXY+PC90ZD48dGQ+PGRpdiBpZD0iVG9wXzYiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iR3VpZGFuY2UiIGlkPSJHdWlkYW5jZSI+R3VpZGFuY2U8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzYiIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQXNzZXJ0aXZlRGlzY2lwbGluZS5hc3B4IiBuYW1lPSJBc3NlcnRpdmUgRGlzY2lwbGluZSIgaWQ9IkFzc2VydGl2ZSBEaXNjaXBsaW5lIj5Bc3NlcnRpdmUgRGlzY2lwbGluZTwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT48L3RkPjx0ZCBhbGlnbj0icmlnaHQiPjx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+PHRyIHZhbGlnbj0idG9wIj48dGQ+PGRpdiBpZD0iVG9wXzciPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iQ2hhbmdlIFN0dWRlbnQiIGlkPSJDaGFuZ2UgU3R1ZGVudCI+Q2hhbmdlIFN0dWRlbnQ8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzciIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQ2hhbmdlU3R1ZGVudC5hc3B4P2NhY2hlPTMlMmYyNSUyZjIwMTcrNyUzYTI3JTNhMTArQU0mU0M9MSZTTj0yMDAwMSZSZXR1cm5QYWdlPURlZmF1bHQuYXNweCZuYW1lPTFfMjAwMDEmaWQ9MV8yMDAwMSIgbmFtZT0iQ2hlbiwgU2hpdGlhbiAtIEdyZCAxMCAtIFNhbnRhIE1hcmdhcml0YSBDYXRob2xpYyBILlMuIiBpZD0iQ2hlbiwgU2hpdGlhbiAtIEdyZCAxMCAtIFNhbnRhIE1hcmdhcml0YSBDYXRob2xpYyBILlMuIj5DaGVuLCBTaGl0aWFuIC0gR3JkIDEwIC0gU2FudGEgTWFyZ2FyaXRhIENhdGhvbGljIEguUy48L2E+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJDaGFuZ2VTdHVkZW50LmFzcHg/Y2FjaGU9MyUyZjI1JTJmMjAxNys3JTNhMjclM2ExMCtBTSZTQz0yJlNOPTIwMDAxJlJldHVyblBhZ2U9RGVmYXVsdC5hc3B4Jm5hbWU9Ml8yMDAwMSZpZD0yXzIwMDAxIiBuYW1lPSJDaGVuLCBTaGl0aWFuIFtJTkFDVElWRV0gLSBHcmQgMTAgKDEvMzEvMjAxNykgLSBTYW50YSBNYXJnYXJpdGEgU3VtbWVyIFNjaGwiIGlkPSJDaGVuLCBTaGl0aWFuIFtJTkFDVElWRV0gLSBHcmQgMTAgKDEvMzEvMjAxNykgLSBTYW50YSBNYXJnYXJpdGEgU3VtbWVyIFNjaGwiPkNoZW4sIFNoaXRpYW4gW0lOQUNUSVZFXSAtIEdyZCAxMCAoMS8zMS8yMDE3KSAtIFNhbnRhIE1hcmdhcml0YSBTdW1tZXIgU2NobDwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkFkZE5ld1N0dWRlbnRUb1BhcmVudC5hc3B4IiBuYW1lPSJBZGQgTmV3IFN0dWRlbnQgVG8gWW91ciBBY2NvdW50IiBpZD0iQWRkIE5ldyBTdHVkZW50IFRvIFlvdXIgQWNjb3VudCI+QWRkIE5ldyBTdHVkZW50IFRvIFlvdXIgQWNjb3VudDwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfOCI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJPcHRpb25zIiBpZD0iT3B0aW9ucyI+T3B0aW9uczwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfOCIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJDaGFuZ2VQYXNzd29yZC5hc3B4IiBuYW1lPSJDaGFuZ2UgUGFzc3dvcmQiIGlkPSJDaGFuZ2UgUGFzc3dvcmQiPkNoYW5nZSBQYXNzd29yZDwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkNoYW5nZUVtYWlsLmFzcHgiIG5hbWU9IkNoYW5nZSBFbWFpbCIgaWQ9IkNoYW5nZSBFbWFpbCI+Q2hhbmdlIEVtYWlsPC9hPjwvZGl2PjwvdGQ+PHRkPjxkaXYgaWQ9IlRvcF85Ij48YSBjbGFzcz0idG9wZHluYW1pY21lbnVUYWJsZXQiIGhyZWY9IkxvZ291dC5hc3B4IiBuYW1lPSJMb2dvdXQiIGlkPSJMb2dvdXQiPkxvZ291dDwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT48c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+YXRfYXR0YWNoKCJUb3BfMSIsICJTdWJfMSIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfMiIsICJTdWJfMiIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfMyIsICJTdWJfMyIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNCIsICJTdWJfNCIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNSIsICJTdWJfNSIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNiIsICJTdWJfNiIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNyIsICJTdWJfNyIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfOCIsICJTdWJfOCIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfOSIsICJTdWJfOSIsICJwb2ludGVyIik7PC9zY3JpcHQ+PC90ZD48L3RyPjwvdGFibGU+PC90ZD48L3RyPjwvdGFibGU+ZAIDDxYCHgdWaXNpYmxlaGQCBA8WAh8FaBYCAgMPDxYCHwJlZGQCBQ9kFgZmDw9kDxAWAWYWARYCHg5QYXJhbWV0ZXJWYWx1ZSgpWVN5c3RlbS5JbnQ2NCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BDkzNzcWAQIFZGQCBA8WAh8FZxYWAgEPDxYCHwIFKFdlbGNvbWUgdG8gdGhlIEFlcmllcyBQb3J0YWwgZm9yIFNoaXRpYW5kZAIGD2QWAmYPZBYUZg8PFgIfAgUIQ2FsZW5kYXJkZAIBDw8WAh8FZ2QWAmYPZBYCZg9kFgICAQ8PFgQeBVdpZHRoGwAAAAAAAF5AAQAAAB4EXyFTQgKAAhYCHgVzdHlsZQUcaGVpZ2h0OjI2cHg7Zm9udC1zaXplOlNtYWxsO2QCAg9kFgJmDw8WBB8HGwAAAAAAwGJAAQAAAB8IAoACZGQCCA8WAh4Hb25jbGljawWVASRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3R4dEVJRCcpLnZhbHVlID0gJzAnO0Rpc3BsYXlPbkNlbnRlclNjcmVlbigkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9BZGRFdmVudF9QYW5lbCcpKTtSZXNldEZpZWxkc18oKTtyZXR1cm4gZmFsc2U7ZAIJDw8WAh8CBQ1BZGQgTmV3IEV2ZW50FgIfCgWVASRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3R4dEVJRCcpLnZhbHVlID0gJzAnO0Rpc3BsYXlPbkNlbnRlclNjcmVlbigkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9BZGRFdmVudF9QYW5lbCcpKTtSZXNldEZpZWxkc18oKTtyZXR1cm4gZmFsc2U7ZAIMDw8WAh8CBQlEaXNwbGF5OiBkZAINDxBkDxYCZgIBFgIFA0RheQUFTW9udGgWAWZkAg4PDxYCHwVnZBYCAgEPFgIeC18hSXRlbUNvdW50AgIWBmYPZBYGAgEPFgQfCgXjAmlmKCRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3JwdENhbGVuZGFyRGF5X2N0bDAwX0NhbEV2ZW50TG9uZycpLnN0eWxlLmRpc3BsYXkgPT0gJ2lubGluZScpeyAkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9ycHRDYWxlbmRhckRheV9jdGwwMF9DYWxFdmVudExvbmcnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsgdGhpcy5zcmM9J2ltYWdlcy9FeHBhbmRCdXR0b24uZ2lmJzt9ZWxzZXsgJGdldCgnY3RsMDBfTWFpbkNvbnRlbnRfY3RsMThfcnB0Q2FsZW5kYXJEYXlfY3RsMDBfQ2FsRXZlbnRMb25nJykuc3R5bGUuZGlzcGxheT0naW5saW5lJzsgdGhpcy5zcmM9J2ltYWdlcy9Db2xsYXBzZUJ1dHRvbi5naWYnO30fBWdkAgMPDxYCHwIFDFNNQ0hTIEV2ZW50c2RkAgUPFgIfBAVKPGJyIC8+UG9zc2libGUgQi9HIEJiYWxsIENJRjxiciAvPlNNQ0hTIEAgU3dhbGxvd3MgRGF5IFBhcmFkZSBpbiBTSkM8YnIgLz5kAgEPZBYCAgMPDxYCHwIFI1BkIDQtIER1ZTogQ2hhcHRlciA5IEFMRUtTIGhvbWV3b3JrZGQCAg9kFgICAQ8WAh8FaBYCAgEPZBYCZg8VASBZb3UgaGF2ZSBubyBldmVudHMgZm9yIHRoaXMgZGF0ZWQCEA8PFgIfBWhkZAISD2QWEgIDD2QWAmYPZBYCZg9kFgICAQ8PFgQfBxsAAAAAAABeQAEAAAAfCAKAAhYCHwkFHGhlaWdodDoyNnB4O2ZvbnQtc2l6ZTpTbWFsbDtkAgQPZBYCZg9kFgJmD2QWAgIBDw8WBB8HGwAAAAAAAF5AAQAAAB8IAoACFgIfCQUcaGVpZ2h0OjI2cHg7Zm9udC1zaXplOlNtYWxsO2QCBQ8PFgIeCU1heExlbmd0aGZkZAIGDxYGHgxEaXNwbGF5TW9uZXkLKX9BamF4Q29udHJvbFRvb2xraXQuTWFza2VkRWRpdFNob3dTeW1ib2wsIEFqYXhDb250cm9sVG9vbGtpdCwgVmVyc2lvbj0xNi4xLjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0yOGYwMWIwZTg0YjZkNTNlAB4OQWNjZXB0TmVnYXRpdmULKwUAHg5JbnB1dERpcmVjdGlvbgspgwFBamF4Q29udHJvbFRvb2xraXQuTWFza2VkRWRpdElucHV0RGlyZWN0aW9uLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249MTYuMS4xLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQBkAgcPDxYCHwxmZGQCCA8WBh8NCysFAB8OCysFAB8PCysGAGQCCg8PFgIeDU9uQ2xpZW50Q2xpY2sFHHJldHVybiBDYWxlbmRhckV2ZW50X0FkZF8oKTtkZAILDw8WAh8QBR9yZXR1cm4gQ2FsZW5kYXJFdmVudF9EZWxldGVfKCk7ZGQCDA8PFgIfEAUecmV0dXJuIENsb3NlQWRkRXZlbnRfUGFuZWxfKCk7FgIfCgVGJGdldCgnY3RsMDBfTWFpbkNvbnRlbnRfY3RsMThfQWRkRXZlbnRfUGFuZWwnKS5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnO2QCCA9kFgJmD2QWAmYPFgIfBWhkAgkPPCsACQEADxYGHghEYXRhS2V5cxYAHwsCBR8FZ2QWCgIBD2QWAmYPFQ0BTApMYXRlIC0gRXhjATAAATEBMQAAAAAAAABkAgIPZBYCZg8VDQFUBVRhcmR5ATAAAAAAAAExAAAAAGQCAw9kFgJmDxUNAApfKlRPVEFMUypfAAAAAAAAAAAAAABkAgQPZBYCZg8VDQAHRVhDVVNFRAEwATABMAEwATABMAEwATABMAEwATBkAgUPZBYCZg8VDQAJVU5FWENVU0VEATABMAEwATABMAEwATABMAEwATABMGQCCg9kFgJmDw8WAh8FaGQWBGYPD2QPEBYCZgIBFgIWAh8GBQExFgIfBmQWAgIFAgNkZAICDzwrAAkBAA8WBB8RFgAfC2ZkZAILDzwrAAkAZAIMD2QWAmYPZBYEZg8PZA8QFgJmAgEWAhYCHwYFATEWAh8GZBYCAgUCA2RkAgIPFgIfCwIBFgRmD2QWAmYPFQMJUmVzb3VyY2VzBFNpdGULRGVzY3JpcHRpb25kAgEPZBYEAgEPDxYCHgtOYXZpZ2F0ZVVybAUgaHR0cDovL3d3dy5zbWhzLm9yZy9jYWxlbmRhci5qc3BkFgJmDxUBD1NjaG9vbCBDYWxlbmRhcmQCAg8VAQYmbmJzcDtkAg0PZBYCZg9kFgICAQ8WAh8FaGQCDw9kFgJmD2QWAgIBDzwrAAkBAA8WAh8FaGRkAhAPZBYCZg9kFgRmDw9kDxAWA2YCAQICFgMWAh8GBQcxMTE5OTcwFgIfBmQWAh8GZBYDAgUCAwIDZGQCAg88KwAJAQAPFgYfERYAHwsCAh8FaGQWBAIBD2QWAmYPFQQXbWFpbHRvOjQwNzgzNjc0OEBxcS5jb20QNDA3ODM2NzQ4QHFxLmNvbQFQAGQCAg9kFgJmDxUEGW1haWx0bzpjaGVuemV0b25nQDEyNi5jb20SY2hlbnpldG9uZ0AxMjYuY29tAVAAZAIRD2QWBGYPZBYCZg9kFgJmDw8WAh8CBQ4xMjUuMzcuMTUxLjE5NWRkAgEPZBYCZg9kFgRmDw8WAh8CBQ03MC4xODcuMTY3LjUyZGQCAQ8PFgIfAgUVMy8yMy8yMDE3IDEwOjQ0OjI3IFBNZGQCBQ9kFgoCCQ9kFgJmD2QWAmYPZBYEAgEPFgIeCm9ua2V5cHJlc3MFkwFpZiAoZXZlbnQua2V5Q29kZSA9PSAxMykge2N0bDAwX01haW5Db250ZW50X3N1YlN0dVNlYXJjaF9idG5TdHVTZWFyY2guZm9jdXMoKTsgY3RsMDBfTWFpbkNvbnRlbnRfc3ViU3R1U2VhcmNoX2J0blN0dVNlYXJjaC5jbGljaygpOyByZXR1cm4gZmFsc2U7IH1kAgMPFgIfCmVkAhEPZBYCZg9kFgJmD2QWAmYPD2QPEBYCZgIBFgIWAh8GBQExFgIfBmQWAgIFAgNkZAIVD2QWAmYPZBYCZg9kFgRmDw9kDxAWAmYCARYCFgIfBgUBMRYCHwZkFgICBQIDZGQCAg88KwAJAQAPFgQfERYAHwtmZGQCFw9kFgJmD2QWAmYPZBYEZg8PZA8QFgFmFgEWAh8GAgEWAQIFZGQCBg9kFgICAQ9kFgJmD2QWCAIBDw9kDxAWBGYCAQICAgMWBBYCHwYFATEWAh8GZBYCHwZkFgIfBmQWBAIFAgMCAwIDZGQCAw9kFgJmD2QWAmYPZBYCAgEPDxYEHwcbAAAAAAAAXkABAAAAHwgCgAIWAh8JBRxoZWlnaHQ6MjZweDtmb250LXNpemU6U21hbGw7ZAIJD2QWAmYPZBYCZg9kFgJmD2QWAgIFDxYCHgpCZWhhdmlvcklEBTdjdGwwMF9NYWluQ29udGVudF9BZG1pbklOVl90eHROZXdDb21tZW50Q0RfRHJvcEJlaGF2aW9yZAINDw8WAh8QBXAkZmluZCgnQWRkQ29tbWVudEJlaGF2aW9yJykuaGlkZSgpO19fZG9Qb3N0QmFjaygnY3RsMDAkTWFpbkNvbnRlbnQkQWRtaW5JTlYkYnRuT0tBZGRDb21tZW50R28nLCcnKTtyZXR1cm4gZmFsc2U7ZGQCGQ9kFgJmD2QWAmYPZBYEZg9kFgJmD2QWAmYPZBYCAgEPDxYEHwcbAAAAAAAAXkABAAAAHwgCgAIWAh8JBRxoZWlnaHQ6MjZweDtmb250LXNpemU6U21hbGw7ZAIBD2QWAmYPZBYCZg9kFgICAQ8PFgQfBxsAAAAAAABeQAEAAAAfCAKAAhYCHwkFHGhlaWdodDoyNnB4O2ZvbnQtc2l6ZTpTbWFsbDtkAgYPDxYCHwIFCTcuMTcuMi4xN2RkAgcPDxYCHwIFQENvcHlyaWdodCAmY29weTsgMTk5NS0yMDE3IEFlcmllcyBTb2Z0d2FyZS4gQWxsIFJpZ2h0cyBSZXNlcnZlZC5kZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WDAUgY3RsMDAkTWFpbkNvbnRlbnQkY3RsMTgkb3BuQ2xhc3MFI2N0bDAwJE1haW5Db250ZW50JGN0bDE4JG9wblBlcnNvbmFsBSFjdGwwMCRNYWluQ29udGVudCRjdGwxOCRvcG5TY2hvb2wFI2N0bDAwJE1haW5Db250ZW50JGN0bDE4JG9wbkRpc3RyaWN0BSRjdGwwMCRNYWluQ29udGVudCRjdGwxOCRvcG5DbGFzc2VzJDAFJWN0bDAwJE1haW5Db250ZW50JGNoa0dhZGdldEF0dFN1bW1hcnkFI2N0bDAwJE1haW5Db250ZW50JGNoa0dhZGdldENhbGVuZGFyBSBjdGwwMCRNYWluQ29udGVudCRjaGtHYWRnZXRUYXNrcwUeY3RsMDAkTWFpbkNvbnRlbnQkY2hrR2FkZ2V0SU5WBShjdGwwMCRNYWluQ29udGVudCRjaGtHYWRnZXRSZXNvdXJjZUxpbmtzBR5jdGwwMCRNYWluQ29udGVudCRjaGtCcmllZmNhc2UFIWN0bDAwJE1haW5Db250ZW50JGNoa0NsYXNzU3VtbWFyeQU3Y3RsMDAkTWFpbkNvbnRlbnQkQWRtaW5JTlYkdHh0TmV3Q29tbWVudENEJERyb3BEb3duR3JpZA9nZNq3ihvha+lUgYk7YLqyofrbCOld+CFwSy7NC2IEv2MC" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Parent/WebResource.axd?d=yKtAyTYwMzMcpR6UHLsZafp44Y5CxWmhASzZ90bmXvEHokWhzvnp7FGX6hB-C1AjQc2CmSHpZfsF7y6w-YY54ubsxvOhEH6tKNlJf2mFzwo1&amp;t=636160552665894255" type="text/javascript"></script>
+
+<script language='javascript'>var isSafari = true;function isIE(){return false;}</script>
+<script type="text/javascript">
+//<![CDATA[
+function CalendarEvent_SetDate_(){ var strDate = (this._value.getMonth() + 1) + '/' + this._value.getDate() + '/' + this._value.getFullYear(); if(strDate.length > 0) { GeneralFunctions.CalendarEvent_SetDate(strDate, CalendarEvent_SetDate_Result_); }}function CalendarEvent_SetDate_Result_(result) { if(result == 'Reset') { ResetForm_(); } }function CalendarEvent_SetDisplay_(display) { GeneralFunctions.CalendarEvent_SetDisplay(display.value, ResetForm_); }function ResetForm_(result) { $get('ctl00_MainContent_ctl18_btnRefresh').click(); }function CloseAddEvent_Panel_(){ $get('ctl00_MainContent_ctl18_AddEvent_Panel').style.display = 'none'; return false;}function ResetFields_(){ var dt = new Date(); var today = GetValue($get('ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker'), 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtTI'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), today, 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), today, 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtT1'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtT2'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtDE'), '', 'txt');}function CalendarEvent_Delete_(){ var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); if(confirm('Are you sure you want to delete this event?')) { GeneralFunctions.CalendarEvent_Delete(EID, CalendarEvent_Delete_Result_) }; return false;}function CalendarEvent_Delete_Result_(result) { if(result) {CloseAddEvent_Panel_(); $get('ctl00_MainContent_ctl18_btnRefresh').click(); } }function CalendarEvent_GetInfo_(){ var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); var btn1 = $get('ctl00_MainContent_ctl18_btnEventOK'); var btn2 = $get('ctl00_MainContent_ctl18_btnDelete'); if((EID * 1) > 0) { SetValue(btn1, 'Save Record', 'txt'); btn2.style.display = 'block'; } else { SetValue(btn1, 'Add Event', 'txt'); btn2.style.display = 'none'; } if((EID * 1) > 0) { GeneralFunctions.CalendarEvent_GetInfo(EID, CalendarEvent_GetInfo_Result_); }}function CalendarEvent_GetInfo_Result_(result){ if(result != null) {  SetValue($get('ctl00_MainContent_ctl18_txtTI'), result[0], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), result[1], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), result[2], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtT1'), result[3], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtT2'), result[4], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtDE'), result[5], 'txt'); }}function CalendarEvent_Add_(){ var TI = GetValue($get('ctl00_MainContent_ctl18_txtTI'), 'txt'); var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); var DT = GetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), 'txt'); var ED = GetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), 'txt'); var T1 = GetValue($get('ctl00_MainContent_ctl18_txtT1'), 'txt'); var T2 = GetValue($get('ctl00_MainContent_ctl18_txtT2'), 'txt'); var DE = GetValue($get('ctl00_MainContent_ctl18_txtDE'), 'txt'); var SCP = ''; var AS1 = '';; GeneralFunctions.CalendarEvent_Add(TI, EID, DT, ED, T1, T2, DE, SCP, AS1, CalendarEvent_Add_Result_); return false;}function CalendarEvent_Add_Result_(result){ if(result != 'true') { alert(result); } else { ButtonClick($get('ctl00_MainContent_ctl18_btnRefresh')); }}function ButtonClick(btn) { if(btn != null) { btn.click(); }}function GetValue(ID, type){ if((ID != null) && (type == 'txt')) { return ID.value; } else if((ID != null) && (type == 'lbl')) { return ID.innerHTML; } return '';}function SetValue(ID, value, type){ if((ID != null) && (type == 'txt')) { ID.value = value; return true; } else if((ID != null) && (type == 'lbl')) { ID.innerHTML = value; return true; } return false;}var ctl00_MainContent_AdminINV_txtNewCommentCD_DropDownContainer_Hide = true; function ctl00_MainContent_AdminINV_txtNewCommentCD_Change (val){if (SetCustomDropValue('ctl00_MainContent_AdminINV_txtNewCommentCD_DropDownGrid', val, 'DropDownRowSelect', 'DropDownRow', 'ctl00_MainContent_AdminINV_txtNewCommentCD_txtControlValue', 'ctl00_MainContent_AdminINV_txtNewCommentCD_txtValue')){$find('ctl00_MainContent_AdminINV_txtNewCommentCD_DropBehavior').hidePopup();}}//]]>
+</script>
+
+<script src="/Parent/ScriptResource.axd?d=dpZMkI6xwnOFLwds7jHr6SJn5I2_bFgta9lO7K9XW86HIB4FiHvfbhTHVXV3Bi6DxnxsTfeKT4A5VexPugZQWzQ8qctRzoKqh5DPb06BypqqQir_HsW5I2UyNLYoH5xcaPeV0yb25M5snjyUZfUco6poujTP5tHYY80bvUi4_KM1&amp;t=2a48f442" type="text/javascript"></script>
+<script src="/Parent/ScriptResource.axd?d=ci4YGnV_BZgSJeSsudapLfKbpS-Z6TtjtmfNZ4mRjuQVkQoq3V4cl9aNMQZOqGLTgrHJmk0_3YcXnri8oX7JWjC9KplCP4p0CS4xLZPpDeFmfowNw1l4ycI10FiKPjytf_hCZpYr-R3eKbxyAbqVhbS6krWfx5WS8onBLng01P4qq2jDF4Zp1w_25DBnhGAZ0&amp;t=2a48f442" type="text/javascript"></script>
+<script src="/Parent/Scripts/AjaxControlToolkit/Bundle?v=f2xAAd2TWOdmsmrwe3Ko7FqubUV1OQ66mzQ_gdvdZuk1" type="text/javascript"></script>
+<script src="SetClientOptions.asmx/js" type="text/javascript"></script>
+<script src="GeneralFunctions.asmx/js" type="text/javascript"></script>
+<script src="SecurityFunctions.asmx/js" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="850658B5" />
+</div>
+	<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$TheMasterScriptManager', 'aspnetForm', ['tctl00$MainContent$ctl18$txtDate$updatepanel1','','tctl00$MainContent$ctl18$txtDT$updatepanel1','','tctl00$MainContent$ctl18$txtED$updatepanel1',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+	<div style="height: 100%" class="view" data-root-url="https://aeries.smhs.org/Parent/" data-school-code="1">
+		<table class="full NoPadding a-expand">
+			<tr id="ctl00_trTop">
+	<td class="ac" valign="top">
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td class="al vat" style="width: 1%;"><img src="images/aeries_BigA-50x.png" alt="" style="padding: 5px 5px 0px 2px; border: 0px;" /></td>
+						<td class="al vam" style="font-size: 20px; color: #000000; font-weight: bold; height: 25px;">
+							<span id="ctl00_lblSchoolYear" style="font-size:12px;">2016-2017</span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<span id="ctl00_lblSchoolName" title="School 1">Santa Margarita Catholic H.S.</span>
+						
+									<input name="ctl00$SC" type="hidden" id="ctl00_SC" class="MasterSC" value="1" />
+									<input name="ctl00$SN" type="hidden" id="ctl00_SN" class="MasterSN" value="20001" />
+									<input name="ctl00$PID" type="hidden" id="ctl00_PID" class="MasterPID" value="1119970" />
+						</td>
+	
+						<td style="font-size: 13px;">
+								
+						</td>
+	
+						<td class="ar vat" style="height: 25px;">
+							<div class="PlainDataClear" style="margin-top: 2.1em; padding: 15px;"><span id="mobileTestdrive" style="padding: 0.3em; font-weight: bold; font-size: 1.5em; display: none;">
+								<a id="goToMobile" href="LoginParent.aspx?RedirectToApp=True">Mobile Portal</a>
+								<sup style="color: #8B0000;">Beta</sup></span></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="al" valign="bottom" colspan="4">
+							<div id="ctl00_ParNav_ParNav"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="al"><table class="menutable" border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td align="left" class="al" style="white-space:nowrap; display:inline;"><table border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td><div id="Top_1"><a class="topdynamicmenuTablet" href="Default.aspx" name="Home" id="Home">Home</a></div></td><td><div id="Top_2"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Student Info" id="Student Info">Student Info</a></div><div id="Sub_2" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="StudentProfile.aspx" name="Profile" id="Profile">Profile</a><a class="subdynamicmenu" href="Students.aspx" name="Demographics" id="Demographics">Demographics</a><a class="subdynamicmenu" href="Classes.aspx" name="Classes" id="Classes">Classes</a><a class="subdynamicmenu" href="Activities.aspx" name="Activities and Awards" id="Activities and Awards">Activities and Awards</a></div></td><td><div id="Top_3"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Attendance" id="Attendance">Attendance</a></div><div id="Sub_3" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="Attendance.aspx" name="Attendance" id="Attendance">Attendance</a></div></td><td><div id="Top_4"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Grades" id="Grades">Grades</a></div><div id="Sub_4" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="GradebookSummary.aspx" name="Gradebook" id="Gradebook">Gradebook</a><a class="subdynamicmenu" href="GradebookDetails.aspx" name="Gradebook Details" id="Gradebook Details">Gradebook Details</a><a class="subdynamicmenu" href="Grades.aspx" name="Grades" id="Grades">Grades</a><a class="subdynamicmenu" href="GraduationRequirements.aspx" name="Graduation Status" id="Graduation Status">Graduation Status</a><a class="subdynamicmenu" href="Transcripts.aspx" name="Transcripts" id="Transcripts">Transcripts</a><a class="subdynamicmenu" href="StudentStandardsBasedProgress.aspx" name="Standards Based Progress Dashboard" id="Standards Based Progress Dashboard">Standards Based Progress Dashboard</a></div></td><td><div id="Top_5"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Medical" id="Medical">Medical</a></div><div id="Sub_5" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="Immunizations.aspx" name="Immunizations" id="Immunizations">Immunizations</a></div></td><td><div id="Top_6"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Guidance" id="Guidance">Guidance</a></div><div id="Sub_6" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="AssertiveDiscipline.aspx" name="Assertive Discipline" id="Assertive Discipline">Assertive Discipline</a></div></td></tr></table></td><td align="right"><table border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td><div id="Top_7"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Change Student" id="Change Student">Change Student</a></div><div id="Sub_7" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="ChangeStudent.aspx?cache=3%2f25%2f2017+7%3a27%3a10+AM&SC=1&SN=20001&ReturnPage=Default.aspx&name=1_20001&id=1_20001" name="Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S." id="Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S.">Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S.</a><a class="subdynamicmenu" href="ChangeStudent.aspx?cache=3%2f25%2f2017+7%3a27%3a10+AM&SC=2&SN=20001&ReturnPage=Default.aspx&name=2_20001&id=2_20001" name="Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl" id="Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl">Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl</a><a class="subdynamicmenu" href="AddNewStudentToParent.aspx" name="Add New Student To Your Account" id="Add New Student To Your Account">Add New Student To Your Account</a></div></td><td><div id="Top_8"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Options" id="Options">Options</a></div><div id="Sub_8" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="ChangePassword.aspx" name="Change Password" id="Change Password">Change Password</a><a class="subdynamicmenu" href="ChangeEmail.aspx" name="Change Email" id="Change Email">Change Email</a></div></td><td><div id="Top_9"><a class="topdynamicmenuTablet" href="Logout.aspx" name="Logout" id="Logout">Logout</a></div></td></tr></table><script type="text/javascript">at_attach("Top_1", "Sub_1", "pointer");at_attach("Top_2", "Sub_2", "pointer");at_attach("Top_3", "Sub_3", "pointer");at_attach("Top_4", "Sub_4", "pointer");at_attach("Top_5", "Sub_5", "pointer");at_attach("Top_6", "Sub_6", "pointer");at_attach("Top_7", "Sub_7", "pointer");at_attach("Top_8", "Sub_8", "pointer");at_attach("Top_9", "Sub_9", "pointer");</script></td></tr></table></td></tr></table></div>
+						</td>
+					</tr>
+				</table>
+			</td>
+</tr>
+
+			<tr style="background-color:#F5F5F5; height: 525px; min-height:525px;"><td class="al" valign="top" style="padding: 5px 5px 5px 5px; min-height:525px;">
+				<div style="width:100%;"><span id="ctl00_lblAlert" class="RedText"></span></div>
+
+				
+				
+
+				
+		
+
+	
+    <div>
+		<div>
+			<!-- *** Required to register AjaxControlToolkit *** -->
+			
+					
+		</div>
+		
+		
+
+		<!-- Parent Widgets -->
+		<div id="ctl00_MainContent_divParentWidgets" class="BackDrop">
+			<div class="a-container">
+				<div id="ParentHomeRow1" class="a-row">		
+					<div class="a-col-20 ac">
+						
+						<span id="ctl00_MainContent_lblWelcome" class="PlainDataClear" style="font-weight:bold;">Welcome to the Aeries Portal for Shitian</span>
+						<div id="divParentNotification" class="HCell" style="padding: 10px; border:solid 1px #ddd; display: none; width: 100%;">
+							<span id="ctl00_MainContent_lblParentNotification" style="font-weight:bold;"></span>&nbsp;<a href="ParentNotificationPreferences.aspx" style="color:#1C3555" >Modify</a>
+						</div>
+						
+						
+					</div>
+				</div>
+
+				<div id="ParentHomeRow2" class="a-row">
+                    <div id="ParentHomeRow2_Left" class="a-col-5">
+						
+					</div>	
+
+					<div id="ParentHomeRow2_Right" class="a-col-15">
+						  
+<script>
+	var isProfile = 'True';
+	var ShowBackground = 'True';
+	var ShowPrintButton = 'False';
+</script>
+<script type="text/javascript" src="Scripts/require/widgets/views/classsummary/classsummary.js?vsn=7.17.2.17"></script>
+
+<div id="ctl00_MainContent_ctl14_divClassSummary" class="classSummaryContainer"></div>
+	
+
+						
+
+<div class="a-obj">
+	<table class="NoPadding a-expand">
+		<tr class="SubHeaderRow">
+			<td class="NewTL"></td>
+			<td class="CatHeader ac"><span id="ctl00_MainContent_ctl18_lblCalendar">Calendar</span></td>
+						
+			<td class="NewTR"></td>
+		</tr>
+		<tr class="SubHeaderRow">
+			<td class="DataLE"></td>
+			<td align="center" class="HCell">
+				<div id="ctl00_MainContent_ctl18_txtDate_updatepanel1" style="display: inline-block;">
+	
+		<input name="ctl00$MainContent$ctl18$txtDate$txtKendoDatePicker" type="text" value="03/25/2017" id="ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+</div>
+				
+			</td>
+			<td class="DataLER"></td>
+		</tr>
+		
+		<tr>
+			<td class="DataLE"></td>
+			<td class="Data al">
+				<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr class="PlainData">
+					<td class="al">
+						<img src="images/addrcd.gif" id="ctl00_MainContent_ctl18_imgAddEvent" border="0" alt="Add New Event" class="Clickable" onclick="$get(&#39;ctl00_MainContent_ctl18_txtEID&#39;).value = &#39;0&#39;;DisplayOnCenterScreen($get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;));ResetFields_();return false;" />&nbsp;
+						<span id="ctl00_MainContent_ctl18_lblAddEvent" class="Clickable" onclick="$get(&#39;ctl00_MainContent_ctl18_txtEID&#39;).value = &#39;0&#39;;DisplayOnCenterScreen($get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;));ResetFields_();return false;">Add New Event</span>
+						<input type="submit" name="ctl00$MainContent$ctl18$btnRefresh" value="Refresh" id="ctl00_MainContent_ctl18_btnRefresh" style="display:none;" />
+						<span id="ctl00_MainContent_ctl18_lblTest"></span>
+					</td>
+					<td class="ar">
+							<span id="ctl00_MainContent_ctl18_lblDisplay">Display: </span>
+							<select name="ctl00$MainContent$ctl18$CalendarView" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ctl18$CalendarView\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_MainContent_ctl18_CalendarView">
+	<option selected="selected" value="Day" ID="lblDay">Day</option>
+	<option value="Month" ID="lblMonth">Month</option>
+
+</select>
+					</td>
+				</tr></table>
+			</td>
+			<td class="DataLER"></td>
+		</tr>
+		
+		<div id="ctl00_MainContent_ctl18_divDay">
+	
+			
+					<tr>
+						<td class="DataLE"></td>
+						<td class="Data al">
+							<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr>
+								<td class="PlainDataClear al">
+									
+									<img src="images/ExpandButton.gif" id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_imgExpand" alt="Show Event Details" border="0" style="cursor:pointer; cursor: pointer;" onclick="if($get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display == &#39;inline&#39;){ $get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display=&#39;none&#39;; this.src=&#39;images/ExpandButton.gif&#39;;}else{ $get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display=&#39;inline&#39;; this.src=&#39;images/CollapseButton.gif&#39;;}" />
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_lblEventDesc">SMCHS Events</span>
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong" style="display:none;"><br />Possible B/G Bball CIF<br />SMCHS @ Swallows Day Parade in SJC<br /></span>
+								</td>
+								<td class="ar vat">
+									
+								</td>
+							</tr></table>
+						</td>
+						<td class="DataLER"></td>
+					</tr>
+				
+					<tr>
+						<td class="DataLE"></td>
+						<td class="Data al">
+							<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr>
+								<td class="PlainDataClear al">
+									
+									
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl01_lblEventDesc">Pd 4- Due: Chapter 9 ALEKS homework</span>
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl01_CalEventLong" style="display:none;"></span>
+								</td>
+								<td class="ar vat">
+									
+								</td>
+							</tr></table>
+						</td>
+						<td class="DataLER"></td>
+					</tr>
+				
+					
+				
+		
+</div>
+		
+		
+		
+			
+		
+		<tr style="height:2px;">
+			<td class="NewBL" style="height:2px; width: 2px;"></td>
+			<td class="DataBottom ac" colspan="3" style="height:2px;"></td>
+			<td class="NewBR" style="height:2px; width: 2px"></td>
+		</tr>	
+	</table>
+	
+	<!-- Add Event Form - Beginning -->
+	
+	<div id="ctl00_MainContent_ctl18_AddEvent_Panel" style="border-style:Outset;display: none; width: 570px; z-index: 1;">
+	
+		
+		<table border="0" style="border-collapse: collapse; border-style: none ;width: 570px;">
+			<tr class="SubHeaderRow">
+				<td class="DataLE"></td>
+				<td id="ctl00_MainContent_ctl18_tdAddEventTop" align="center" class="CatHeader" style="cursor: move; width: 100%"><b>Add New Event</b></td>
+	
+				<td class="DataLER"></td>
+			</tr>
+		</table>
+		
+		<table class="class="NoPadding a-expand"" style="width: 570px;">
+			<tr>
+				<td class="DataLE"></td>
+				<td class="ac">
+					<table class="NoPadding a-expand">
+						<tr><td class="ac">
+					
+							<table class="NoPadding a-expand">
+							<tr class="SubHeaderRow">
+								<td class="HCellT al"><b>&nbsp;Title&nbsp;</b></td>
+							</tr>
+							
+							<tr>
+								<td class="Data al">
+									<input name="ctl00$MainContent$ctl18$txtTI" type="text" id="ctl00_MainContent_ctl18_txtTI" class="k-textbox" style="width:350px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$txtEID" id="ctl00_MainContent_ctl18_txtEID" value="0" />
+								</td>
+							</tr>
+							</table>
+						</td></tr>
+						
+						<tr><td align="center">
+							<table border="0" style="border-collapse: collapse; border-color: black; width:100%;">
+							<tr class="SubHeaderRow">
+								<td class="HCellT ac"><b>&nbsp;Start Date&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;End Date&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;Start Time&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;End Time&nbsp;</b></td>
+							</tr>
+							<tr>
+								<td class="Data ac">&nbsp;<div id="ctl00_MainContent_ctl18_txtDT_updatepanel1" style="display: inline-block;">
+		
+		<input name="ctl00$MainContent$ctl18$txtDT$txtKendoDatePicker" type="text" id="ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+	</div></td>
+								<td class="Data ac">&nbsp;<div id="ctl00_MainContent_ctl18_txtED_updatepanel1" style="display: inline-block;">
+		
+		<input name="ctl00$MainContent$ctl18$txtED$txtKendoDatePicker" type="text" id="ctl00_MainContent_ctl18_txtED_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+	</div></td>
+								
+								<td class="Data ac">
+									<input name="ctl00$MainContent$ctl18$txtT1" type="text" id="ctl00_MainContent_ctl18_txtT1" class="k-textbox" style="width:77px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$meeT1_ClientState" id="ctl00_MainContent_ctl18_meeT1_ClientState" />
+								</td>
+								<td class="Data ac">
+									<input name="ctl00$MainContent$ctl18$txtT2" type="text" id="ctl00_MainContent_ctl18_txtT2" class="k-textbox" style="width:77px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$meeT2_ClientState" id="ctl00_MainContent_ctl18_meeT2_ClientState" />
+								</td>
+							</tr>
+							</table>
+						</td></tr>
+
+						<!-- *** 07/01/2015 HB -- teacher event -->
+						
+						<tr><td class="ac">
+							<table class="NoPadding a-expand">
+							<tr class="SubHeaderRow">
+								<td class="HCellT ac"><b>&nbsp;Description&nbsp;</b></td>
+							</tr>
+							<tr>
+								<td class="Data ac">&nbsp; <textarea name="ctl00$MainContent$ctl18$txtDE" rows="4" cols="20" id="ctl00_MainContent_ctl18_txtDE" style="width:300px;">
+</textarea>&nbsp;</td>
+							</tr>
+							</table>
+						</td></tr>
+					</table>
+				</td>
+				
+				<td class="DataLER"></td>
+			</tr>
+				
+			<tr>
+				<td class="DataLE"></td>
+				<td align="center" class="Data" style="width: 400px;">
+					<table border="0" style="border-collapse:collapse;border-style:none;">
+						<tr>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnEventOK" value="Add Event" onclick="return CalendarEvent_Add_();" id="ctl00_MainContent_ctl18_btnEventOK" /></td>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnDelete" value="Delete" onclick="return CalendarEvent_Delete_();" id="ctl00_MainContent_ctl18_btnDelete" style="display: none;" /></td>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnCancel" value="Cancel" onclick="return CloseAddEvent_Panel_();$get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;).style.display = &#39;none&#39;;" id="ctl00_MainContent_ctl18_btnCancel" /></td>
+						</tr>
+					</table>
+				</td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr style="height:2px;">
+				<td class="NewBL" style="height:2px; width: 2px;"></td>
+				<td class="DataBottom ac" style="height:2px;"></td>
+				<td class="NewBR" style="height:2px; width: 2px"></td>
+			</tr>
+		</table>
+	
+</div>
+
+	<!-- Add Event Form - Ending -->
+
+<label id="lblRootURL" style="display: none;">https://aeries.smhs.org/parent</label>
+</div>
+<script type="text/javascript">
+	function txtED_Changed() {
+		var dt = $("#" + 'ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker');
+		var ed = $("#" + 'ctl00_MainContent_ctl18_txtED_txtKendoDatePicker');
+		var dt1 = new Date(dt.val());
+		var dt2 = new Date(ed.val());
+
+		if ((dt1 != NaN) && (dt2 != NaN)) {
+			if (dt1.getTime() > dt2.getTime()) {
+				ed.val(dt.val());
+			}
+		}
+	}
+
+	function calendarFilter_click() {
+		var div = $("#divFilter");
+		var isVisible = false;
+		var left = 250;
+
+		if (div.width() <= 200) { left = 100; }
+
+		div.css({
+			top: $("#btnCalenderFilter").offset().top + 23,
+			left: $("#btnCalenderFilter").offset().left - left
+ 		});
+
+		if (div.attr("style") == undefined) {
+			isVisible = true;
+		}
+		else if (div.attr("style").indexOf("block") >= 0) {
+			isVisible = true;
+		}
+		
+		if (isVisible) {
+			div.fadeOut(700, function () {
+				div.css("display", "none");
+			});
+		}
+		else {
+			div.fadeIn(700, function () {
+				div.css("display", "block");
+			});
+		}
+	}
+
+	function ddlEventScope_OnSelect(e) {
+		var sp = "";
+		var tmp = null;
+		var root = $("#lblRootURL").html();
+
+		if (root[root.length] != "/") { root += "/"; }
+
+		if (typeof e == "object") {
+			sp = this.dataItem(e.item).value;
+		}
+		else {
+			tmp = e.split("|");
+			sp = tmp[0];
+		}
+
+		var webMethod = root + "portal/teacher/event/getassociation/scopeid/" + sp + "/";
+			
+		var request = $.ajax({
+			url: webMethod,
+			type: "GET",
+			cache: false,
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		});
+
+		request.done(function (result) {
+			$("#ddlAssociation").kendoDropDownList({
+				dataTextField: "Description",
+				dataValueField: "Code",
+				dataSource: result
+			});
+
+			if (tmp != null) { $("#ddlAssociation").data("kendoDropDownList").value(tmp[1]); }
+		});
+
+		request.fail(function (jqXHR, textStatus) {
+			console.log("ddlEventScope_OnSelect Request Failed: " + jqXHR.responseText);
+		});
+	}
+
+	$(document).ready(function () {
+		data = [];
+		data.push({ text: "Personal - just you", value: "PER" });
+
+		
+		var classes = $("#" + 'ctl00_MainContent_ctl18_opnClasses');
+		if (classes) { $("#divClasses").css("display", 'inline-block'); }
+
+		$("#divFilter").css("width", "456px");
+		data.push({ text: "Section - one of your classes", value: "MST" });
+		data.push({ text: "Course - all of your classes for a course", value: "CRS" });
+		
+
+		data.push({ text: "Teacher - all of your class", value: "TCH" });
+
+		if ($("#ddlEventScope").length > 0) {
+			$("#ddlEventScope").kendoDropDownList({
+				dataTextField: "text",
+				dataValueField: "value",
+				dataSource: data,
+				select: ddlEventScope_OnSelect
+			});
+
+			$("#ddlEventScope").data("kendoDropDownList").select(0);
+			ddlEventScope_OnSelect("PER|NONE");
+
+			$("#btnCalenderFilter").bind("click", calendarFilter_click);
+			$("#divEventTypes input[type='button']").on("click", function () {
+				$("#divFilter").fadeOut(700, function () {
+					$("#" + 'ctl00_MainContent_ctl18_btnRefresh').click();
+				});
+			});
+		}
+	});
+</script>
+
+<style type="text/css">
+.calendar-filter {
+	font-size: 12pt;
+	color: #06C;
+}
+.calendar-filter:hover {
+	color: #FFF;
+}
+
+.bgClass {
+	border: 1px solid #9DE788;
+	background-color: #9DE788;
+}
+
+.bgPeronsal {
+	border: 1px solid #F00;
+	background-color: #F00;
+}
+
+.bgSchool {
+	border: 1px solid #FF0;
+	background-color: #FF0;
+}
+
+.bgDistrict {
+	border: 1px solid #699;
+	background-color: #699;
+}
+
+#divFilter {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	border: 2px solid #92B8CE;
+	background-color: #fff;
+	z-index: 10000;
+}
+
+#divEventTypes, #divClasses {
+	width: 200px;
+	height: 200px;
+	overflow: auto;
+	vertical-align: top;
+	display: inline-block;
+}
+
+#divEventTypes ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#divEventTypes ul li {
+	height: 23px;
+	text-align: left;
+	vertical-align: top;
+	padding-top: 5px;
+	padding-left: 3px;
+}
+
+#divEventTypes ul li:hover {
+	cursor: pointer;
+	background-color: #e3e3e3;
+}
+
+#divEventTypes ul li label {
+	vertical-align: top;
+}
+
+#divEventTypes div, #divClasses div {
+	height: 25px;
+	padding-top: 5px;
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+#divEventTypes input[type='button'] {
+	width: 100px;
+	margin-top: 10px;
+}
+
+#divClasses {
+	width: 252px;
+	border-left: 1px solid #fff;
+}
+
+#divClasses table {
+	width: 233px;
+	border: none;
+	border-spacing: 0;
+	border-collapse: collapse;
+	background-color: #f9f9f9;
+}
+
+#divClasses table td {
+	height: 23px;
+	padding-top: 5px;
+	border: 1px solid transparent;
+}
+
+#divClasses table td:hover {
+	cursor: pointer;
+	background-color: #e1e8fe;
+}
+
+#divClasses table tr:nth-child(even) {
+	background-color: #e3e3e3;
+}
+
+#divClasses table tr td label {
+	vertical-align: top;
+}
+</style>
+					</div>				
+                </div>			
+
+				<div id="ParentHomeRow3" class="a-row">
+					<div class="a-col-12">
+																		
+						
+
+<style type="text/css">
+	.activeLink {
+		color: #0000ee;
+		text-decoration: none;
+	}
+	.activeLink:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<script type="text/javascript">	
+	$(function () {
+		var request = $.ajax({
+			url: "studentdata/reportcardhistory/true/",
+			type: "GET",
+			cache: false,
+			dataType: "html",
+			contentType: "application/html; charset=utf-8"
+		})
+		request.done(function (result) {
+			if (result) {
+				if ($.trim(result).length > 0) {
+					$(".report-card-history").html(result);
+					$(".report-card-history a").addClass("activeLink");
+				}
+			}
+		})
+		request.fail(function (qXHR, textStatus) {
+			// do nothing
+		});
+	});
+</script>
+						<table id="ctl00_MainContent_dlAttSummaryPeriod" cellspacing="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tr>
+		<td>
+								<tr class="SubHeaderRow">
+									<td class="NewTL"></td>
+									<td class="CatHeader ac" colspan="13"><a href="Attendance.aspx">Attendance Summary</a></td>
+									<td class="NewTR"></td>
+								</tr>
+								<tr class="SubHeaderRow">
+									<td class="DataLE"></td>
+									<td class="HCell ac">Code</td>
+									<td class="HCell al">Description</td>
+									<td class="HCell ac">All</td>
+									<td class="HCell ac">0</td>
+									<td class="HCell ac">1</td>
+									<td class="HCell ac">2</td>
+									<td class="HCell ac">3</td>
+									<td class="HCell ac">4</td>
+									<td class="HCell ac">5</td>
+									<td class="HCell ac">6</td>
+									<td class="HCell ac">7</td>
+									<td class="HCell ac">8</td>
+									<td class="HCell ac">9</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac">L</td>
+									<td class="Data al">Late - Exc</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac"></td>
+									<td class="Data ac">1</td>
+									<td class="Data ac">1</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac">T</td>
+									<td class="Data al">Tardy</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac">1</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">_*TOTALS*_</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">EXCUSED</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">UNEXCUSED</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr style="height:2px;">
+									<td class="NewBL" style="height:2px; width:2px;"></td>
+									<td class="DataBottom ac" colspan="13" style="height:2px;"></td>
+									<td class="NewBR" style="height:2px; width:2px;"></td>
+								</tr>
+							</td>
+	</tr>
+</table>							
+					</div>
+
+					<div class="a-col-8">
+													
+						<div id="divAttSummaryDaily" class="a-obj">
+							
+						</div>						
+						
+
+<div class="a-obj">
+	
+			<table class="NoPadding a-expand">
+				<tr class="SubHeaderRow">
+					<td class="NewTL"></td>
+					<td class="CatHeader ac" colspan="2">Resources</td>
+					<td class="NewTR"></td>
+				</tr>
+				<tr class="SubHeaderRow">
+					<td class="DataLE" /></td>
+					<td class="HCell al">Site</td>
+					<td class="HCell al">Description</td>
+					<td class="DataLER" /></td>
+				</tr>
+		
+			<tr>
+				<td class="DataLE"></td>
+				<td class="Data al"><a href="http://www.smhs.org/calendar.jsp" target="_blank">School Calendar</a></td>
+				<td class="Data al">&nbsp;</td>
+				<td class="DataLER"></td>
+			</tr>
+						
+				<tr style="height:2px;">
+					<td class="NewBL" style="height:2px; width: 2px;"></td>
+					<td class="DataBottom ac" colspan="2" style="height:2px;"></td>
+					<td class="NewBR" style="height:2px; width: 2px"></td>
+				</tr>	
+			</table>
+		
+</div>
+						
+
+<style type="text/css">
+	.quick-button-small {
+		-webkit-border-radius: 5px 5px 5px 5px;
+		-moz-border-radius: 5px 5px 5px 5px;
+		border-radius: 5px 5px 5px 5px;
+		height: 20px;
+		font-size: 11.5px;
+		font-family: Arial, Tahoma, Helvetica;
+		background-color: white;
+		border:1px solid #AEAEAE;
+	}
+	.quick-button-small:hover
+		{
+		background-color: #E3E3E3;
+		}
+	
+</style>
+<div class="a-obj">
+	
+</div>
+						
+						
+
+<div class="a-obj">
+	
+	
+</div>
+						
+
+<div class="a-obj">
+	
+</div>
+					</div>
+				</div>
+
+				<div id="ParentHomeRow4" class="a-row">
+					<div class="a-col-20 PlainDataClear ac" style="font-size:65%; color: #333333">
+						<table id="ctl00_MainContent_tblLoginHistory" class="NoPadding a-expand">
+	<tr>
+		<td>Currently Accessing From: <span id="ctl00_MainContent_lblCurrentIP">125.37.151.195</span></td>
+	</tr>
+	<tr>
+		<td>Previously Accessed From: <span id="ctl00_MainContent_lblPrevIP">70.187.167.52</span> on <span id="ctl00_MainContent_lblPrevTimestamp">3/23/2017 10:44:27 PM</span></td>
+	</tr>
+</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Admin Widgets -->
+					
+
+	</div>	
+	<input type="submit" name="ctl00$MainContent$btnEditHomePage" value="Edit Home Page" onclick="return false;" id="ctl00_MainContent_btnEditHomePage" style="display: none;" />
+	
+
+	<div id="ctl00_MainContent_EditHomePage_Panel" style="display: none;">
+	
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr class="SubHeaderRow">
+				<td class="DataTL"></td>
+				<td align="center" class="HCellT" colspan="2">Available Gadgets</td>
+				<td class="DataTR"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetAttSummary" type="checkbox" name="ctl00$MainContent$chkGadgetAttSummary" /><label for="ctl00_MainContent_chkGadgetAttSummary">Attendance Summary</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetCalendar" type="checkbox" name="ctl00$MainContent$chkGadgetCalendar" /><label for="ctl00_MainContent_chkGadgetCalendar">Events Calendar</label></td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetTasks" type="checkbox" name="ctl00$MainContent$chkGadgetTasks" /><label for="ctl00_MainContent_chkGadgetTasks">My Tasks</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetINV" type="checkbox" name="ctl00$MainContent$chkGadgetINV" /><label for="ctl00_MainContent_chkGadgetINV">Intervention Caseload</label></td>
+				<td class="DataLER"></td>
+			</tr>
+            <tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetResourceLinks" type="checkbox" name="ctl00$MainContent$chkGadgetResourceLinks" /><label for="ctl00_MainContent_chkGadgetResourceLinks">Resources</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkBriefcase" type="checkbox" name="ctl00$MainContent$chkBriefcase" /><label for="ctl00_MainContent_chkBriefcase">My Briefcase</label></td>
+				<td class="DataLER"></td>
+			</tr>
+	        <tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkClassSummary" type="checkbox" name="ctl00$MainContent$chkClassSummary" /><label for="ctl00_MainContent_chkClassSummary">Class Summary</label></td>
+				<td align="left" valign="top" class="Data"></td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="center" valign="top" class="Data" colspan="2">
+					<input type="submit" name="ctl00$MainContent$btnEditHomeOK" value="OK" id="ctl00_MainContent_btnEditHomeOK" />
+					<input type="button" value="Cancel" onclick="$find('GadgetOptions').hide(); return false;" />
+				</td>
+				<td class="DataLER"></td>
+			</tr>
+		</table>
+	
+</div>
+	<input type="hidden" name="ctl00$MainContent$Caption" id="ctl00_MainContent_Caption" />
+
+	<script type="text/javascript">
+
+		var viewParentNotification = false;
+
+		$(document).ready(function () {
+			if (viewParentNotification) {
+				$("#divParentNotification").slideDown("slow");
+				$("#divParentNotification").delay(10000).slideUp();
+			}
+
+			$("[name$='txtStuSearch']").focus();
+		});
+
+	</script>
+
+
+			</td></tr>
+			<tr><td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+					<td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;" class="al">Aeries&nbsp;Version&nbsp;<span id="ctl00_lblVersion">7.17.2.17</span></td>
+					<td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;" class="ar"><span id="ctl00_lblCopyright">Copyright &copy; 1995-2017 Aeries Software. All Rights Reserved.</span></td>
+				</tr></table>
+			</td></tr>
+		</table>
+	</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+function EditHomePage(){ $get('ctl00_MainContent_btnEditHomePage').click(); return false;}function ExpandOverEmptyColumns(columnOneID,columnTwoID){ if(columnOneID.children().length === 0) { columnTwoID.addClass('a-col-20'); } if(columnTwoID.children().length === 0) { columnOneID.addClass('a-col-20'); }}ExpandOverEmptyColumns($('#ParentHomeRow2_Right'),$('#ParentHomeRow2_Left'));//]]>
+</script>
+<script language='javascript'> var timeoutIsParent = true; var global_SessionTimer; var global_WarningTimer; var global_SessionTimeout = 3600000;  var global_WarningTimeout = 2700000;  initSessionTimer(3600000,2700000);</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy', change: CalendarEvent_SetDate_ }); $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtMonth_txtKendoMonthPicker').kendoDatePicker({  start: 'year',  depth: 'year',  format:  'MMMM yyyy', change: CalendarEvent_SetDate_ });});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy', change: txtED_Changed }); $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FloatingBehavior, {"handle":$get("ctl00_MainContent_ctl18_tdAddEventTop"),"id":"ctl00_MainContent_ctl18_dpeAddEvent_Panel"}, null, null, $get("ctl00_MainContent_ctl18_AddEvent_Panel"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MainContent_ctl18_meeT1_ClientState","acceptAMPM":true,"century":2000,"cultureAMPMPlaceholder":"AM;PM","cultureCurrencySymbolPlaceholder":"$","cultureDateFormat":"MDY","cultureDatePlaceholder":"/","cultureDecimalPlaceholder":".","cultureName":"en-US","cultureThousandsPlaceholder":",","cultureTimePlaceholder":":","id":"ctl00_MainContent_ctl18_meeT1","mask":"99:99","maskType":3}, null, null, $get("ctl00_MainContent_ctl18_txtT1"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MainContent_ctl18_meeT2_ClientState","acceptAMPM":true,"century":2000,"cultureAMPMPlaceholder":"AM;PM","cultureCurrencySymbolPlaceholder":"$","cultureDateFormat":"MDY","cultureDatePlaceholder":"/","cultureDecimalPlaceholder":".","cultureName":"en-US","cultureThousandsPlaceholder":",","cultureTimePlaceholder":":","id":"ctl00_MainContent_ctl18_meeT2","mask":"99:99","maskType":3}, null, null, $get("ctl00_MainContent_ctl18_txtT2"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","dropShadow":true,"dynamicServicePath":"/Parent/Default.aspx","id":"GadgetOptions","popupControlID":"ctl00_MainContent_EditHomePage_Panel"}, null, null, $get("ctl00_MainContent_btnEditHomePage"));
+});
+//]]>
+</script>
+</form>
+	
+    <script type="text/javascript">
+        // remove the mobile portal link on desktop browsers
+        if (!kendo.support.mobileOS) {
+        	if ($get("mobileTestdrive")) { $get("mobileTestdrive").innerHTML = ""; }
+        } else {
+            $('#mobileTestdrive').show();
+        }
+    </script>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+
+		window.masterSC = $('.MasterSC').val();
+		window.masterSN = $('.MasterSN').val();
+		window.masterID = $('.MasterPID').val();
+
+		
+	});
+    </script>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Aeries.net Student Portal - Shitian Chen
+</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><link rel="icon" href="favicon.ico" type="image/x-icon" /><link href="/Parent/Content/AjaxControlToolkit/Styles/Bundle?v=FDBVOkOPr_cBjdVOMFWml5TXJYdiNvOL409jlglEoH81" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="StyleSheets/aeries-responsive.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/aeries.common.min.css?v=20160413" /><link rel="stylesheet" type="text/css" href="StyleSheets/aeries.default.min.css?v=20160413" /><link id="ctl00_BaseCSS" rel="stylesheet" type="text/css" href="StyleSheets/GeneralDark.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/calendar-stylesheet.css" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.common.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.rtl.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.default.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.dataviz.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.dataviz.default.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.bootstrap.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="StyleSheets/DynamicMenu.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/font-awesome/font-awesome.min.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/CheckBoxes.min.css?vsn=20150915" />
+
+    <script src="ClientScripts/ControlPositions.js?vsn=20140815" type="text/javascript"></script>
+    <script src="ClientScripts/ExpandOut.js" type="text/javascript"></script>
+    <script src="ClientScripts/XMLCommunications.js" type="text/javascript"></script>
+    <script src="ClientScripts/xmldom.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="Scripts/require/TimeOut.js?vsn=20151215"></script>
+    <script src="ClientScripts/calendar.js" type="text/javascript"></script>
+    <script src="ClientScripts/iscroll.js" type="text/javascript"></script>
+	<script src="ClientScripts/EmailStuff.js?vsn=20160401" type="text/javascript"></script>
+	<script src="ClientScripts/jquery.min.js?v=1.12.3" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.validate.min.js"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.validate.unobtrusive.min.js"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.unobtrusive-ajax.min.js"></script>
+	<script src="KendoUI/kendo.all.min.js?v=2017.1.118" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="KendoUI/kendo.aspnetmvc.min.js?v=2017.1.118"></script>
+    <script src="ClientScripts/General.js?vsn=20151215" type="text/javascript"></script>
+	<script src="ClientScripts/ParentNav.js" type="text/javascript"></script>
+	<script src="ClientScripts/StudentBackpack.js?vsn=20161208" type="text/javascript"></script>
+    <script type="text/javascript">window.defaultStatus="Welcome to Aeries";</script>
+	<script type="text/javascript" src="ClientScripts/aeries-kendo-windows-1.0.4.js?vsn=20160401"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			if (kendo.support.mobileOS) {
+
+				//GeneralFunctions.IsDemoServer(CheckForMobileVersion_IsDemoServer_Complete);
+			}
+
+		});
+
+	</script>
+
+    </head>
+
+<body id="ctl00_body" class="MainParent" leftmargin="8" topmargin="0" marginwidth="8" marginheight="0">
+  
+  <form method="post" action="./Default.aspx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMzcyNzExNzUPFgQeD0hpZGVDb250YWN0SW5mb2ceE1ZhbGlkYXRlUmVxdWVzdE1vZGUCARYCZg9kFgICAw9kFgJmD2QWDAIBD2QWAmYPZBYGAgEPDxYCHgRUZXh0BQkyMDE2LTIwMTdkZAIDDw8WBB8CBR1TYW50YSBNYXJnYXJpdGEgQ2F0aG9saWMgSC5TLh4HVG9vbFRpcAUIU2Nob29sIDFkZAIND2QWAmYPFgIeCWlubmVyaHRtbAXNKjx0YWJsZSB3aWR0aD0iMTAwJSIgYm9yZGVyPSIwIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiPjx0cj48dGQgYWxpZ249ImxlZnQiIGNsYXNzPSJhbCI+PHRhYmxlIGNsYXNzPSJtZW51dGFibGUiIGJvcmRlcj0iMCIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIj48dHIgdmFsaWduPSJ0b3AiPjx0ZCBhbGlnbj0ibGVmdCIgY2xhc3M9ImFsIiBzdHlsZT0id2hpdGUtc3BhY2U6bm93cmFwOyBkaXNwbGF5OmlubGluZTsiPjx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+PHRyIHZhbGlnbj0idG9wIj48dGQ+PGRpdiBpZD0iVG9wXzEiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iRGVmYXVsdC5hc3B4IiBuYW1lPSJIb21lIiBpZD0iSG9tZSI+SG9tZTwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfMiI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJTdHVkZW50IEluZm8iIGlkPSJTdHVkZW50IEluZm8iPlN0dWRlbnQgSW5mbzwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfMiIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJTdHVkZW50UHJvZmlsZS5hc3B4IiBuYW1lPSJQcm9maWxlIiBpZD0iUHJvZmlsZSI+UHJvZmlsZTwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IlN0dWRlbnRzLmFzcHgiIG5hbWU9IkRlbW9ncmFwaGljcyIgaWQ9IkRlbW9ncmFwaGljcyI+RGVtb2dyYXBoaWNzPC9hPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQ2xhc3Nlcy5hc3B4IiBuYW1lPSJDbGFzc2VzIiBpZD0iQ2xhc3NlcyI+Q2xhc3NlczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkFjdGl2aXRpZXMuYXNweCIgbmFtZT0iQWN0aXZpdGllcyBhbmQgQXdhcmRzIiBpZD0iQWN0aXZpdGllcyBhbmQgQXdhcmRzIj5BY3Rpdml0aWVzIGFuZCBBd2FyZHM8L2E+PC9kaXY+PC90ZD48dGQ+PGRpdiBpZD0iVG9wXzMiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iQXR0ZW5kYW5jZSIgaWQ9IkF0dGVuZGFuY2UiPkF0dGVuZGFuY2U8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzMiIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQXR0ZW5kYW5jZS5hc3B4IiBuYW1lPSJBdHRlbmRhbmNlIiBpZD0iQXR0ZW5kYW5jZSI+QXR0ZW5kYW5jZTwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfNCI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJHcmFkZXMiIGlkPSJHcmFkZXMiPkdyYWRlczwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfNCIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJHcmFkZWJvb2tTdW1tYXJ5LmFzcHgiIG5hbWU9IkdyYWRlYm9vayIgaWQ9IkdyYWRlYm9vayI+R3JhZGVib29rPC9hPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iR3JhZGVib29rRGV0YWlscy5hc3B4IiBuYW1lPSJHcmFkZWJvb2sgRGV0YWlscyIgaWQ9IkdyYWRlYm9vayBEZXRhaWxzIj5HcmFkZWJvb2sgRGV0YWlsczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkdyYWRlcy5hc3B4IiBuYW1lPSJHcmFkZXMiIGlkPSJHcmFkZXMiPkdyYWRlczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkdyYWR1YXRpb25SZXF1aXJlbWVudHMuYXNweCIgbmFtZT0iR3JhZHVhdGlvbiBTdGF0dXMiIGlkPSJHcmFkdWF0aW9uIFN0YXR1cyI+R3JhZHVhdGlvbiBTdGF0dXM8L2E+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJUcmFuc2NyaXB0cy5hc3B4IiBuYW1lPSJUcmFuc2NyaXB0cyIgaWQ9IlRyYW5zY3JpcHRzIj5UcmFuc2NyaXB0czwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IlN0dWRlbnRTdGFuZGFyZHNCYXNlZFByb2dyZXNzLmFzcHgiIG5hbWU9IlN0YW5kYXJkcyBCYXNlZCBQcm9ncmVzcyBEYXNoYm9hcmQiIGlkPSJTdGFuZGFyZHMgQmFzZWQgUHJvZ3Jlc3MgRGFzaGJvYXJkIj5TdGFuZGFyZHMgQmFzZWQgUHJvZ3Jlc3MgRGFzaGJvYXJkPC9hPjwvZGl2PjwvdGQ+PHRkPjxkaXYgaWQ9IlRvcF81Ij48YSBjbGFzcz0idG9wZHluYW1pY21lbnVUYWJsZXQiIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIG5hbWU9Ik1lZGljYWwiIGlkPSJNZWRpY2FsIj5NZWRpY2FsPC9hPjwvZGl2PjxkaXYgaWQ9IlN1Yl81IiBjbGFzcz0iU3ViVGFiIiBzdHlsZT0iYm9yZGVyLWJvdHRvbTogb3V0c2V0IDFweCAjRkZGRkZGOyBkaXNwbGF5OmlubGluZTsgbGVmdDowcHg7IHotaW5kZXg6IDE7Ij48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkltbXVuaXphdGlvbnMuYXNweCIgbmFtZT0iSW1tdW5pemF0aW9ucyIgaWQ9IkltbXVuaXphdGlvbnMiPkltbXVuaXphdGlvbnM8L2E+PC9kaXY+PC90ZD48dGQ+PGRpdiBpZD0iVG9wXzYiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iR3VpZGFuY2UiIGlkPSJHdWlkYW5jZSI+R3VpZGFuY2U8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzYiIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQXNzZXJ0aXZlRGlzY2lwbGluZS5hc3B4IiBuYW1lPSJBc3NlcnRpdmUgRGlzY2lwbGluZSIgaWQ9IkFzc2VydGl2ZSBEaXNjaXBsaW5lIj5Bc3NlcnRpdmUgRGlzY2lwbGluZTwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT48L3RkPjx0ZCBhbGlnbj0icmlnaHQiPjx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+PHRyIHZhbGlnbj0idG9wIj48dGQ+PGRpdiBpZD0iVG9wXzciPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iQ2hhbmdlIFN0dWRlbnQiIGlkPSJDaGFuZ2UgU3R1ZGVudCI+Q2hhbmdlIFN0dWRlbnQ8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzciIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQ2hhbmdlU3R1ZGVudC5hc3B4P2NhY2hlPTMlMmYyNSUyZjIwMTcrNyUzYTUwJTNhNTArQU0mU0M9MSZTTj0yMDAwMSZSZXR1cm5QYWdlPURlZmF1bHQuYXNweCZuYW1lPTFfMjAwMDEmaWQ9MV8yMDAwMSIgbmFtZT0iQ2hlbiwgU2hpdGlhbiAtIEdyZCAxMCAtIFNhbnRhIE1hcmdhcml0YSBDYXRob2xpYyBILlMuIiBpZD0iQ2hlbiwgU2hpdGlhbiAtIEdyZCAxMCAtIFNhbnRhIE1hcmdhcml0YSBDYXRob2xpYyBILlMuIj5DaGVuLCBTaGl0aWFuIC0gR3JkIDEwIC0gU2FudGEgTWFyZ2FyaXRhIENhdGhvbGljIEguUy48L2E+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJDaGFuZ2VTdHVkZW50LmFzcHg/Y2FjaGU9MyUyZjI1JTJmMjAxNys3JTNhNTAlM2E1MCtBTSZTQz0yJlNOPTIwMDAxJlJldHVyblBhZ2U9RGVmYXVsdC5hc3B4Jm5hbWU9Ml8yMDAwMSZpZD0yXzIwMDAxIiBuYW1lPSJDaGVuLCBTaGl0aWFuIFtJTkFDVElWRV0gLSBHcmQgMTAgKDEvMzEvMjAxNykgLSBTYW50YSBNYXJnYXJpdGEgU3VtbWVyIFNjaGwiIGlkPSJDaGVuLCBTaGl0aWFuIFtJTkFDVElWRV0gLSBHcmQgMTAgKDEvMzEvMjAxNykgLSBTYW50YSBNYXJnYXJpdGEgU3VtbWVyIFNjaGwiPkNoZW4sIFNoaXRpYW4gW0lOQUNUSVZFXSAtIEdyZCAxMCAoMS8zMS8yMDE3KSAtIFNhbnRhIE1hcmdhcml0YSBTdW1tZXIgU2NobDwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkFkZE5ld1N0dWRlbnRUb1BhcmVudC5hc3B4IiBuYW1lPSJBZGQgTmV3IFN0dWRlbnQgVG8gWW91ciBBY2NvdW50IiBpZD0iQWRkIE5ldyBTdHVkZW50IFRvIFlvdXIgQWNjb3VudCI+QWRkIE5ldyBTdHVkZW50IFRvIFlvdXIgQWNjb3VudDwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfOCI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJPcHRpb25zIiBpZD0iT3B0aW9ucyI+T3B0aW9uczwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfOCIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJDaGFuZ2VQYXNzd29yZC5hc3B4IiBuYW1lPSJDaGFuZ2UgUGFzc3dvcmQiIGlkPSJDaGFuZ2UgUGFzc3dvcmQiPkNoYW5nZSBQYXNzd29yZDwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkNoYW5nZUVtYWlsLmFzcHgiIG5hbWU9IkNoYW5nZSBFbWFpbCIgaWQ9IkNoYW5nZSBFbWFpbCI+Q2hhbmdlIEVtYWlsPC9hPjwvZGl2PjwvdGQ+PHRkPjxkaXYgaWQ9IlRvcF85Ij48YSBjbGFzcz0idG9wZHluYW1pY21lbnVUYWJsZXQiIGhyZWY9IkxvZ291dC5hc3B4IiBuYW1lPSJMb2dvdXQiIGlkPSJMb2dvdXQiPkxvZ291dDwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT48c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+YXRfYXR0YWNoKCJUb3BfMSIsICJTdWJfMSIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfMiIsICJTdWJfMiIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfMyIsICJTdWJfMyIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNCIsICJTdWJfNCIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNSIsICJTdWJfNSIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNiIsICJTdWJfNiIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNyIsICJTdWJfNyIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfOCIsICJTdWJfOCIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfOSIsICJTdWJfOSIsICJwb2ludGVyIik7PC9zY3JpcHQ+PC90ZD48L3RyPjwvdGFibGU+PC90ZD48L3RyPjwvdGFibGU+ZAIDDxYCHgdWaXNpYmxlaGQCBA8WAh8FaBYCAgMPDxYCHwJlZGQCBQ9kFgZmDw9kDxAWAWYWARYCHg5QYXJhbWV0ZXJWYWx1ZSgpWVN5c3RlbS5JbnQ2NCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BDkzNzcWAQIFZGQCBA8WAh8FZxYWAgEPDxYCHwIFKFdlbGNvbWUgdG8gdGhlIEFlcmllcyBQb3J0YWwgZm9yIFNoaXRpYW5kZAIGD2QWAmYPZBYUZg8PFgIfAgUIQ2FsZW5kYXJkZAIBDw8WAh8FZ2QWAmYPZBYCZg9kFgICAQ8PFgQeBVdpZHRoGwAAAAAAAF5AAQAAAB4EXyFTQgKAAhYCHgVzdHlsZQUcaGVpZ2h0OjI2cHg7Zm9udC1zaXplOlNtYWxsO2QCAg9kFgJmDw8WBB8HGwAAAAAAwGJAAQAAAB8IAoACZGQCCA8WAh4Hb25jbGljawWVASRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3R4dEVJRCcpLnZhbHVlID0gJzAnO0Rpc3BsYXlPbkNlbnRlclNjcmVlbigkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9BZGRFdmVudF9QYW5lbCcpKTtSZXNldEZpZWxkc18oKTtyZXR1cm4gZmFsc2U7ZAIJDw8WAh8CBQ1BZGQgTmV3IEV2ZW50FgIfCgWVASRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3R4dEVJRCcpLnZhbHVlID0gJzAnO0Rpc3BsYXlPbkNlbnRlclNjcmVlbigkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9BZGRFdmVudF9QYW5lbCcpKTtSZXNldEZpZWxkc18oKTtyZXR1cm4gZmFsc2U7ZAIMDw8WAh8CBQlEaXNwbGF5OiBkZAINDxBkDxYCZgIBFgIFA0RheQUFTW9udGgWAWZkAg4PDxYCHwVnZBYCAgEPFgIeC18hSXRlbUNvdW50AgIWBmYPZBYGAgEPFgQfCgXjAmlmKCRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3JwdENhbGVuZGFyRGF5X2N0bDAwX0NhbEV2ZW50TG9uZycpLnN0eWxlLmRpc3BsYXkgPT0gJ2lubGluZScpeyAkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9ycHRDYWxlbmRhckRheV9jdGwwMF9DYWxFdmVudExvbmcnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsgdGhpcy5zcmM9J2ltYWdlcy9FeHBhbmRCdXR0b24uZ2lmJzt9ZWxzZXsgJGdldCgnY3RsMDBfTWFpbkNvbnRlbnRfY3RsMThfcnB0Q2FsZW5kYXJEYXlfY3RsMDBfQ2FsRXZlbnRMb25nJykuc3R5bGUuZGlzcGxheT0naW5saW5lJzsgdGhpcy5zcmM9J2ltYWdlcy9Db2xsYXBzZUJ1dHRvbi5naWYnO30fBWdkAgMPDxYCHwIFDFNNQ0hTIEV2ZW50c2RkAgUPFgIfBAVKPGJyIC8+UG9zc2libGUgQi9HIEJiYWxsIENJRjxiciAvPlNNQ0hTIEAgU3dhbGxvd3MgRGF5IFBhcmFkZSBpbiBTSkM8YnIgLz5kAgEPZBYCAgMPDxYCHwIFI1BkIDQtIER1ZTogQ2hhcHRlciA5IEFMRUtTIGhvbWV3b3JrZGQCAg9kFgICAQ8WAh8FaBYCAgEPZBYCZg8VASBZb3UgaGF2ZSBubyBldmVudHMgZm9yIHRoaXMgZGF0ZWQCEA8PFgIfBWhkZAISD2QWEgIDD2QWAmYPZBYCZg9kFgICAQ8PFgQfBxsAAAAAAABeQAEAAAAfCAKAAhYCHwkFHGhlaWdodDoyNnB4O2ZvbnQtc2l6ZTpTbWFsbDtkAgQPZBYCZg9kFgJmD2QWAgIBDw8WBB8HGwAAAAAAAF5AAQAAAB8IAoACFgIfCQUcaGVpZ2h0OjI2cHg7Zm9udC1zaXplOlNtYWxsO2QCBQ8PFgIeCU1heExlbmd0aGZkZAIGDxYGHgxEaXNwbGF5TW9uZXkLKX9BamF4Q29udHJvbFRvb2xraXQuTWFza2VkRWRpdFNob3dTeW1ib2wsIEFqYXhDb250cm9sVG9vbGtpdCwgVmVyc2lvbj0xNi4xLjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0yOGYwMWIwZTg0YjZkNTNlAB4OQWNjZXB0TmVnYXRpdmULKwUAHg5JbnB1dERpcmVjdGlvbgspgwFBamF4Q29udHJvbFRvb2xraXQuTWFza2VkRWRpdElucHV0RGlyZWN0aW9uLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249MTYuMS4xLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQBkAgcPDxYCHwxmZGQCCA8WBh8NCysFAB8OCysFAB8PCysGAGQCCg8PFgIeDU9uQ2xpZW50Q2xpY2sFHHJldHVybiBDYWxlbmRhckV2ZW50X0FkZF8oKTtkZAILDw8WAh8QBR9yZXR1cm4gQ2FsZW5kYXJFdmVudF9EZWxldGVfKCk7ZGQCDA8PFgIfEAUecmV0dXJuIENsb3NlQWRkRXZlbnRfUGFuZWxfKCk7FgIfCgVGJGdldCgnY3RsMDBfTWFpbkNvbnRlbnRfY3RsMThfQWRkRXZlbnRfUGFuZWwnKS5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnO2QCCA9kFgJmD2QWAmYPFgIfBWhkAgkPPCsACQEADxYGHghEYXRhS2V5cxYAHwsCBR8FZ2QWCgIBD2QWAmYPFQ0BTApMYXRlIC0gRXhjATAAATEBMQAAAAAAAABkAgIPZBYCZg8VDQFUBVRhcmR5ATAAAAAAAAExAAAAAGQCAw9kFgJmDxUNAApfKlRPVEFMUypfAAAAAAAAAAAAAABkAgQPZBYCZg8VDQAHRVhDVVNFRAEwATABMAEwATABMAEwATABMAEwATBkAgUPZBYCZg8VDQAJVU5FWENVU0VEATABMAEwATABMAEwATABMAEwATABMGQCCg9kFgJmDw8WAh8FaGQWBGYPD2QPEBYCZgIBFgIWAh8GBQExFgIfBmQWAgIFAgNkZAICDzwrAAkBAA8WBB8RFgAfC2ZkZAILDzwrAAkAZAIMD2QWAmYPZBYEZg8PZA8QFgJmAgEWAhYCHwYFATEWAh8GZBYCAgUCA2RkAgIPFgIfCwIBFgRmD2QWAmYPFQMJUmVzb3VyY2VzBFNpdGULRGVzY3JpcHRpb25kAgEPZBYEAgEPDxYCHgtOYXZpZ2F0ZVVybAUgaHR0cDovL3d3dy5zbWhzLm9yZy9jYWxlbmRhci5qc3BkFgJmDxUBD1NjaG9vbCBDYWxlbmRhcmQCAg8VAQYmbmJzcDtkAg0PZBYCZg9kFgICAQ8WAh8FaGQCDw9kFgJmD2QWAgIBDzwrAAkBAA8WAh8FaGRkAhAPZBYCZg9kFgRmDw9kDxAWA2YCAQICFgMWAh8GBQcxMTE5OTcwFgIfBmQWAh8GZBYDAgUCAwIDZGQCAg88KwAJAQAPFgYfERYAHwsCAh8FaGQWBAIBD2QWAmYPFQQXbWFpbHRvOjQwNzgzNjc0OEBxcS5jb20QNDA3ODM2NzQ4QHFxLmNvbQFQAGQCAg9kFgJmDxUEGW1haWx0bzpjaGVuemV0b25nQDEyNi5jb20SY2hlbnpldG9uZ0AxMjYuY29tAVAAZAIRD2QWBGYPZBYCZg9kFgJmDw8WAh8CBQ4xMjUuMzcuMTUxLjE5NWRkAgEPZBYCZg9kFgRmDw8WAh8CBQ4xMjUuMzcuMTUxLjE5NWRkAgEPDxYCHwIFFDMvMjUvMjAxNyA3OjQ4OjMxIEFNZGQCBQ9kFgoCCQ9kFgJmD2QWAmYPZBYEAgEPFgIeCm9ua2V5cHJlc3MFkwFpZiAoZXZlbnQua2V5Q29kZSA9PSAxMykge2N0bDAwX01haW5Db250ZW50X3N1YlN0dVNlYXJjaF9idG5TdHVTZWFyY2guZm9jdXMoKTsgY3RsMDBfTWFpbkNvbnRlbnRfc3ViU3R1U2VhcmNoX2J0blN0dVNlYXJjaC5jbGljaygpOyByZXR1cm4gZmFsc2U7IH1kAgMPFgIfCmVkAhEPZBYCZg9kFgJmD2QWAmYPD2QPEBYCZgIBFgIWAh8GBQExFgIfBmQWAgIFAgNkZAIVD2QWAmYPZBYCZg9kFgRmDw9kDxAWAmYCARYCFgIfBgUBMRYCHwZkFgICBQIDZGQCAg88KwAJAQAPFgQfERYAHwtmZGQCFw9kFgJmD2QWAmYPZBYEZg8PZA8QFgFmFgEWAh8GAgEWAQIFZGQCBg9kFgICAQ9kFgJmD2QWCAIBDw9kDxAWBGYCAQICAgMWBBYCHwYFATEWAh8GZBYCHwZkFgIfBmQWBAIFAgMCAwIDZGQCAw9kFgJmD2QWAmYPZBYCAgEPDxYEHwcbAAAAAAAAXkABAAAAHwgCgAIWAh8JBRxoZWlnaHQ6MjZweDtmb250LXNpemU6U21hbGw7ZAIJD2QWAmYPZBYCZg9kFgJmD2QWAgIFDxYCHgpCZWhhdmlvcklEBTdjdGwwMF9NYWluQ29udGVudF9BZG1pbklOVl90eHROZXdDb21tZW50Q0RfRHJvcEJlaGF2aW9yZAINDw8WAh8QBXAkZmluZCgnQWRkQ29tbWVudEJlaGF2aW9yJykuaGlkZSgpO19fZG9Qb3N0QmFjaygnY3RsMDAkTWFpbkNvbnRlbnQkQWRtaW5JTlYkYnRuT0tBZGRDb21tZW50R28nLCcnKTtyZXR1cm4gZmFsc2U7ZGQCGQ9kFgJmD2QWAmYPZBYEZg9kFgJmD2QWAmYPZBYCAgEPDxYEHwcbAAAAAAAAXkABAAAAHwgCgAIWAh8JBRxoZWlnaHQ6MjZweDtmb250LXNpemU6U21hbGw7ZAIBD2QWAmYPZBYCZg9kFgICAQ8PFgQfBxsAAAAAAABeQAEAAAAfCAKAAhYCHwkFHGhlaWdodDoyNnB4O2ZvbnQtc2l6ZTpTbWFsbDtkAgYPDxYCHwIFCTcuMTcuMi4xN2RkAgcPDxYCHwIFQENvcHlyaWdodCAmY29weTsgMTk5NS0yMDE3IEFlcmllcyBTb2Z0d2FyZS4gQWxsIFJpZ2h0cyBSZXNlcnZlZC5kZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WDAUgY3RsMDAkTWFpbkNvbnRlbnQkY3RsMTgkb3BuQ2xhc3MFI2N0bDAwJE1haW5Db250ZW50JGN0bDE4JG9wblBlcnNvbmFsBSFjdGwwMCRNYWluQ29udGVudCRjdGwxOCRvcG5TY2hvb2wFI2N0bDAwJE1haW5Db250ZW50JGN0bDE4JG9wbkRpc3RyaWN0BSRjdGwwMCRNYWluQ29udGVudCRjdGwxOCRvcG5DbGFzc2VzJDAFJWN0bDAwJE1haW5Db250ZW50JGNoa0dhZGdldEF0dFN1bW1hcnkFI2N0bDAwJE1haW5Db250ZW50JGNoa0dhZGdldENhbGVuZGFyBSBjdGwwMCRNYWluQ29udGVudCRjaGtHYWRnZXRUYXNrcwUeY3RsMDAkTWFpbkNvbnRlbnQkY2hrR2FkZ2V0SU5WBShjdGwwMCRNYWluQ29udGVudCRjaGtHYWRnZXRSZXNvdXJjZUxpbmtzBR5jdGwwMCRNYWluQ29udGVudCRjaGtCcmllZmNhc2UFIWN0bDAwJE1haW5Db250ZW50JGNoa0NsYXNzU3VtbWFyeQU3Y3RsMDAkTWFpbkNvbnRlbnQkQWRtaW5JTlYkdHh0TmV3Q29tbWVudENEJERyb3BEb3duR3JpZA9nZIYwIs3m5mJ6gX1Zty9sIYz/C//Qc2xRHIxIyli/eCav" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Parent/WebResource.axd?d=yKtAyTYwMzMcpR6UHLsZafp44Y5CxWmhASzZ90bmXvEHokWhzvnp7FGX6hB-C1AjQc2CmSHpZfsF7y6w-YY54ubsxvOhEH6tKNlJf2mFzwo1&amp;t=636160552665894255" type="text/javascript"></script>
+
+<script language='javascript'>var isSafari = true;function isIE(){return false;}</script>
+<script type="text/javascript">
+//<![CDATA[
+function CalendarEvent_SetDate_(){ var strDate = (this._value.getMonth() + 1) + '/' + this._value.getDate() + '/' + this._value.getFullYear(); if(strDate.length > 0) { GeneralFunctions.CalendarEvent_SetDate(strDate, CalendarEvent_SetDate_Result_); }}function CalendarEvent_SetDate_Result_(result) { if(result == 'Reset') { ResetForm_(); } }function CalendarEvent_SetDisplay_(display) { GeneralFunctions.CalendarEvent_SetDisplay(display.value, ResetForm_); }function ResetForm_(result) { $get('ctl00_MainContent_ctl18_btnRefresh').click(); }function CloseAddEvent_Panel_(){ $get('ctl00_MainContent_ctl18_AddEvent_Panel').style.display = 'none'; return false;}function ResetFields_(){ var dt = new Date(); var today = GetValue($get('ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker'), 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtTI'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), today, 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), today, 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtT1'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtT2'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtDE'), '', 'txt');}function CalendarEvent_Delete_(){ var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); if(confirm('Are you sure you want to delete this event?')) { GeneralFunctions.CalendarEvent_Delete(EID, CalendarEvent_Delete_Result_) }; return false;}function CalendarEvent_Delete_Result_(result) { if(result) {CloseAddEvent_Panel_(); $get('ctl00_MainContent_ctl18_btnRefresh').click(); } }function CalendarEvent_GetInfo_(){ var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); var btn1 = $get('ctl00_MainContent_ctl18_btnEventOK'); var btn2 = $get('ctl00_MainContent_ctl18_btnDelete'); if((EID * 1) > 0) { SetValue(btn1, 'Save Record', 'txt'); btn2.style.display = 'block'; } else { SetValue(btn1, 'Add Event', 'txt'); btn2.style.display = 'none'; } if((EID * 1) > 0) { GeneralFunctions.CalendarEvent_GetInfo(EID, CalendarEvent_GetInfo_Result_); }}function CalendarEvent_GetInfo_Result_(result){ if(result != null) {  SetValue($get('ctl00_MainContent_ctl18_txtTI'), result[0], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), result[1], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), result[2], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtT1'), result[3], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtT2'), result[4], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtDE'), result[5], 'txt'); }}function CalendarEvent_Add_(){ var TI = GetValue($get('ctl00_MainContent_ctl18_txtTI'), 'txt'); var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); var DT = GetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), 'txt'); var ED = GetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), 'txt'); var T1 = GetValue($get('ctl00_MainContent_ctl18_txtT1'), 'txt'); var T2 = GetValue($get('ctl00_MainContent_ctl18_txtT2'), 'txt'); var DE = GetValue($get('ctl00_MainContent_ctl18_txtDE'), 'txt'); var SCP = ''; var AS1 = '';; GeneralFunctions.CalendarEvent_Add(TI, EID, DT, ED, T1, T2, DE, SCP, AS1, CalendarEvent_Add_Result_); return false;}function CalendarEvent_Add_Result_(result){ if(result != 'true') { alert(result); } else { ButtonClick($get('ctl00_MainContent_ctl18_btnRefresh')); }}function ButtonClick(btn) { if(btn != null) { btn.click(); }}function GetValue(ID, type){ if((ID != null) && (type == 'txt')) { return ID.value; } else if((ID != null) && (type == 'lbl')) { return ID.innerHTML; } return '';}function SetValue(ID, value, type){ if((ID != null) && (type == 'txt')) { ID.value = value; return true; } else if((ID != null) && (type == 'lbl')) { ID.innerHTML = value; return true; } return false;}var ctl00_MainContent_AdminINV_txtNewCommentCD_DropDownContainer_Hide = true; function ctl00_MainContent_AdminINV_txtNewCommentCD_Change (val){if (SetCustomDropValue('ctl00_MainContent_AdminINV_txtNewCommentCD_DropDownGrid', val, 'DropDownRowSelect', 'DropDownRow', 'ctl00_MainContent_AdminINV_txtNewCommentCD_txtControlValue', 'ctl00_MainContent_AdminINV_txtNewCommentCD_txtValue')){$find('ctl00_MainContent_AdminINV_txtNewCommentCD_DropBehavior').hidePopup();}}//]]>
+</script>
+
+<script src="/Parent/ScriptResource.axd?d=dpZMkI6xwnOFLwds7jHr6SJn5I2_bFgta9lO7K9XW86HIB4FiHvfbhTHVXV3Bi6DxnxsTfeKT4A5VexPugZQWzQ8qctRzoKqh5DPb06BypqqQir_HsW5I2UyNLYoH5xcaPeV0yb25M5snjyUZfUco6poujTP5tHYY80bvUi4_KM1&amp;t=2a48f442" type="text/javascript"></script>
+<script src="/Parent/ScriptResource.axd?d=ci4YGnV_BZgSJeSsudapLfKbpS-Z6TtjtmfNZ4mRjuQVkQoq3V4cl9aNMQZOqGLTgrHJmk0_3YcXnri8oX7JWjC9KplCP4p0CS4xLZPpDeFmfowNw1l4ycI10FiKPjytf_hCZpYr-R3eKbxyAbqVhbS6krWfx5WS8onBLng01P4qq2jDF4Zp1w_25DBnhGAZ0&amp;t=2a48f442" type="text/javascript"></script>
+<script src="/Parent/Scripts/AjaxControlToolkit/Bundle?v=f2xAAd2TWOdmsmrwe3Ko7FqubUV1OQ66mzQ_gdvdZuk1" type="text/javascript"></script>
+<script src="SetClientOptions.asmx/js" type="text/javascript"></script>
+<script src="GeneralFunctions.asmx/js" type="text/javascript"></script>
+<script src="SecurityFunctions.asmx/js" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="850658B5" />
+</div>
+	<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$TheMasterScriptManager', 'aspnetForm', ['tctl00$MainContent$ctl18$txtDate$updatepanel1','','tctl00$MainContent$ctl18$txtDT$updatepanel1','','tctl00$MainContent$ctl18$txtED$updatepanel1',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+	<div style="height: 100%" class="view" data-root-url="https://aeries.smhs.org/Parent/" data-school-code="1">
+		<table class="full NoPadding a-expand">
+			<tr id="ctl00_trTop">
+	<td class="ac" valign="top">
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td class="al vat" style="width: 1%;"><img src="images/aeries_BigA-50x.png" alt="" style="padding: 5px 5px 0px 2px; border: 0px;" /></td>
+						<td class="al vam" style="font-size: 20px; color: #000000; font-weight: bold; height: 25px;">
+							<span id="ctl00_lblSchoolYear" style="font-size:12px;">2016-2017</span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<span id="ctl00_lblSchoolName" title="School 1">Santa Margarita Catholic H.S.</span>
+						
+									<input name="ctl00$SC" type="hidden" id="ctl00_SC" class="MasterSC" value="1" />
+									<input name="ctl00$SN" type="hidden" id="ctl00_SN" class="MasterSN" value="20001" />
+									<input name="ctl00$PID" type="hidden" id="ctl00_PID" class="MasterPID" value="1119970" />
+						</td>
+	
+						<td style="font-size: 13px;">
+								
+						</td>
+	
+						<td class="ar vat" style="height: 25px;">
+							<div class="PlainDataClear" style="margin-top: 2.1em; padding: 15px;"><span id="mobileTestdrive" style="padding: 0.3em; font-weight: bold; font-size: 1.5em; display: none;">
+								<a id="goToMobile" href="LoginParent.aspx?RedirectToApp=True">Mobile Portal</a>
+								<sup style="color: #8B0000;">Beta</sup></span></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="al" valign="bottom" colspan="4">
+							<div id="ctl00_ParNav_ParNav"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="al"><table class="menutable" border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td align="left" class="al" style="white-space:nowrap; display:inline;"><table border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td><div id="Top_1"><a class="topdynamicmenuTablet" href="Default.aspx" name="Home" id="Home">Home</a></div></td><td><div id="Top_2"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Student Info" id="Student Info">Student Info</a></div><div id="Sub_2" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="StudentProfile.aspx" name="Profile" id="Profile">Profile</a><a class="subdynamicmenu" href="Students.aspx" name="Demographics" id="Demographics">Demographics</a><a class="subdynamicmenu" href="Classes.aspx" name="Classes" id="Classes">Classes</a><a class="subdynamicmenu" href="Activities.aspx" name="Activities and Awards" id="Activities and Awards">Activities and Awards</a></div></td><td><div id="Top_3"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Attendance" id="Attendance">Attendance</a></div><div id="Sub_3" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="Attendance.aspx" name="Attendance" id="Attendance">Attendance</a></div></td><td><div id="Top_4"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Grades" id="Grades">Grades</a></div><div id="Sub_4" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="GradebookSummary.aspx" name="Gradebook" id="Gradebook">Gradebook</a><a class="subdynamicmenu" href="GradebookDetails.aspx" name="Gradebook Details" id="Gradebook Details">Gradebook Details</a><a class="subdynamicmenu" href="Grades.aspx" name="Grades" id="Grades">Grades</a><a class="subdynamicmenu" href="GraduationRequirements.aspx" name="Graduation Status" id="Graduation Status">Graduation Status</a><a class="subdynamicmenu" href="Transcripts.aspx" name="Transcripts" id="Transcripts">Transcripts</a><a class="subdynamicmenu" href="StudentStandardsBasedProgress.aspx" name="Standards Based Progress Dashboard" id="Standards Based Progress Dashboard">Standards Based Progress Dashboard</a></div></td><td><div id="Top_5"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Medical" id="Medical">Medical</a></div><div id="Sub_5" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="Immunizations.aspx" name="Immunizations" id="Immunizations">Immunizations</a></div></td><td><div id="Top_6"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Guidance" id="Guidance">Guidance</a></div><div id="Sub_6" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="AssertiveDiscipline.aspx" name="Assertive Discipline" id="Assertive Discipline">Assertive Discipline</a></div></td></tr></table></td><td align="right"><table border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td><div id="Top_7"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Change Student" id="Change Student">Change Student</a></div><div id="Sub_7" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="ChangeStudent.aspx?cache=3%2f25%2f2017+7%3a50%3a50+AM&SC=1&SN=20001&ReturnPage=Default.aspx&name=1_20001&id=1_20001" name="Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S." id="Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S.">Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S.</a><a class="subdynamicmenu" href="ChangeStudent.aspx?cache=3%2f25%2f2017+7%3a50%3a50+AM&SC=2&SN=20001&ReturnPage=Default.aspx&name=2_20001&id=2_20001" name="Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl" id="Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl">Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl</a><a class="subdynamicmenu" href="AddNewStudentToParent.aspx" name="Add New Student To Your Account" id="Add New Student To Your Account">Add New Student To Your Account</a></div></td><td><div id="Top_8"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Options" id="Options">Options</a></div><div id="Sub_8" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="ChangePassword.aspx" name="Change Password" id="Change Password">Change Password</a><a class="subdynamicmenu" href="ChangeEmail.aspx" name="Change Email" id="Change Email">Change Email</a></div></td><td><div id="Top_9"><a class="topdynamicmenuTablet" href="Logout.aspx" name="Logout" id="Logout">Logout</a></div></td></tr></table><script type="text/javascript">at_attach("Top_1", "Sub_1", "pointer");at_attach("Top_2", "Sub_2", "pointer");at_attach("Top_3", "Sub_3", "pointer");at_attach("Top_4", "Sub_4", "pointer");at_attach("Top_5", "Sub_5", "pointer");at_attach("Top_6", "Sub_6", "pointer");at_attach("Top_7", "Sub_7", "pointer");at_attach("Top_8", "Sub_8", "pointer");at_attach("Top_9", "Sub_9", "pointer");</script></td></tr></table></td></tr></table></div>
+						</td>
+					</tr>
+				</table>
+			</td>
+</tr>
+
+			<tr style="background-color:#F5F5F5; height: 525px; min-height:525px;"><td class="al" valign="top" style="padding: 5px 5px 5px 5px; min-height:525px;">
+				<div style="width:100%;"><span id="ctl00_lblAlert" class="RedText"></span></div>
+
+				
+				
+
+				
+		
+
+	
+    <div>
+		<div>
+			<!-- *** Required to register AjaxControlToolkit *** -->
+			
+					
+		</div>
+		
+		
+
+		<!-- Parent Widgets -->
+		<div id="ctl00_MainContent_divParentWidgets" class="BackDrop">
+			<div class="a-container">
+				<div id="ParentHomeRow1" class="a-row">		
+					<div class="a-col-20 ac">
+						
+						<span id="ctl00_MainContent_lblWelcome" class="PlainDataClear" style="font-weight:bold;">Welcome to the Aeries Portal for Shitian</span>
+						<div id="divParentNotification" class="HCell" style="padding: 10px; border:solid 1px #ddd; display: none; width: 100%;">
+							<span id="ctl00_MainContent_lblParentNotification" style="font-weight:bold;"></span>&nbsp;<a href="ParentNotificationPreferences.aspx" style="color:#1C3555" >Modify</a>
+						</div>
+						
+						
+					</div>
+				</div>
+
+				<div id="ParentHomeRow2" class="a-row">
+                    <div id="ParentHomeRow2_Left" class="a-col-5">
+						
+					</div>	
+
+					<div id="ParentHomeRow2_Right" class="a-col-15">
+						  
+<script>
+	var isProfile = 'True';
+	var ShowBackground = 'True';
+	var ShowPrintButton = 'False';
+</script>
+<script type="text/javascript" src="Scripts/require/widgets/views/classsummary/classsummary.js?vsn=7.17.2.17"></script>
+
+<div id="ctl00_MainContent_ctl14_divClassSummary" class="classSummaryContainer"></div>
+	
+
+						
+
+<div class="a-obj">
+	<table class="NoPadding a-expand">
+		<tr class="SubHeaderRow">
+			<td class="NewTL"></td>
+			<td class="CatHeader ac"><span id="ctl00_MainContent_ctl18_lblCalendar">Calendar</span></td>
+						
+			<td class="NewTR"></td>
+		</tr>
+		<tr class="SubHeaderRow">
+			<td class="DataLE"></td>
+			<td align="center" class="HCell">
+				<div id="ctl00_MainContent_ctl18_txtDate_updatepanel1" style="display: inline-block;">
+	
+		<input name="ctl00$MainContent$ctl18$txtDate$txtKendoDatePicker" type="text" value="03/25/2017" id="ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+</div>
+				
+			</td>
+			<td class="DataLER"></td>
+		</tr>
+		
+		<tr>
+			<td class="DataLE"></td>
+			<td class="Data al">
+				<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr class="PlainData">
+					<td class="al">
+						<img src="images/addrcd.gif" id="ctl00_MainContent_ctl18_imgAddEvent" border="0" alt="Add New Event" class="Clickable" onclick="$get(&#39;ctl00_MainContent_ctl18_txtEID&#39;).value = &#39;0&#39;;DisplayOnCenterScreen($get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;));ResetFields_();return false;" />&nbsp;
+						<span id="ctl00_MainContent_ctl18_lblAddEvent" class="Clickable" onclick="$get(&#39;ctl00_MainContent_ctl18_txtEID&#39;).value = &#39;0&#39;;DisplayOnCenterScreen($get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;));ResetFields_();return false;">Add New Event</span>
+						<input type="submit" name="ctl00$MainContent$ctl18$btnRefresh" value="Refresh" id="ctl00_MainContent_ctl18_btnRefresh" style="display:none;" />
+						<span id="ctl00_MainContent_ctl18_lblTest"></span>
+					</td>
+					<td class="ar">
+							<span id="ctl00_MainContent_ctl18_lblDisplay">Display: </span>
+							<select name="ctl00$MainContent$ctl18$CalendarView" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ctl18$CalendarView\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_MainContent_ctl18_CalendarView">
+	<option selected="selected" value="Day" ID="lblDay">Day</option>
+	<option value="Month" ID="lblMonth">Month</option>
+
+</select>
+					</td>
+				</tr></table>
+			</td>
+			<td class="DataLER"></td>
+		</tr>
+		
+		<div id="ctl00_MainContent_ctl18_divDay">
+	
+			
+					<tr>
+						<td class="DataLE"></td>
+						<td class="Data al">
+							<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr>
+								<td class="PlainDataClear al">
+									
+									<img src="images/ExpandButton.gif" id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_imgExpand" alt="Show Event Details" border="0" style="cursor:pointer; cursor: pointer;" onclick="if($get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display == &#39;inline&#39;){ $get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display=&#39;none&#39;; this.src=&#39;images/ExpandButton.gif&#39;;}else{ $get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display=&#39;inline&#39;; this.src=&#39;images/CollapseButton.gif&#39;;}" />
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_lblEventDesc">SMCHS Events</span>
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong" style="display:none;"><br />Possible B/G Bball CIF<br />SMCHS @ Swallows Day Parade in SJC<br /></span>
+								</td>
+								<td class="ar vat">
+									
+								</td>
+							</tr></table>
+						</td>
+						<td class="DataLER"></td>
+					</tr>
+				
+					<tr>
+						<td class="DataLE"></td>
+						<td class="Data al">
+							<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr>
+								<td class="PlainDataClear al">
+									
+									
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl01_lblEventDesc">Pd 4- Due: Chapter 9 ALEKS homework</span>
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl01_CalEventLong" style="display:none;"></span>
+								</td>
+								<td class="ar vat">
+									
+								</td>
+							</tr></table>
+						</td>
+						<td class="DataLER"></td>
+					</tr>
+				
+					
+				
+		
+</div>
+		
+		
+		
+			
+		
+		<tr style="height:2px;">
+			<td class="NewBL" style="height:2px; width: 2px;"></td>
+			<td class="DataBottom ac" colspan="3" style="height:2px;"></td>
+			<td class="NewBR" style="height:2px; width: 2px"></td>
+		</tr>	
+	</table>
+	
+	<!-- Add Event Form - Beginning -->
+	
+	<div id="ctl00_MainContent_ctl18_AddEvent_Panel" style="border-style:Outset;display: none; width: 570px; z-index: 1;">
+	
+		
+		<table border="0" style="border-collapse: collapse; border-style: none ;width: 570px;">
+			<tr class="SubHeaderRow">
+				<td class="DataLE"></td>
+				<td id="ctl00_MainContent_ctl18_tdAddEventTop" align="center" class="CatHeader" style="cursor: move; width: 100%"><b>Add New Event</b></td>
+	
+				<td class="DataLER"></td>
+			</tr>
+		</table>
+		
+		<table class="class="NoPadding a-expand"" style="width: 570px;">
+			<tr>
+				<td class="DataLE"></td>
+				<td class="ac">
+					<table class="NoPadding a-expand">
+						<tr><td class="ac">
+					
+							<table class="NoPadding a-expand">
+							<tr class="SubHeaderRow">
+								<td class="HCellT al"><b>&nbsp;Title&nbsp;</b></td>
+							</tr>
+							
+							<tr>
+								<td class="Data al">
+									<input name="ctl00$MainContent$ctl18$txtTI" type="text" id="ctl00_MainContent_ctl18_txtTI" class="k-textbox" style="width:350px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$txtEID" id="ctl00_MainContent_ctl18_txtEID" value="0" />
+								</td>
+							</tr>
+							</table>
+						</td></tr>
+						
+						<tr><td align="center">
+							<table border="0" style="border-collapse: collapse; border-color: black; width:100%;">
+							<tr class="SubHeaderRow">
+								<td class="HCellT ac"><b>&nbsp;Start Date&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;End Date&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;Start Time&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;End Time&nbsp;</b></td>
+							</tr>
+							<tr>
+								<td class="Data ac">&nbsp;<div id="ctl00_MainContent_ctl18_txtDT_updatepanel1" style="display: inline-block;">
+		
+		<input name="ctl00$MainContent$ctl18$txtDT$txtKendoDatePicker" type="text" id="ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+	</div></td>
+								<td class="Data ac">&nbsp;<div id="ctl00_MainContent_ctl18_txtED_updatepanel1" style="display: inline-block;">
+		
+		<input name="ctl00$MainContent$ctl18$txtED$txtKendoDatePicker" type="text" id="ctl00_MainContent_ctl18_txtED_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+	</div></td>
+								
+								<td class="Data ac">
+									<input name="ctl00$MainContent$ctl18$txtT1" type="text" id="ctl00_MainContent_ctl18_txtT1" class="k-textbox" style="width:77px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$meeT1_ClientState" id="ctl00_MainContent_ctl18_meeT1_ClientState" />
+								</td>
+								<td class="Data ac">
+									<input name="ctl00$MainContent$ctl18$txtT2" type="text" id="ctl00_MainContent_ctl18_txtT2" class="k-textbox" style="width:77px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$meeT2_ClientState" id="ctl00_MainContent_ctl18_meeT2_ClientState" />
+								</td>
+							</tr>
+							</table>
+						</td></tr>
+
+						<!-- *** 07/01/2015 HB -- teacher event -->
+						
+						<tr><td class="ac">
+							<table class="NoPadding a-expand">
+							<tr class="SubHeaderRow">
+								<td class="HCellT ac"><b>&nbsp;Description&nbsp;</b></td>
+							</tr>
+							<tr>
+								<td class="Data ac">&nbsp; <textarea name="ctl00$MainContent$ctl18$txtDE" rows="4" cols="20" id="ctl00_MainContent_ctl18_txtDE" style="width:300px;">
+</textarea>&nbsp;</td>
+							</tr>
+							</table>
+						</td></tr>
+					</table>
+				</td>
+				
+				<td class="DataLER"></td>
+			</tr>
+				
+			<tr>
+				<td class="DataLE"></td>
+				<td align="center" class="Data" style="width: 400px;">
+					<table border="0" style="border-collapse:collapse;border-style:none;">
+						<tr>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnEventOK" value="Add Event" onclick="return CalendarEvent_Add_();" id="ctl00_MainContent_ctl18_btnEventOK" /></td>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnDelete" value="Delete" onclick="return CalendarEvent_Delete_();" id="ctl00_MainContent_ctl18_btnDelete" style="display: none;" /></td>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnCancel" value="Cancel" onclick="return CloseAddEvent_Panel_();$get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;).style.display = &#39;none&#39;;" id="ctl00_MainContent_ctl18_btnCancel" /></td>
+						</tr>
+					</table>
+				</td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr style="height:2px;">
+				<td class="NewBL" style="height:2px; width: 2px;"></td>
+				<td class="DataBottom ac" style="height:2px;"></td>
+				<td class="NewBR" style="height:2px; width: 2px"></td>
+			</tr>
+		</table>
+	
+</div>
+
+	<!-- Add Event Form - Ending -->
+
+<label id="lblRootURL" style="display: none;">https://aeries.smhs.org/parent</label>
+</div>
+<script type="text/javascript">
+	function txtED_Changed() {
+		var dt = $("#" + 'ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker');
+		var ed = $("#" + 'ctl00_MainContent_ctl18_txtED_txtKendoDatePicker');
+		var dt1 = new Date(dt.val());
+		var dt2 = new Date(ed.val());
+
+		if ((dt1 != NaN) && (dt2 != NaN)) {
+			if (dt1.getTime() > dt2.getTime()) {
+				ed.val(dt.val());
+			}
+		}
+	}
+
+	function calendarFilter_click() {
+		var div = $("#divFilter");
+		var isVisible = false;
+		var left = 250;
+
+		if (div.width() <= 200) { left = 100; }
+
+		div.css({
+			top: $("#btnCalenderFilter").offset().top + 23,
+			left: $("#btnCalenderFilter").offset().left - left
+ 		});
+
+		if (div.attr("style") == undefined) {
+			isVisible = true;
+		}
+		else if (div.attr("style").indexOf("block") >= 0) {
+			isVisible = true;
+		}
+		
+		if (isVisible) {
+			div.fadeOut(700, function () {
+				div.css("display", "none");
+			});
+		}
+		else {
+			div.fadeIn(700, function () {
+				div.css("display", "block");
+			});
+		}
+	}
+
+	function ddlEventScope_OnSelect(e) {
+		var sp = "";
+		var tmp = null;
+		var root = $("#lblRootURL").html();
+
+		if (root[root.length] != "/") { root += "/"; }
+
+		if (typeof e == "object") {
+			sp = this.dataItem(e.item).value;
+		}
+		else {
+			tmp = e.split("|");
+			sp = tmp[0];
+		}
+
+		var webMethod = root + "portal/teacher/event/getassociation/scopeid/" + sp + "/";
+			
+		var request = $.ajax({
+			url: webMethod,
+			type: "GET",
+			cache: false,
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		});
+
+		request.done(function (result) {
+			$("#ddlAssociation").kendoDropDownList({
+				dataTextField: "Description",
+				dataValueField: "Code",
+				dataSource: result
+			});
+
+			if (tmp != null) { $("#ddlAssociation").data("kendoDropDownList").value(tmp[1]); }
+		});
+
+		request.fail(function (jqXHR, textStatus) {
+			console.log("ddlEventScope_OnSelect Request Failed: " + jqXHR.responseText);
+		});
+	}
+
+	$(document).ready(function () {
+		data = [];
+		data.push({ text: "Personal - just you", value: "PER" });
+
+		
+		var classes = $("#" + 'ctl00_MainContent_ctl18_opnClasses');
+		if (classes) { $("#divClasses").css("display", 'inline-block'); }
+
+		$("#divFilter").css("width", "456px");
+		data.push({ text: "Section - one of your classes", value: "MST" });
+		data.push({ text: "Course - all of your classes for a course", value: "CRS" });
+		
+
+		data.push({ text: "Teacher - all of your class", value: "TCH" });
+
+		if ($("#ddlEventScope").length > 0) {
+			$("#ddlEventScope").kendoDropDownList({
+				dataTextField: "text",
+				dataValueField: "value",
+				dataSource: data,
+				select: ddlEventScope_OnSelect
+			});
+
+			$("#ddlEventScope").data("kendoDropDownList").select(0);
+			ddlEventScope_OnSelect("PER|NONE");
+
+			$("#btnCalenderFilter").bind("click", calendarFilter_click);
+			$("#divEventTypes input[type='button']").on("click", function () {
+				$("#divFilter").fadeOut(700, function () {
+					$("#" + 'ctl00_MainContent_ctl18_btnRefresh').click();
+				});
+			});
+		}
+	});
+</script>
+
+<style type="text/css">
+.calendar-filter {
+	font-size: 12pt;
+	color: #06C;
+}
+.calendar-filter:hover {
+	color: #FFF;
+}
+
+.bgClass {
+	border: 1px solid #9DE788;
+	background-color: #9DE788;
+}
+
+.bgPeronsal {
+	border: 1px solid #F00;
+	background-color: #F00;
+}
+
+.bgSchool {
+	border: 1px solid #FF0;
+	background-color: #FF0;
+}
+
+.bgDistrict {
+	border: 1px solid #699;
+	background-color: #699;
+}
+
+#divFilter {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	border: 2px solid #92B8CE;
+	background-color: #fff;
+	z-index: 10000;
+}
+
+#divEventTypes, #divClasses {
+	width: 200px;
+	height: 200px;
+	overflow: auto;
+	vertical-align: top;
+	display: inline-block;
+}
+
+#divEventTypes ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#divEventTypes ul li {
+	height: 23px;
+	text-align: left;
+	vertical-align: top;
+	padding-top: 5px;
+	padding-left: 3px;
+}
+
+#divEventTypes ul li:hover {
+	cursor: pointer;
+	background-color: #e3e3e3;
+}
+
+#divEventTypes ul li label {
+	vertical-align: top;
+}
+
+#divEventTypes div, #divClasses div {
+	height: 25px;
+	padding-top: 5px;
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+#divEventTypes input[type='button'] {
+	width: 100px;
+	margin-top: 10px;
+}
+
+#divClasses {
+	width: 252px;
+	border-left: 1px solid #fff;
+}
+
+#divClasses table {
+	width: 233px;
+	border: none;
+	border-spacing: 0;
+	border-collapse: collapse;
+	background-color: #f9f9f9;
+}
+
+#divClasses table td {
+	height: 23px;
+	padding-top: 5px;
+	border: 1px solid transparent;
+}
+
+#divClasses table td:hover {
+	cursor: pointer;
+	background-color: #e1e8fe;
+}
+
+#divClasses table tr:nth-child(even) {
+	background-color: #e3e3e3;
+}
+
+#divClasses table tr td label {
+	vertical-align: top;
+}
+</style>
+					</div>				
+                </div>			
+
+				<div id="ParentHomeRow3" class="a-row">
+					<div class="a-col-12">
+																		
+						
+
+<style type="text/css">
+	.activeLink {
+		color: #0000ee;
+		text-decoration: none;
+	}
+	.activeLink:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<script type="text/javascript">	
+	$(function () {
+		var request = $.ajax({
+			url: "studentdata/reportcardhistory/true/",
+			type: "GET",
+			cache: false,
+			dataType: "html",
+			contentType: "application/html; charset=utf-8"
+		})
+		request.done(function (result) {
+			if (result) {
+				if ($.trim(result).length > 0) {
+					$(".report-card-history").html(result);
+					$(".report-card-history a").addClass("activeLink");
+				}
+			}
+		})
+		request.fail(function (qXHR, textStatus) {
+			// do nothing
+		});
+	});
+</script>
+						<table id="ctl00_MainContent_dlAttSummaryPeriod" cellspacing="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tr>
+		<td>
+								<tr class="SubHeaderRow">
+									<td class="NewTL"></td>
+									<td class="CatHeader ac" colspan="13"><a href="Attendance.aspx">Attendance Summary</a></td>
+									<td class="NewTR"></td>
+								</tr>
+								<tr class="SubHeaderRow">
+									<td class="DataLE"></td>
+									<td class="HCell ac">Code</td>
+									<td class="HCell al">Description</td>
+									<td class="HCell ac">All</td>
+									<td class="HCell ac">0</td>
+									<td class="HCell ac">1</td>
+									<td class="HCell ac">2</td>
+									<td class="HCell ac">3</td>
+									<td class="HCell ac">4</td>
+									<td class="HCell ac">5</td>
+									<td class="HCell ac">6</td>
+									<td class="HCell ac">7</td>
+									<td class="HCell ac">8</td>
+									<td class="HCell ac">9</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac">L</td>
+									<td class="Data al">Late - Exc</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac"></td>
+									<td class="Data ac">1</td>
+									<td class="Data ac">1</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac">T</td>
+									<td class="Data al">Tardy</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac">1</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">_*TOTALS*_</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">EXCUSED</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">UNEXCUSED</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr style="height:2px;">
+									<td class="NewBL" style="height:2px; width:2px;"></td>
+									<td class="DataBottom ac" colspan="13" style="height:2px;"></td>
+									<td class="NewBR" style="height:2px; width:2px;"></td>
+								</tr>
+							</td>
+	</tr>
+</table>							
+					</div>
+
+					<div class="a-col-8">
+													
+						<div id="divAttSummaryDaily" class="a-obj">
+							
+						</div>						
+						
+
+<div class="a-obj">
+	
+			<table class="NoPadding a-expand">
+				<tr class="SubHeaderRow">
+					<td class="NewTL"></td>
+					<td class="CatHeader ac" colspan="2">Resources</td>
+					<td class="NewTR"></td>
+				</tr>
+				<tr class="SubHeaderRow">
+					<td class="DataLE" /></td>
+					<td class="HCell al">Site</td>
+					<td class="HCell al">Description</td>
+					<td class="DataLER" /></td>
+				</tr>
+		
+			<tr>
+				<td class="DataLE"></td>
+				<td class="Data al"><a href="http://www.smhs.org/calendar.jsp" target="_blank">School Calendar</a></td>
+				<td class="Data al">&nbsp;</td>
+				<td class="DataLER"></td>
+			</tr>
+						
+				<tr style="height:2px;">
+					<td class="NewBL" style="height:2px; width: 2px;"></td>
+					<td class="DataBottom ac" colspan="2" style="height:2px;"></td>
+					<td class="NewBR" style="height:2px; width: 2px"></td>
+				</tr>	
+			</table>
+		
+</div>
+						
+
+<style type="text/css">
+	.quick-button-small {
+		-webkit-border-radius: 5px 5px 5px 5px;
+		-moz-border-radius: 5px 5px 5px 5px;
+		border-radius: 5px 5px 5px 5px;
+		height: 20px;
+		font-size: 11.5px;
+		font-family: Arial, Tahoma, Helvetica;
+		background-color: white;
+		border:1px solid #AEAEAE;
+	}
+	.quick-button-small:hover
+		{
+		background-color: #E3E3E3;
+		}
+	
+</style>
+<div class="a-obj">
+	
+</div>
+						
+						
+
+<div class="a-obj">
+	
+	
+</div>
+						
+
+<div class="a-obj">
+	
+</div>
+					</div>
+				</div>
+
+				<div id="ParentHomeRow4" class="a-row">
+					<div class="a-col-20 PlainDataClear ac" style="font-size:65%; color: #333333">
+						<table id="ctl00_MainContent_tblLoginHistory" class="NoPadding a-expand">
+	<tr>
+		<td>Currently Accessing From: <span id="ctl00_MainContent_lblCurrentIP">125.37.151.195</span></td>
+	</tr>
+	<tr>
+		<td>Previously Accessed From: <span id="ctl00_MainContent_lblPrevIP">125.37.151.195</span> on <span id="ctl00_MainContent_lblPrevTimestamp">3/25/2017 7:48:31 AM</span></td>
+	</tr>
+</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Admin Widgets -->
+					
+
+	</div>	
+	<input type="submit" name="ctl00$MainContent$btnEditHomePage" value="Edit Home Page" onclick="return false;" id="ctl00_MainContent_btnEditHomePage" style="display: none;" />
+	
+
+	<div id="ctl00_MainContent_EditHomePage_Panel" style="display: none;">
+	
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr class="SubHeaderRow">
+				<td class="DataTL"></td>
+				<td align="center" class="HCellT" colspan="2">Available Gadgets</td>
+				<td class="DataTR"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetAttSummary" type="checkbox" name="ctl00$MainContent$chkGadgetAttSummary" /><label for="ctl00_MainContent_chkGadgetAttSummary">Attendance Summary</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetCalendar" type="checkbox" name="ctl00$MainContent$chkGadgetCalendar" /><label for="ctl00_MainContent_chkGadgetCalendar">Events Calendar</label></td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetTasks" type="checkbox" name="ctl00$MainContent$chkGadgetTasks" /><label for="ctl00_MainContent_chkGadgetTasks">My Tasks</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetINV" type="checkbox" name="ctl00$MainContent$chkGadgetINV" /><label for="ctl00_MainContent_chkGadgetINV">Intervention Caseload</label></td>
+				<td class="DataLER"></td>
+			</tr>
+            <tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetResourceLinks" type="checkbox" name="ctl00$MainContent$chkGadgetResourceLinks" /><label for="ctl00_MainContent_chkGadgetResourceLinks">Resources</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkBriefcase" type="checkbox" name="ctl00$MainContent$chkBriefcase" /><label for="ctl00_MainContent_chkBriefcase">My Briefcase</label></td>
+				<td class="DataLER"></td>
+			</tr>
+	        <tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkClassSummary" type="checkbox" name="ctl00$MainContent$chkClassSummary" /><label for="ctl00_MainContent_chkClassSummary">Class Summary</label></td>
+				<td align="left" valign="top" class="Data"></td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="center" valign="top" class="Data" colspan="2">
+					<input type="submit" name="ctl00$MainContent$btnEditHomeOK" value="OK" id="ctl00_MainContent_btnEditHomeOK" />
+					<input type="button" value="Cancel" onclick="$find('GadgetOptions').hide(); return false;" />
+				</td>
+				<td class="DataLER"></td>
+			</tr>
+		</table>
+	
+</div>
+	<input type="hidden" name="ctl00$MainContent$Caption" id="ctl00_MainContent_Caption" />
+
+	<script type="text/javascript">
+
+		var viewParentNotification = false;
+
+		$(document).ready(function () {
+			if (viewParentNotification) {
+				$("#divParentNotification").slideDown("slow");
+				$("#divParentNotification").delay(10000).slideUp();
+			}
+
+			$("[name$='txtStuSearch']").focus();
+		});
+
+	</script>
+
+
+			</td></tr>
+			<tr><td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+					<td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;" class="al">Aeries&nbsp;Version&nbsp;<span id="ctl00_lblVersion">7.17.2.17</span></td>
+					<td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;" class="ar"><span id="ctl00_lblCopyright">Copyright &copy; 1995-2017 Aeries Software. All Rights Reserved.</span></td>
+				</tr></table>
+			</td></tr>
+		</table>
+	</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+function EditHomePage(){ $get('ctl00_MainContent_btnEditHomePage').click(); return false;}function ExpandOverEmptyColumns(columnOneID,columnTwoID){ if(columnOneID.children().length === 0) { columnTwoID.addClass('a-col-20'); } if(columnTwoID.children().length === 0) { columnOneID.addClass('a-col-20'); }}ExpandOverEmptyColumns($('#ParentHomeRow2_Right'),$('#ParentHomeRow2_Left'));//]]>
+</script>
+<script language='javascript'> var timeoutIsParent = true; var global_SessionTimer; var global_WarningTimer; var global_SessionTimeout = 3600000;  var global_WarningTimeout = 2700000;  initSessionTimer(3600000,2700000);</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy', change: CalendarEvent_SetDate_ }); $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtMonth_txtKendoMonthPicker').kendoDatePicker({  start: 'year',  depth: 'year',  format:  'MMMM yyyy', change: CalendarEvent_SetDate_ });});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy', change: txtED_Changed }); $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FloatingBehavior, {"handle":$get("ctl00_MainContent_ctl18_tdAddEventTop"),"id":"ctl00_MainContent_ctl18_dpeAddEvent_Panel"}, null, null, $get("ctl00_MainContent_ctl18_AddEvent_Panel"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MainContent_ctl18_meeT1_ClientState","acceptAMPM":true,"century":2000,"cultureAMPMPlaceholder":"AM;PM","cultureCurrencySymbolPlaceholder":"$","cultureDateFormat":"MDY","cultureDatePlaceholder":"/","cultureDecimalPlaceholder":".","cultureName":"en-US","cultureThousandsPlaceholder":",","cultureTimePlaceholder":":","id":"ctl00_MainContent_ctl18_meeT1","mask":"99:99","maskType":3}, null, null, $get("ctl00_MainContent_ctl18_txtT1"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MainContent_ctl18_meeT2_ClientState","acceptAMPM":true,"century":2000,"cultureAMPMPlaceholder":"AM;PM","cultureCurrencySymbolPlaceholder":"$","cultureDateFormat":"MDY","cultureDatePlaceholder":"/","cultureDecimalPlaceholder":".","cultureName":"en-US","cultureThousandsPlaceholder":",","cultureTimePlaceholder":":","id":"ctl00_MainContent_ctl18_meeT2","mask":"99:99","maskType":3}, null, null, $get("ctl00_MainContent_ctl18_txtT2"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","dropShadow":true,"dynamicServicePath":"/Parent/Default.aspx","id":"GadgetOptions","popupControlID":"ctl00_MainContent_EditHomePage_Panel"}, null, null, $get("ctl00_MainContent_btnEditHomePage"));
+});
+//]]>
+</script>
+</form>
+	
+    <script type="text/javascript">
+        // remove the mobile portal link on desktop browsers
+        if (!kendo.support.mobileOS) {
+        	if ($get("mobileTestdrive")) { $get("mobileTestdrive").innerHTML = ""; }
+        } else {
+            $('#mobileTestdrive').show();
+        }
+    </script>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+
+		window.masterSC = $('.MasterSC').val();
+		window.masterSN = $('.MasterSN').val();
+		window.masterID = $('.MasterPID').val();
+
+		
+	});
+    </script>
+
+
+</body>
+</html>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><title>
+	Aeries.net Student Portal - Shitian Chen
+</title><link rel="shortcut icon" href="favicon.ico" type="image/x-icon" /><link rel="icon" href="favicon.ico" type="image/x-icon" /><link href="/Parent/Content/AjaxControlToolkit/Styles/Bundle?v=FDBVOkOPr_cBjdVOMFWml5TXJYdiNvOL409jlglEoH81" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="StyleSheets/aeries-responsive.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/aeries.common.min.css?v=20160413" /><link rel="stylesheet" type="text/css" href="StyleSheets/aeries.default.min.css?v=20160413" /><link id="ctl00_BaseCSS" rel="stylesheet" type="text/css" href="StyleSheets/GeneralDark.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/calendar-stylesheet.css" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.common.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.rtl.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.default.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.dataviz.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.dataviz.default.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="KendoUI/kendo.bootstrap.min.css?v=2017.1.118" /><link rel="stylesheet" type="text/css" href="StyleSheets/DynamicMenu.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/font-awesome/font-awesome.min.css" /><link rel="stylesheet" type="text/css" href="StyleSheets/CheckBoxes.min.css?vsn=20150915" />
+
+    <script src="ClientScripts/ControlPositions.js?vsn=20140815" type="text/javascript"></script>
+    <script src="ClientScripts/ExpandOut.js" type="text/javascript"></script>
+    <script src="ClientScripts/XMLCommunications.js" type="text/javascript"></script>
+    <script src="ClientScripts/xmldom.js" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="Scripts/require/TimeOut.js?vsn=20151215"></script>
+    <script src="ClientScripts/calendar.js" type="text/javascript"></script>
+    <script src="ClientScripts/iscroll.js" type="text/javascript"></script>
+	<script src="ClientScripts/EmailStuff.js?vsn=20160401" type="text/javascript"></script>
+	<script src="ClientScripts/jquery.min.js?v=1.12.3" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.validate.min.js"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.validate.unobtrusive.min.js"></script>
+	<script type="text/javascript" language="javascript" src="ClientScripts/jquery.unobtrusive-ajax.min.js"></script>
+	<script src="KendoUI/kendo.all.min.js?v=2017.1.118" type="text/javascript"></script>
+	<script type="text/javascript" language="javascript" src="KendoUI/kendo.aspnetmvc.min.js?v=2017.1.118"></script>
+    <script src="ClientScripts/General.js?vsn=20151215" type="text/javascript"></script>
+	<script src="ClientScripts/ParentNav.js" type="text/javascript"></script>
+	<script src="ClientScripts/StudentBackpack.js?vsn=20161208" type="text/javascript"></script>
+    <script type="text/javascript">window.defaultStatus="Welcome to Aeries";</script>
+	<script type="text/javascript" src="ClientScripts/aeries-kendo-windows-1.0.4.js?vsn=20160401"></script>
+
+	<script type="text/javascript">
+
+		$(document).ready(function () {
+
+			if (kendo.support.mobileOS) {
+
+				//GeneralFunctions.IsDemoServer(CheckForMobileVersion_IsDemoServer_Complete);
+			}
+
+		});
+
+	</script>
+
+    </head>
+
+<body id="ctl00_body" class="MainParent" leftmargin="8" topmargin="0" marginwidth="8" marginheight="0">
+  
+  <form method="post" action="./Default.aspx" id="aspnetForm">
+<div class="aspNetHidden">
+<input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="" />
+<input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="" />
+<input type="hidden" name="__LASTFOCUS" id="__LASTFOCUS" value="" />
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwULLTEwMzcyNzExNzUPFgQeD0hpZGVDb250YWN0SW5mb2ceE1ZhbGlkYXRlUmVxdWVzdE1vZGUCARYCZg9kFgICAw9kFgJmD2QWDAIBD2QWAmYPZBYGAgEPDxYCHgRUZXh0BQkyMDE2LTIwMTdkZAIDDw8WBB8CBR1TYW50YSBNYXJnYXJpdGEgQ2F0aG9saWMgSC5TLh4HVG9vbFRpcAUIU2Nob29sIDFkZAIND2QWAmYPFgIeCWlubmVyaHRtbAXNKjx0YWJsZSB3aWR0aD0iMTAwJSIgYm9yZGVyPSIwIiBjZWxscGFkZGluZz0iMCIgY2VsbHNwYWNpbmc9IjAiPjx0cj48dGQgYWxpZ249ImxlZnQiIGNsYXNzPSJhbCI+PHRhYmxlIGNsYXNzPSJtZW51dGFibGUiIGJvcmRlcj0iMCIgY2VsbHBhZGRpbmc9IjAiIGNlbGxzcGFjaW5nPSIwIj48dHIgdmFsaWduPSJ0b3AiPjx0ZCBhbGlnbj0ibGVmdCIgY2xhc3M9ImFsIiBzdHlsZT0id2hpdGUtc3BhY2U6bm93cmFwOyBkaXNwbGF5OmlubGluZTsiPjx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+PHRyIHZhbGlnbj0idG9wIj48dGQ+PGRpdiBpZD0iVG9wXzEiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iRGVmYXVsdC5hc3B4IiBuYW1lPSJIb21lIiBpZD0iSG9tZSI+SG9tZTwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfMiI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJTdHVkZW50IEluZm8iIGlkPSJTdHVkZW50IEluZm8iPlN0dWRlbnQgSW5mbzwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfMiIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJTdHVkZW50UHJvZmlsZS5hc3B4IiBuYW1lPSJQcm9maWxlIiBpZD0iUHJvZmlsZSI+UHJvZmlsZTwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IlN0dWRlbnRzLmFzcHgiIG5hbWU9IkRlbW9ncmFwaGljcyIgaWQ9IkRlbW9ncmFwaGljcyI+RGVtb2dyYXBoaWNzPC9hPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQ2xhc3Nlcy5hc3B4IiBuYW1lPSJDbGFzc2VzIiBpZD0iQ2xhc3NlcyI+Q2xhc3NlczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkFjdGl2aXRpZXMuYXNweCIgbmFtZT0iQWN0aXZpdGllcyBhbmQgQXdhcmRzIiBpZD0iQWN0aXZpdGllcyBhbmQgQXdhcmRzIj5BY3Rpdml0aWVzIGFuZCBBd2FyZHM8L2E+PC9kaXY+PC90ZD48dGQ+PGRpdiBpZD0iVG9wXzMiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iQXR0ZW5kYW5jZSIgaWQ9IkF0dGVuZGFuY2UiPkF0dGVuZGFuY2U8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzMiIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQXR0ZW5kYW5jZS5hc3B4IiBuYW1lPSJBdHRlbmRhbmNlIiBpZD0iQXR0ZW5kYW5jZSI+QXR0ZW5kYW5jZTwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfNCI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJHcmFkZXMiIGlkPSJHcmFkZXMiPkdyYWRlczwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfNCIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJHcmFkZWJvb2tTdW1tYXJ5LmFzcHgiIG5hbWU9IkdyYWRlYm9vayIgaWQ9IkdyYWRlYm9vayI+R3JhZGVib29rPC9hPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iR3JhZGVib29rRGV0YWlscy5hc3B4IiBuYW1lPSJHcmFkZWJvb2sgRGV0YWlscyIgaWQ9IkdyYWRlYm9vayBEZXRhaWxzIj5HcmFkZWJvb2sgRGV0YWlsczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkdyYWRlcy5hc3B4IiBuYW1lPSJHcmFkZXMiIGlkPSJHcmFkZXMiPkdyYWRlczwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkdyYWR1YXRpb25SZXF1aXJlbWVudHMuYXNweCIgbmFtZT0iR3JhZHVhdGlvbiBTdGF0dXMiIGlkPSJHcmFkdWF0aW9uIFN0YXR1cyI+R3JhZHVhdGlvbiBTdGF0dXM8L2E+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJUcmFuc2NyaXB0cy5hc3B4IiBuYW1lPSJUcmFuc2NyaXB0cyIgaWQ9IlRyYW5zY3JpcHRzIj5UcmFuc2NyaXB0czwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IlN0dWRlbnRTdGFuZGFyZHNCYXNlZFByb2dyZXNzLmFzcHgiIG5hbWU9IlN0YW5kYXJkcyBCYXNlZCBQcm9ncmVzcyBEYXNoYm9hcmQiIGlkPSJTdGFuZGFyZHMgQmFzZWQgUHJvZ3Jlc3MgRGFzaGJvYXJkIj5TdGFuZGFyZHMgQmFzZWQgUHJvZ3Jlc3MgRGFzaGJvYXJkPC9hPjwvZGl2PjwvdGQ+PHRkPjxkaXYgaWQ9IlRvcF81Ij48YSBjbGFzcz0idG9wZHluYW1pY21lbnVUYWJsZXQiIGhyZWY9ImphdmFzY3JpcHQ6dm9pZCgwKTsiIG5hbWU9Ik1lZGljYWwiIGlkPSJNZWRpY2FsIj5NZWRpY2FsPC9hPjwvZGl2PjxkaXYgaWQ9IlN1Yl81IiBjbGFzcz0iU3ViVGFiIiBzdHlsZT0iYm9yZGVyLWJvdHRvbTogb3V0c2V0IDFweCAjRkZGRkZGOyBkaXNwbGF5OmlubGluZTsgbGVmdDowcHg7IHotaW5kZXg6IDE7Ij48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkltbXVuaXphdGlvbnMuYXNweCIgbmFtZT0iSW1tdW5pemF0aW9ucyIgaWQ9IkltbXVuaXphdGlvbnMiPkltbXVuaXphdGlvbnM8L2E+PC9kaXY+PC90ZD48dGQ+PGRpdiBpZD0iVG9wXzYiPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iR3VpZGFuY2UiIGlkPSJHdWlkYW5jZSI+R3VpZGFuY2U8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzYiIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQXNzZXJ0aXZlRGlzY2lwbGluZS5hc3B4IiBuYW1lPSJBc3NlcnRpdmUgRGlzY2lwbGluZSIgaWQ9IkFzc2VydGl2ZSBEaXNjaXBsaW5lIj5Bc3NlcnRpdmUgRGlzY2lwbGluZTwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT48L3RkPjx0ZCBhbGlnbj0icmlnaHQiPjx0YWJsZSBib3JkZXI9IjAiIGNlbGxwYWRkaW5nPSIwIiBjZWxsc3BhY2luZz0iMCI+PHRyIHZhbGlnbj0idG9wIj48dGQ+PGRpdiBpZD0iVG9wXzciPjxhIGNsYXNzPSJ0b3BkeW5hbWljbWVudVRhYmxldCIgaHJlZj0iamF2YXNjcmlwdDp2b2lkKDApOyIgbmFtZT0iQ2hhbmdlIFN0dWRlbnQiIGlkPSJDaGFuZ2UgU3R1ZGVudCI+Q2hhbmdlIFN0dWRlbnQ8L2E+PC9kaXY+PGRpdiBpZD0iU3ViXzciIGNsYXNzPSJTdWJUYWIiIHN0eWxlPSJib3JkZXItYm90dG9tOiBvdXRzZXQgMXB4ICNGRkZGRkY7IGRpc3BsYXk6aW5saW5lOyBsZWZ0OjBweDsgei1pbmRleDogMTsiPjxhIGNsYXNzPSJzdWJkeW5hbWljbWVudSIgaHJlZj0iQ2hhbmdlU3R1ZGVudC5hc3B4P2NhY2hlPTMlMmYyNSUyZjIwMTcrOCUzYTIyJTNhMTQrQU0mU0M9MSZTTj0yMDAwMSZSZXR1cm5QYWdlPURlZmF1bHQuYXNweCZuYW1lPTFfMjAwMDEmaWQ9MV8yMDAwMSIgbmFtZT0iQ2hlbiwgU2hpdGlhbiAtIEdyZCAxMCAtIFNhbnRhIE1hcmdhcml0YSBDYXRob2xpYyBILlMuIiBpZD0iQ2hlbiwgU2hpdGlhbiAtIEdyZCAxMCAtIFNhbnRhIE1hcmdhcml0YSBDYXRob2xpYyBILlMuIj5DaGVuLCBTaGl0aWFuIC0gR3JkIDEwIC0gU2FudGEgTWFyZ2FyaXRhIENhdGhvbGljIEguUy48L2E+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJDaGFuZ2VTdHVkZW50LmFzcHg/Y2FjaGU9MyUyZjI1JTJmMjAxNys4JTNhMjIlM2ExNCtBTSZTQz0yJlNOPTIwMDAxJlJldHVyblBhZ2U9RGVmYXVsdC5hc3B4Jm5hbWU9Ml8yMDAwMSZpZD0yXzIwMDAxIiBuYW1lPSJDaGVuLCBTaGl0aWFuIFtJTkFDVElWRV0gLSBHcmQgMTAgKDEvMzEvMjAxNykgLSBTYW50YSBNYXJnYXJpdGEgU3VtbWVyIFNjaGwiIGlkPSJDaGVuLCBTaGl0aWFuIFtJTkFDVElWRV0gLSBHcmQgMTAgKDEvMzEvMjAxNykgLSBTYW50YSBNYXJnYXJpdGEgU3VtbWVyIFNjaGwiPkNoZW4sIFNoaXRpYW4gW0lOQUNUSVZFXSAtIEdyZCAxMCAoMS8zMS8yMDE3KSAtIFNhbnRhIE1hcmdhcml0YSBTdW1tZXIgU2NobDwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkFkZE5ld1N0dWRlbnRUb1BhcmVudC5hc3B4IiBuYW1lPSJBZGQgTmV3IFN0dWRlbnQgVG8gWW91ciBBY2NvdW50IiBpZD0iQWRkIE5ldyBTdHVkZW50IFRvIFlvdXIgQWNjb3VudCI+QWRkIE5ldyBTdHVkZW50IFRvIFlvdXIgQWNjb3VudDwvYT48L2Rpdj48L3RkPjx0ZD48ZGl2IGlkPSJUb3BfOCI+PGEgY2xhc3M9InRvcGR5bmFtaWNtZW51VGFibGV0IiBocmVmPSJqYXZhc2NyaXB0OnZvaWQoMCk7IiBuYW1lPSJPcHRpb25zIiBpZD0iT3B0aW9ucyI+T3B0aW9uczwvYT48L2Rpdj48ZGl2IGlkPSJTdWJfOCIgY2xhc3M9IlN1YlRhYiIgc3R5bGU9ImJvcmRlci1ib3R0b206IG91dHNldCAxcHggI0ZGRkZGRjsgZGlzcGxheTppbmxpbmU7IGxlZnQ6MHB4OyB6LWluZGV4OiAxOyI+PGEgY2xhc3M9InN1YmR5bmFtaWNtZW51IiBocmVmPSJDaGFuZ2VQYXNzd29yZC5hc3B4IiBuYW1lPSJDaGFuZ2UgUGFzc3dvcmQiIGlkPSJDaGFuZ2UgUGFzc3dvcmQiPkNoYW5nZSBQYXNzd29yZDwvYT48YSBjbGFzcz0ic3ViZHluYW1pY21lbnUiIGhyZWY9IkNoYW5nZUVtYWlsLmFzcHgiIG5hbWU9IkNoYW5nZSBFbWFpbCIgaWQ9IkNoYW5nZSBFbWFpbCI+Q2hhbmdlIEVtYWlsPC9hPjwvZGl2PjwvdGQ+PHRkPjxkaXYgaWQ9IlRvcF85Ij48YSBjbGFzcz0idG9wZHluYW1pY21lbnVUYWJsZXQiIGhyZWY9IkxvZ291dC5hc3B4IiBuYW1lPSJMb2dvdXQiIGlkPSJMb2dvdXQiPkxvZ291dDwvYT48L2Rpdj48L3RkPjwvdHI+PC90YWJsZT48c2NyaXB0IHR5cGU9InRleHQvamF2YXNjcmlwdCI+YXRfYXR0YWNoKCJUb3BfMSIsICJTdWJfMSIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfMiIsICJTdWJfMiIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfMyIsICJTdWJfMyIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNCIsICJTdWJfNCIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNSIsICJTdWJfNSIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNiIsICJTdWJfNiIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfNyIsICJTdWJfNyIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfOCIsICJTdWJfOCIsICJwb2ludGVyIik7YXRfYXR0YWNoKCJUb3BfOSIsICJTdWJfOSIsICJwb2ludGVyIik7PC9zY3JpcHQ+PC90ZD48L3RyPjwvdGFibGU+PC90ZD48L3RyPjwvdGFibGU+ZAIDDxYCHgdWaXNpYmxlaGQCBA8WAh8FaBYCAgMPDxYCHwJlZGQCBQ9kFgZmDw9kDxAWAWYWARYCHg5QYXJhbWV0ZXJWYWx1ZSgpWVN5c3RlbS5JbnQ2NCwgbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5BDkzNzcWAQIFZGQCBA8WAh8FZxYWAgEPDxYCHwIFKFdlbGNvbWUgdG8gdGhlIEFlcmllcyBQb3J0YWwgZm9yIFNoaXRpYW5kZAIGD2QWAmYPZBYUZg8PFgIfAgUIQ2FsZW5kYXJkZAIBDw8WAh8FZ2QWAmYPZBYCZg9kFgICAQ8PFgQeBVdpZHRoGwAAAAAAAF5AAQAAAB4EXyFTQgKAAhYCHgVzdHlsZQUcaGVpZ2h0OjI2cHg7Zm9udC1zaXplOlNtYWxsO2QCAg9kFgJmDw8WBB8HGwAAAAAAwGJAAQAAAB8IAoACZGQCCA8WAh4Hb25jbGljawWVASRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3R4dEVJRCcpLnZhbHVlID0gJzAnO0Rpc3BsYXlPbkNlbnRlclNjcmVlbigkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9BZGRFdmVudF9QYW5lbCcpKTtSZXNldEZpZWxkc18oKTtyZXR1cm4gZmFsc2U7ZAIJDw8WAh8CBQ1BZGQgTmV3IEV2ZW50FgIfCgWVASRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3R4dEVJRCcpLnZhbHVlID0gJzAnO0Rpc3BsYXlPbkNlbnRlclNjcmVlbigkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9BZGRFdmVudF9QYW5lbCcpKTtSZXNldEZpZWxkc18oKTtyZXR1cm4gZmFsc2U7ZAIMDw8WAh8CBQlEaXNwbGF5OiBkZAINDxBkDxYCZgIBFgIFA0RheQUFTW9udGgWAWZkAg4PDxYCHwVnZBYCAgEPFgIeC18hSXRlbUNvdW50AgIWBmYPZBYGAgEPFgQfCgXjAmlmKCRnZXQoJ2N0bDAwX01haW5Db250ZW50X2N0bDE4X3JwdENhbGVuZGFyRGF5X2N0bDAwX0NhbEV2ZW50TG9uZycpLnN0eWxlLmRpc3BsYXkgPT0gJ2lubGluZScpeyAkZ2V0KCdjdGwwMF9NYWluQ29udGVudF9jdGwxOF9ycHRDYWxlbmRhckRheV9jdGwwMF9DYWxFdmVudExvbmcnKS5zdHlsZS5kaXNwbGF5PSdub25lJzsgdGhpcy5zcmM9J2ltYWdlcy9FeHBhbmRCdXR0b24uZ2lmJzt9ZWxzZXsgJGdldCgnY3RsMDBfTWFpbkNvbnRlbnRfY3RsMThfcnB0Q2FsZW5kYXJEYXlfY3RsMDBfQ2FsRXZlbnRMb25nJykuc3R5bGUuZGlzcGxheT0naW5saW5lJzsgdGhpcy5zcmM9J2ltYWdlcy9Db2xsYXBzZUJ1dHRvbi5naWYnO30fBWdkAgMPDxYCHwIFDFNNQ0hTIEV2ZW50c2RkAgUPFgIfBAVKPGJyIC8+UG9zc2libGUgQi9HIEJiYWxsIENJRjxiciAvPlNNQ0hTIEAgU3dhbGxvd3MgRGF5IFBhcmFkZSBpbiBTSkM8YnIgLz5kAgEPZBYCAgMPDxYCHwIFI1BkIDQtIER1ZTogQ2hhcHRlciA5IEFMRUtTIGhvbWV3b3JrZGQCAg9kFgICAQ8WAh8FaBYCAgEPZBYCZg8VASBZb3UgaGF2ZSBubyBldmVudHMgZm9yIHRoaXMgZGF0ZWQCEA8PFgIfBWhkZAISD2QWEgIDD2QWAmYPZBYCZg9kFgICAQ8PFgQfBxsAAAAAAABeQAEAAAAfCAKAAhYCHwkFHGhlaWdodDoyNnB4O2ZvbnQtc2l6ZTpTbWFsbDtkAgQPZBYCZg9kFgJmD2QWAgIBDw8WBB8HGwAAAAAAAF5AAQAAAB8IAoACFgIfCQUcaGVpZ2h0OjI2cHg7Zm9udC1zaXplOlNtYWxsO2QCBQ8PFgIeCU1heExlbmd0aGZkZAIGDxYGHgxEaXNwbGF5TW9uZXkLKX9BamF4Q29udHJvbFRvb2xraXQuTWFza2VkRWRpdFNob3dTeW1ib2wsIEFqYXhDb250cm9sVG9vbGtpdCwgVmVyc2lvbj0xNi4xLjEuMCwgQ3VsdHVyZT1uZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj0yOGYwMWIwZTg0YjZkNTNlAB4OQWNjZXB0TmVnYXRpdmULKwUAHg5JbnB1dERpcmVjdGlvbgspgwFBamF4Q29udHJvbFRvb2xraXQuTWFza2VkRWRpdElucHV0RGlyZWN0aW9uLCBBamF4Q29udHJvbFRvb2xraXQsIFZlcnNpb249MTYuMS4xLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MjhmMDFiMGU4NGI2ZDUzZQBkAgcPDxYCHwxmZGQCCA8WBh8NCysFAB8OCysFAB8PCysGAGQCCg8PFgIeDU9uQ2xpZW50Q2xpY2sFHHJldHVybiBDYWxlbmRhckV2ZW50X0FkZF8oKTtkZAILDw8WAh8QBR9yZXR1cm4gQ2FsZW5kYXJFdmVudF9EZWxldGVfKCk7ZGQCDA8PFgIfEAUecmV0dXJuIENsb3NlQWRkRXZlbnRfUGFuZWxfKCk7FgIfCgVGJGdldCgnY3RsMDBfTWFpbkNvbnRlbnRfY3RsMThfQWRkRXZlbnRfUGFuZWwnKS5zdHlsZS5kaXNwbGF5ID0gJ25vbmUnO2QCCA9kFgJmD2QWAmYPFgIfBWhkAgkPPCsACQEADxYGHghEYXRhS2V5cxYAHwsCBR8FZ2QWCgIBD2QWAmYPFQ0BTApMYXRlIC0gRXhjATAAATEBMQAAAAAAAABkAgIPZBYCZg8VDQFUBVRhcmR5ATAAAAAAAAExAAAAAGQCAw9kFgJmDxUNAApfKlRPVEFMUypfAAAAAAAAAAAAAABkAgQPZBYCZg8VDQAHRVhDVVNFRAEwATABMAEwATABMAEwATABMAEwATBkAgUPZBYCZg8VDQAJVU5FWENVU0VEATABMAEwATABMAEwATABMAEwATABMGQCCg9kFgJmDw8WAh8FaGQWBGYPD2QPEBYCZgIBFgIWAh8GBQExFgIfBmQWAgIFAgNkZAICDzwrAAkBAA8WBB8RFgAfC2ZkZAILDzwrAAkAZAIMD2QWAmYPZBYEZg8PZA8QFgJmAgEWAhYCHwYFATEWAh8GZBYCAgUCA2RkAgIPFgIfCwIBFgRmD2QWAmYPFQMJUmVzb3VyY2VzBFNpdGULRGVzY3JpcHRpb25kAgEPZBYEAgEPDxYCHgtOYXZpZ2F0ZVVybAUgaHR0cDovL3d3dy5zbWhzLm9yZy9jYWxlbmRhci5qc3BkFgJmDxUBD1NjaG9vbCBDYWxlbmRhcmQCAg8VAQYmbmJzcDtkAg0PZBYCZg9kFgICAQ8WAh8FaGQCDw9kFgJmD2QWAgIBDzwrAAkBAA8WAh8FaGRkAhAPZBYCZg9kFgRmDw9kDxAWA2YCAQICFgMWAh8GBQcxMTE5OTcwFgIfBmQWAh8GZBYDAgUCAwIDZGQCAg88KwAJAQAPFgYfERYAHwsCAh8FaGQWBAIBD2QWAmYPFQQXbWFpbHRvOjQwNzgzNjc0OEBxcS5jb20QNDA3ODM2NzQ4QHFxLmNvbQFQAGQCAg9kFgJmDxUEGW1haWx0bzpjaGVuemV0b25nQDEyNi5jb20SY2hlbnpldG9uZ0AxMjYuY29tAVAAZAIRD2QWBGYPZBYCZg9kFgJmDw8WAh8CBQ4xMjUuMzcuMTUxLjE5NWRkAgEPZBYCZg9kFgRmDw8WAh8CBQ4xMjUuMzcuMTUxLjE5NWRkAgEPDxYCHwIFFDMvMjUvMjAxNyA3OjUwOjUwIEFNZGQCBQ9kFgoCCQ9kFgJmD2QWAmYPZBYEAgEPFgIeCm9ua2V5cHJlc3MFkwFpZiAoZXZlbnQua2V5Q29kZSA9PSAxMykge2N0bDAwX01haW5Db250ZW50X3N1YlN0dVNlYXJjaF9idG5TdHVTZWFyY2guZm9jdXMoKTsgY3RsMDBfTWFpbkNvbnRlbnRfc3ViU3R1U2VhcmNoX2J0blN0dVNlYXJjaC5jbGljaygpOyByZXR1cm4gZmFsc2U7IH1kAgMPFgIfCmVkAhEPZBYCZg9kFgJmD2QWAmYPD2QPEBYCZgIBFgIWAh8GBQExFgIfBmQWAgIFAgNkZAIVD2QWAmYPZBYCZg9kFgRmDw9kDxAWAmYCARYCFgIfBgUBMRYCHwZkFgICBQIDZGQCAg88KwAJAQAPFgQfERYAHwtmZGQCFw9kFgJmD2QWAmYPZBYEZg8PZA8QFgFmFgEWAh8GAgEWAQIFZGQCBg9kFgICAQ9kFgJmD2QWCAIBDw9kDxAWBGYCAQICAgMWBBYCHwYFATEWAh8GZBYCHwZkFgIfBmQWBAIFAgMCAwIDZGQCAw9kFgJmD2QWAmYPZBYCAgEPDxYEHwcbAAAAAAAAXkABAAAAHwgCgAIWAh8JBRxoZWlnaHQ6MjZweDtmb250LXNpemU6U21hbGw7ZAIJD2QWAmYPZBYCZg9kFgJmD2QWAgIFDxYCHgpCZWhhdmlvcklEBTdjdGwwMF9NYWluQ29udGVudF9BZG1pbklOVl90eHROZXdDb21tZW50Q0RfRHJvcEJlaGF2aW9yZAINDw8WAh8QBXAkZmluZCgnQWRkQ29tbWVudEJlaGF2aW9yJykuaGlkZSgpO19fZG9Qb3N0QmFjaygnY3RsMDAkTWFpbkNvbnRlbnQkQWRtaW5JTlYkYnRuT0tBZGRDb21tZW50R28nLCcnKTtyZXR1cm4gZmFsc2U7ZGQCGQ9kFgJmD2QWAmYPZBYEZg9kFgJmD2QWAmYPZBYCAgEPDxYEHwcbAAAAAAAAXkABAAAAHwgCgAIWAh8JBRxoZWlnaHQ6MjZweDtmb250LXNpemU6U21hbGw7ZAIBD2QWAmYPZBYCZg9kFgICAQ8PFgQfBxsAAAAAAABeQAEAAAAfCAKAAhYCHwkFHGhlaWdodDoyNnB4O2ZvbnQtc2l6ZTpTbWFsbDtkAgYPDxYCHwIFCTcuMTcuMi4xN2RkAgcPDxYCHwIFQENvcHlyaWdodCAmY29weTsgMTk5NS0yMDE3IEFlcmllcyBTb2Z0d2FyZS4gQWxsIFJpZ2h0cyBSZXNlcnZlZC5kZBgCBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WDAUgY3RsMDAkTWFpbkNvbnRlbnQkY3RsMTgkb3BuQ2xhc3MFI2N0bDAwJE1haW5Db250ZW50JGN0bDE4JG9wblBlcnNvbmFsBSFjdGwwMCRNYWluQ29udGVudCRjdGwxOCRvcG5TY2hvb2wFI2N0bDAwJE1haW5Db250ZW50JGN0bDE4JG9wbkRpc3RyaWN0BSRjdGwwMCRNYWluQ29udGVudCRjdGwxOCRvcG5DbGFzc2VzJDAFJWN0bDAwJE1haW5Db250ZW50JGNoa0dhZGdldEF0dFN1bW1hcnkFI2N0bDAwJE1haW5Db250ZW50JGNoa0dhZGdldENhbGVuZGFyBSBjdGwwMCRNYWluQ29udGVudCRjaGtHYWRnZXRUYXNrcwUeY3RsMDAkTWFpbkNvbnRlbnQkY2hrR2FkZ2V0SU5WBShjdGwwMCRNYWluQ29udGVudCRjaGtHYWRnZXRSZXNvdXJjZUxpbmtzBR5jdGwwMCRNYWluQ29udGVudCRjaGtCcmllZmNhc2UFIWN0bDAwJE1haW5Db250ZW50JGNoa0NsYXNzU3VtbWFyeQU3Y3RsMDAkTWFpbkNvbnRlbnQkQWRtaW5JTlYkdHh0TmV3Q29tbWVudENEJERyb3BEb3duR3JpZA9nZBG74kAZCJKS5pBQkWdzygsZ7azAXqrtcDVZW86/lXjb" />
+</div>
+
+<script type="text/javascript">
+//<![CDATA[
+var theForm = document.forms['aspnetForm'];
+if (!theForm) {
+    theForm = document.aspnetForm;
+}
+function __doPostBack(eventTarget, eventArgument) {
+    if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+        theForm.__EVENTTARGET.value = eventTarget;
+        theForm.__EVENTARGUMENT.value = eventArgument;
+        theForm.submit();
+    }
+}
+//]]>
+</script>
+
+
+<script src="/Parent/WebResource.axd?d=yKtAyTYwMzMcpR6UHLsZafp44Y5CxWmhASzZ90bmXvEHokWhzvnp7FGX6hB-C1AjQc2CmSHpZfsF7y6w-YY54ubsxvOhEH6tKNlJf2mFzwo1&amp;t=636160552665894255" type="text/javascript"></script>
+
+<script language='javascript'>var isSafari = true;function isIE(){return false;}</script>
+<script type="text/javascript">
+//<![CDATA[
+function CalendarEvent_SetDate_(){ var strDate = (this._value.getMonth() + 1) + '/' + this._value.getDate() + '/' + this._value.getFullYear(); if(strDate.length > 0) { GeneralFunctions.CalendarEvent_SetDate(strDate, CalendarEvent_SetDate_Result_); }}function CalendarEvent_SetDate_Result_(result) { if(result == 'Reset') { ResetForm_(); } }function CalendarEvent_SetDisplay_(display) { GeneralFunctions.CalendarEvent_SetDisplay(display.value, ResetForm_); }function ResetForm_(result) { $get('ctl00_MainContent_ctl18_btnRefresh').click(); }function CloseAddEvent_Panel_(){ $get('ctl00_MainContent_ctl18_AddEvent_Panel').style.display = 'none'; return false;}function ResetFields_(){ var dt = new Date(); var today = GetValue($get('ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker'), 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtTI'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), today, 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), today, 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtT1'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtT2'), '', 'txt'); SetValue($get('ctl00_MainContent_ctl18_txtDE'), '', 'txt');}function CalendarEvent_Delete_(){ var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); if(confirm('Are you sure you want to delete this event?')) { GeneralFunctions.CalendarEvent_Delete(EID, CalendarEvent_Delete_Result_) }; return false;}function CalendarEvent_Delete_Result_(result) { if(result) {CloseAddEvent_Panel_(); $get('ctl00_MainContent_ctl18_btnRefresh').click(); } }function CalendarEvent_GetInfo_(){ var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); var btn1 = $get('ctl00_MainContent_ctl18_btnEventOK'); var btn2 = $get('ctl00_MainContent_ctl18_btnDelete'); if((EID * 1) > 0) { SetValue(btn1, 'Save Record', 'txt'); btn2.style.display = 'block'; } else { SetValue(btn1, 'Add Event', 'txt'); btn2.style.display = 'none'; } if((EID * 1) > 0) { GeneralFunctions.CalendarEvent_GetInfo(EID, CalendarEvent_GetInfo_Result_); }}function CalendarEvent_GetInfo_Result_(result){ if(result != null) {  SetValue($get('ctl00_MainContent_ctl18_txtTI'), result[0], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), result[1], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), result[2], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtT1'), result[3], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtT2'), result[4], 'txt');  SetValue($get('ctl00_MainContent_ctl18_txtDE'), result[5], 'txt'); }}function CalendarEvent_Add_(){ var TI = GetValue($get('ctl00_MainContent_ctl18_txtTI'), 'txt'); var EID = GetValue($get('ctl00_MainContent_ctl18_txtEID'), 'txt'); var DT = GetValue($get('ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker'), 'txt'); var ED = GetValue($get('ctl00_MainContent_ctl18_txtED_txtKendoDatePicker'), 'txt'); var T1 = GetValue($get('ctl00_MainContent_ctl18_txtT1'), 'txt'); var T2 = GetValue($get('ctl00_MainContent_ctl18_txtT2'), 'txt'); var DE = GetValue($get('ctl00_MainContent_ctl18_txtDE'), 'txt'); var SCP = ''; var AS1 = '';; GeneralFunctions.CalendarEvent_Add(TI, EID, DT, ED, T1, T2, DE, SCP, AS1, CalendarEvent_Add_Result_); return false;}function CalendarEvent_Add_Result_(result){ if(result != 'true') { alert(result); } else { ButtonClick($get('ctl00_MainContent_ctl18_btnRefresh')); }}function ButtonClick(btn) { if(btn != null) { btn.click(); }}function GetValue(ID, type){ if((ID != null) && (type == 'txt')) { return ID.value; } else if((ID != null) && (type == 'lbl')) { return ID.innerHTML; } return '';}function SetValue(ID, value, type){ if((ID != null) && (type == 'txt')) { ID.value = value; return true; } else if((ID != null) && (type == 'lbl')) { ID.innerHTML = value; return true; } return false;}var ctl00_MainContent_AdminINV_txtNewCommentCD_DropDownContainer_Hide = true; function ctl00_MainContent_AdminINV_txtNewCommentCD_Change (val){if (SetCustomDropValue('ctl00_MainContent_AdminINV_txtNewCommentCD_DropDownGrid', val, 'DropDownRowSelect', 'DropDownRow', 'ctl00_MainContent_AdminINV_txtNewCommentCD_txtControlValue', 'ctl00_MainContent_AdminINV_txtNewCommentCD_txtValue')){$find('ctl00_MainContent_AdminINV_txtNewCommentCD_DropBehavior').hidePopup();}}//]]>
+</script>
+
+<script src="/Parent/ScriptResource.axd?d=dpZMkI6xwnOFLwds7jHr6SJn5I2_bFgta9lO7K9XW86HIB4FiHvfbhTHVXV3Bi6DxnxsTfeKT4A5VexPugZQWzQ8qctRzoKqh5DPb06BypqqQir_HsW5I2UyNLYoH5xcaPeV0yb25M5snjyUZfUco6poujTP5tHYY80bvUi4_KM1&amp;t=2a48f442" type="text/javascript"></script>
+<script src="/Parent/ScriptResource.axd?d=ci4YGnV_BZgSJeSsudapLfKbpS-Z6TtjtmfNZ4mRjuQVkQoq3V4cl9aNMQZOqGLTgrHJmk0_3YcXnri8oX7JWjC9KplCP4p0CS4xLZPpDeFmfowNw1l4ycI10FiKPjytf_hCZpYr-R3eKbxyAbqVhbS6krWfx5WS8onBLng01P4qq2jDF4Zp1w_25DBnhGAZ0&amp;t=2a48f442" type="text/javascript"></script>
+<script src="/Parent/Scripts/AjaxControlToolkit/Bundle?v=f2xAAd2TWOdmsmrwe3Ko7FqubUV1OQ66mzQ_gdvdZuk1" type="text/javascript"></script>
+<script src="SetClientOptions.asmx/js" type="text/javascript"></script>
+<script src="GeneralFunctions.asmx/js" type="text/javascript"></script>
+<script src="SecurityFunctions.asmx/js" type="text/javascript"></script>
+<div class="aspNetHidden">
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="850658B5" />
+</div>
+	<script type="text/javascript">
+//<![CDATA[
+Sys.WebForms.PageRequestManager._initialize('ctl00$TheMasterScriptManager', 'aspnetForm', ['tctl00$MainContent$ctl18$txtDate$updatepanel1','','tctl00$MainContent$ctl18$txtDT$updatepanel1','','tctl00$MainContent$ctl18$txtED$updatepanel1',''], [], [], 90, 'ctl00');
+//]]>
+</script>
+
+
+	<div style="height: 100%" class="view" data-root-url="https://aeries.smhs.org/Parent/" data-school-code="1">
+		<table class="full NoPadding a-expand">
+			<tr id="ctl00_trTop">
+	<td class="ac" valign="top">
+				<table border="0" cellspacing="0" cellpadding="0" width="100%">
+					<tr>
+						<td class="al vat" style="width: 1%;"><img src="images/aeries_BigA-50x.png" alt="" style="padding: 5px 5px 0px 2px; border: 0px;" /></td>
+						<td class="al vam" style="font-size: 20px; color: #000000; font-weight: bold; height: 25px;">
+							<span id="ctl00_lblSchoolYear" style="font-size:12px;">2016-2017</span>
+							&nbsp;&nbsp;&nbsp;&nbsp;
+							<span id="ctl00_lblSchoolName" title="School 1">Santa Margarita Catholic H.S.</span>
+						
+									<input name="ctl00$SC" type="hidden" id="ctl00_SC" class="MasterSC" value="1" />
+									<input name="ctl00$SN" type="hidden" id="ctl00_SN" class="MasterSN" value="20001" />
+									<input name="ctl00$PID" type="hidden" id="ctl00_PID" class="MasterPID" value="1119970" />
+						</td>
+	
+						<td style="font-size: 13px;">
+								
+						</td>
+	
+						<td class="ar vat" style="height: 25px;">
+							<div class="PlainDataClear" style="margin-top: 2.1em; padding: 15px;"><span id="mobileTestdrive" style="padding: 0.3em; font-weight: bold; font-size: 1.5em; display: none;">
+								<a id="goToMobile" href="LoginParent.aspx?RedirectToApp=True">Mobile Portal</a>
+								<sup style="color: #8B0000;">Beta</sup></span></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="al" valign="bottom" colspan="4">
+							<div id="ctl00_ParNav_ParNav"><table width="100%" border="0" cellpadding="0" cellspacing="0"><tr><td align="left" class="al"><table class="menutable" border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td align="left" class="al" style="white-space:nowrap; display:inline;"><table border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td><div id="Top_1"><a class="topdynamicmenuTablet" href="Default.aspx" name="Home" id="Home">Home</a></div></td><td><div id="Top_2"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Student Info" id="Student Info">Student Info</a></div><div id="Sub_2" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="StudentProfile.aspx" name="Profile" id="Profile">Profile</a><a class="subdynamicmenu" href="Students.aspx" name="Demographics" id="Demographics">Demographics</a><a class="subdynamicmenu" href="Classes.aspx" name="Classes" id="Classes">Classes</a><a class="subdynamicmenu" href="Activities.aspx" name="Activities and Awards" id="Activities and Awards">Activities and Awards</a></div></td><td><div id="Top_3"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Attendance" id="Attendance">Attendance</a></div><div id="Sub_3" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="Attendance.aspx" name="Attendance" id="Attendance">Attendance</a></div></td><td><div id="Top_4"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Grades" id="Grades">Grades</a></div><div id="Sub_4" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="GradebookSummary.aspx" name="Gradebook" id="Gradebook">Gradebook</a><a class="subdynamicmenu" href="GradebookDetails.aspx" name="Gradebook Details" id="Gradebook Details">Gradebook Details</a><a class="subdynamicmenu" href="Grades.aspx" name="Grades" id="Grades">Grades</a><a class="subdynamicmenu" href="GraduationRequirements.aspx" name="Graduation Status" id="Graduation Status">Graduation Status</a><a class="subdynamicmenu" href="Transcripts.aspx" name="Transcripts" id="Transcripts">Transcripts</a><a class="subdynamicmenu" href="StudentStandardsBasedProgress.aspx" name="Standards Based Progress Dashboard" id="Standards Based Progress Dashboard">Standards Based Progress Dashboard</a></div></td><td><div id="Top_5"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Medical" id="Medical">Medical</a></div><div id="Sub_5" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="Immunizations.aspx" name="Immunizations" id="Immunizations">Immunizations</a></div></td><td><div id="Top_6"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Guidance" id="Guidance">Guidance</a></div><div id="Sub_6" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="AssertiveDiscipline.aspx" name="Assertive Discipline" id="Assertive Discipline">Assertive Discipline</a></div></td></tr></table></td><td align="right"><table border="0" cellpadding="0" cellspacing="0"><tr valign="top"><td><div id="Top_7"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Change Student" id="Change Student">Change Student</a></div><div id="Sub_7" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="ChangeStudent.aspx?cache=3%2f25%2f2017+8%3a22%3a14+AM&SC=1&SN=20001&ReturnPage=Default.aspx&name=1_20001&id=1_20001" name="Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S." id="Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S.">Chen, Shitian - Grd 10 - Santa Margarita Catholic H.S.</a><a class="subdynamicmenu" href="ChangeStudent.aspx?cache=3%2f25%2f2017+8%3a22%3a14+AM&SC=2&SN=20001&ReturnPage=Default.aspx&name=2_20001&id=2_20001" name="Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl" id="Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl">Chen, Shitian [INACTIVE] - Grd 10 (1/31/2017) - Santa Margarita Summer Schl</a><a class="subdynamicmenu" href="AddNewStudentToParent.aspx" name="Add New Student To Your Account" id="Add New Student To Your Account">Add New Student To Your Account</a></div></td><td><div id="Top_8"><a class="topdynamicmenuTablet" href="javascript:void(0);" name="Options" id="Options">Options</a></div><div id="Sub_8" class="SubTab" style="border-bottom: outset 1px #FFFFFF; display:inline; left:0px; z-index: 1;"><a class="subdynamicmenu" href="ChangePassword.aspx" name="Change Password" id="Change Password">Change Password</a><a class="subdynamicmenu" href="ChangeEmail.aspx" name="Change Email" id="Change Email">Change Email</a></div></td><td><div id="Top_9"><a class="topdynamicmenuTablet" href="Logout.aspx" name="Logout" id="Logout">Logout</a></div></td></tr></table><script type="text/javascript">at_attach("Top_1", "Sub_1", "pointer");at_attach("Top_2", "Sub_2", "pointer");at_attach("Top_3", "Sub_3", "pointer");at_attach("Top_4", "Sub_4", "pointer");at_attach("Top_5", "Sub_5", "pointer");at_attach("Top_6", "Sub_6", "pointer");at_attach("Top_7", "Sub_7", "pointer");at_attach("Top_8", "Sub_8", "pointer");at_attach("Top_9", "Sub_9", "pointer");</script></td></tr></table></td></tr></table></div>
+						</td>
+					</tr>
+				</table>
+			</td>
+</tr>
+
+			<tr style="background-color:#F5F5F5; height: 525px; min-height:525px;"><td class="al" valign="top" style="padding: 5px 5px 5px 5px; min-height:525px;">
+				<div style="width:100%;"><span id="ctl00_lblAlert" class="RedText"></span></div>
+
+				
+				
+
+				
+		
+
+	
+    <div>
+		<div>
+			<!-- *** Required to register AjaxControlToolkit *** -->
+			
+					
+		</div>
+		
+		
+
+		<!-- Parent Widgets -->
+		<div id="ctl00_MainContent_divParentWidgets" class="BackDrop">
+			<div class="a-container">
+				<div id="ParentHomeRow1" class="a-row">		
+					<div class="a-col-20 ac">
+						
+						<span id="ctl00_MainContent_lblWelcome" class="PlainDataClear" style="font-weight:bold;">Welcome to the Aeries Portal for Shitian</span>
+						<div id="divParentNotification" class="HCell" style="padding: 10px; border:solid 1px #ddd; display: none; width: 100%;">
+							<span id="ctl00_MainContent_lblParentNotification" style="font-weight:bold;"></span>&nbsp;<a href="ParentNotificationPreferences.aspx" style="color:#1C3555" >Modify</a>
+						</div>
+						
+						
+					</div>
+				</div>
+
+				<div id="ParentHomeRow2" class="a-row">
+                    <div id="ParentHomeRow2_Left" class="a-col-5">
+						
+					</div>	
+
+					<div id="ParentHomeRow2_Right" class="a-col-15">
+						  
+<script>
+	var isProfile = 'True';
+	var ShowBackground = 'True';
+	var ShowPrintButton = 'False';
+</script>
+<script type="text/javascript" src="Scripts/require/widgets/views/classsummary/classsummary.js?vsn=7.17.2.17"></script>
+
+<div id="ctl00_MainContent_ctl14_divClassSummary" class="classSummaryContainer"></div>
+	
+
+						
+
+<div class="a-obj">
+	<table class="NoPadding a-expand">
+		<tr class="SubHeaderRow">
+			<td class="NewTL"></td>
+			<td class="CatHeader ac"><span id="ctl00_MainContent_ctl18_lblCalendar">Calendar</span></td>
+						
+			<td class="NewTR"></td>
+		</tr>
+		<tr class="SubHeaderRow">
+			<td class="DataLE"></td>
+			<td align="center" class="HCell">
+				<div id="ctl00_MainContent_ctl18_txtDate_updatepanel1" style="display: inline-block;">
+	
+		<input name="ctl00$MainContent$ctl18$txtDate$txtKendoDatePicker" type="text" value="03/25/2017" id="ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+</div>
+				
+			</td>
+			<td class="DataLER"></td>
+		</tr>
+		
+		<tr>
+			<td class="DataLE"></td>
+			<td class="Data al">
+				<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr class="PlainData">
+					<td class="al">
+						<img src="images/addrcd.gif" id="ctl00_MainContent_ctl18_imgAddEvent" border="0" alt="Add New Event" class="Clickable" onclick="$get(&#39;ctl00_MainContent_ctl18_txtEID&#39;).value = &#39;0&#39;;DisplayOnCenterScreen($get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;));ResetFields_();return false;" />&nbsp;
+						<span id="ctl00_MainContent_ctl18_lblAddEvent" class="Clickable" onclick="$get(&#39;ctl00_MainContent_ctl18_txtEID&#39;).value = &#39;0&#39;;DisplayOnCenterScreen($get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;));ResetFields_();return false;">Add New Event</span>
+						<input type="submit" name="ctl00$MainContent$ctl18$btnRefresh" value="Refresh" id="ctl00_MainContent_ctl18_btnRefresh" style="display:none;" />
+						<span id="ctl00_MainContent_ctl18_lblTest"></span>
+					</td>
+					<td class="ar">
+							<span id="ctl00_MainContent_ctl18_lblDisplay">Display: </span>
+							<select name="ctl00$MainContent$ctl18$CalendarView" onchange="javascript:setTimeout(&#39;__doPostBack(\&#39;ctl00$MainContent$ctl18$CalendarView\&#39;,\&#39;\&#39;)&#39;, 0)" id="ctl00_MainContent_ctl18_CalendarView">
+	<option selected="selected" value="Day" ID="lblDay">Day</option>
+	<option value="Month" ID="lblMonth">Month</option>
+
+</select>
+					</td>
+				</tr></table>
+			</td>
+			<td class="DataLER"></td>
+		</tr>
+		
+		<div id="ctl00_MainContent_ctl18_divDay">
+	
+			
+					<tr>
+						<td class="DataLE"></td>
+						<td class="Data al">
+							<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr>
+								<td class="PlainDataClear al">
+									
+									<img src="images/ExpandButton.gif" id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_imgExpand" alt="Show Event Details" border="0" style="cursor:pointer; cursor: pointer;" onclick="if($get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display == &#39;inline&#39;){ $get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display=&#39;none&#39;; this.src=&#39;images/ExpandButton.gif&#39;;}else{ $get(&#39;ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong&#39;).style.display=&#39;inline&#39;; this.src=&#39;images/CollapseButton.gif&#39;;}" />
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_lblEventDesc">SMCHS Events</span>
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl00_CalEventLong" style="display:none;"><br />Possible B/G Bball CIF<br />SMCHS @ Swallows Day Parade in SJC<br /></span>
+								</td>
+								<td class="ar vat">
+									
+								</td>
+							</tr></table>
+						</td>
+						<td class="DataLER"></td>
+					</tr>
+				
+					<tr>
+						<td class="DataLE"></td>
+						<td class="Data al">
+							<table border="0" style="padding: 1px; border-collapse: collapse; border-style: none; width: 100%;"><tr>
+								<td class="PlainDataClear al">
+									
+									
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl01_lblEventDesc">Pd 4- Due: Chapter 9 ALEKS homework</span>
+									<span id="ctl00_MainContent_ctl18_rptCalendarDay_ctl01_CalEventLong" style="display:none;"></span>
+								</td>
+								<td class="ar vat">
+									
+								</td>
+							</tr></table>
+						</td>
+						<td class="DataLER"></td>
+					</tr>
+				
+					
+				
+		
+</div>
+		
+		
+		
+			
+		
+		<tr style="height:2px;">
+			<td class="NewBL" style="height:2px; width: 2px;"></td>
+			<td class="DataBottom ac" colspan="3" style="height:2px;"></td>
+			<td class="NewBR" style="height:2px; width: 2px"></td>
+		</tr>	
+	</table>
+	
+	<!-- Add Event Form - Beginning -->
+	
+	<div id="ctl00_MainContent_ctl18_AddEvent_Panel" style="border-style:Outset;display: none; width: 570px; z-index: 1;">
+	
+		
+		<table border="0" style="border-collapse: collapse; border-style: none ;width: 570px;">
+			<tr class="SubHeaderRow">
+				<td class="DataLE"></td>
+				<td id="ctl00_MainContent_ctl18_tdAddEventTop" align="center" class="CatHeader" style="cursor: move; width: 100%"><b>Add New Event</b></td>
+	
+				<td class="DataLER"></td>
+			</tr>
+		</table>
+		
+		<table class="class="NoPadding a-expand"" style="width: 570px;">
+			<tr>
+				<td class="DataLE"></td>
+				<td class="ac">
+					<table class="NoPadding a-expand">
+						<tr><td class="ac">
+					
+							<table class="NoPadding a-expand">
+							<tr class="SubHeaderRow">
+								<td class="HCellT al"><b>&nbsp;Title&nbsp;</b></td>
+							</tr>
+							
+							<tr>
+								<td class="Data al">
+									<input name="ctl00$MainContent$ctl18$txtTI" type="text" id="ctl00_MainContent_ctl18_txtTI" class="k-textbox" style="width:350px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$txtEID" id="ctl00_MainContent_ctl18_txtEID" value="0" />
+								</td>
+							</tr>
+							</table>
+						</td></tr>
+						
+						<tr><td align="center">
+							<table border="0" style="border-collapse: collapse; border-color: black; width:100%;">
+							<tr class="SubHeaderRow">
+								<td class="HCellT ac"><b>&nbsp;Start Date&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;End Date&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;Start Time&nbsp;</b></td>
+								<td class="HCellT ac"><b>&nbsp;End Time&nbsp;</b></td>
+							</tr>
+							<tr>
+								<td class="Data ac">&nbsp;<div id="ctl00_MainContent_ctl18_txtDT_updatepanel1" style="display: inline-block;">
+		
+		<input name="ctl00$MainContent$ctl18$txtDT$txtKendoDatePicker" type="text" id="ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+	</div></td>
+								<td class="Data ac">&nbsp;<div id="ctl00_MainContent_ctl18_txtED_updatepanel1" style="display: inline-block;">
+		
+		<input name="ctl00$MainContent$ctl18$txtED$txtKendoDatePicker" type="text" id="ctl00_MainContent_ctl18_txtED_txtKendoDatePicker" style="width:120px;height:26px;font-size:Small;" />
+	
+	</div></td>
+								
+								<td class="Data ac">
+									<input name="ctl00$MainContent$ctl18$txtT1" type="text" id="ctl00_MainContent_ctl18_txtT1" class="k-textbox" style="width:77px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$meeT1_ClientState" id="ctl00_MainContent_ctl18_meeT1_ClientState" />
+								</td>
+								<td class="Data ac">
+									<input name="ctl00$MainContent$ctl18$txtT2" type="text" id="ctl00_MainContent_ctl18_txtT2" class="k-textbox" style="width:77px;" />
+									<input type="hidden" name="ctl00$MainContent$ctl18$meeT2_ClientState" id="ctl00_MainContent_ctl18_meeT2_ClientState" />
+								</td>
+							</tr>
+							</table>
+						</td></tr>
+
+						<!-- *** 07/01/2015 HB -- teacher event -->
+						
+						<tr><td class="ac">
+							<table class="NoPadding a-expand">
+							<tr class="SubHeaderRow">
+								<td class="HCellT ac"><b>&nbsp;Description&nbsp;</b></td>
+							</tr>
+							<tr>
+								<td class="Data ac">&nbsp; <textarea name="ctl00$MainContent$ctl18$txtDE" rows="4" cols="20" id="ctl00_MainContent_ctl18_txtDE" style="width:300px;">
+</textarea>&nbsp;</td>
+							</tr>
+							</table>
+						</td></tr>
+					</table>
+				</td>
+				
+				<td class="DataLER"></td>
+			</tr>
+				
+			<tr>
+				<td class="DataLE"></td>
+				<td align="center" class="Data" style="width: 400px;">
+					<table border="0" style="border-collapse:collapse;border-style:none;">
+						<tr>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnEventOK" value="Add Event" onclick="return CalendarEvent_Add_();" id="ctl00_MainContent_ctl18_btnEventOK" /></td>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnDelete" value="Delete" onclick="return CalendarEvent_Delete_();" id="ctl00_MainContent_ctl18_btnDelete" style="display: none;" /></td>
+							<td align="center"><input type="submit" name="ctl00$MainContent$ctl18$btnCancel" value="Cancel" onclick="return CloseAddEvent_Panel_();$get(&#39;ctl00_MainContent_ctl18_AddEvent_Panel&#39;).style.display = &#39;none&#39;;" id="ctl00_MainContent_ctl18_btnCancel" /></td>
+						</tr>
+					</table>
+				</td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr style="height:2px;">
+				<td class="NewBL" style="height:2px; width: 2px;"></td>
+				<td class="DataBottom ac" style="height:2px;"></td>
+				<td class="NewBR" style="height:2px; width: 2px"></td>
+			</tr>
+		</table>
+	
+</div>
+
+	<!-- Add Event Form - Ending -->
+
+<label id="lblRootURL" style="display: none;">https://aeries.smhs.org/parent</label>
+</div>
+<script type="text/javascript">
+	function txtED_Changed() {
+		var dt = $("#" + 'ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker');
+		var ed = $("#" + 'ctl00_MainContent_ctl18_txtED_txtKendoDatePicker');
+		var dt1 = new Date(dt.val());
+		var dt2 = new Date(ed.val());
+
+		if ((dt1 != NaN) && (dt2 != NaN)) {
+			if (dt1.getTime() > dt2.getTime()) {
+				ed.val(dt.val());
+			}
+		}
+	}
+
+	function calendarFilter_click() {
+		var div = $("#divFilter");
+		var isVisible = false;
+		var left = 250;
+
+		if (div.width() <= 200) { left = 100; }
+
+		div.css({
+			top: $("#btnCalenderFilter").offset().top + 23,
+			left: $("#btnCalenderFilter").offset().left - left
+ 		});
+
+		if (div.attr("style") == undefined) {
+			isVisible = true;
+		}
+		else if (div.attr("style").indexOf("block") >= 0) {
+			isVisible = true;
+		}
+		
+		if (isVisible) {
+			div.fadeOut(700, function () {
+				div.css("display", "none");
+			});
+		}
+		else {
+			div.fadeIn(700, function () {
+				div.css("display", "block");
+			});
+		}
+	}
+
+	function ddlEventScope_OnSelect(e) {
+		var sp = "";
+		var tmp = null;
+		var root = $("#lblRootURL").html();
+
+		if (root[root.length] != "/") { root += "/"; }
+
+		if (typeof e == "object") {
+			sp = this.dataItem(e.item).value;
+		}
+		else {
+			tmp = e.split("|");
+			sp = tmp[0];
+		}
+
+		var webMethod = root + "portal/teacher/event/getassociation/scopeid/" + sp + "/";
+			
+		var request = $.ajax({
+			url: webMethod,
+			type: "GET",
+			cache: false,
+			dataType: "json",
+			contentType: "application/json; charset=utf-8"
+		});
+
+		request.done(function (result) {
+			$("#ddlAssociation").kendoDropDownList({
+				dataTextField: "Description",
+				dataValueField: "Code",
+				dataSource: result
+			});
+
+			if (tmp != null) { $("#ddlAssociation").data("kendoDropDownList").value(tmp[1]); }
+		});
+
+		request.fail(function (jqXHR, textStatus) {
+			console.log("ddlEventScope_OnSelect Request Failed: " + jqXHR.responseText);
+		});
+	}
+
+	$(document).ready(function () {
+		data = [];
+		data.push({ text: "Personal - just you", value: "PER" });
+
+		
+		var classes = $("#" + 'ctl00_MainContent_ctl18_opnClasses');
+		if (classes) { $("#divClasses").css("display", 'inline-block'); }
+
+		$("#divFilter").css("width", "456px");
+		data.push({ text: "Section - one of your classes", value: "MST" });
+		data.push({ text: "Course - all of your classes for a course", value: "CRS" });
+		
+
+		data.push({ text: "Teacher - all of your class", value: "TCH" });
+
+		if ($("#ddlEventScope").length > 0) {
+			$("#ddlEventScope").kendoDropDownList({
+				dataTextField: "text",
+				dataValueField: "value",
+				dataSource: data,
+				select: ddlEventScope_OnSelect
+			});
+
+			$("#ddlEventScope").data("kendoDropDownList").select(0);
+			ddlEventScope_OnSelect("PER|NONE");
+
+			$("#btnCalenderFilter").bind("click", calendarFilter_click);
+			$("#divEventTypes input[type='button']").on("click", function () {
+				$("#divFilter").fadeOut(700, function () {
+					$("#" + 'ctl00_MainContent_ctl18_btnRefresh').click();
+				});
+			});
+		}
+	});
+</script>
+
+<style type="text/css">
+.calendar-filter {
+	font-size: 12pt;
+	color: #06C;
+}
+.calendar-filter:hover {
+	color: #FFF;
+}
+
+.bgClass {
+	border: 1px solid #9DE788;
+	background-color: #9DE788;
+}
+
+.bgPeronsal {
+	border: 1px solid #F00;
+	background-color: #F00;
+}
+
+.bgSchool {
+	border: 1px solid #FF0;
+	background-color: #FF0;
+}
+
+.bgDistrict {
+	border: 1px solid #699;
+	background-color: #699;
+}
+
+#divFilter {
+	width: 200px;
+	height: 200px;
+	position: absolute;
+	border: 2px solid #92B8CE;
+	background-color: #fff;
+	z-index: 10000;
+}
+
+#divEventTypes, #divClasses {
+	width: 200px;
+	height: 200px;
+	overflow: auto;
+	vertical-align: top;
+	display: inline-block;
+}
+
+#divEventTypes ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+#divEventTypes ul li {
+	height: 23px;
+	text-align: left;
+	vertical-align: top;
+	padding-top: 5px;
+	padding-left: 3px;
+}
+
+#divEventTypes ul li:hover {
+	cursor: pointer;
+	background-color: #e3e3e3;
+}
+
+#divEventTypes ul li label {
+	vertical-align: top;
+}
+
+#divEventTypes div, #divClasses div {
+	height: 25px;
+	padding-top: 5px;
+	background-color: #ccc;
+	font-weight: bold;
+}
+
+#divEventTypes input[type='button'] {
+	width: 100px;
+	margin-top: 10px;
+}
+
+#divClasses {
+	width: 252px;
+	border-left: 1px solid #fff;
+}
+
+#divClasses table {
+	width: 233px;
+	border: none;
+	border-spacing: 0;
+	border-collapse: collapse;
+	background-color: #f9f9f9;
+}
+
+#divClasses table td {
+	height: 23px;
+	padding-top: 5px;
+	border: 1px solid transparent;
+}
+
+#divClasses table td:hover {
+	cursor: pointer;
+	background-color: #e1e8fe;
+}
+
+#divClasses table tr:nth-child(even) {
+	background-color: #e3e3e3;
+}
+
+#divClasses table tr td label {
+	vertical-align: top;
+}
+</style>
+					</div>				
+                </div>			
+
+				<div id="ParentHomeRow3" class="a-row">
+					<div class="a-col-12">
+																		
+						
+
+<style type="text/css">
+	.activeLink {
+		color: #0000ee;
+		text-decoration: none;
+	}
+	.activeLink:hover {
+		text-decoration: underline;
+	}
+</style>
+
+<script type="text/javascript">	
+	$(function () {
+		var request = $.ajax({
+			url: "studentdata/reportcardhistory/true/",
+			type: "GET",
+			cache: false,
+			dataType: "html",
+			contentType: "application/html; charset=utf-8"
+		})
+		request.done(function (result) {
+			if (result) {
+				if ($.trim(result).length > 0) {
+					$(".report-card-history").html(result);
+					$(".report-card-history a").addClass("activeLink");
+				}
+			}
+		})
+		request.fail(function (qXHR, textStatus) {
+			// do nothing
+		});
+	});
+</script>
+						<table id="ctl00_MainContent_dlAttSummaryPeriod" cellspacing="0" style="border-width:0px;width:100%;border-collapse:collapse;">
+	<tr>
+		<td>
+								<tr class="SubHeaderRow">
+									<td class="NewTL"></td>
+									<td class="CatHeader ac" colspan="13"><a href="Attendance.aspx">Attendance Summary</a></td>
+									<td class="NewTR"></td>
+								</tr>
+								<tr class="SubHeaderRow">
+									<td class="DataLE"></td>
+									<td class="HCell ac">Code</td>
+									<td class="HCell al">Description</td>
+									<td class="HCell ac">All</td>
+									<td class="HCell ac">0</td>
+									<td class="HCell ac">1</td>
+									<td class="HCell ac">2</td>
+									<td class="HCell ac">3</td>
+									<td class="HCell ac">4</td>
+									<td class="HCell ac">5</td>
+									<td class="HCell ac">6</td>
+									<td class="HCell ac">7</td>
+									<td class="HCell ac">8</td>
+									<td class="HCell ac">9</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac">L</td>
+									<td class="Data al">Late - Exc</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac"></td>
+									<td class="Data ac">1</td>
+									<td class="Data ac">1</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac">T</td>
+									<td class="Data al">Tardy</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac">1</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">_*TOTALS*_</td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="Data ac"></td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">EXCUSED</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr>
+									<td class="DataLE"></td>
+									<td class="Data ac"></td>
+									<td class="Data al">UNEXCUSED</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="Data ac">0</td>
+									<td class="DataLER"></td>
+								</tr>
+							</td>
+	</tr><tr>
+		<td>
+								<tr style="height:2px;">
+									<td class="NewBL" style="height:2px; width:2px;"></td>
+									<td class="DataBottom ac" colspan="13" style="height:2px;"></td>
+									<td class="NewBR" style="height:2px; width:2px;"></td>
+								</tr>
+							</td>
+	</tr>
+</table>							
+					</div>
+
+					<div class="a-col-8">
+													
+						<div id="divAttSummaryDaily" class="a-obj">
+							
+						</div>						
+						
+
+<div class="a-obj">
+	
+			<table class="NoPadding a-expand">
+				<tr class="SubHeaderRow">
+					<td class="NewTL"></td>
+					<td class="CatHeader ac" colspan="2">Resources</td>
+					<td class="NewTR"></td>
+				</tr>
+				<tr class="SubHeaderRow">
+					<td class="DataLE" /></td>
+					<td class="HCell al">Site</td>
+					<td class="HCell al">Description</td>
+					<td class="DataLER" /></td>
+				</tr>
+		
+			<tr>
+				<td class="DataLE"></td>
+				<td class="Data al"><a href="http://www.smhs.org/calendar.jsp" target="_blank">School Calendar</a></td>
+				<td class="Data al">&nbsp;</td>
+				<td class="DataLER"></td>
+			</tr>
+						
+				<tr style="height:2px;">
+					<td class="NewBL" style="height:2px; width: 2px;"></td>
+					<td class="DataBottom ac" colspan="2" style="height:2px;"></td>
+					<td class="NewBR" style="height:2px; width: 2px"></td>
+				</tr>	
+			</table>
+		
+</div>
+						
+
+<style type="text/css">
+	.quick-button-small {
+		-webkit-border-radius: 5px 5px 5px 5px;
+		-moz-border-radius: 5px 5px 5px 5px;
+		border-radius: 5px 5px 5px 5px;
+		height: 20px;
+		font-size: 11.5px;
+		font-family: Arial, Tahoma, Helvetica;
+		background-color: white;
+		border:1px solid #AEAEAE;
+	}
+	.quick-button-small:hover
+		{
+		background-color: #E3E3E3;
+		}
+	
+</style>
+<div class="a-obj">
+	
+</div>
+						
+						
+
+<div class="a-obj">
+	
+	
+</div>
+						
+
+<div class="a-obj">
+	
+</div>
+					</div>
+				</div>
+
+				<div id="ParentHomeRow4" class="a-row">
+					<div class="a-col-20 PlainDataClear ac" style="font-size:65%; color: #333333">
+						<table id="ctl00_MainContent_tblLoginHistory" class="NoPadding a-expand">
+	<tr>
+		<td>Currently Accessing From: <span id="ctl00_MainContent_lblCurrentIP">125.37.151.195</span></td>
+	</tr>
+	<tr>
+		<td>Previously Accessed From: <span id="ctl00_MainContent_lblPrevIP">125.37.151.195</span> on <span id="ctl00_MainContent_lblPrevTimestamp">3/25/2017 7:50:50 AM</span></td>
+	</tr>
+</table>
+
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Admin Widgets -->
+					
+
+	</div>	
+	<input type="submit" name="ctl00$MainContent$btnEditHomePage" value="Edit Home Page" onclick="return false;" id="ctl00_MainContent_btnEditHomePage" style="display: none;" />
+	
+
+	<div id="ctl00_MainContent_EditHomePage_Panel" style="display: none;">
+	
+		<table border="0" cellpadding="0" cellspacing="0">
+			<tr class="SubHeaderRow">
+				<td class="DataTL"></td>
+				<td align="center" class="HCellT" colspan="2">Available Gadgets</td>
+				<td class="DataTR"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetAttSummary" type="checkbox" name="ctl00$MainContent$chkGadgetAttSummary" /><label for="ctl00_MainContent_chkGadgetAttSummary">Attendance Summary</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetCalendar" type="checkbox" name="ctl00$MainContent$chkGadgetCalendar" /><label for="ctl00_MainContent_chkGadgetCalendar">Events Calendar</label></td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetTasks" type="checkbox" name="ctl00$MainContent$chkGadgetTasks" /><label for="ctl00_MainContent_chkGadgetTasks">My Tasks</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetINV" type="checkbox" name="ctl00$MainContent$chkGadgetINV" /><label for="ctl00_MainContent_chkGadgetINV">Intervention Caseload</label></td>
+				<td class="DataLER"></td>
+			</tr>
+            <tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkGadgetResourceLinks" type="checkbox" name="ctl00$MainContent$chkGadgetResourceLinks" /><label for="ctl00_MainContent_chkGadgetResourceLinks">Resources</label></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkBriefcase" type="checkbox" name="ctl00$MainContent$chkBriefcase" /><label for="ctl00_MainContent_chkBriefcase">My Briefcase</label></td>
+				<td class="DataLER"></td>
+			</tr>
+	        <tr>
+				<td class="DataLE"></td>
+				<td align="left" valign="top" class="Data"><input id="ctl00_MainContent_chkClassSummary" type="checkbox" name="ctl00$MainContent$chkClassSummary" /><label for="ctl00_MainContent_chkClassSummary">Class Summary</label></td>
+				<td align="left" valign="top" class="Data"></td>
+				<td class="DataLER"></td>
+			</tr>
+			<tr>
+				<td class="DataLE"></td>
+				<td align="center" valign="top" class="Data" colspan="2">
+					<input type="submit" name="ctl00$MainContent$btnEditHomeOK" value="OK" id="ctl00_MainContent_btnEditHomeOK" />
+					<input type="button" value="Cancel" onclick="$find('GadgetOptions').hide(); return false;" />
+				</td>
+				<td class="DataLER"></td>
+			</tr>
+		</table>
+	
+</div>
+	<input type="hidden" name="ctl00$MainContent$Caption" id="ctl00_MainContent_Caption" />
+
+	<script type="text/javascript">
+
+		var viewParentNotification = false;
+
+		$(document).ready(function () {
+			if (viewParentNotification) {
+				$("#divParentNotification").slideDown("slow");
+				$("#divParentNotification").delay(10000).slideUp();
+			}
+
+			$("[name$='txtStuSearch']").focus();
+		});
+
+	</script>
+
+
+			</td></tr>
+			<tr><td>
+				<table border="0" cellspacing="0" cellpadding="0" width="100%"><tr>
+					<td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;" class="al">Aeries&nbsp;Version&nbsp;<span id="ctl00_lblVersion">7.17.2.17</span></td>
+					<td style="font-family: Verdana, Arial, Helvetica, sans-serif; font-size: 10px; color: #000000;" class="ar"><span id="ctl00_lblCopyright">Copyright &copy; 1995-2017 Aeries Software. All Rights Reserved.</span></td>
+				</tr></table>
+			</td></tr>
+		</table>
+	</div>
+
+
+<script type="text/javascript">
+//<![CDATA[
+function EditHomePage(){ $get('ctl00_MainContent_btnEditHomePage').click(); return false;}function ExpandOverEmptyColumns(columnOneID,columnTwoID){ if(columnOneID.children().length === 0) { columnTwoID.addClass('a-col-20'); } if(columnTwoID.children().length === 0) { columnOneID.addClass('a-col-20'); }}ExpandOverEmptyColumns($('#ParentHomeRow2_Right'),$('#ParentHomeRow2_Left'));//]]>
+</script>
+<script language='javascript'> var timeoutIsParent = true; var global_SessionTimer; var global_WarningTimer; var global_SessionTimeout = 3600000;  var global_WarningTimeout = 2700000;  initSessionTimer(3600000,2700000);</script>
+<script type="text/javascript">
+//<![CDATA[
+$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy', change: CalendarEvent_SetDate_ }); $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtDate_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtMonth_txtKendoMonthPicker').kendoDatePicker({  start: 'year',  depth: 'year',  format:  'MMMM yyyy', change: CalendarEvent_SetDate_ });});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtDT_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy', change: txtED_Changed }); $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_ctl18_txtED_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_AdminINV_txtNewCommentDT_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_Briefcase_txtSD_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});$(document).ready(function () { $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').kendoDatePicker({  format:  'MM/dd/yyyy' }); $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').kendoMaskedTextBox({  mask: '00/00/0000' }); $('#ctl00_MainContent_Briefcase_txtED_txtKendoDatePicker').parent().find('span.k-i-calendar').css('margin-bottom', '5px');});Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.FloatingBehavior, {"handle":$get("ctl00_MainContent_ctl18_tdAddEventTop"),"id":"ctl00_MainContent_ctl18_dpeAddEvent_Panel"}, null, null, $get("ctl00_MainContent_ctl18_AddEvent_Panel"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MainContent_ctl18_meeT1_ClientState","acceptAMPM":true,"century":2000,"cultureAMPMPlaceholder":"AM;PM","cultureCurrencySymbolPlaceholder":"$","cultureDateFormat":"MDY","cultureDatePlaceholder":"/","cultureDecimalPlaceholder":".","cultureName":"en-US","cultureThousandsPlaceholder":",","cultureTimePlaceholder":":","id":"ctl00_MainContent_ctl18_meeT1","mask":"99:99","maskType":3}, null, null, $get("ctl00_MainContent_ctl18_txtT1"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.MaskedEditBehavior, {"ClientStateFieldID":"ctl00_MainContent_ctl18_meeT2_ClientState","acceptAMPM":true,"century":2000,"cultureAMPMPlaceholder":"AM;PM","cultureCurrencySymbolPlaceholder":"$","cultureDateFormat":"MDY","cultureDatePlaceholder":"/","cultureDecimalPlaceholder":".","cultureName":"en-US","cultureThousandsPlaceholder":",","cultureTimePlaceholder":":","id":"ctl00_MainContent_ctl18_meeT2","mask":"99:99","maskType":3}, null, null, $get("ctl00_MainContent_ctl18_txtT2"));
+});
+Sys.Application.add_init(function() {
+    $create(Sys.Extended.UI.ModalPopupBehavior, {"backgroundCssClass":"modalBackground","dropShadow":true,"dynamicServicePath":"/Parent/Default.aspx","id":"GadgetOptions","popupControlID":"ctl00_MainContent_EditHomePage_Panel"}, null, null, $get("ctl00_MainContent_btnEditHomePage"));
+});
+//]]>
+</script>
+</form>
+	
+    <script type="text/javascript">
+        // remove the mobile portal link on desktop browsers
+        if (!kendo.support.mobileOS) {
+        	if ($get("mobileTestdrive")) { $get("mobileTestdrive").innerHTML = ""; }
+        } else {
+            $('#mobileTestdrive').show();
+        }
+    </script>
+
+    <script type="text/javascript">
+	$(document).ready(function() {
+
+		window.masterSC = $('.MasterSC').val();
+		window.masterSN = $('.MasterSN').val();
+		window.masterID = $('.MasterPID').val();
+
+		
+	});
+    </script>
+
+
+</body>
+</html>

@@ -16,7 +16,7 @@ $gradeYear = '9th';
 //$term = 'Q3';
 $Catch_All_Term_Datas = "";
 
-//$proxy = "127.0.0.1:7070";
+$proxy = "127.0.0.1:7070";
 // $MarkingPeriodId = array(
 //     '54' => "Q1", //FIRST QUARTER
 //     '55' => 'Q2', //SECOND QUARTER
@@ -47,8 +47,8 @@ $ch = curl_init();// 初始化
 curl_setopt($ch, CURLOPT_URL, $logInUrl);// 网址
 curl_setopt($ch, CURLOPT_USERAGENT,'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/32.0.1700.107 Chrome/32.0.1700.107 Safari/537.36');
 // 设置代理
-// curl_setopt($ch, CURLOPT_PROXY, $proxy);
-// curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
+curl_setopt($ch, CURLOPT_PROXY, $proxy);
+curl_setopt($ch, CURLOPT_PROXYTYPE, CURLPROXY_SOCKS5_HOSTNAME);
  
 // 基本配置
 curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -65,7 +65,7 @@ curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 
 $student_Html = curl_exec($ch);
-//html_put_files("login/aaaa.html", $student_Html);
+html_put_files("login/aaaa.html", $student_Html);
 $student_Html_dom = new \HtmlParser\ParserDom($student_Html);
 /*
 // This is Parent account to start get student datas.
@@ -130,7 +130,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
     echo "CurrentMarkingPeriodId: ". $CurrentMarkingPeriodId ."\n";
     //get current term name
     $term = $MarkingPeriodId[$CurrentMarkingPeriodId];
-    
+    /*
     // get recent score json data for current semester
     $recent_json = $student_Html_dom->find('div.bgf9', 1)->outerHtml();
     $tmp = explode("\n", $recent_json);
@@ -318,7 +318,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
             ". time() ."
         )";
     $bdd->execute($query);
-
+    */
     //get summary and detail score datas
     $z = 0;
     foreach($MarkingPeriodId as $key => $value) {
@@ -348,7 +348,7 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
         $msc = getMillisecond();
         //get Category Averages for each Course
         $pp_grade_detail = "https://www.plusportals.com/ParentStudentDetails/ShowScoresDetails?_=". $msc ."&sectionId=". $SectionId;
-        echo $pp_grade_detail."\n";
+        //echo $pp_grade_detail."\n";
         curl_setopt($ch, CURLOPT_URL, $pp_grade_detail);// 学生成绩详情页面
         $pp_category_averages_Html[$SectionId] = curl_exec($ch);
 
@@ -411,7 +411,6 @@ for ($i = 0; $i < count($pp_get_all_students); $i++) {
           )";
         $bdd->execute($query);
     }
-
 }
 //var_dump($pp_infos);
 curl_close($ch);

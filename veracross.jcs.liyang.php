@@ -3,10 +3,6 @@ require 'vendor/autoload.php';
 include('db_class.php'); // call db.class.php
 $bdd = new db();
 /*
-「大象人事」的 CTO tommy@daxiangrenshi.com
- OneAPM zhaohaijun@oneapm.com
- jipengcheng@guazi.com
-
 utf8:✓
 authenticity_token:lC1L6epImfLF8svYwfY9L/Abg3wpqZfPfvdIqDcOQEtqZmqlAY2XPHIzPVfCm4knrnpeS1o9KiEsyDkOUe00iw==
 username:liyan19@jcpatriot.org
